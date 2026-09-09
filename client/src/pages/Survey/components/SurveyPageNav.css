@@ -1,0 +1,108 @@
+/* Custom survey page navigation — see SurveyPageNav.tsx for why this replaces
+   SurveyJS's built-in progress bar. Scrolling happens ONLY via the arrow buttons,
+   so there is no scrollbar and no drag gesture to fight the survey on a tablet. */
+
+.spn {
+	display: flex;
+	align-items: stretch;
+	gap: 4px;
+	margin: 0 0 16px;
+	padding: 6px;
+	background: #f6f7f9;
+	border-radius: 8px;
+	/* fixed height: nothing here may change size and shove the page around */
+	box-sizing: border-box;
+}
+
+.spn__arrow {
+	flex: 0 0 36px;
+	border: 1px solid #d4d7dd;
+	background: #fff;
+	border-radius: 6px;
+	font-size: 20px;
+	line-height: 1;
+	color: #333;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+.spn__arrow:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.spn__strip {
+	flex: 1 1 auto;
+	display: flex;
+	gap: 6px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: smooth;
+	/* hide the scrollbar in every engine — arrows are the only control */
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.spn__strip::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.spn__chip {
+	flex: 0 0 auto;          /* never squeeze: titles stay readable */
+	max-width: 190px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 12px;
+	border: 1px solid #3E236E;
+	border-radius: 999px;
+	background: #3E236E;        /* visited: app title purple */
+	font-size: 13px;
+	color: #fff;
+	cursor: pointer;
+	white-space: nowrap;
+	touch-action: manipulation;
+}
+
+.spn__num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.25);
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.spn__label {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.spn__chip--active {
+	background: #ddd5ea;        /* current: light tint of the title purple */
+	border-color: #3E236E;
+	color: #3E236E;
+	font-weight: 700;
+}
+.spn__chip--active .spn__num {
+	background: #3E236E;
+	color: #fff;
+}
+
+.spn__chip--locked {
+	background: #f0f1f3;        /* unvisited: greyed out */
+	border-color: #d4d7dd;
+	color: #9aa0a8;
+	cursor: not-allowed;
+}
+.spn__chip--locked .spn__num {
+	background: #dfe1e5;
+	color: #9aa0a8;
+}
+
+@media (max-width: 640px) {
+	.spn__chip { max-width: 150px; font-size: 12px; }
+}

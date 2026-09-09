@@ -28,3 +28,6 @@ yarn-error.log*
 .env
 
 /dist
+# local env files for other environments (contain live DB credentials)
+.env.*
+!.env.example

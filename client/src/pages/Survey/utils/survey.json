@@ -1,1687 +1,1571 @@
 {
-  "title": "Unsheltered Point-in-Time Count 2026",
-  "pages": [
+ "title": "Unsheltered Point-in-Time Count 2026",
+ "pages": [
+  {
+   "name": "volunteer-pre-screen",
+   "title": "Pre-Screening Questions - Volunteer Only",
+   "elements": [
     {
-      "name": "volunteer-pre-screen",
-      "title": "Pre-Screening Questions - Volunteer Only",
-      "elements": [
-        {
-          "type": "html",
-          "name": "intro_text",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> These questions are for volunteers only. Please do not ask the respondent.</div>"
-        },
-        {
-          "type": "dropdown",
-          "name": "location",
-          "title": "Please select location:",
-          "isRequired": true,
-          "choicesByUrl": {
-            "url": "/api/locations",
-            "path": "data",
-            "valueName": "_id",
-            "titleName": "hubName"
-          },
-          "showNoneItem": true
-        }
-      ]
+     "type": "html",
+     "name": "intro_text",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> These questions are for volunteers only. Please do not ask the respondent.</div>"
     },
     {
-      "name": "age_check",
-      "title": "Age Check",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "is_adult",
-          "title": "Are you 18 years old or older?",
-          "isRequired": true,
-          "choices": [
-            "Yes",
-            "No"
-          ]
-        },
-        {
-          "type": "radiogroup",
-          "name": "is_over12",
-          "visibleIf": "{is_adult} = 'No'",
-          "title": "Are you 12 years old or older?",
-          "requiredIf": "{is_adult} = 'No'",
-          "choices": [
-            "Yes",
-            "No"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "consent",
-      "title": "Consent Form",
-      "elements": [
-        {
-          "type": "html",
-          "name": "adult_consent",
-          "visibleIf": "{is_adult} = 'Yes'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n<strong>Instructions:</strong> Please read the following consent information out loud to the respondent and have them orally give their consent to you.\n</div>\n\n<div style=\"max-width: 800px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.6;\">\n<h2 style=\"text-align: left; color: #333; margin-bottom: 20px; font-size: 22px;\">Unsheltered Point-in-Time Count 2026</h2>\n<h4 style=\"color: #444; margin-top: 20px; margin-bottom: 10px;\">UW Researchers:</h4>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Zack W. Almquist</strong><br>\n\t\tAssociate Professor, Department of Sociology<br>\n\t\t<a href=\"mailto:zalmquist@uw.edu\">zalmquist@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Amy Hagopian</strong><br>\n\t\tProfessor Emeritus, Global Health<br>\n\t\tProfessor Emeritus, Health Systems and Population Health<br>\n\t\tDirector, Community Oriented Public Health Practice<br>\n\t\t<a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. June Yang</strong><br>\n\t\tResearch Scientist, Center for Studies in Demography and Ecology (CSDE) &amp; eScience Institute<br>\n\t\t<a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a>\n\t</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Researcher's Statement</h4>\n<p style=\"margin-bottom: 15px;\">We are asking you to be in a research study. The purpose of this consent form is to give you the information you will need to help you decide whether to be in the study or not. Please read the form carefully. You may ask questions about the purpose of the research, what we would ask you to do, the possible risks and benefits, your rights as a volunteer, and anything else about the research or this form that is not clear. When we have answered all your questions, you can decide if you want to be in the study or not. This process is called \"informed consent.\" We will give you a copy of this form for your records.</p>\n<p style=\"margin-bottom: 20px;\">This is a research study focused on innovating better methods to enumerate individuals experiencing homelessness. This study is led by Drs. Zack W. Almquist, Amy Hagopian and June Yang at the University of Washington. We hope to learn more about the number and demographics of individuals' experiencing homelessness through their social networks. You are being asked to take part in this study as a person currently experiencing homelessness.</p>\n\n<div style=\"background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0;\">\n<h4 style=\"color: #1976D2; margin-top: 0; margin-bottom: 12px;\">Key Information</h4>\n<ul style=\"margin-bottom: 0; padding-left: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">Taking part is your choice.</li>\n\t<li style=\"margin-bottom: 8px;\">If you join, we will ask you to do a 10–15 minute survey about your housing, health, and people you know who are also experiencing homelessness.</li>\n\t<li style=\"margin-bottom: 8px;\">You will receive a <strong>$20 cash card or electronic payment</strong> for doing the survey, and <strong>$5 for each person you successfully recruit</strong> (up to three people).</li>\n\t<li style=\"margin-bottom: 8px;\">Questions may feel personal (for example, about health, substance use, or housing history). You can skip any question or stop at any time and still get paid.</li>\n\t<li style=\"margin-bottom: 8px;\">We will keep your information confidential to the extent allowed by law. We will ask for some limited identifying information so we don't count you twice and so we can contact you for possible follow-up. We will store this information securely, separate from your survey answers.</li>\n\t<li style=\"margin-bottom: 0;\">If you later decide to stop, we will stop collecting new information from you, but we will keep and continue to use data already collected, including any data that have already been de-identified and combined with other participants.</li>\n</ul>\n<p style=\"margin-top: 12px; margin-bottom: 0; font-style: italic;\">Please read the sections below for more detail.</p>\n</div>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">PURPOSE OF THE STUDY</h4>\n<p style=\"margin-bottom: 20px;\">The purpose of this study is to collect information about the number and characteristics of people who are currently experiencing homelessness. We also want to investigate the timing and social networks of people who are currently unhoused.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">STUDY PROCEDURES</h4>\n<p style=\"margin-bottom: 15px;\">To better understand the number of people experiencing homelessness, their demographics and social networks, we will survey household heads 18 and older.</p>\n<p style=\"margin-bottom: 20px;\">This study is being done in the form of a survey. If you decide to participate in the survey, you will be asked to discuss your experiences with homelessness and social networks of people you know who are also experiencing homelessness. It will take about 10 minutes to complete the survey.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Risks:</strong> Risks of this study are minimal, though there are questions which inquire about personal and/or sensitive content. Participants can refuse to answer any question or discontinue the interview at any point without repercussion. Every effort will be made to keep responses confidential, and responses will not affect any of your current or subsequent benefits.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Benefits:</strong> Participation in this study will contribute to shared knowledge on homelessness from those who are experiencing it first-hand.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Compensation:</strong> Participants will receive a $20 prepaid visa card after completing the survey questionnaire. We will also give you a $5 gift card for each person (also experiencing homelessness) who you recruit to participate in this study (up to three people/gift cards).</p>\n\n<p style=\"margin-bottom: 20px;\"><strong>Voluntary Participation:</strong> Your participation in this study is voluntary. You can decide to participate or not to participate, or to withdraw at any time without penalty or loss of benefits to which you are entitled.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What happens to the information collected for the research?</h4>\n<p style=\"margin-bottom: 15px;\">We will not keep any personal identifying information about you after the study period.</p>\n<p style=\"margin-bottom: 15px;\">The data we collect will be confidential. We will protect the privacy of the participants by coding all data sheets and files with a participant identification number. If we learn that the participant intends to harm themselves or others, however, we are legally obligated to report that to a mental health official.</p>\n<p style=\"margin-bottom: 20px;\">Sometimes government or university staff review studies like this to make sure they are being done safely and legally. If a review takes place, they may look at study records. They will protect your privacy, and your information will not be used to put you at legal risk.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">DATA RETENTION AND WITHDRAWAL</h4>\n<p style=\"margin-bottom: 15px;\">Because this is a multi-year project, we need to keep your data for some time.</p>\n<p style=\"margin-bottom: 15px;\">We will keep your survey answers and the link between your name/contact information and your study ID for as long as needed to:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>Finish this study,</li>\n\t<li>Conduct closely related studies about homelessness, and</li>\n\t<li>Meet University of Washington and state/federal records-retention rules (these rules generally require keeping data for several years after a study ends).</li>\n</ul>\n<p style=\"margin-bottom: 20px;\">We may use your de-identified survey data (data with names and direct contact information removed) in future research related to homelessness and housing. We may also share de-identified data with other researchers under formal data-sharing agreements. Your name and direct contact information will not be shared with other researchers without additional IRB approval or your additional consent.</p>\n\n<p style=\"margin-bottom: 8px; margin-top: 20px;\"><strong>What if I withdraw from the study?</strong></p>\n<p style=\"margin-bottom: 15px;\">If you decide to stop participating, we will stop collecting new information from you and will not contact you again for this study (unless you later tell us you want to re-join).</p>\n<p style=\"margin-bottom: 15px;\">However, we will keep and continue to use the information already collected about you, including any data that have already been de-identified and combined with others. Once your data are combined and analyzed, they cannot be separated out.</p>\n<p style=\"margin-bottom: 20px;\">We will also keep certain identifiers (such as your date of birth and name initials) and the code that links those to your survey ID, as allowed by UW policy and law. Because we keep these identifiers even if you withdraw, you may decide that you do not want to participate.</p>\n\n<p style=\"margin-bottom: 8px; margin-top: 20px;\"><strong>What will be shared with others?</strong></p>\n<p style=\"margin-bottom: 15px;\">We may share group-level results (for example, \"X% of people report Y\") with KCRHA, local governments, HUD, community organizations, and in academic publications.</p>\n<p style=\"margin-bottom: 20px;\">Your name or direct contact information will not appear in any reports or publications.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Whom can I talk to?</h4>\n<p style=\"margin-bottom: 15px;\">If you have any questions or concerns about this project, you may contact:</p>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 15px;\">\n\t<li>Dr. Zack Almquist – <a href=\"mailto:zalmquis@uw.edu\">zalmquis@uw.edu</a></li>\n\t<li>Dr. Amy Hagopian – <a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a></li>\n\t<li>Dr. June Yang – <a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a></li>\n</ul>\n<p style=\"margin-bottom: 15px;\">If you have questions about your rights as a research subject or complaints about the research, contact:</p>\n<p style=\"margin-bottom: 20px; padding-left: 20px;\"><strong>Human Subjects Division (HSD) – University of Washington</strong><br>\nPhone: (206) 543-0098<br>\nEmail: <a href=\"mailto:hsdinfo@uw.edu\">hsdinfo@uw.edu</a></p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">CONSENT</h4>\n<p style=\"margin-bottom: 15px;\">Participation in research is voluntary. You may refuse to participate or stop at any time without penalty or loss of benefits to which you are entitled.</p>\n<p style=\"margin-bottom: 10px;\"><strong>By agreeing below, you are saying:</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>This study has been explained to you.</li>\n\t<li>You have had the chance to ask questions.</li>\n\t<li>You understand that you can stop at any time.</li>\n\t<li>You voluntarily agree to take part in this research.</li>\n</ul>\n</div>\n"
-        },
-        {
-          "type": "html",
-          "name": "youth_consent",
-          "visibleIf": "{is_adult} = 'No'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n<strong>Instructions:</strong> Please read the following consent information out loud to the respondent and have them orally give their consent to you.\n</div>\n\n<div style=\"max-width: 800px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.6;\">\n<h4 style=\"text-align: center; color: #333; margin-bottom: 20px; font-size: 18px;\">Unsheltered Point-in-Time Count 2026</h4>\n\n<h4 style=\"color: #444; margin-top: 20px; margin-bottom: 10px;\">UW Researchers:</h4>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Zack W. Almquist</strong><br>\n\t\tAssociate Professor, Department of Sociology<br>\n\t\t<a href=\"mailto:zalmquist@uw.edu\">zalmquist@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Amy Hagopian</strong><br>\n\t\tProfessor Emeritus, Global Health<br>\n\t\tProfessor Emeritus, Health Systems and Population Health<br>\n\t\tDirector, Community Oriented Public Health Practice<br>\n\t\t<a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. June Yang</strong><br>\n\t\tResearch Scientist, Center for Studies in Demography and Ecology (CSDE) &amp; eScience Institute<br>\n\t\t<a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a>\n\t</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Why are we talking to you?</h4>\n<p style=\"margin-bottom: 15px;\">We are doing a research study to learn more about young people who are experiencing homelessness or unstable housing. We want to understand how many youth are in this situation, what their lives are like, and how their friendships and social networks work.</p>\n<p style=\"margin-bottom: 20px;\">We are asking you to be in this study because you are a young person who is currently experiencing homelessness or unstable housing.</p>\n<p style=\"margin-bottom: 20px;\"><strong>Taking part is your choice.</strong></p>\n\n<div style=\"background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0;\">\n<h4 style=\"color: #1976D2; margin-top: 0; margin-bottom: 12px;\">Key things to know:</h4>\n<ul style=\"margin-bottom: 0; padding-left: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">If you join, we will ask you to do a survey that takes about 10–15 minutes.</li>\n\t<li style=\"margin-bottom: 8px;\">The survey will ask about:\n\t\t<ul style=\"margin-top: 5px; padding-left: 20px;\">\n\t\t\t<li>Your housing situation</li>\n\t\t\t<li>Your health</li>\n\t\t\t<li>People you know who are also experiencing homelessness or unstable housing</li>\n\t\t</ul>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">You will get a <strong>$20 prepaid card</strong> for doing the survey.</li>\n\t<li style=\"margin-bottom: 8px;\">You can also receive <strong>$5 for each person you successfully recruit</strong> (up to three people) who is also experiencing homelessness or unstable housing and who chooses to do the survey.</li>\n\t<li style=\"margin-bottom: 8px;\">Some questions may feel personal (for example, about health, substance use, or your housing history).</li>\n\t<li style=\"margin-bottom: 8px;\">You can skip any question you do not want to answer.</li>\n\t<li style=\"margin-bottom: 8px;\">You can stop at any time, and you will still get your payment for the survey.</li>\n\t<li style=\"margin-bottom: 8px;\">We will keep your information private as much as the law allows.</li>\n\t<li style=\"margin-bottom: 0;\">We will not share your answers with parents/guardians, teachers, case workers, or shelter staff unless we are worried that you or someone else is in serious danger.</li>\n</ul>\n</div>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What is the purpose of this study?</h4>\n<p style=\"margin-bottom: 10px;\">The purpose of this study is to:</p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>Learn more about how many people are experiencing homelessness.</li>\n\t<li>Understand what life is like for youth who are unhoused or unstably housed.</li>\n\t<li>Learn how social networks (the people you know) are connected to homelessness.</li>\n</ul>\n<p style=\"margin-bottom: 20px;\">This information may help community organizations and local leaders plan better services and support for youth.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What will happen if you join?</h4>\n<p style=\"margin-bottom: 10px;\">If you decide to be in the study:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>A researcher will explain the study and answer any questions you have.</li>\n\t<li>You will do a survey (on a tablet, phone, or paper, or read aloud if you prefer).</li>\n\t<li>The survey will ask you about:\n\t\t<ul style=\"margin-top: 5px;\">\n\t\t\t<li>Your age and basic background</li>\n\t\t\t<li>Your current and past housing situation</li>\n\t\t\t<li>Your health and well-being</li>\n\t\t\t<li>People you know who are also experiencing homelessness or unstable housing</li>\n\t\t</ul>\n\t</li>\n\t<li>The survey will take about 10–15 minutes.</li>\n\t<li>You can take breaks, skip any questions you don't like, or stop at any time.</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Are there any risks or discomforts?</h4>\n<p style=\"margin-bottom: 15px;\">Some questions may feel personal, sad, or uncomfortable (for example, questions about your housing situation, substance use, or hard life experiences).</p>\n<p style=\"margin-bottom: 15px;\">You might feel upset when thinking or talking about these topics.</p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>You do not have to answer any question you do not want to answer.</li>\n\t<li>You can stop the survey at any time, for any reason.</li>\n\t<li>If you become upset, we can pause, stop, or help connect you with local resources if available.</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Will you be paid?</h4>\n<p style=\"margin-bottom: 8px;\"><strong>Yes.</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>You will get a $20 prepaid visa card or electronic payment after you complete the survey.</li>\n\t<li>You can also receive $5 for each person (up to three people) you recruit who is also experiencing homelessness or unstable housing and who decides to do the survey.</li>\n\t<li>Even if you decide to stop the survey early, you will still receive the $20 for participating.</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Will your answers be kept private?</h4>\n<p style=\"margin-bottom: 15px;\">We will do our best to keep your information private:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>We will give you a study ID number instead of using your name on the survey.</li>\n\t<li>Your name and any contact information (like phone or email) will be stored separately from your survey answers.</li>\n\t<li>Only the research team, individuals from the UW, or other agencies that may need to audit study records will have access to the link between your name and your survey ID, and this will be kept in secure, password-protected files.</li>\n</ul>\n<p style=\"margin-bottom: 15px;\"><strong>However, there are a few important exceptions:</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>If you tell us that you plan to seriously hurt yourself or hurt someone else, we must tell someone who can help keep you or others safe.</li>\n\t<li>Because you are a young person, if you tell us that an adult is hurting you, abusing you, or neglecting you, we are required by law to report this to a person or agency who can help keep you safe.</li>\n\t<li>Sometimes government or university staff check studies like this to make sure they are being done safely and legally. If they review this study, they may look at study records, but they will protect your privacy, and your information will not be used to get you in trouble with the law.</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What happens to your information after the study?</h4>\n<p style=\"margin-bottom: 15px;\">Because this is a multi-year project, we need to keep your data for some time.</p>\n<p style=\"margin-bottom: 15px;\">We will keep your survey answers and the link between your name/contact information and your study ID for as long as needed to:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>Finish this study</li>\n\t<li>Do closely related studies about homelessness</li>\n\t<li>Meet University of Washington and state/federal rules for how long we must keep research records</li>\n</ul>\n<p style=\"margin-bottom: 20px;\">We may use your de-identified survey data (data with your name and contact information removed) in future research about homelessness and housing. We may share de-identified data with other researchers, but your name and direct contact information will not be shared without additional approval and/or your additional consent.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What if you change your mind?</h4>\n<p style=\"margin-bottom: 15px;\">Being in this study is voluntary.</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>You can say no to being in the study.</li>\n\t<li>If you start and then change your mind, you can stop at any time.</li>\n\t<li>If you stop, we will not collect new information from you or contact you again for this study (unless you later tell us you want to re-join).</li>\n</ul>\n<p style=\"margin-bottom: 15px;\"><strong>However:</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>We will keep and continue to use information already collected about you, including any data that have already been de-identified and combined with other participants. Once your data are combined and analyzed, they cannot be separated out.</li>\n\t<li>We may keep certain basic identifiers (such as your date of birth and initials) and the code that links those to your study ID, as allowed by UW policy and law.</li>\n\t<li>You can decide if you are comfortable with this before you agree to participate.</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What will be shared with others?</h4>\n<p style=\"margin-bottom: 10px;\">We may share group-level results (for example, \"X% of youth reported Y\") with:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>King County Regional Homelessness Authority (KCRHA)</li>\n\t<li>Local governments</li>\n\t<li>HUD (the U.S. Department of Housing and Urban Development)</li>\n\t<li>Community organizations</li>\n\t<li>In academic papers or presentations</li>\n</ul>\n<p style=\"margin-bottom: 20px;\">Your name or direct contact information will never appear in any reports or publications.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Whom can you talk to?</h4>\n<p style=\"margin-bottom: 15px;\">If you have questions or concerns about the study, you can contact:</p>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 15px;\">\n\t<li>Dr. Zack Almquist – <a href=\"mailto:zalmquis@uw.edu\">zalmquis@uw.edu</a></li>\n\t<li>Dr. Amy Hagopian – <a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a></li>\n\t<li>Dr. June Yang – <a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a></li>\n</ul>\n<p style=\"margin-bottom: 15px;\">If you have questions about your rights as someone in a research study or complaints about the research, you can contact:</p>\n<p style=\"margin-bottom: 20px; padding-left: 20px;\"><strong>Human Subjects Division (HSD) – University of Washington</strong><br>\nPhone: (206) 543-0098<br>\nEmail: <a href=\"mailto:hsdinfo@uw.edu\">hsdinfo@uw.edu</a></p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Your choice (Assent)</h4>\n<p style=\"margin-bottom: 15px;\">Taking part in this research is your choice. You may refuse to participate or stop at any time without penalty or loss of benefits to which you are entitled.</p>\n<p style=\"margin-bottom: 10px;\"><strong>By agreeing, you are saying:</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>Someone explained this study to you in a way you understand.</li>\n\t<li>You had a chance to ask questions.</li>\n\t<li>Your questions were answered.</li>\n\t<li>You understand that you can stop at any time.</li>\n\t<li>You want to be in this study.</li>\n</ul>\n</div>\n"
-        },
-        {
-          "type": "radiogroup",
-          "name": "consent_given",
-          "title": "Do you consent to participate in this survey?",
-          "isRequired": true,
-          "choices": [
-            "Yes",
-            "No"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "survey-validation",
-      "title": "Survey Validation",
-      "elements": [
-        {
-          "type": "text",
-          "name": "first_two_letters_fname",
-          "title": "Enter the first two letters of the respondent's first name",
-          "validators": [
-            {
-              "type": "regex",
-              "text": "Please enter the first two letters of the respondent's first name.",
-              "regex": "^[A-Za-z]{2}$"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "name": "first_two_letters_lname",
-          "title": "Enter the first two letters of the respondent's last name",
-          "validators": [
-            {
-              "type": "regex",
-              "text": "Please enter the first two letters of the respondent's last name.",
-              "regex": "^[A-Za-z]{2}$"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "name": "date_of_birth",
-          "title": "Enter the respondent's date of birth",
-          "inputType": "date",
-          "min": "1926-02-01",
-          "max": "2014-02-28"
-        }
-      ]
-    },
-    {
-      "name": "survey_churn",
-      "title": "Previous Surveys",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "survey_churn_prioryr",
-          "title": "Did you participate in a similar survey as this survey (e.g., received a coupon) in January 2024 in this same city?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "survey_churn_seed",
-          "visibleIf": "{survey_churn_prioryr} = 'Yes'",
-          "title": "In 2024, did you receive a coupon from a care worker or navigator (this was referred to as a \"seed coupon\")?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "survey_churn_referral",
-          "visibleIf": "{survey_churn_prioryr} = 'Yes'",
-          "title": "In 2024, did you receive a coupon from a friend or other person experiencing homelessness?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        }
-      ]
-    },
-    {
-      "name": "personal_living_situation",
-      "title": "Personal Living Situation",
-      "elements": [
-        {
-          "type": "dropdown",
-          "name": "sleeping_situation",
-          "title": "Where did you stay last night?",
-          "choices": [
-            {
-              "value": "outside_in_tent",
-              "text": "Outside in a tent (or tent-like structure)"
-            },
-            {
-              "value": "outside_no_tent",
-              "text": "Outside, not in a tent"
-            },
-            {
-              "value": "small_vehicle",
-              "text": "In a car, truck, or van (smaller vehicle)"
-            },
-            {
-              "value": "large_vehicle",
-              "text": "In an RV, trailer, or bus/boat (larger vehicle)"
-            },
-            {
-              "value": "park",
-              "text": "In a park (uncovered, like on a bench)"
-            },
-            {
-              "value": "shelter",
-              "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
-            },
-            {
-              "value": "hotel",
-              "text": "In a hotel or motel"
-            },
-            {
-              "value": "abandoned_building",
-              "text": "In an abandoned building/backyard or storage structure"
-            },
-            {
-              "value": "public_facility",
-              "text": "In a public facility or transit (bus/train station, transit center, airport, hopsital waiting room)"
-            },
-            {
-              "value": "tiny_home",
-              "text": "In a tiny home"
-            },
-            {
-              "value": "public_transit",
-              "text": "On public transit (e.g. slept on bus, train, etc.)"
-            },
-            {
-              "value": "jail",
-              "text": "In jail or prison"
-            },
-            {
-              "value": "hospital",
-              "text": "In a hopsital (stayed as a patient overnight)"
-            },
-            {
-              "value": "drug_alcohol_treatment",
-              "text": "In a drug or alcohol treatment/detox center"
-            },
-            {
-              "value": "friend_family",
-              "text": "In a friend or family member's house/apartment"
-            },
-            {
-              "value": "do_not_know",
-              "text": "Do not know"
-            }
-          ],
-          "showOtherItem": true,
-          "showNoneItem": true,
-          "noneText": "Choose not to answer",
-          "otherText": "Other (please specify)"
-        },
-        {
-          "type": "checkbox",
-          "name": "vehicle_amenities",
-          "visibleIf": "{sleeping_situation} anyof ['small_vehicle', 'large_vehicle']",
-          "title": "Does your vehicle have access to any of the following needs?",
-          "choices": [
-            "Drinking water",
-            "Restroom/Toilet",
-            "Heat and/or Cooling",
-            "Ability to bathe",
-            "Ability to cook hot food"
-          ],
-          "separateSpecialChoices": true,
-          "showNoneItem": true
-        },
-        {
-          "type": "checkbox",
-          "name": "personal_amenities",
-          "title": "Do you generally have access to any of the following needs?",
-          "choices": [
-            "Drinking water",
-            "Restroom/Toilet",
-            "Heat and/or Cooling",
-            "Ability to bathe",
-            "Ability to cook hot food"
-          ],
-          "showNoneItem": true
-        }
-      ]
-    },
-    {
-      "name": "network_questions_p1",
-      "title": "Network Module",
-      "elements": [
-        {
-          "type": "html",
-          "name": "network_size_instruction",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> If the respondent says \"hundreds\" or \"too many\" emphasize the \"personally know\" part of the question. They would need to both recognize each other and know some information about each other.\n\t\t\t</div>"
-        },
-        {
-          "type": "text",
-          "name": "non_family_network_size",
-          "title": "Other than any family living with you, how many people do you closely know who are also unhoused or experiencing homelessness today?",
-          "validators": [
-            {
-              "type": "numeric",
-              "minValue": 0,
-              "maxValue": 100
-            }
-          ],
-          "inputType": "number"
-        }
-      ]
-    },
-    {
-      "name": "network_questions_p2",
-      "title": "Network Module",
-      "elements": [
-        {
-          "type": "html",
-          "name": "network_instruction",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Please fill in information for each person below. You can add or remove tabs as needed.</div>"
-        },
-        {
-          "type": "paneldynamic",
-          "name": "non_family_network",
-          "title": "For those {non_family_network_size} people, please fill in as much of the following information as you are able:\n",
-          "bindings": {
-            "panelCount": "non_family_network"
-          },
-          "templateElements": [
-            {
-              "type": "text",
-              "name": "network_person_name",
-              "title": "Name/Nickname/Initials",
-              "placeholder": "Name or nickname"
-            },
-            {
-              "type": "dropdown",
-              "name": "relationship",
-              "title": "What is your relationship to {panel.network_person_name}?",
-              "choices": [
-                "Friend",
-                "Acquaintance",
-                "Partner (husband/wife, fiancé/fiancée, boyfriend/girlfriend, etc.)",
-                "Immediate family (parent/father/mother, sibling/brother/sister, child/son/daughter)",
-                "Extended family (cousin, nephew/niece, uncle/aunt, grandparent/grandfather/grandmother)",
-                "Neighbor (people you live near)"
-              ],
-              "showOtherItem": true,
-              "otherText": "Other (please specify)",
-              "placeholder": "Select relationship..."
-            },
-            {
-              "type": "dropdown",
-              "name": "network_sleeping_situation",
-              "title": "Where does {panel.network_person_name} currently sleep?",
-              "choices": [
-                {
-                  "value": "outside_in_tent",
-                  "text": "Outside in a tent (or tent-like structure)"
-                },
-                {
-                  "value": "outside_no_tent",
-                  "text": "Outside, not in a tent"
-                },
-                {
-                  "value": "small_vehicle",
-                  "text": "In a car, truck, or van (smaller vehicle)"
-                },
-                {
-                  "value": "large_vehicle",
-                  "text": "In an RV, trailer, or bus/boat (larger vehicle)"
-                },
-                {
-                  "value": "park",
-                  "text": "In a park (uncovered, like on a bench)"
-                },
-                {
-                  "value": "shelter",
-                  "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
-                },
-                {
-                  "value": "hotel",
-                  "text": "In a hotel or motel"
-                },
-                {
-                  "value": "abandoned_building",
-                  "text": "In an abandoned building/backyard or storage structure"
-                },
-                {
-                  "value": "public_facility",
-                  "text": "In a public facility or transit (bus/train station, transit center, airport, hopsital waiting room)"
-                },
-                {
-                  "value": "tiny_home",
-                  "text": "In a tiny home"
-                },
-                {
-                  "value": "public_transit",
-                  "text": "On public transit (e.g. slept on bus, train, etc.)"
-                },
-                {
-                  "value": "jail",
-                  "text": "In jail or prison"
-                },
-                {
-                  "value": "hospital",
-                  "text": "In a hopsital (stayed as a patient overnight)"
-                },
-                {
-                  "value": "drug_alcohol_treatment",
-                  "text": "In a drug or alcohol treatment/detox center"
-                },
-                {
-                  "value": "friend_family",
-                  "text": "In a friend or family member's house/apartment"
-                },
-                {
-                  "value": "do_not_know",
-                  "text": "Do not know"
-                }
-              ],
-              "showOtherItem": true,
-              "showNoneItem": true,
-              "noneText": "Choose not to answer",
-              "otherText": "Other (please specify)"
-            }
-          ],
-          "templateTitle": "Person: {panel.network_person_name}",
-          "maxPanelCount": 50,
-          "addPanelText": "+ Add new person",
-          "removePanelText": "Remove",
-          "displayMode": "tab"
-        }
-      ]
-    },
-    {
-      "name": "duration_homelessness",
-      "title": "Duration of Homelessness",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "episode_lot_homeless",
-          "title": "How long have you been homeless this time?",
-          "choices": [
-            "1 night or less",
-            "2-6 nights",
-            "1 week or more, but less than 1 month",
-            "1 month or more, but less than 90 days",
-            "90 days or more, but less than 1 year",
-            "1 year or longer",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "num_episodes",
-          "title": "Including this time, how many different times have you been homeless in the past 3 years, that is since November 2022?",
-          "choices": [
-            "1 time",
-            "2 times",
-            "3 times",
-            "4 or more times",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "multipletext",
-          "name": "overall_lot_homeless",
-          "title": "If you added up all the time you have spent experiencing homelessness in the past 3 years, about how long would that be?",
-          "description": "Feel free to enter any variations of the respondent's answer. For example: 1.5 years, 18 months, 1 year and 6 months.",
-          "items": [
-            {
-              "name": "overall_lot_homeless_days",
-              "inputType": "number",
-              "title": "Years"
-            },
-            {
-              "name": "overall_lot_homeless_months",
-              "inputType": "number",
-              "title": "Months"
-            },
-            {
-              "name": "overall_lot_homeless_years",
-              "inputType": "number",
-              "title": "Days"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "shelter_services_panel",
-      "title": "Housing Assistance Services",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "winter_shelter",
-          "title": "In the last week, did you stay in a Winter / Severe Weather Shelter?  \n",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "tagbox",
-          "name": "winter_shelter_dates",
-          "visibleIf": "{winter_shelter} = 'Yes'",
-          "title": "Which days did you stay in a Winter / Severe Weather Shelter? \n",
-          "description": "Please check all dates the respondent used a winter shelter.",
-          "choices": [
-            "January 17th, 2026",
-            "January 18th, 2026",
-            "January 19th, 2026",
-            "January 20th, 2026",
-            "January 21st, 2026",
-            "January 22nd, 2026",
-            "January 23rd, 2026",
-            "January 24th, 2026",
-            "January 25th, 2026",
-            "January 26th, 2026",
-            "January 27th, 2026",
-            "January 28th, 2026",
-            "January 29th, 2026",
-            "January 30th, 2026",
-            "January 31st, 2026",
-            "February 1st, 2026",
-            "February 2nd, 2026",
-            "February 3rd, 2026",
-            "February 4th, 2026",
-            "February 5th, 2026",
-            "February 6th, 2026"
-          ]
-        },
-        {
-          "type": "radiogroup",
-          "name": "shelter_services",
-          "title": "In the past 3 years, have you enrolled in an Emergency Shelter or received any other form of housing assistance from an organization that serves people experiencing homelessness? (Includes referrals, vouchers, hygiene support, etc.)",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "matrixdynamic",
-          "name": "shelter_services_details",
-          "visibleIf": "{shelter_services} = 'Yes'",
-          "title": "Housing Assistance Services",
-          "description": "Fill out the table below as much as possible. If a respondent received a service multiple times, include only the last service.",
-          "validators": [
-            {
-              "type": "expression"
-            }
-          ],
-          "columns": [
-            {
-              "name": "shelter_service_type",
-              "title": "Type  of Last Service Received",
-              "cellType": "dropdown",
-              "choices": [
-                "Street Outreach",
-                "Diversion",
-                "Emergency Shelter",
-                "Temporary Housing",
-                "Coordinated Entry",
-                "Severe Weather Shelter",
-                "Day Center",
-                "Food bank",
-                "Case Management"
-              ],
-              "showOtherItem": true
-            },
-            {
-              "name": "shelter_service_year",
-              "title": "Date of Service Received (Month/Year)",
-              "cellType": "text",
-              "maskType": "datetime",
-              "maskSettings": {
-                "pattern": "mm/yyyy",
-                "min": "2023-01-01",
-                "max": "2026-02-15"
-              }
-            }
-          ],
-          "choices": [
-            "Street Outreach",
-            "Diversion",
-            "Emergency Shelter",
-            "Temporary Housing",
-            "Coordinated Entry",
-            "Severe Weather Shelter ",
-            "Day Center",
-            "Food bank",
-            "Case Management"
-          ],
-          "rowCount": 3,
-          "addRowText": "Add Service",
-          "removeRowText": "Remove"
-        }
-      ]
-    },
-    {
-      "name": "demographics",
-      "title": "Demographics",
-      "elements": [
-        {
-          "type": "html",
-          "name": "demographics_instruction",
-          "visibleIf": "{is_adult} = 'No'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has already indicated they are under 18, you may select 12-17 without asking this question.</strong></div>"
-        },
-        {
-          "type": "radiogroup",
-          "name": "age_group",
-          "title": "How old are you?",
-          "choices": [
-            "12-17",
-            "18-24",
-            "25-34",
-            "35-44",
-            "45-54",
-            "55-64",
-            "65 or older",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "checkbox",
-          "name": "gender_id",
-          "title": "Which of the following best describes your gender? (Select all that apply)",
-          "choices": [
-            "Woman (Girl if child)",
-            "Man (Boy if child)",
-            "Culturally Specific Identity (e.g., Two-spirit)",
-            "Transgender",
-            "Non-binary",
-            "Questioning",
-            "Different identity",
-            "Do not know"
-          ],
-          "showOtherItem": true,
-          "showNoneItem": true,
-          "noneText": "Choose not to answer",
-          "otherText": "Other (please specify)"
-        },
-        {
-          "type": "radiogroup",
-          "name": "ethnicity",
-          "title": "Are you Hispanic/ Latina/e/o?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "checkbox",
-          "name": "racial_id",
-          "title": "Which of the following best describes your racial identity? (Select all that apply)",
-          "choices": [
-            "American Indian or Alaska Native",
-            "Asian",
-            "Black or African American",
-            "Hispanic/Latina/e/o",
-            "Middle Eastern or North African",
-            "Native Hawaiian or Pacific Islander",
-            "White",
-            "Do not know"
-          ],
-          "showOtherItem": true,
-          "showNoneItem": true,
-          "noneText": "Choose not to answer",
-          "otherText": "Other (please specify)"
-        },
-        {
-          "type": "text",
-          "name": "tribal_affil",
-          "title": "Do you have a Tribal Affiliation? If so, what is it?"
-        },
-        {
-          "type": "html",
-          "name": "va_health_eligible_instruction",
-          "visibleIf": "{is_adult} = 'No'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, only ask about <i>family members'</i> status</strong></div>"
-        },
-        {
-          "type": "radiogroup",
-          "name": "veteran_status",
-          "title": "Are you or a member of your immediate family a veteran?",
-          "choices": [
-            "Yes, I am a veteran",
-            "Yes, a member of my immediate family is a veteran",
-            "Yes, I am a veteran AND a member of my immediate family is a veteran",
-            "No, neither I nor a member of my immediate family are veterans",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "va_health_eligible",
-          "visibleIf": "{veteran_status} anyof ['Yes, I am a veteran', 'Yes, a member of my immediate family is a veteran', 'Yes, I am a veteran AND a member of my immediate family is a veteran']",
-          "title": "Have you ever received health care of other benefits from a Veterans Administration (VA) center?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        }
-      ]
-    },
-    {
-      "name": "health",
-      "title": "Health",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "fleeing_dv",
-          "visibleIf": "{is_adult} = 'Yes'",
-          "title": "Are you currently experiencing homelessness because you are/were fleeing domestic violence, dating violence, sexual assault, or stalking?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "disabled",
-          "title": "Do you identify as having a disability?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "mental_health",
-          "visibleIf": "{is_adult} = 'Yes'",
-          "title": "Do you identify as having a severe mental illness?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "radiogroup",
-          "name": "substance_use",
-          "visibleIf": "{is_adult} = 'Yes'",
-          "title": "Do you identify as having a substance use disorder?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        }
-      ]
-    },
-    {
-      "name": "household",
-      "title": "Household",
-      "elements": [
-        {
-          "type": "html",
-          "name": "household_instruction",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Please list the initials of all the people in your household (anyone who shares the same dwelling with you)</strong></div>"
-        },
-        {
-          "type": "paneldynamic",
-          "name": "household_members",
-          "title": "Household Members",
-          "templateElements": [
-            {
-              "type": "text",
-              "name": "hh_member_initials",
-              "title": "Initials",
-              "validators": [
-                {
-                  "type": "regex",
-                  "text": "Please enter initials (1-4 letters)",
-                  "regex": "^[A-Za-z]{1,4}$"
-                }
-              ],
-              "placeholder": "e.g., JD"
-            },
-            {
-              "type": "dropdown",
-              "name": "hh_member_relation",
-              "title": "How is {panel.hh_member_initials} related to you?",
-              "choices": [
-                "Parent/Legal guardian",
-                "Other adult family member",
-                "Sibling",
-                "My own child",
-                "Spouse",
-                "Non-married partner",
-                "Other non-family member"
-              ]
-            },
-            {
-              "type": "dropdown",
-              "name": "hh_member_age",
-              "title": "How old is {panel.hh_member_initials}?",
-              "choices": [
-                "0-6 years old",
-                "7-12 years old",
-                "13-17 years old",
-                "18 - 24 years old",
-                "25 –34 years old",
-                "35- 44 years old",
-                "45-54 years old",
-                "55-64 years old",
-                "65 or older"
-              ]
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_gender_id",
-              "title": "Which of the following best describes the gender of {panel.hh_member_initials}?",
-              "choices": [
-                "Woman (Girl if child)",
-                "Man (Boy if child)",
-                "Culturally Specific Identity (e.g., Two-spirit)",
-                "Transgender",
-                "Non-binary",
-                "Questioning",
-                "Different identity",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_ethnicity",
-              "title": "Is {panel.hh_member_initials} Hispanic/Latina/e/o?\n",
-              "choices": [
-                "Yes",
-                "No",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "checkbox",
-              "name": "hh_member_race",
-              "title": "Which of the following best describes the racial identity of {panel.hh_member_initials}? (Note, you may report more than one group.)",
-              "choices": [
-                "American Indian or Alaska Native",
-                "Asian",
-                "Black or African American",
-                "Hispanic/Latina/e/o",
-                "Middle Eastern or North African",
-                "Native Hawaiian or Pacific Islander",
-                "White",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "text",
-              "name": "hh_member_tribal_id",
-              "title": "Does {panel.hh_member_initials} have a Tribal Affiliation? If so, what is their Tribal Affiliation?"
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_vet_status",
-              "visibleIf": "{household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
-              "title": "Is {panel.hh_member_initials} a veteran?",
-              "choices": [
-                "Yes",
-                "No",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_disability",
-              "title": "Does {panel.hh_member_initials} identify as having a disability?",
-              "choices": [
-                "Yes",
-                "No",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_smi",
-              "visibleIf": "{is_adult} = 'Yes' and {household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
-              "title": "Does {panel.hh_member_initials} identify as having a severe mental illness?",
-              "choices": [
-                "Yes",
-                "No",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "hh_member_sud",
-              "visibleIf": "{is_adult} = 'Yes' and {household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
-              "title": "Does {panel.hh_member_initials} identify as having a substance use disorder?",
-              "choices": [
-                "Yes",
-                "No",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            }
-          ],
-          "templateTitle": "Household Member: {panel.hh_member_initials}",
-          "maxPanelCount": 10,
-          "addPanelText": "+ Add household member",
-          "removePanelText": "Remove",
-          "displayMode": "tab"
-        }
-      ]
-    },
-    {
-      "name": "special-questions",
-      "title": "Special Questions",
-      "elements": [
-        {
-          "type": "html",
-          "name": "travel_questions_instruction",
-          "visibleIf": "{location} notcontains 'Phone'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER NOTE: Please do not ask the travel-related questions below when surveying at Mary's Place Phone Line.</strong></div>"
-        },
-        {
-          "type": "radiogroup",
-          "name": "travel_location",
-          "visibleIf": "{location} notcontains 'Phone'",
-          "title": "Where did you travel from today? (Town or City)",
-          "choices": [
-            {
-              "value": "Snoqualmie Valley",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Snoqualmie",
-                    "North Bend",
-                    "Carnation",
-                    "Duvall",
-                    "Preston",
-                    "Riverpoint",
-                    "Skykomish"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "North King County",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Shoreline",
-                    "Lake Forest Park",
-                    "Bothell",
-                    "Kenmore",
-                    "Lake City",
-                    "Woodinville"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "East King County",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Kirkland",
-                    "Redmond",
-                    "Bellevue",
-                    "Mercer Island",
-                    "Sammamish",
-                    "Beaux Arts Village",
-                    "Issaquah",
-                    "Clyde Hill",
-                    "Yarrow Point",
-                    "Medina"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "South King County",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Tukwila",
-                    "Burien",
-                    "Renton",
-                    "Kent",
-                    "Auburn",
-                    "SeaTac",
-                    "Federal Way",
-                    "Pacific",
-                    "Algona",
-                    "Normandy Park",
-                    "Des Moines",
-                    "Newcastle",
-                    "Milton"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "South East King County",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Maple Valley",
-                    "Black Diamond",
-                    "Enumclaw",
-                    "Covington"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "Unincorporated King County",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Bryn Mawr Skyway",
-                    "White Center",
-                    "South Park",
-                    "Fairwood",
-                    "East Renton Highlands",
-                    "Cottage Lake",
-                    "Fall City",
-                    "Hobart",
-                    "Union Hill"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "Seattle Metro",
-              "elements": [
-                {
-                  "type": "dropdown",
-                  "name": "question1",
-                  "title": "Which city?",
-                  "choices": [
-                    "Seattle Neighborhood A",
-                    "Seattle Neighborhood B",
-                    "Seattle Neighborhood C",
-                    "Seattle Neighborhood D",
-                    "Seattle Neighborhood E",
-                    "Seattle Neighborhood F",
-                    "Seattle Neighborhood G"
-                  ]
-                }
-              ]
-            },
-            {
-              "value": "Vashon-Maury Island"
-            }
-          ],
-          "showOtherItem": true,
-          "showNoneItem": true,
-          "noneText": "Do not know",
-          "otherText": "Other (please specify)"
-        },
-        {
-          "type": "checkbox",
-          "name": "travel_transport",
-          "visibleIf": "{location} notcontains 'Phone'",
-          "title": "What transportation did you use to come to {location}?",
-          "choices": [
-            "Bus",
-            "Link light Rail",
-            "Ferry",
-            "Car",
-            "Bicycle / Bike",
-            "Walking"
-          ],
-          "showOtherItem": true,
-          "otherText": "Other (please specify)"
-        },
-        {
-          "type": "panel",
-          "name": "travel_time",
-          "title": "How long did it take you to travel to get to {location}?",
-          "visibleIf": "{location} notcontains 'Phone'",
-          "elements": [
-            {
-              "type": "slider",
-              "name": "travel_time_hours",
-              "title": "Hours",
-              "max": 10
-            },
-            {
-              "type": "slider",
-              "name": "travel_time_minutes",
-              "title": "Minutes",
-              "max": 60,
-              "step": 5
-            }
-          ]
-        },
-        {
-          "type": "checkbox",
-          "name": "travel_distance",
-          "visibleIf": "{location} notcontains 'Phone'",
-          "title": "About how many miles did you travel to {location}?",
-          "choices": [
-            "Less than half a mile",
-            "Half a mile to 1 mile"
-          ],
-          "showOtherItem": true,
-          "otherPlaceholder": "Enter integer value",
-          "otherText": "Other (please specify in integer miles)"
-        },
-        {
-          "type": "panel",
-          "name": "last_stable_panel",
-          "elements": [
-            {
-              "type": "radiogroup",
-              "name": "last_stable_loc",
-              "title": "Where did you live the last time you had stable housing such as an apartment or a house?",
-              "choices": [
-                "King County",
-                "Washington State (Outside of King County)",
-                "United States (Outside of Washington State)",
-                "Outside of the United States",
-                "Do not know"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "dropdown",
-              "name": "last_stable_loc_city",
-              "visibleIf": "{last_stable_loc} = 'King County'",
-              "title": "Which city in King County was it?",
-              "choices": [
-                "Algona",
-                "Auburn",
-                "Bear Creek/Sammamish (Unincorporated)",
-                "Beaux Arts",
-                "Bellevue",
-                "Black Diamond",
-                "Bothell",
-                "Burien",
-                "Carnation",
-                "Clyde hill",
-                "Covington",
-                "Des Moines",
-                "Duvall",
-                "East Federal Way (Unincorporated)",
-                "East Renton (Unincorporated)",
-                "Enumclaw",
-                "Fairwood (Unincorporated)",
-                "Federal Way",
-                "Four Creeks/Tiger Mountain (Unincorporated)",
-                "Hunts Point",
-                "Issaquah",
-                "Kenmore",
-                "Kent",
-                "Kirkland",
-                "Lake Forest Park",
-                "Maple Valley",
-                "Medina",
-                "Mercer Island",
-                "Milton",
-                "Newcastle",
-                "Normandy Park",
-                "North Bend",
-                "North Highline (Unincorporated)",
-                "Pacific",
-                "Renton",
-                "Sammamish",
-                "Sea Tac",
-                "Seattle",
-                "Shoreline",
-                "Skykomish",
-                "Snoqualmie",
-                "Redmond",
-                "Snoqualmie Valley/Northeast",
-                "King County (Unincorporated)",
-                "Southeast King County (Unincorporated)",
-                "Tukwila",
-                "Unincorporated King County Other (includes any community not otherwise listed) -",
-                "Bryn Mawr Skyway",
-                "White Center",
-                "South Park",
-                "Fairwood",
-                "East Renton Highlands",
-                "Cottage Lake",
-                "Fall City",
-                "Hobart",
-                "Union Hill",
-                "Vashon/Maury Island",
-                "West Hill (Unincorporated)",
-                "Woodinville",
-                "Yarrow Point"
-              ]
-            },
-            {
-              "type": "dropdown",
-              "name": "last_stable_loc_county",
-              "visibleIf": "{last_stable_loc} = 'Washington State (Outside of King County)'",
-              "title": "Which county in Washington State was it?",
-              "choices": [
-                "Adams",
-                "Asotin",
-                "Benton",
-                "Chelan",
-                "Clallam",
-                "Clark",
-                "Columbia",
-                "Cowlitz",
-                "Douglas",
-                "Ferry",
-                "Franklin",
-                "Garfield",
-                "Grant",
-                "Grays Harbor",
-                "Island",
-                "Jefferson",
-                "Kitsap",
-                "Kittititas",
-                "Klickitat",
-                "Lewis",
-                "Lincoln",
-                "Mason",
-                "Okanogan",
-                "Pend Orellie",
-                "Pierce",
-                "San Juan (County)",
-                "Skagit",
-                "Skamania",
-                "Snohomish",
-                "Spokane",
-                "Stevens",
-                "Thurston",
-                "Wahkiakum",
-                "Walla Walla (County)",
-                "Whatcom",
-                "Whitman",
-                "Yakima (County)"
-              ]
-            },
-            {
-              "type": "dropdown",
-              "name": "last_stable_loc_state",
-              "visibleIf": "{last_stable_loc} = 'United States (Outside of Washington State)'",
-              "title": "Which  state in the United States?",
-              "choices": [
-                "Alabama",
-                "Alaska",
-                "Arizona",
-                "Arkansas",
-                "California",
-                "Colorado",
-                "Connecticut",
-                "Delaware",
-                "Florida",
-                "Georgia",
-                "Hawaii",
-                "Idaho",
-                "Illinois",
-                "Indiana",
-                "Iowa",
-                "Kansas",
-                "Kentucky",
-                "Louisiana",
-                "Maine",
-                "Maryland",
-                "Massachusetts",
-                "Michigan",
-                "Minnesota",
-                "Mississippi",
-                "Missouri",
-                "Montana",
-                "Nebraska",
-                "Nevada",
-                "New Hampshire",
-                "New Jersey",
-                "New Mexico",
-                "New York",
-                "North Carolina",
-                "North Dakota",
-                "Ohio",
-                "Oklahoma",
-                "Oregon",
-                "Pennsylvania",
-                "Rhode Island",
-                "South Carolina",
-                "South Dakota",
-                "Tennessee",
-                "Texas",
-                "Utah",
-                "Vermont",
-                "Virginia",
-                "West Virginia",
-                "Wisconsin",
-                "Wyoming"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "html",
-          "name": "age_first_hmlss_instruction",
-          "visibleIf": "{is_adult} = 'No'",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, you may select 12-17 without asking the question.</strong></div>"
-        },
-        {
-          "type": "dropdown",
-          "name": "age_first_hmlss",
-          "title": "How old were you the first time you experienced homelessness?",
-          "choices": [
-            "0-17",
-            "18-24",
-            "25-35",
-            "36-49",
-            "50-65",
-            "66 or older",
-            "Do not know"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "tagbox",
-          "name": "precipitating_events",
-          "title": "What events or conditions contributed to you becoming homeless at this time?",
-          "choices": [
-            "Lost job",
-            "Eviction",
-            "Foreclosure",
-            "Incarceration/detention",
-            "Illness/medical problem",
-            {
-              "value": "Substance Use Disorder",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            {
-              "value": "Mental health issues",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            {
-              "value": "Hospitalization/treatment",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            "Divorce/separation/breakup",
-            "Could not afford rent increase",
-            {
-              "value": "Argument with family/friend/roommate",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            {
-              "value": "Family domestic violence",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            "Family/friend's housing wouldn't let me stay",
-            "Family/friend couldn't afford to let me stay",
-            {
-              "value": "Safety",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            "Resettlement transition",
-            "Aging out of foster care",
-            "Death of a parent/spouse/child",
-            "Do not know"
-          ],
-          "choicesOrder": "random",
-          "showOtherItem": true,
-          "showNoneItem": true,
-          "noneText": "Choose not to answer",
-          "otherText": "Other (please specify)",
-          "searchMode": "startsWith"
-        },
-        {
-          "type": "tagbox",
-          "name": "shelter_priorities",
-          "title": "If you were to seek out a shelter program, what top shelter features would be most important to you? (Please select up to 5)",
-          "choices": [
-            "Ease of access/enrollment",
-            "Close to where I stay now/ In my current community",
-            "Enough space to keep my distance from others",
-            "Clean facilities free of germs/illness",
-            "Ability to store my belongings",
-            "Ability to bring my pet/service animal",
-            "Ability to bring my partner",
-            "Ability to move in with a friend",
-            "Minimal rules so I can do as I please",
-            "Culturally specific services",
-            "Meals provided daily",
-            "A private room",
-            "Ability to return if I don't stay there one night",
-            "Support to find permanent housing",
-            {
-              "value": "Support for decreasing substance use",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            {
-              "value": "Support for mental health conditions",
-              "visibleIf": "{is_adult} = 'Yes'"
-            },
-            "On-site health services such as a nurse"
-          ],
-          "choicesOrder": "random",
-          "showOtherItem": true,
-          "otherText": "Other (please specify)",
-          "maxSelectedChoices": 5
-        },
-        {
-          "type": "dropdown",
-          "name": "pet_animal",
-          "title": "Do you have a pet or animal companion?",
-          "choices": [
-            "Yes",
-            "No"
-          ],
-          "showNoneItem": true,
-          "noneText": "Choose not to answer"
-        },
-        {
-          "type": "paneldynamic",
-          "name": "pet_animal_details",
-          "visibleIf": "{pet_animal} = 'Yes'",
-          "title": "Pet Information",
-          "templateElements": [
-            {
-              "type": "text",
-              "name": "pet_name",
-              "title": "Pet Name (optional)",
-              "placeholder": "e.g., Fluffy"
-            },
-            {
-              "type": "radiogroup",
-              "name": "pet_animal_type",
-              "title": "Type of Animal",
-              "choices": [
-                "Cat",
-                "Dog",
-                "Pocket pet / rodent"
-              ],
-              "showOtherItem": true,
-              "showNoneItem": true,
-              "noneText": "Choose not to answer",
-              "otherText": "Specify other animal type"
-            },
-            {
-              "type": "radiogroup",
-              "name": "pet_animal_weight",
-              "title": "Approximate Weight of {panel.pet_name}",
-              "choices": [
-                "40 lbs or less",
-                "More than 40 lbs"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "pet_animal_vet_care",
-              "title": "Has {panel.pet_name} seen vet care in last 3 years (such as for wellness visits, vaccines, or an illness)?",
-              "choices": [
-                "Yes",
-                "No"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            },
-            {
-              "type": "radiogroup",
-              "name": "pet_medical_needs",
-              "title": "How long have you been responsible for {panel.pet_name}?",
-              "choices": [
-                "Less than 1 year",
-                "1-3 years",
-                "More than 3 years"
-              ],
-              "showNoneItem": true,
-              "noneText": "Choose not to answer"
-            }
-          ],
-          "templateTitle": "Pet: {panel.pet_name}",
-          "maxPanelCount": 10,
-          "addPanelText": "+ Add new pet",
-          "removePanelText": "Remove",
-          "displayMode": "tab"
-        }
-      ]
-    },
-    {
-      "name": "survey_deduplication",
-      "title": "Survey Deduplication",
-      "elements": [
-        {
-          "type": "radiogroup",
-          "name": "deduplication",
-          "title": "Not counting this time, do you believe you’ve completed this survey in 2026 already?",
-          "choices": [
-            "Yes",
-            "No",
-            "Do not know"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "outro",
-      "title": "Outro",
-      "elements": [
-        {
-          "type": "html",
-          "name": "outro_html",
-          "html": "<strong>That completes the questions for today's survey. Thank you so much for your responses and your time. We will now issue the gift card and prepare your coupons to pass out to others in your network who are unsheltered.</strong>"
-        }
-      ]
-    },
-    {
-      "name": "giftCards",
-      "title": "Gift Card Contacts",
-      "elements": [
-        {
-          "type": "html",
-          "name": "referral_instruction",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> Please read the following information out loud to the respondent.\n\t\t\t</div>\n\t\t\t<br />\n\t\t\t<p>\n\t\t\t\tAt the end of this survey, we will give you <strong>referral coupons</strong>.\n\t\t\t\tPlease give them to other people experiencing homelessness.\n\t\t\t\tIf they come and take our survey using your coupon, we can send you <strong>$5 gift cards</strong> for each completed referral.\n\t\t\t\tTo receive these gift cards, we need either a <strong>phone number or email address</strong>. We will begin issuing the additional funds at the end of February.\n\t\t\t</p>"
-        },
-        {
-          "type": "checkbox",
-          "name": "email_phone_consent",
-          "title": "Do you consent to receive your gift cards via SMS or email?",
-          "choices": [
-            {
-              "value": "email",
-              "text": "Email address"
-            },
-            {
-              "value": "phone",
-              "text": "Phone number"
-            }
-          ],
-          "showNoneItem": true,
-          "noneText": "None"
-        },
-        {
-          "type": "text",
-          "name": "email",
-          "visibleIf": "{email_phone_consent} contains 'email'",
-          "title": "What's your email address?",
-          "requiredIf": "{email_phone_consent} contains 'email'",
-          "inputType": "email"
-        },
-        {
-          "type": "text",
-          "name": "phone",
-          "visibleIf": "{email_phone_consent} contains 'phone'",
-          "title": "What's your phone number?",
-          "requiredIf": "{email_phone_consent} contains 'phone'",
-          "maskType": "pattern",
-          "maskSettings": {
-            "pattern": "(999) 999-9999"
-          }
-        }
-      ]
-    },
-    {
-      "name": "giftCards2",
-      "title": "Gift Card Details",
-      "elements": [
-        {
-          "type": "html",
-          "name": "gift_card_intructions",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> The HUB lead will provide the gift card to the respondent. Please record the information below before submitting this survey.\n\t\t\t</div>"
-        },
-        {
-          "type": "radiogroup",
-          "name": "gift_card_check",
-          "title": "Did the respondent receive a Gift Card?",
-          "isRequired": true,
-          "choices": [
-            "Yes",
-            "No"
-          ],
-          "showOtherItem": true
-        },
-        {
-          "type": "text",
-          "name": "gift_card_number",
-          "visibleIf": "{gift_card_check} = 'Yes'",
-          "title": "Please enter the last 4 digits of the Gift Card:",
-          "isRequired": true,
-          "requiredIf": "{gift_card_check} = 'Yes'",
-          "inputType": "number",
-          "min": 0,
-          "max": 9999
-        },
-        {
-          "type": "text",
-          "name": "gift_card_2",
-          "visibleIf": "{gift_card_check} = 'Yes' and {has_minor_child} = true",
-          "title": "Please enter the last 4 digits of the 2nd Gift Card:",
-          "description": "Note: Families with minor children receive two gift cards.",
-          "inputType": "number",
-          "min": 0,
-          "max": 9999
-        }
-      ]
-    },
-    {
-      "name": "end_page",
-      "title": "End Page",
-      "elements": [
-        {
-          "type": "html",
-          "name": "question2",
-          "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> These questions are for volunteers only. Please do not ask the respondent.</div>"
-        },
-        {
-          "type": "comment",
-          "name": "survey_comments",
-          "title": "Please document any issues, exceptions, or important context about this survey (e.g., respondent left early, alternate contact information provided, questions skipped due to circumstances, etc.)"
-        }
-      ]
+     "type": "dropdown",
+     "name": "location",
+     "title": "Please select location:",
+     "isRequired": true,
+     "choicesByUrl": {
+      "url": "/api/locations",
+      "path": "data",
+      "valueName": "_id",
+      "titleName": "hubName"
+     },
+     "showNoneItem": true
     }
-  ],
-  "triggers": [
+   ],
+   "navigationTitle": "Pre-Screening Questions - Volunteer Only"
+  },
+  {
+   "name": "age_check",
+   "title": "Age Verification",
+   "elements": [
     {
-      "type": "complete",
-      "expression": "{consent_given} = 'No'"
+     "type": "radiogroup",
+     "name": "is_adult",
+     "title": "Are you 18 and over?",
+     "isRequired": true,
+     "choices": [
+      "Yes",
+      "No"
+     ]
+    }
+   ],
+   "navigationTitle": "Age Verification"
+  },
+  {
+   "name": "consent",
+   "title": "Consent Form",
+   "elements": [
+    {
+     "type": "html",
+     "name": "adult_consent",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n<strong>Instructions:</strong> Please read the following consent information out loud to the respondent and have them orally give their consent to you.\n</div>\n\n<div style=\"max-width: 800px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.6;\">\n<h2 style=\"text-align: left; color: #333; margin-bottom: 20px; font-size: 22px;\">Unsheltered Point-in-Time Count 2026</h2>\n<h4 style=\"color: #444; margin-top: 20px; margin-bottom: 10px;\">UW Researchers:</h4>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Zack W. Almquist</strong><br>\n\t\tAssociate Professor, Department of Sociology<br>\n\t\t<a href=\"mailto:zalmquist@uw.edu\">zalmquist@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. Amy Hagopian</strong><br>\n\t\tProfessor Emeritus, Global Health<br>\n\t\tProfessor Emeritus, Health Systems and Population Health<br>\n\t\tDirector, Community Oriented Public Health Practice<br>\n\t\t<a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a>\n\t</li>\n\t<li style=\"margin-bottom: 8px;\">\n\t\t<strong>Dr. June Yang</strong><br>\n\t\tResearch Scientist, Center for Studies in Demography and Ecology (CSDE) &amp; eScience Institute<br>\n\t\t<a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a>\n\t</li>\n</ul>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Researcher's Statement</h4>\n<p style=\"margin-bottom: 15px;\">We are asking you to be in a research study. The purpose of this consent form is to give you the information you will need to help you decide whether to be in the study or not. Please read the form carefully. You may ask questions about the purpose of the research, what we would ask you to do, the possible risks and benefits, your rights as a volunteer, and anything else about the research or this form that is not clear. When we have answered all your questions, you can decide if you want to be in the study or not. This process is called \"informed consent.\" We will give you a copy of this form for your records.</p>\n<p style=\"margin-bottom: 20px;\">This is a research study focused on innovating better methods to enumerate individuals experiencing homelessness. This study is led by Drs. Zack W. Almquist, Amy Hagopian and June Yang at the University of Washington. We hope to learn more about the number and demographics of individuals' experiencing homelessness through their social networks. You are being asked to take part in this study as a person currently experiencing homelessness.</p>\n\n<div style=\"background-color: #e7f3ff; border-left: 4px solid #2196F3; padding: 15px; margin: 20px 0;\">\n<h4 style=\"color: #1976D2; margin-top: 0; margin-bottom: 12px;\">Key Information</h4>\n<ul style=\"margin-bottom: 0; padding-left: 20px;\">\n\t<li style=\"margin-bottom: 8px;\">Taking part is your choice.</li>\n\t<li style=\"margin-bottom: 8px;\">If you join, we will ask you to do a 10–15 minute survey about your housing, health, and people you know who are also experiencing homelessness. This is intended to help the Grant County Health District (GCHD) improve their assistance of people experiencing homelessness in Grant County by better understanding their needs.</li>\n\t<li style=\"margin-bottom: 8px;\">You will receive a <strong>$20 gift card</strong> for doing the survey, and <strong>$5 for each person you successfully recruit</strong> (up to three people).</li>\n\t<li style=\"margin-bottom: 8px;\">Questions may feel personal (for example, about health, substance use, or housing history). You can skip any question or stop at any time.</li>\n\t<li style=\"margin-bottom: 8px;\">We will keep your information confidential to the extent allowed by law. We will ask for some limited identifying information so we don't count you twice and so we can contact you for possible follow-up. We will store this information securely, separate from your survey answers.</li>\n\t<li style=\"margin-bottom: 0;\">If you later decide to stop, we will stop collecting new information from you, but we will keep and continue to use data already collected, including any data that have already been de-identified and combined with other participants.</li>\n</ul>\n<p style=\"margin-top: 12px; margin-bottom: 0; font-style: italic;\">Please read the sections below for more detail.</p>\n</div>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">PURPOSE OF THE STUDY</h4>\n<p style=\"margin-bottom: 20px;\">The purpose of this study is to collect information about the number and characteristics of people who are currently experiencing homelessness. We also want to investigate the timing and social networks of people who are currently unhoused.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">STUDY PROCEDURES</h4>\n<p style=\"margin-bottom: 15px;\">To better understand the number of people experiencing homelessness, their demographics and social networks, we will survey household heads 18 and older.</p>\n<p style=\"margin-bottom: 20px;\">This study is being done in the form of a survey. If you decide to participate in the survey, you will be asked to discuss your experiences with homelessness and social networks of people you know who are also experiencing homelessness. It will take about 10 minutes to complete the survey.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Risks:</strong> Risks of this study are minimal, though there are questions which inquire about personal and/or sensitive content. Participants can refuse to answer any question or discontinue the interview at any point without repercussion. Every effort will be made to keep responses confidential, and responses will not affect any of your current or subsequent benefits.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Benefits:</strong> Participation in this study will contribute to shared knowledge on homelessness from those who are experiencing it first-hand.</p>\n\n<p style=\"margin-bottom: 8px;\"><strong>Compensation:</strong> Participants will receive a $20 prepaid visa card after completing the survey questionnaire. We will also give you a $5 gift card for each person (also experiencing homelessness) who you recruit to participate in this study (up to three people/gift cards).</p>\n\n<p style=\"margin-bottom: 20px;\"><strong>Voluntary Participation:</strong> Your participation in this study is voluntary. You can decide to participate or not to participate, or to withdraw at any time without penalty or loss of benefits to which you are entitled.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">What happens to the information collected for the research?</h4>\n<p style=\"margin-bottom: 15px;\">We will not keep any personal identifying information about you after the study period.</p>\n<p style=\"margin-bottom: 15px;\">The data we collect will be confidential. We will protect the privacy of the participants by coding all data sheets and files with a participant identification number. If we learn that the participant intends to harm themselves or others, however, we are legally obligated to report that to a mental health official.</p>\n<p style=\"margin-bottom: 20px;\">Sometimes government or university staff review studies like this to make sure they are being done safely and legally. If a review takes place, they may look at study records. They will protect your privacy, and your information will not be used to put you at legal risk.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">DATA RETENTION AND WITHDRAWAL</h4>\n<p style=\"margin-bottom: 15px;\">Because this is a multi-year project, we need to keep your data for some time.</p>\n<p style=\"margin-bottom: 15px;\">We will keep your survey answers and the link between your name/contact information and your study ID for as long as needed to:</p>\n<ul style=\"margin-bottom: 15px; padding-left: 25px;\">\n\t<li>Finish this study,</li>\n\t<li>Conduct closely related studies about homelessness, and</li>\n\t<li>Meet University of Washington and state/federal records-retention rules (these rules generally require keeping data for several years after a study ends).</li>\n</ul>\n<p style=\"margin-bottom: 20px;\">We may use your de-identified survey data (data with names and direct contact information removed) in future research related to homelessness and housing. We may also share de-identified data with other researchers under formal data-sharing agreements. Your name and direct contact information will not be shared with other researchers without additional IRB approval or your additional consent.</p>\n\n<p style=\"margin-bottom: 8px; margin-top: 20px;\"><strong>What if I withdraw from the study?</strong></p>\n<p style=\"margin-bottom: 15px;\">If you decide to stop participating, we will stop collecting new information from you and will not contact you again for this study (unless you later tell us you want to re-join).</p>\n<p style=\"margin-bottom: 15px;\">However, we will keep and continue to use the information already collected about you, including any data that have already been de-identified and combined with others. Once your data are combined and analyzed, they cannot be separated out.</p>\n<p style=\"margin-bottom: 20px;\">We will also keep certain identifiers (such as your date of birth and name initials) and the code that links those to your survey ID, as allowed by UW policy and law. Because we keep these identifiers even if you withdraw, you may decide that you do not want to participate.</p>\n\n<p style=\"margin-bottom: 8px; margin-top: 20px;\"><strong>What will be shared with others?</strong></p>\n<p style=\"margin-bottom: 15px;\">We may share group-level results (for example, \"X% of people report Y\") with the Grant County Health District (GCHD), local governments, HUD, community organizations, and in academic publications.</p>\n<p style=\"margin-bottom: 20px;\">Your name or direct contact information will not appear in any reports or publications.</p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">Whom can I talk to?</h4>\n<p style=\"margin-bottom: 15px;\">If you have any questions or concerns about this project, you may contact:</p>\n<ul style=\"list-style: none; padding-left: 0; margin-bottom: 15px;\">\n\t<li>Dr. Zack Almquist – <a href=\"mailto:zalmquis@uw.edu\">zalmquis@uw.edu</a></li>\n\t<li>Dr. Amy Hagopian – <a href=\"mailto:hagopian@uw.edu\">hagopian@uw.edu</a></li>\n\t<li>Dr. June Yang – <a href=\"mailto:jyang32@uw.edu\">jyang32@uw.edu</a></li>\n</ul>\n<p style=\"margin-bottom: 15px;\">If you have questions about your rights as a research subject or complaints about the research, contact:</p>\n<p style=\"margin-bottom: 20px; padding-left: 20px;\"><strong>Human Subjects Division (HSD) – University of Washington</strong><br>\nPhone: (206) 543-0098<br>\nEmail: <a href=\"mailto:hsdinfo@uw.edu\">hsdinfo@uw.edu</a></p>\n\n<h4 style=\"color: #444; margin-top: 25px; margin-bottom: 10px;\">CONSENT</h4>\n<p style=\"margin-bottom: 15px;\">Participation in research is voluntary. You may refuse to participate or stop at any time without penalty or loss of benefits to which you are entitled.</p>\n<p style=\"margin-bottom: 10px;\"><strong>By agreeing below, you are saying:</strong></p>\n<ul style=\"margin-bottom: 20px; padding-left: 25px;\">\n\t<li>This study has been explained to you.</li>\n\t<li>You have had the chance to ask questions.</li>\n\t<li>You understand that you can stop at any time.</li>\n\t<li>You voluntarily agree to take part in this research.</li>\n</ul>\n</div>\n"
     },
     {
-      "type": "complete",
-      "expression": "{is_adult} = 'No' and {is_over12} = 'No'"
+     "type": "radiogroup",
+     "name": "consent_given",
+     "title": "Do you consent to participate in this survey?",
+     "isRequired": true,
+     "choices": [
+      "Yes",
+      "No"
+     ]
     }
-  ],
-  "calculatedValues": [
+   ],
+   "navigationTitle": "Consent Form"
+  },
+  {
+   "name": "survey-validation",
+   "title": "Survey Validation",
+   "elements": [
     {
-      "name": "has_minor_child",
-      "expression": "countInArray({household_members}, 'hh_member_age', {hh_member_age} anyof ['0-6 years old', '7-12 years old', '13-17 years old']) > 0"
+     "type": "text",
+     "name": "first_two_letters_fname",
+     "title": "Enter the first two letters of the respondent's first name",
+     "validators": [
+      {
+       "type": "regex",
+       "text": "Please enter the first two letters of the respondent's first name.",
+       "regex": "^[A-Za-z]{2}$"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "name": "first_two_letters_lname",
+     "title": "Enter the first two letters of the respondent's last name",
+     "validators": [
+      {
+       "type": "regex",
+       "text": "Please enter the first two letters of the respondent's last name.",
+       "regex": "^[A-Za-z]{2}$"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "name": "date_of_birth",
+     "title": "Enter the respondent's date of birth",
+     "inputType": "date",
+     "min": "1926-02-01",
+     "max": "2014-02-28"
     }
-  ],
-  "partialSendEnabled": true,
-  "showPageTitles": false,
-  "showProgressBar": true,
-  "progressBarShowPageTitles": true,
-  "progressBarShowPageNumbers": true,
-  "tocLocation": "right",
-  "textUpdateMode": "onTyping",
-  "widthMode": "responsive"
+   ],
+   "navigationTitle": "Survey Validation"
+  },
+  {
+   "name": "personal_living_situation",
+   "title": "Personal Living Situation",
+   "elements": [
+    {
+     "type": "dropdown",
+     "name": "sleeping_situation",
+     "title": "Where did you stay last night?",
+     "choices": [
+      {
+       "value": "outside_in_tent",
+       "text": "Outside in a tent (or tent-like structure)"
+      },
+      {
+       "value": "outside_no_tent",
+       "text": "Outside, not in a tent"
+      },
+      {
+       "value": "small_vehicle",
+       "text": "In a car, truck, or van (smaller vehicle)"
+      },
+      {
+       "value": "large_vehicle",
+       "text": "In an RV, trailer, or bus/boat (larger vehicle)"
+      },
+      {
+       "value": "park",
+       "text": "In a park (uncovered, like on a bench)"
+      },
+      {
+       "value": "shelter",
+       "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
+      },
+      {
+       "value": "hotel",
+       "text": "In a hotel or motel"
+      },
+      {
+       "value": "abandoned_building",
+       "text": "In an abandoned building/backyard or storage structure"
+      },
+      {
+       "value": "public_facility",
+       "text": "In a public facility or transit (bus/train station, transit center, airport, hopsital waiting room)"
+      },
+      {
+       "value": "tiny_home",
+       "text": "In a tiny home"
+      },
+      {
+       "value": "public_transit",
+       "text": "On public transit (e.g. slept on bus, train, etc.)"
+      },
+      {
+       "value": "jail",
+       "text": "In jail or prison"
+      },
+      {
+       "value": "hospital",
+       "text": "In a hopsital (stayed as a patient overnight)"
+      },
+      {
+       "value": "drug_alcohol_treatment",
+       "text": "In a drug or alcohol treatment/detox center"
+      },
+      {
+       "value": "friend_family",
+       "text": "In a friend or family member's house/apartment"
+      },
+      {
+       "value": "do_not_know",
+       "text": "Do not know"
+      }
+     ],
+     "showOtherItem": true,
+     "showNoneItem": true,
+     "noneText": "Choose not to answer",
+     "otherText": "Other (please specify)"
+    },
+    {
+     "type": "checkbox",
+     "name": "vehicle_amenities",
+     "visibleIf": "{sleeping_situation} anyof ['small_vehicle', 'large_vehicle']",
+     "title": "Does your vehicle have access to any of the following needs?",
+     "choices": [
+      "Drinking water",
+      "Restroom/Toilet",
+      "Heat and/or Cooling",
+      "Ability to bathe",
+      "Ability to cook hot food"
+     ],
+     "separateSpecialChoices": true,
+     "showNoneItem": true
+    },
+    {
+     "type": "checkbox",
+     "name": "personal_amenities",
+     "title": "Do you generally have access to any of the following needs?",
+     "choices": [
+      "Drinking water",
+      "Restroom/Toilet",
+      "Heat and/or Cooling",
+      "Ability to bathe",
+      "Ability to cook hot food"
+     ],
+     "showNoneItem": true
+    }
+   ],
+   "navigationTitle": "Personal Living Situation"
+  },
+  {
+   "name": "network_questions_p1",
+   "title": "Network Module",
+   "elements": [
+    {
+     "type": "html",
+     "name": "network_size_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> If the respondent says \"hundreds\" or \"too many\" emphasize the \"personally know\" part of the question. They would need to both recognize each other and know some information about each other.\n\t\t\t</div>"
+    },
+    {
+     "type": "text",
+     "name": "non_family_network_size",
+     "title": "Other than any family living with you, how many people do you closely know who are also unhoused or experiencing homelessness today?",
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 100
+      }
+     ],
+     "inputType": "number"
+    }
+   ],
+   "navigationTitle": "Network Module"
+  },
+  {
+   "name": "network_questions_p2",
+   "title": "Network Module",
+   "elements": [
+    {
+     "type": "html",
+     "name": "network_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Please fill in information for each person below. You can add or remove tabs as needed.</div>"
+    },
+    {
+     "type": "paneldynamic",
+     "name": "non_family_network",
+     "title": "For those {non_family_network_size} people, please fill in as much of the following information as you are able:\n",
+     "bindings": {
+      "panelCount": "non_family_network"
+     },
+     "templateElements": [
+      {
+       "type": "text",
+       "name": "network_person_name",
+       "title": "Name/Nickname/Initials",
+       "placeholder": "Name or nickname"
+      },
+      {
+       "type": "dropdown",
+       "name": "relationship",
+       "title": "What is your relationship to {panel.network_person_name}?",
+       "choices": [
+        "Friend",
+        "Acquaintance",
+        "Partner (husband/wife, fiancé/fiancée, boyfriend/girlfriend, etc.)",
+        "Immediate family (parent/father/mother, sibling/brother/sister, child/son/daughter)",
+        "Extended family (cousin, nephew/niece, uncle/aunt, grandparent/grandfather/grandmother)",
+        "Neighbor (people you live near)"
+       ],
+       "showOtherItem": true,
+       "otherText": "Other (please specify)",
+       "placeholder": "Select relationship..."
+      },
+      {
+       "type": "dropdown",
+       "name": "network_sleeping_situation",
+       "title": "Where does {panel.network_person_name} currently sleep?",
+       "choices": [
+        {
+         "value": "outside_in_tent",
+         "text": "Outside in a tent (or tent-like structure)"
+        },
+        {
+         "value": "outside_no_tent",
+         "text": "Outside, not in a tent"
+        },
+        {
+         "value": "small_vehicle",
+         "text": "In a car, truck, or van (smaller vehicle)"
+        },
+        {
+         "value": "large_vehicle",
+         "text": "In an RV, trailer, or bus/boat (larger vehicle)"
+        },
+        {
+         "value": "park",
+         "text": "In a park (uncovered, like on a bench)"
+        },
+        {
+         "value": "shelter",
+         "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
+        },
+        {
+         "value": "hotel",
+         "text": "In a hotel or motel"
+        },
+        {
+         "value": "abandoned_building",
+         "text": "In an abandoned building/backyard or storage structure"
+        },
+        {
+         "value": "public_facility",
+         "text": "In a public facility or transit (bus/train station, transit center, airport, hopsital waiting room)"
+        },
+        {
+         "value": "tiny_home",
+         "text": "In a tiny home"
+        },
+        {
+         "value": "public_transit",
+         "text": "On public transit (e.g. slept on bus, train, etc.)"
+        },
+        {
+         "value": "jail",
+         "text": "In jail or prison"
+        },
+        {
+         "value": "hospital",
+         "text": "In a hopsital (stayed as a patient overnight)"
+        },
+        {
+         "value": "drug_alcohol_treatment",
+         "text": "In a drug or alcohol treatment/detox center"
+        },
+        {
+         "value": "friend_family",
+         "text": "In a friend or family member's house/apartment"
+        },
+        {
+         "value": "do_not_know",
+         "text": "Do not know"
+        }
+       ],
+       "showOtherItem": true,
+       "showNoneItem": true,
+       "noneText": "Choose not to answer",
+       "otherText": "Other (please specify)"
+      }
+     ],
+     "templateTitle": "Person: {panel.network_person_name}",
+     "maxPanelCount": 50,
+     "addPanelText": "+ Add new person",
+     "removePanelText": "Remove",
+     "displayMode": "tab"
+    }
+   ],
+   "navigationTitle": "Network Module"
+  },
+  {
+   "name": "duration_homelessness",
+   "title": "Duration of Homelessness",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "episode_lot_homeless",
+     "title": "How long have you been homeless this time?",
+     "choices": [
+      "1 night or less",
+      "2-6 nights",
+      "1 week or more, but less than 1 month",
+      "1 month or more, but less than 90 days",
+      "90 days or more, but less than 1 year",
+      "1 year or longer",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "radiogroup",
+     "name": "num_episodes",
+     "title": "Including this time, how many different times have you been homeless in the past 3 years, that is since November 2022?",
+     "choices": [
+      "1 time",
+      "2 times",
+      "3 times",
+      "4 or more times",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "multipletext",
+     "name": "overall_lot_homeless",
+     "title": "If you added up all the time you have spent experiencing homelessness in the past 3 years, about how long would that be?",
+     "description": "Feel free to enter any variations of the respondent's answer. For example: 1.5 years, 18 months, 1 year and 6 months.",
+     "items": [
+      {
+       "name": "overall_lot_homeless_days",
+       "inputType": "number",
+       "title": "Years"
+      },
+      {
+       "name": "overall_lot_homeless_months",
+       "inputType": "number",
+       "title": "Months"
+      },
+      {
+       "name": "overall_lot_homeless_years",
+       "inputType": "number",
+       "title": "Days"
+      }
+     ]
+    }
+   ],
+   "navigationTitle": "Duration of Homelessness"
+  },
+  {
+   "name": "shelter_services_panel",
+   "title": "Housing Assistance Services",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "shelter_services",
+     "title": "In the past 3 years, have you enrolled in an Emergency Shelter or received any other form of housing assistance from an organization that serves people experiencing homelessness? (Includes referrals, vouchers, hygiene support, etc.)",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "matrixdynamic",
+     "name": "shelter_services_details",
+     "visibleIf": "{shelter_services} = 'Yes'",
+     "title": "Housing Assistance Services",
+     "description": "Fill out the table below as much as possible. If a respondent received a service multiple times, include only the last service.",
+     "validators": [
+      {
+       "type": "expression"
+      }
+     ],
+     "columns": [
+      {
+       "name": "shelter_service_type",
+       "title": "Type  of Last Service Received",
+       "cellType": "dropdown",
+       "choices": [
+        "Street Outreach",
+        "Diversion",
+        "Emergency Shelter",
+        "Temporary Housing",
+        "Coordinated Entry",
+        "Severe Weather Shelter",
+        "Day Center",
+        "Food bank",
+        "Case Management"
+       ],
+       "showOtherItem": true
+      },
+      {
+       "name": "shelter_service_year",
+       "title": "Date of Service Received (Month/Year)",
+       "cellType": "text",
+       "maskType": "datetime",
+       "maskSettings": {
+        "pattern": "mm/yyyy",
+        "min": "2023-01-01",
+        "max": "2026-02-15"
+       }
+      }
+     ],
+     "choices": [
+      "Street Outreach",
+      "Diversion",
+      "Emergency Shelter",
+      "Temporary Housing",
+      "Coordinated Entry",
+      "Severe Weather Shelter ",
+      "Day Center",
+      "Food bank",
+      "Case Management"
+     ],
+     "rowCount": 3,
+     "addRowText": "Add Service",
+     "removeRowText": "Remove"
+    }
+   ],
+   "navigationTitle": "Housing Assistance Services"
+  },
+  {
+   "name": "demographics",
+   "title": "Demographics",
+   "elements": [
+    {
+     "type": "html",
+     "name": "demographics_instruction",
+     "visibleIf": "{is_adult} = 'No'",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has already indicated they are under 18, you may select 12-17 without asking this question.</strong></div>"
+    },
+    {
+     "type": "radiogroup",
+     "name": "age_group",
+     "title": "How old are you?",
+     "choices": [
+      "18-24",
+      "25-34",
+      "35-44",
+      "45-54",
+      "55-64",
+      "65 or older",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "checkbox",
+     "name": "gender_id",
+     "title": "Which of the following best describes your gender? (Select all that apply)",
+     "choices": [
+      "Woman",
+      "Man",
+      "Culturally Specific Identity (e.g., Two-spirit)",
+      "Transgender",
+      "Non-binary",
+      "Questioning",
+      "Different identity",
+      "Do not know"
+     ],
+     "showOtherItem": true,
+     "showNoneItem": true,
+     "noneText": "Choose not to answer",
+     "otherText": "Other (please specify)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "ethnicity",
+     "title": "Are you Hispanic/ Latina/e/o?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "checkbox",
+     "name": "racial_id",
+     "title": "Which of the following best describes your racial identity? (Select all that apply)",
+     "choices": [
+      "American Indian or Alaska Native",
+      "Asian",
+      "Black or African American",
+      "Hispanic/Latina/e/o",
+      "Middle Eastern or North African",
+      "Native Hawaiian or Pacific Islander",
+      "White",
+      "Do not know"
+     ],
+     "showOtherItem": true,
+     "showNoneItem": true,
+     "noneText": "Choose not to answer",
+     "otherText": "Other (please specify)"
+    },
+    {
+     "type": "text",
+     "name": "tribal_affil",
+     "title": "Do you have a Tribal Affiliation? If so, what is it?"
+    },
+    {
+     "type": "html",
+     "name": "va_health_eligible_instruction",
+     "visibleIf": "{is_adult} = 'No'",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, only ask about <i>family members'</i> status</strong></div>"
+    },
+    {
+     "type": "radiogroup",
+     "name": "veteran_status",
+     "title": "Are you or a member of your immediate family a veteran?",
+     "choices": [
+      "Yes, I am a veteran",
+      "Yes, a member of my immediate family is a veteran",
+      "Yes, I am a veteran AND a member of my immediate family is a veteran",
+      "No, neither I nor a member of my immediate family are veterans",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "radiogroup",
+     "name": "va_health_eligible",
+     "visibleIf": "{veteran_status} anyof ['Yes, I am a veteran', 'Yes, a member of my immediate family is a veteran', 'Yes, I am a veteran AND a member of my immediate family is a veteran']",
+     "title": "Have you ever received health care of other benefits from a Veterans Administration (VA) center?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    }
+   ],
+   "navigationTitle": "Demographics"
+  },
+  {
+   "name": "health",
+   "title": "Health",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "fleeing_dv",
+     "visibleIf": "{is_adult} = 'Yes'",
+     "title": "Are you currently experiencing homelessness because you are/were fleeing domestic violence, dating violence, sexual assault, or stalking?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "radiogroup",
+     "name": "disabled",
+     "title": "Do you identify as having a disability?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "radiogroup",
+     "name": "mental_health",
+     "visibleIf": "{is_adult} = 'Yes'",
+     "title": "Do you identify as having a severe mental illness?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "radiogroup",
+     "name": "substance_use",
+     "visibleIf": "{is_adult} = 'Yes'",
+     "title": "Do you identify as having a substance use disorder?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "checkbox",
+     "name": "substances_used",
+     "visibleIf": "{substance_use} = 'Yes'",
+     "title": "What drugs are you currently/actively using? (Select all that apply)",
+     "choices": [
+      "Alcohol",
+      "Cannabis",
+      "Methamphetamine",
+      "Opioids/Heroin",
+      "Fentanyl",
+      "Cocaine",
+      "Prescription medication misuse"
+     ],
+     "hasOther": true,
+     "otherText": "Other (write in)",
+     "showNoneItem": false,
+     "choicesOrder": "none"
+    },
+    {
+     "type": "radiogroup",
+     "name": "substance_housing_impact",
+     "title": "Has substance use impacted your access to housing, either currently or in the past?",
+     "choices": [
+      "Yes",
+      "No",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "comment",
+     "name": "substance_housing_impact_detail",
+     "visibleIf": "{substance_housing_impact} = 'Yes'",
+     "title": "Please describe (optional)",
+     "isRequired": false
+    }
+   ],
+   "navigationTitle": "Health"
+  },
+  {
+   "name": "tobacco_nicotine",
+   "title": "Tobacco / Nicotine Use",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "tobacco_use",
+     "title": "Do you use tobacco or nicotine products?",
+     "choices": [
+      "Yes",
+      "No",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "tobacco_forms",
+     "visibleIf": "{tobacco_use} = 'Yes'",
+     "title": "What form of tobacco or nicotine products do you use? (Select all that apply)",
+     "choices": [
+      "Cigarettes",
+      "Vaping",
+      "Nicotine gum",
+      "Chewing tobacco",
+      "Nicotine patches"
+     ],
+     "hasOther": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "tobacco_start_age_known",
+     "visibleIf": "{tobacco_use} = 'Yes'",
+     "title": "What age did you start using tobacco or nicotine products?",
+     "choices": [
+      "Enter age",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "text",
+     "name": "tobacco_start_age",
+     "inputType": "number",
+     "visibleIf": "{tobacco_start_age_known} = 'Enter age'",
+     "title": "Age in years",
+     "min": 0,
+     "max": 120
+    }
+   ],
+   "navigationTitle": "Tobacco / Nicotine Use"
+  },
+  {
+   "name": "household",
+   "title": "Household",
+   "elements": [
+    {
+     "type": "html",
+     "name": "household_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Please list the initials of all the people in your household (anyone who shares the same dwelling with you)</strong></div>"
+    },
+    {
+     "type": "paneldynamic",
+     "name": "household_members",
+     "title": "Household Members",
+     "templateElements": [
+      {
+       "type": "text",
+       "name": "hh_member_initials",
+       "title": "Initials",
+       "validators": [
+        {
+         "type": "regex",
+         "text": "Please enter initials (1-4 letters)",
+         "regex": "^[A-Za-z]{1,4}$"
+        }
+       ],
+       "placeholder": "e.g., JD"
+      },
+      {
+       "type": "dropdown",
+       "name": "hh_member_relation",
+       "title": "How is {panel.hh_member_initials} related to you?",
+       "choices": [
+        "Parent/Legal guardian",
+        "Other adult family member",
+        "Sibling",
+        "My own child",
+        "Spouse",
+        "Non-married partner",
+        "Other non-family member"
+       ]
+      },
+      {
+       "type": "dropdown",
+       "name": "hh_member_age",
+       "title": "How old is {panel.hh_member_initials}?",
+       "choices": [
+        "0-6 years old",
+        "7-12 years old",
+        "13-17 years old",
+        "18 - 24 years old",
+        "25 –34 years old",
+        "35- 44 years old",
+        "45-54 years old",
+        "55-64 years old",
+        "65 or older"
+       ]
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_gender_id",
+       "title": "Which of the following best describes the gender of {panel.hh_member_initials}?",
+       "choices": [
+        "Woman (Girl if child)",
+        "Man (Boy if child)",
+        "Culturally Specific Identity (e.g., Two-spirit)",
+        "Transgender",
+        "Non-binary",
+        "Questioning",
+        "Different identity",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_ethnicity",
+       "title": "Is {panel.hh_member_initials} Hispanic/Latina/e/o?\n",
+       "choices": [
+        "Yes",
+        "No",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "checkbox",
+       "name": "hh_member_race",
+       "title": "Which of the following best describes the racial identity of {panel.hh_member_initials}? (Note, you may report more than one group.)",
+       "choices": [
+        "American Indian or Alaska Native",
+        "Asian",
+        "Black or African American",
+        "Hispanic/Latina/e/o",
+        "Middle Eastern or North African",
+        "Native Hawaiian or Pacific Islander",
+        "White",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "text",
+       "name": "hh_member_tribal_id",
+       "title": "Does {panel.hh_member_initials} have a Tribal Affiliation? If so, what is their Tribal Affiliation?"
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_vet_status",
+       "visibleIf": "{household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
+       "title": "Is {panel.hh_member_initials} a veteran?",
+       "choices": [
+        "Yes",
+        "No",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_disability",
+       "title": "Does {panel.hh_member_initials} identify as having a disability?",
+       "choices": [
+        "Yes",
+        "No",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_smi",
+       "visibleIf": "{is_adult} = 'Yes' and {household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
+       "title": "Does {panel.hh_member_initials} identify as having a severe mental illness?",
+       "choices": [
+        "Yes",
+        "No",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "hh_member_sud",
+       "visibleIf": "{is_adult} = 'Yes' and {household_members[0].hh_member_age} anyof ['18 - 24 years old', '25 –34 years old', '35- 44 years old', '45-54 years old', '55-64 years old', '65 or older']",
+       "title": "Does {panel.hh_member_initials} identify as having a substance use disorder?",
+       "choices": [
+        "Yes",
+        "No",
+        "Do not know"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      }
+     ],
+     "templateTitle": "Household Member: {panel.hh_member_initials}",
+     "maxPanelCount": 10,
+     "addPanelText": "+ Add household member",
+     "removePanelText": "Remove",
+     "displayMode": "tab"
+    }
+   ],
+   "navigationTitle": "Household"
+  },
+  {
+   "name": "special-questions",
+   "title": "Special Questions",
+   "elements": [
+    {
+     "type": "html",
+     "name": "travel_questions_instruction",
+     "visibleIf": "{location} notcontains 'Phone'",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER NOTE: Please do not ask the travel-related questions below when surveying at Mary's Place Phone Line.</strong></div>"
+    },
+    {
+     "type": "dropdown",
+     "name": "travel_location",
+     "visibleIf": "{location} notcontains 'Phone'",
+     "title": "Where did you travel from today? (Town or City)",
+     "choices": [
+      "Moses Lake",
+      "Ephrata",
+      "Quincy",
+      "Royal City",
+      "Mattawa",
+      "Soap Lake",
+      "Warden",
+      "George",
+      "Coulee City",
+      "Electric City",
+      "Grand Coulee",
+      "Hartline",
+      "Krupp (Marlin)",
+      "Wilson Creek",
+      "Desert Aire",
+      "Beverly",
+      "Unincorporated Grant County",
+      "Choose not to answer",
+      "Do not know"
+     ],
+     "showOtherItem": true,
+     "showNoneItem": true,
+     "noneText": "Do not know",
+     "otherText": "Other (write in)",
+     "hasOther": true
+    },
+    {
+     "type": "checkbox",
+     "name": "travel_transport",
+     "visibleIf": "{location} notcontains 'Phone'",
+     "title": "What transportation did you use to come to {location}?",
+     "choices": [
+      "Bus",
+      "Car",
+      "Bicycle/bike",
+      "Walking"
+     ],
+     "showOtherItem": true,
+     "otherText": "Other (write in)",
+     "hasOther": true
+    },
+    {
+     "type": "panel",
+     "name": "travel_time",
+     "title": "How long did it take you to travel to get to {location}?",
+     "visibleIf": "{location} notcontains 'Phone'",
+     "elements": [
+      {
+       "type": "text",
+       "name": "travel_time_hours",
+       "title": "Hours",
+       "inputType": "number",
+       "placeholder": "Enter a number"
+      },
+      {
+       "type": "text",
+       "name": "travel_time_minutes",
+       "title": "Minutes",
+       "inputType": "number",
+       "placeholder": "Enter a number"
+      }
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "travel_distance",
+     "visibleIf": "{location} notcontains 'Phone'",
+     "title": "About how many miles did you travel to {location}?",
+     "choices": [
+      "Less than half a mile",
+      "Half a mile to 1 mile"
+     ],
+     "showOtherItem": true,
+     "otherPlaceholder": "e.g. 4.3",
+     "otherText": "Other - enter miles (decimals allowed, e.g. 4.3)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "refugee_asylum",
+     "title": "Are you a refugee or currently seeking asylum in the United States?",
+     "choices": [
+      "Yes",
+      "No",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "panel",
+     "name": "last_stable_panel",
+     "elements": [
+      {
+       "type": "radiogroup",
+       "name": "last_stable_loc",
+       "title": "Where did you live the last time you had stable housing such as an apartment or a house?",
+       "choices": [
+        "Grant County",
+        "Washington State (Outside of Grant County)",
+        "United States (Outside of Washington State)",
+        "Outside of the United States"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "dropdown",
+       "name": "last_stable_loc_city",
+       "visibleIf": "{last_stable_loc} = 'Grant County'",
+       "title": "Which city or town in Grant County was it?",
+       "choices": [
+        "Moses Lake",
+        "Ephrata",
+        "Quincy",
+        "Royal City",
+        "Mattawa",
+        "Soap Lake",
+        "Warden",
+        "George",
+        "Coulee City",
+        "Electric City",
+        "Grand Coulee",
+        "Hartline",
+        "Krupp (Marlin)",
+        "Wilson Creek",
+        "Desert Aire",
+        "Beverly",
+        "Unincorporated Grant County"
+       ],
+       "hasOther": true,
+       "otherText": "Other (write in)"
+      },
+      {
+       "type": "dropdown",
+       "name": "last_stable_loc_county",
+       "visibleIf": "{last_stable_loc} = 'Washington State (Outside of Grant County)'",
+       "title": "Which county in Washington State was it?",
+       "choices": [
+        "Adams",
+        "Asotin",
+        "Benton",
+        "Chelan",
+        "Clallam",
+        "Clark",
+        "Columbia",
+        "Cowlitz",
+        "Douglas",
+        "Ferry",
+        "Franklin",
+        "Garfield",
+        "Grant",
+        "Grays Harbor",
+        "Island",
+        "Jefferson",
+        "Kitsap",
+        "Kittititas",
+        "Klickitat",
+        "Lewis",
+        "Lincoln",
+        "Mason",
+        "Okanogan",
+        "Pend Orellie",
+        "Pierce",
+        "San Juan (County)",
+        "Skagit",
+        "Skamania",
+        "Snohomish",
+        "Spokane",
+        "Stevens",
+        "Thurston",
+        "Wahkiakum",
+        "Walla Walla (County)",
+        "Whatcom",
+        "Whitman",
+        "Yakima (County)"
+       ]
+      },
+      {
+       "type": "dropdown",
+       "name": "last_stable_loc_state",
+       "visibleIf": "{last_stable_loc} = 'United States (Outside of Washington State)'",
+       "title": "Which  state in the United States?",
+       "choices": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "html",
+     "name": "age_first_hmlss_instruction",
+     "visibleIf": "{is_adult} = 'No'",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, you may select 12-17 without asking the question.</strong></div>"
+    },
+    {
+     "type": "dropdown",
+     "name": "age_first_hmlss",
+     "title": "How old were you the first time you experienced homelessness?",
+     "choices": [
+      "0-17",
+      "18-24",
+      "25-35",
+      "36-49",
+      "50-65",
+      "66 or older",
+      "Do not know"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "tagbox",
+     "name": "precipitating_events",
+     "title": "What events or conditions contributed to you becoming homeless at this time? (Select all that apply)",
+     "choices": [
+      "Lost job",
+      "Eviction",
+      "Foreclosure",
+      "Incarceration/detention",
+      "Illness/medical problem",
+      {
+       "value": "Substance Use Disorder",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      {
+       "value": "Mental health issues",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      {
+       "value": "Hospitalization/treatment",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      "Divorce/separation/breakup",
+      "Could not afford rent increase",
+      {
+       "value": "Argument with family/friend/roommate",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      {
+       "value": "Family domestic violence",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      "Family/friend's housing wouldn't let me stay",
+      "Family/friend couldn't afford to let me stay",
+      {
+       "value": "Safety",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      "Resettlement transition",
+      "Aging out of foster care",
+      "Death of a parent/spouse/child",
+      "Do not know"
+     ],
+     "choicesOrder": "random",
+     "showOtherItem": true,
+     "showNoneItem": true,
+     "noneText": "Choose not to answer",
+     "otherText": "Other (please specify)",
+     "searchMode": "startsWith"
+    },
+    {
+     "type": "tagbox",
+     "name": "shelter_priorities",
+     "title": "If you were to seek out a shelter program, what top shelter features would be most important to you? (Please select up to 5)",
+     "choices": [
+      "Ease of access/enrollment",
+      "Close to where I stay now/ In my current community",
+      "Enough space to keep my distance from others",
+      "Clean facilities free of germs/illness",
+      "Ability to store my belongings",
+      "Ability to bring my pet/service animal",
+      "Ability to bring my partner",
+      "Ability to move in with a friend",
+      "Minimal rules so I can do as I please",
+      "Culturally specific services",
+      "Meals provided daily",
+      "A private room",
+      "Ability to return if I don't stay there one night",
+      "Support to find permanent housing",
+      {
+       "value": "Support for decreasing substance use",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      {
+       "value": "Support for mental health conditions",
+       "visibleIf": "{is_adult} = 'Yes'"
+      },
+      "On-site health services such as a nurse"
+     ],
+     "choicesOrder": "random",
+     "showOtherItem": true,
+     "otherText": "Other (please specify)",
+     "maxSelectedChoices": 5
+    },
+    {
+     "type": "radiogroup",
+     "name": "pet_animal",
+     "title": "Do you have a pet or animal companion?",
+     "choices": [
+      "Yes",
+      "No"
+     ],
+     "showNoneItem": true,
+     "noneText": "Choose not to answer"
+    },
+    {
+     "type": "paneldynamic",
+     "name": "pet_animal_details",
+     "visibleIf": "{pet_animal} = 'Yes'",
+     "title": "Pet Information",
+     "templateElements": [
+      {
+       "type": "text",
+       "name": "pet_name",
+       "title": "Pet Name (optional)",
+       "placeholder": "e.g., Fluffy"
+      },
+      {
+       "type": "radiogroup",
+       "name": "pet_animal_type",
+       "title": "Type of Animal",
+       "choices": [
+        "Cat",
+        "Dog",
+        "Pocket pet / rodent"
+       ],
+       "showOtherItem": true,
+       "showNoneItem": true,
+       "noneText": "Choose not to answer",
+       "otherText": "Specify other animal type"
+      },
+      {
+       "type": "radiogroup",
+       "name": "pet_animal_weight",
+       "title": "Approximate Weight of {panel.pet_name}",
+       "choices": [
+        "40 lbs or less",
+        "More than 40 lbs"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "pet_animal_vet_care",
+       "title": "Has {panel.pet_name} seen vet care in last 3 years (such as for wellness visits, vaccines, or an illness)?",
+       "choices": [
+        "Yes",
+        "No"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      },
+      {
+       "type": "radiogroup",
+       "name": "pet_medical_needs",
+       "title": "How long have you been responsible for {panel.pet_name}?",
+       "choices": [
+        "Less than 1 year",
+        "1-3 years",
+        "More than 3 years"
+       ],
+       "showNoneItem": true,
+       "noneText": "Choose not to answer"
+      }
+     ],
+     "templateTitle": "Pet: {panel.pet_name}",
+     "maxPanelCount": 10,
+     "addPanelText": "+ Add new pet",
+     "removePanelText": "Remove",
+     "displayMode": "tab"
+    }
+   ],
+   "navigationTitle": "Special Questions"
+  },
+  {
+   "name": "social_support",
+   "title": "Social Support / Housing Network",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "support_network_housed",
+     "title": "Do you have friends or family with stable housing elsewhere who may be able to support you?",
+     "choices": [
+      "Yes",
+      "No",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "support_network_transport",
+     "visibleIf": "{support_network_housed} = 'Yes'",
+     "title": "Would transportation availability affect your ability to get to them?",
+     "choices": [
+      "Yes",
+      "No",
+      "Choose not to answer",
+      "Do not know"
+     ]
+    },
+    {
+     "type": "comment",
+     "name": "support_network_transport_detail",
+     "visibleIf": "{support_network_housed} = 'Yes'",
+     "title": "Please describe (optional)",
+     "isRequired": false
+    }
+   ],
+   "navigationTitle": "Social Support / Housing Network"
+  },
+  {
+   "name": "survey_deduplication",
+   "title": "Survey Deduplication",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "deduplication",
+     "title": "Not counting this time, do you believe you’ve completed this survey in 2026 already?",
+     "choices": [
+      "Yes",
+      "No",
+      "Do not know"
+     ]
+    }
+   ],
+   "navigationTitle": "Survey Deduplication"
+  },
+  {
+   "name": "outro",
+   "title": "Outro",
+   "elements": [
+    {
+     "type": "html",
+     "name": "outro_html",
+     "html": "<strong>That completes the questions for today's survey. Thank you so much for your responses and your time. We will now issue the gift card and prepare your coupons to pass out to others in your network who are unsheltered.</strong>"
+    }
+   ],
+   "navigationTitle": "Outro"
+  },
+  {
+   "name": "giftCards",
+   "title": "Gift Card Contacts",
+   "elements": [
+    {
+     "type": "html",
+     "name": "referral_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> Please read the following information out loud to the respondent.\n\t\t\t</div>\n\t\t\t<br />\n\t\t\t<p>\n\t\t\t\tAt the end of this survey, we will give you <strong>referral coupons</strong>.\n\t\t\t\tPlease give them to other people experiencing homelessness.\n\t\t\t\tIf they come and take our survey using your coupon, we can send you <strong>$5 gift cards</strong> for each completed referral.\n\t\t\t\tTo receive these gift cards, we need either a <strong>phone number or email address</strong>. We will begin issuing the additional funds at the end of February.\n\t\t\t</p>"
+    },
+    {
+     "type": "checkbox",
+     "name": "email_phone_consent",
+     "title": "Do you consent to receive your gift cards via SMS or email?",
+     "choices": [
+      {
+       "value": "email",
+       "text": "Email address"
+      },
+      {
+       "value": "phone",
+       "text": "Phone number"
+      }
+     ],
+     "showNoneItem": true,
+     "noneText": "None"
+    },
+    {
+     "type": "text",
+     "name": "email",
+     "visibleIf": "{email_phone_consent} contains 'email'",
+     "title": "What's your email address?",
+     "requiredIf": "{email_phone_consent} contains 'email'",
+     "inputType": "email"
+    },
+    {
+     "type": "text",
+     "name": "phone",
+     "visibleIf": "{email_phone_consent} contains 'phone'",
+     "title": "What's your phone number?",
+     "requiredIf": "{email_phone_consent} contains 'phone'",
+     "maskType": "pattern",
+     "maskSettings": {
+      "pattern": "(999) 999-9999"
+     }
+    }
+   ],
+   "navigationTitle": "Gift Card Contacts"
+  },
+  {
+   "name": "giftCards2",
+   "title": "Gift Card Details",
+   "elements": [
+    {
+     "type": "html",
+     "name": "gift_card_intructions",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> The HUB lead will provide the gift card to the respondent. Please record the information below before submitting this survey.\n\t\t\t</div>"
+    },
+    {
+     "type": "radiogroup",
+     "name": "gift_card_check",
+     "title": "Did the respondent receive a Gift Card?",
+     "isRequired": true,
+     "choices": [
+      "Yes",
+      "No"
+     ],
+     "showOtherItem": true
+    },
+    {
+     "type": "text",
+     "name": "gift_card_number",
+     "visibleIf": "{gift_card_check} = 'Yes'",
+     "title": "Please enter the last 4 digits of the Gift Card:",
+     "isRequired": true,
+     "requiredIf": "{gift_card_check} = 'Yes'",
+     "inputType": "number",
+     "min": 0,
+     "max": 9999
+    },
+    {
+     "type": "text",
+     "name": "gift_card_2",
+     "visibleIf": "{gift_card_check} = 'Yes' and {has_minor_child} = true",
+     "title": "Please enter the last 4 digits of the 2nd Gift Card:",
+     "description": "Note: Families with minor children receive two gift cards.",
+     "inputType": "number",
+     "min": 0,
+     "max": 9999
+    }
+   ],
+   "navigationTitle": "Gift Card Details"
+  },
+  {
+   "name": "end_page",
+   "title": "End Page",
+   "elements": [
+    {
+     "type": "html",
+     "name": "question2",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> These questions are for volunteers only. Please do not ask the respondent.</div>"
+    },
+    {
+     "type": "comment",
+     "name": "survey_comments",
+     "title": "Please document any issues, exceptions, or important context about this survey (e.g., respondent left early, alternate contact information provided, questions skipped due to circumstances, etc.)"
+    }
+   ],
+   "navigationTitle": "End Page"
+  }
+ ],
+ "triggers": [
+  {
+   "type": "complete",
+   "expression": "{consent_given} = 'No'"
+  },
+  {
+   "type": "complete",
+   "expression": "{is_adult} = 'No'"
+  }
+ ],
+ "calculatedValues": [
+  {
+   "name": "has_minor_child",
+   "expression": "countInArray({household_members}, 'hh_member_age', {hh_member_age} anyof ['0-6 years old', '7-12 years old', '13-17 years old']) > 0"
+  }
+ ],
+ "partialSendEnabled": true,
+ "showPageTitles": false,
+ "showProgressBar": false,
+ "textUpdateMode": "onTyping",
+ "widthMode": "responsive",
+ "showTOC": false
 }

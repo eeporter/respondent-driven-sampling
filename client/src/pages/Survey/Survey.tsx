@@ -16,6 +16,7 @@ import toast from 'react-hot-toast';
 
 import { SurveyDocument } from '@/types/Survey';
 
+import SurveyPageNav from './components/SurveyPageNav';
 import { initializeSurvey } from './utils/surveyUtils';
 
 // This component is responsible for rendering the survey and handling its logic
@@ -86,6 +87,8 @@ const Survey = () => {
 
 		// Clear any existing handlers to prevent duplicates
 		survey.onCurrentPageChanged.clear();
+		survey.onCurrentPageChanging.clear();
+		survey.onValueChanged.clear();
 		survey.onComplete.clear();
 
 		const pushHistoryState = (pageNo: number) => {
@@ -114,8 +117,60 @@ const Survey = () => {
 			};
 		};
 
-		survey.onCurrentPageChanged.add(async sender => {
-			pushHistoryState(sender.currentPageNo);
+
+		// Progress-bar navigation is visited-based: a volunteer may click back to
+		// any page they have already been to, but cannot jump ahead. Jumping ahead
+		// would bypass the required-field validation that the Next button enforces
+		// (e.g. skipping consent), so this closes that hole as well as matching the
+		// expected wizard behaviour.
+		const visitedPages = new Set<number>();
+		{
+			const data = survey.data ?? {};
+			survey.visiblePages.forEach((page, i) => {
+				if (i <= survey.currentPageNo) visitedPages.add(i);
+				const answered = page
+					.getQuestions(true)
+					.some(
+						q =>
+							data[q.name] !== undefined &&
+							data[q.name] !== null &&
+							data[q.name] !== ''
+					);
+				if (answered) visitedPages.add(i);
+			});
+		}
+
+		survey.onCurrentPageChanging.add((sender, options) => {
+			const target = sender.visiblePages.indexOf(options.newCurrentPage);
+			const current = sender.currentPageNo;
+
+			// always allow going backwards, and allow the normal one-page-forward
+			// step (the Next button, which runs validation itself)
+			if (target <= current || target === current + 1) return;
+
+			// allow forward navigation only to somewhere already visited
+			if (!visitedPages.has(target)) {
+				options.allow = false;
+				toast('Please complete the earlier pages first.');
+			}
+		});
+
+		survey.onCurrentPageChanged.add(sender => {
+			visitedPages.add(sender.currentPageNo);
+		});
+
+		// Autosave is shared by page changes and individual answers. A single
+		// in-flight guard prevents the very first save racing with itself and
+		// creating duplicate survey records, since only the first call may create.
+		let saveInFlight = false;
+		let saveQueued = false;
+
+		const persist = async (sender: Model) => {
+			if (saveInFlight) {
+				saveQueued = true;
+				return;
+			}
+			saveInFlight = true;
 
 			const surveyData = {
 				...getSurveyData(sender.data),
@@ -161,15 +216,54 @@ const Survey = () => {
 			} catch (error) {
 				// TODO: handle error (e.g., show notification as toast messages)
 				console.error('Autosave failed:', error);
+			} finally {
+				saveInFlight = false;
+				if (saveQueued) {
+					saveQueued = false;
+					void persist(sender);
+				}
 			}
+		};
+
+		survey.onCurrentPageChanged.add(async sender => {
+			pushHistoryState(sender.currentPageNo);
+			await persist(sender);
+		});
+
+		// Save every answer as it is entered, not just on page turns, so nothing is
+		// lost if the tablet sleeps or the browser is closed mid-page. Debounced so
+		// typing in a text field does not fire a request per keystroke.
+		let valueDebounce: ReturnType<typeof setTimeout> | null = null;
+		survey.onValueChanged.add(sender => {
+			if (valueDebounce) clearTimeout(valueDebounce);
+			valueDebounce = setTimeout(() => void persist(sender), 800);
 		});
 
 		survey.onComplete.add(async sender => {
+			// A survey can complete before any autosave has finished — most notably
+			// the under-18 path, where answering "No" fires the complete trigger
+			// while the create request from the page change may still be in flight.
+			// Without this the record would never be written and we would lose the
+			// fact that a survey was started at all.
+			if (saveInFlight) {
+				for (let i = 0; i < 50 && saveInFlight; i++) {
+					await new Promise(r => setTimeout(r, 100));
+				}
+			}
+			if (getObjectId() === null) {
+				await persist(sender);
+			}
+
 			const surveyData = {
 				...getSurveyData(sender.data), // Merging happens here too
 				completed: true
 			};
 			setSurveyData(surveyData);
+
+			if (getObjectId() === null) {
+				console.error('Cannot complete survey: no record was created');
+				return;
+			}
 
 			try {
 				const result = await surveyService.updateSurvey(
@@ -317,7 +411,10 @@ const Survey = () => {
 		<>
 			<div style={{ padding: '20px' }}>
 				{surveyRef.current && (
-					<SurveyComponent model={surveyRef.current} />
+					<>
+						<SurveyPageNav survey={surveyRef.current} />
+						<SurveyComponent model={surveyRef.current} />
+					</>
 				)}
 			</div>
 		</>
