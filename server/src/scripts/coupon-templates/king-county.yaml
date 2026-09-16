@@ -1,0 +1,18 @@
+# King County coupon text — the default (COUPON_TEMPLATE unset).
+# Matches the text previously hard-coded in generateSeeds.ts / generateCoupons.ts.
+title: 'Understanding Unsheltered Homelessness'
+intro:
+    before: 'Bring this coupon to one of the locations below to complete a survey about your experience being unsheltered (including living in an RV or car/vehicle) and to receive a '
+    highlight: '$20'
+    after: ' Gift Card.'
+notes:
+    - 'Our locations are accessible with free parking and bike racks unless marked otherwise.'
+    - 'Pets and service animals welcome.'
+locations:
+    - name: 'Highline United Methodist Church'
+      address: '13015 1st AVE S, Burien, WA 98168'
+      schedule:
+          - 'Monday - Friday (11/17 - 11/21)'
+          - '10am to 3pm'
+contact: 'For questions, please call +1 (833) 393-1621'
+logo: 'assets/logo.png'

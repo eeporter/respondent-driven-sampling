@@ -15,7 +15,9 @@
 		"lint:fix": "eslint . --ext js,ts --fix",
 		"super-admin": "tsx --env-file=.env src/scripts/superAdminCRUD.ts",
 		"location": "tsx --env-file=.env src/scripts/locationCRUD.ts",
+		"location:test": "tsx --env-file=.env.test src/scripts/locationCRUD.ts",
 		"generate-seeds": "tsx --env-file=.env src/scripts/generateSeeds.ts",
+		"generate-seeds:test": "tsx --env-file=.env.test src/scripts/generateSeeds.ts",
 		"generate-coupons": "tsx --env-file=.env src/scripts/generateCoupons.ts",
 		"sms": "tsx --env-file=.env src/scripts/smsCRUD.ts"
 	},
@@ -42,6 +44,7 @@
 		"morgan": "^1.10.1",
 		"nocache": "^4.0.0",
 		"nodemon": "^3.1.9",
+		"pdf-lib": "^1.17.1",
 		"pdfkit": "^0.17.2",
 		"qrcode": "^1.5.4",
 		"swagger-jsdoc": "^6.2.8",

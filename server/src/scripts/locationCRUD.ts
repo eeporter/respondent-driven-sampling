@@ -24,9 +24,14 @@
  *     Example: npm run location -- update "Main Hub" --hubName "Updated Hub" --address "456 New St"
  *     Example: npm run location -- update 507f1f77bcf86cd799439011 --hubType PREMISE
  *
- *   delete <hubName|address|objectId>
+ *   delete <hubName|address|objectId> [--reassign-to <hubName|address|objectId>]
+ *     Refuses if any seed, user or survey still references the location, unless
+ *     --reassign-to moves those records to another location first.
  *     Example: npm run location -- delete "Main Hub"
  *     Example: npm run location -- delete 507f1f77bcf86cd799439011
+ *     Example: npm run location -- delete "Old Hub" --reassign-to "Main Hub"
+ *
+ * `location` reads server/.env; `location:test` reads server/.env.test.
  */
 import fs from 'fs';
 import path from 'path';
@@ -39,6 +44,11 @@ import {
 	createLocationSchema,
 	updateLocationSchema
 } from '@/database/location/zod/location.validator';
+
+import {
+	countLocationReferences,
+	reassignLocationReferences
+} from './locationReferences';
 
 // ===== Validation Helper Functions =====
 
@@ -355,10 +365,41 @@ async function updateLocation(
 
 // ===== DELETE Operation =====
 
-async function deleteLocation(identifier: string): Promise<void> {
+async function deleteLocation(
+	identifier: string,
+	reassignTo?: string
+): Promise<void> {
 	console.log('\n🗑️  Deleting Location...\n');
 
 	const location = await findLocationByIdentifier(identifier);
+
+	if (reassignTo) {
+		const target = await findLocationByIdentifier(reassignTo);
+		if (target._id.equals(location._id)) {
+			throw new Error('--reassign-to must name a different location');
+		}
+		const moved = await reassignLocationReferences(
+			location._id,
+			target._id
+		);
+		console.log(
+			`Moved to "${target.hubName}" (${target._id}): ${moved.seeds} seed(s), ` +
+				`${moved.users} user(s), ${moved.surveys} survey(s), ` +
+				`${moved.surveyAnswers} survey location answer(s)`
+		);
+	}
+
+	// Deleting a referenced location would orphan those records
+	const { seeds, users, surveys } = await countLocationReferences(
+		location._id
+	);
+	if (seeds + users + surveys > 0) {
+		throw new Error(
+			`Location "${location.hubName}" (${location._id}) is still referenced by ` +
+				`${seeds} seed(s), ${users} user(s) and ${surveys} survey(s) - not deleted. ` +
+				'Add --reassign-to <hubName> to move them to another location first.'
+		);
+	}
 
 	await Location.findByIdAndDelete(location._id);
 
@@ -375,7 +416,7 @@ async function main(): Promise<void> {
 	try {
 		console.log('Connecting to database...');
 		await connectDB();
-		console.log('Connected to database ✓');
+		console.log(`Connected to database "${process.env.MONGO_DB_NAME}" ✓`);
 
 		const args = process.argv.slice(2);
 
@@ -495,7 +536,18 @@ async function main(): Promise<void> {
 					);
 					process.exit(1);
 				}
-				await deleteLocation(args[1]);
+				{
+					const flagIndex = args.indexOf('--reassign-to');
+					const reassignTo =
+						flagIndex === -1 ? undefined : args[flagIndex + 1];
+					if (flagIndex !== -1 && !reassignTo) {
+						console.error(
+							'Error: --reassign-to requires a location'
+						);
+						process.exit(1);
+					}
+					await deleteLocation(args[1], reassignTo);
+				}
 				break;
 
 			default:

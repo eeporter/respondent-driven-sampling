@@ -4,6 +4,9 @@
  * Usage: npm run generate-seeds -- <hubName|objectId> <count>
  * Example: npm run generate-seeds -- "Main Hub" 10
  * Example: npm run generate-seeds -- 507f1f77bcf86cd799439011 10
+ *
+ * `generate-seeds` reads server/.env; `generate-seeds:test` reads server/.env.test.
+ * Coupon text comes from coupon-templates/, chosen by COUPON_TEMPLATE (see couponTemplate.ts).
  */
 import fs from 'fs';
 import path from 'path';
@@ -17,13 +20,24 @@ import Location from '@/database/location/mongoose/location.model';
 import Seed, { ISeed } from '@/database/seed/mongoose/seed.model';
 import { generateUniqueSurveyCode } from '@/database/survey/survey.controller';
 
+import { assertPdfTemplate, renderPdfCoupons } from './couponPdf';
+import {
+	assertCouponFits,
+	drawCouponPage,
+	loadCouponTemplateFromEnv,
+	LoadedCouponTemplate
+} from './couponTemplate';
+
 // Get current directory
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Assets and output paths
-const logoPath = path.join(__dirname, 'assets/logo.png');
+// Output path
 const seedsOutputDir = path.join(__dirname, 'seeds');
+
+// QR code size, and the page height taken by the QR code plus its coupon code line
+const qrSize = 100;
+const codeBlockHeight = qrSize + 15 + 50;
 
 // ===== PDF Generation Helper Functions =====
 
@@ -70,7 +84,7 @@ async function generateQRCodeBuffer(
 async function addQRCodePage(
 	doc: PDFKit.PDFDocument,
 	surveyCode: string,
-	_locationName: string,
+	couponTemplate: LoadedCouponTemplate,
 	isFirstPage: boolean
 ): Promise<void> {
 	if (!isFirstPage) {
@@ -81,155 +95,48 @@ async function addQRCodePage(
 	const margin = 50;
 	const contentWidth = pageWidth - margin * 2;
 
-	let currentY = margin;
-
-	if (fs.existsSync(logoPath)) {
-		const logoWidth = 60;
-		doc.image(logoPath, (pageWidth - logoWidth) / 2, currentY, {
-			fit: [logoWidth, logoWidth]
-		});
-		currentY += logoWidth + 10;
-	}
-
-	// Title
-	doc.fontSize(18)
-		.font('Helvetica-Bold')
-		.text('Understanding Unsheltered Homelessness', margin, currentY, {
-			align: 'center',
-			width: contentWidth
-		});
-
-	currentY += 40;
-
-	// Instructions
-	doc.fontSize(12)
-		.font('Helvetica')
-		.text(
-			'Bring this coupon to one of the locations below to complete a survey about your experience being unsheltered (including living in an RV or car/vehicle) and to receive a ',
-			margin,
-			currentY,
-			{
-				align: 'left',
-				width: contentWidth,
-				continued: true
-			}
-		)
-		.font('Helvetica-Bold')
-		.text('$20', { continued: true })
-		.font('Helvetica')
-		.text(' Gift Card.');
-
-	currentY += 50;
-
-	doc.fontSize(12)
-		.font('Helvetica')
-		.text(
-			'Our locations are accessible with free parking and bike racks unless marked otherwise.',
-			margin,
-			currentY,
-			{
-				align: 'left',
-				width: contentWidth
-			}
-		);
-
-	currentY += 25;
-
-	doc.text('Pets and service animals welcome.', margin, currentY, {
-		align: 'left',
-		width: contentWidth
-	});
-
-	currentY += 50;
-
-	// QR Code and Coupon Code
-	const qrSize = 100;
-	const qrX = (pageWidth - qrSize) / 2;
-
 	const qrBuffer = await generateQRCodeBuffer(surveyCode, qrSize);
-	doc.image(qrBuffer, qrX, currentY, {
-		width: qrSize,
-		height: qrSize
-	});
 
-	currentY += qrSize + 15;
-
-	doc.fontSize(16)
-		.font('Helvetica-Bold')
-		.text(`Coupon Code: ${surveyCode}`, margin, currentY, {
-			align: 'center',
-			width: contentWidth
+	drawCouponPage(doc, couponTemplate, currentY => {
+		// QR Code and Coupon Code
+		doc.image(qrBuffer, (pageWidth - qrSize) / 2, currentY, {
+			width: qrSize,
+			height: qrSize
 		});
 
-	currentY += 50;
+		currentY += qrSize + 15;
 
-	// Locations section
-	doc.fontSize(12)
-		.font('Helvetica-Bold')
-		.text('Locations', margin, currentY, {
-			align: 'left',
-			width: contentWidth
-		});
-
-	currentY += 20;
-
-	doc.fontSize(11)
-		.font('Helvetica')
-		.text('• Highline United Methodist Church', margin + 10, currentY, {
-			align: 'left',
-			width: contentWidth - 10
-		});
-
-	currentY += 15;
-
-	doc.text('  13015 1st AVE S, Burien, WA 98168', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 20;
-
-	doc.text('• Interview Dates and Hours:', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 15;
-
-	doc.text('  Monday - Friday (11/17 - 11/21)', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 15;
-
-	doc.text('  10am to 3pm', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 50;
-
-	// Contact info
-	doc.fontSize(10)
-		.font('Helvetica')
-		.text(
-			'For questions, please call +1 (833) 393-1621',
-			margin,
-			currentY,
-			{
+		doc.fontSize(16)
+			.font('Helvetica-Bold')
+			.text(`Coupon Code: ${surveyCode}`, margin, currentY, {
 				align: 'center',
 				width: contentWidth
-			}
-		);
+			});
+
+		return currentY + 50;
+	});
 }
 
 async function generatePDF(
 	seeds: ISeed[],
-	locationName: string
+	locationName: string,
+	couponTemplate: LoadedCouponTemplate
 ): Promise<void> {
 	const outputDir = createOutputDirectory();
 	const filepath = generateTimestampFilename(locationName, outputDir);
+
+	if (couponTemplate.pdfPath) {
+		const codes = seeds.map(seed => seed.surveyCode);
+		fs.writeFileSync(
+			filepath,
+			await renderPdfCoupons(couponTemplate, codes)
+		);
+		console.log(`\n✓ PDF generated: ${filepath}`);
+		console.log(
+			`  Contains ${seeds.length} coupon(s) from template "${couponTemplate.name}"`
+		);
+		return;
+	}
 
 	// Create PDF document
 	const doc = new PDFDocument({
@@ -242,7 +149,7 @@ async function generatePDF(
 
 	// Generate one page per seed
 	for (let i = 0; i < seeds.length; i++) {
-		await addQRCodePage(doc, seeds[i].surveyCode, locationName, i === 0);
+		await addQRCodePage(doc, seeds[i].surveyCode, couponTemplate, i === 0);
 	}
 
 	doc.end();
@@ -350,9 +257,18 @@ async function generateSeeds(
 	count: number
 ): Promise<void> {
 	try {
+		// Check the coupon template before creating any seeds, so a bad template
+		// cannot leave seeds in the database without a printable PDF.
+		const couponTemplate = loadCouponTemplateFromEnv(__dirname);
+		if (couponTemplate.pdfPath) {
+			await assertPdfTemplate(couponTemplate);
+		} else {
+			assertCouponFits(couponTemplate, codeBlockHeight);
+		}
+
 		console.log('Connecting to database...');
 		await connectDB();
-		console.log('Connected to database ✓\n');
+		console.log(`Connected to database "${process.env.MONGO_DB_NAME}" ✓\n`);
 
 		const location = await findLocationByIdentifier(locationIdentifier);
 		const createdSeeds = await generateSeedsForLocation(location, count);
@@ -360,7 +276,7 @@ async function generateSeeds(
 		printSeedsSummary(createdSeeds, location.hubName);
 
 		console.log('\n📄 Generating PDF with QR codes...');
-		await generatePDF(createdSeeds, location.hubName);
+		await generatePDF(createdSeeds, location.hubName, couponTemplate);
 	} catch (error) {
 		console.error(
 			'\n✗ Error:',

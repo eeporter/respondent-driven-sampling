@@ -9,18 +9,26 @@
  * 2. Run: npm run generate-coupons -- [how-many]
  *    Example: npm run generate-coupons -- 10  (generates a PDF with 10 coupons)
  *    Example: npm run generate-coupons      (generates a PDF with 1 coupon)
+ *
+ * Coupon text comes from coupon-templates/, chosen by COUPON_TEMPLATE (see couponTemplate.ts).
  */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import PDFDocument from 'pdfkit';
 
+import { assertPdfTemplate, renderPdfCoupons } from './couponPdf';
+import {
+	drawCouponPage,
+	loadCouponTemplateFromEnv,
+	LoadedCouponTemplate
+} from './couponTemplate';
+
 // Get current directory
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Assets and output paths
-const logoPath = path.join(__dirname, 'assets/logo.png');
+// Output path
 const couponsOutputDir = path.join(__dirname, 'coupons');
 
 // ===== PDF Generation Helper Functions =====
@@ -46,151 +54,37 @@ function generateTimestampFilename(outputDir: string, count: number): string {
 	return path.join(outputDir, filename);
 }
 
-function addTemplatePage(doc: PDFKit.PDFDocument): void {
+function addTemplatePage(
+	doc: PDFKit.PDFDocument,
+	couponTemplate: LoadedCouponTemplate
+): void {
 	const pageWidth = doc.page.width;
-	const margin = 50;
-	const contentWidth = pageWidth - margin * 2;
 
-	let currentY = margin;
+	drawCouponPage(doc, couponTemplate, currentY => {
+		// --- QR Code Placeholder ---
+		const qrSize = 150;
+		const qrX = (pageWidth - qrSize) / 2;
 
-	// Logo
-	if (fs.existsSync(logoPath)) {
-		const logoWidth = 60;
-		doc.image(logoPath, (pageWidth - logoWidth) / 2, currentY, {
-			fit: [logoWidth, logoWidth]
-		});
-		currentY += logoWidth + 10;
-	}
+		doc.lineWidth(1)
+			.rect(qrX, currentY, qrSize, qrSize)
+			.dash(5, { space: 5 })
+			.stroke();
+		doc.undash();
 
-	// Title
-	doc.fontSize(18)
-		.font('Helvetica-Bold')
-		.text('Understanding Unsheltered Homelessness', margin, currentY, {
-			align: 'center',
-			width: contentWidth
-		});
+		doc.fontSize(10)
+			.font('Helvetica-Oblique')
+			.text(
+				'Place QR Code Sticker Here',
+				qrX,
+				currentY + qrSize / 2 - 5,
+				{
+					width: qrSize,
+					align: 'center'
+				}
+			);
 
-	currentY += 40;
-
-	// Instructions
-	doc.fontSize(12)
-		.font('Helvetica')
-		.text(
-			'Bring this coupon to one of the locations below to complete a survey about your experience being unsheltered (including living in an RV or car/vehicle) and to receive a ',
-			margin,
-			currentY,
-			{
-				align: 'left',
-				width: contentWidth,
-				continued: true
-			}
-		)
-		.font('Helvetica-Bold')
-		.text('$20', { continued: true })
-		.font('Helvetica')
-		.text(' Gift Card.');
-
-	currentY += 50;
-
-	doc.fontSize(12)
-		.font('Helvetica')
-		.text(
-			'Our locations are accessible with free parking and bike racks unless marked otherwise.',
-			margin,
-			currentY,
-			{
-				align: 'left',
-				width: contentWidth
-			}
-		);
-
-	currentY += 25;
-
-	doc.text('Pets and service animals welcome.', margin, currentY, {
-		align: 'left',
-		width: contentWidth
+		return currentY + qrSize + 15;
 	});
-
-	currentY += 50;
-
-	// --- QR Code Placeholder ---
-	const qrSize = 150;
-	const qrX = (pageWidth - qrSize) / 2;
-
-	doc.lineWidth(1)
-		.rect(qrX, currentY, qrSize, qrSize)
-		.dash(5, { space: 5 })
-		.stroke();
-	doc.undash();
-
-	doc.fontSize(10)
-		.font('Helvetica-Oblique')
-		.text('Place QR Code Sticker Here', qrX, currentY + qrSize / 2 - 5, {
-			width: qrSize,
-			align: 'center'
-		});
-
-	currentY += qrSize + 15;
-
-	// Locations section
-	doc.fontSize(12)
-		.font('Helvetica-Bold')
-		.text('Locations', margin, currentY, {
-			align: 'left',
-			width: contentWidth
-		});
-
-	currentY += 20;
-
-	doc.fontSize(11)
-		.font('Helvetica')
-		.text('• Highline United Methodist Church', margin + 10, currentY, {
-			align: 'left',
-			width: contentWidth - 10
-		});
-
-	currentY += 15;
-
-	doc.text('  13015 1st AVE S, Burien, WA 98168', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 20;
-
-	doc.text('• Interview Dates and Hours:', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 15;
-
-	doc.text('  Monday - Friday (11/17 - 11/21)', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 15;
-
-	doc.text('  10am to 3pm', margin + 10, currentY, {
-		align: 'left',
-		width: contentWidth - 10
-	});
-
-	currentY += 50;
-
-	// Contact info
-	doc.fontSize(10)
-		.font('Helvetica')
-		.text(
-			'For questions, please call +1 (833) 393-1621',
-			margin,
-			currentY,
-			{
-				align: 'center',
-				width: contentWidth
-			}
-		);
 }
 
 async function generateCoupons(): Promise<void> {
@@ -204,10 +98,23 @@ async function generateCoupons(): Promise<void> {
 			);
 		}
 
+		const couponTemplate = loadCouponTemplateFromEnv(__dirname);
+
 		console.log(`📄 Generating a PDF with ${count} blank coupon(s)...`);
 
 		const outputDir = createOutputDirectory();
 		const filepath = generateTimestampFilename(outputDir, count);
+
+		if (couponTemplate.pdfPath) {
+			await assertPdfTemplate(couponTemplate);
+			const blanks = Array.from({ length: count }, () => null);
+			fs.writeFileSync(
+				filepath,
+				await renderPdfCoupons(couponTemplate, blanks)
+			);
+			console.log(`\n✓ PDF generated: ${filepath}`);
+			return;
+		}
 
 		const doc = new PDFDocument({
 			size: 'LETTER',
@@ -220,7 +127,7 @@ async function generateCoupons(): Promise<void> {
 
 		for (let i = 0; i < count; i++) {
 			doc.addPage();
-			addTemplatePage(doc);
+			addTemplatePage(doc, couponTemplate);
 		}
 
 		doc.end();
