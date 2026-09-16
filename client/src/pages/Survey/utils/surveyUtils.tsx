@@ -2,6 +2,8 @@ import { Model, PageModel, QuestionSelectBase } from 'survey-core';
 
 import { SurveyDocument } from '@/types/Survey';
 
+import { isTestEnvironment } from '@/utils/environment';
+
 import surveyJsonData from './survey.json';
 import { themeJson } from './surveyTheme';
 
@@ -138,6 +140,8 @@ export const initializeSurvey = (
 	}
 
 	const survey = new Model(surveyJson);
+	// drives the test-only warning page at the start of the survey
+	survey.setVariable('is_test_environment', isTestEnvironment());
 
 	// Apply custom theme
 	survey.applyTheme(themeJson);

@@ -1,4 +1,4 @@
-import { ProtectedRoute } from '@/components';
+import { ProtectedRoute, TestBanner } from '@/components';
 import { AuthProvider } from '@/contexts';
 import {
 	ApplyReferral,
@@ -31,6 +31,7 @@ function App() {
 			<ThemeProvider theme={muiTheme}>
 				<CssBaseline />
 				<Router>
+					<TestBanner />
 					<Routes>
 						<Route
 							path="/"

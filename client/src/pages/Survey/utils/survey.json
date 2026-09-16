@@ -2,6 +2,19 @@
  "title": "Unsheltered Point-in-Time Count 2026",
  "pages": [
   {
+   "name": "test_environment_notice",
+   "title": "Test survey only",
+   "navigationTitle": "Test only",
+   "visibleIf": "{is_test_environment} = true",
+   "elements": [
+    {
+     "type": "html",
+     "name": "test_environment_notice_html",
+     "html": "<div style=\"max-width: 800px; margin: 20px auto; font-family: Arial, sans-serif; line-height: 1.6; border: 3px solid #b00020; background-color: #fff3cd; padding: 20px;\">\n<h2 style=\"margin-top: 0; color: #b00020; font-size: 26px;\">This is the <strong style=\"color: #b00020;\">TEST</strong> site</h2>\n<p style=\"margin-bottom: 12px;\">Surveys started here are for practice and training only. They are <strong style=\"color: #b00020;\">not</strong> part of the Point-in-Time Count, and the answers are not included in any results.</p>\n<p style=\"margin-bottom: 12px;\"><strong>If you are surveying a real participant, stop and use the live site instead:</strong><br><a href=\"https://gchd-rds.azurewebsites.net\">https://gchd-rds.azurewebsites.net</a></p>\n<p style=\"margin-bottom: 0;\">To continue practising, select Next.</p>\n</div>"
+    }
+   ]
+  },
+  {
    "name": "volunteer-pre-screen",
    "title": "Pre-Screening Questions - Volunteer Only",
    "elements": [

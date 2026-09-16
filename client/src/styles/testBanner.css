@@ -1,0 +1,18 @@
+/* Warning bar shown on every page of the test site */
+.test-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1100; /* above the header, which sits at 1000 */
+  padding: 10px 16px;
+  background-color: #fff3cd;
+  border-bottom: 3px solid #b00020;
+  color: #222;
+  font-size: 16px;
+  text-align: center;
+}
+
+.test-banner-word {
+  color: #b00020;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
