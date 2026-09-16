@@ -55,7 +55,10 @@ export default function QrPage() {
 								}
 							)
 						) : (
-							<p>No referral codes available.</p>
+							<p>
+								No coupon codes were issued for this survey.
+								You can still return to the home page below.
+							</p>
 						)}
 					</div>
 				</div>

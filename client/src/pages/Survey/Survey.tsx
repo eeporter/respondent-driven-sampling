@@ -17,7 +17,11 @@ import toast from 'react-hot-toast';
 import { SurveyDocument } from '@/types/Survey';
 
 import SurveyPageNav from './components/SurveyPageNav';
-import { initializeSurvey } from './utils/surveyUtils';
+import {
+	initializeSurvey,
+	LAST_PAGE_KEY,
+	recordSkippedAnswers
+} from './utils/surveyUtils';
 
 // This component is responsible for rendering the survey and handling its logic
 // It uses the SurveyJS library to create and manage the survey
@@ -144,6 +148,11 @@ const Survey = () => {
 			const target = sender.visiblePages.indexOf(options.newCurrentPage);
 			const current = sender.currentPageNo;
 
+			// moving on from this page: validation has already passed, so anything
+			// still empty was genuinely skipped
+			if (target > current)
+				recordSkippedAnswers(sender, options.oldCurrentPage);
+
 			// always allow going backwards, and allow the normal one-page-forward
 			// step (the Next button, which runs validation itself)
 			if (target <= current || target === current + 1) return;
@@ -157,6 +166,9 @@ const Survey = () => {
 
 		survey.onCurrentPageChanged.add(sender => {
 			visitedPages.add(sender.currentPageNo);
+			if (!isEditMode && sender.currentPage?.name) {
+				sender.setValue(LAST_PAGE_KEY, sender.currentPage.name);
+			}
 		});
 
 		// Autosave is shared by page changes and individual answers. A single
@@ -280,14 +292,23 @@ const Survey = () => {
 					return;
 				}
 
-				if (result && result.childSurveyCodes) {
-					setChildSurveyCodes(result.childSurveyCodes);
+				// Always land on the coupon-code page: it carries the Print and
+				// Return to Home buttons, so a survey with no codes to print must
+				// not leave the interviewer stranded on the finished survey.
+				if (result) {
+					setChildSurveyCodes(result.childSurveyCodes ?? []);
 					navigate('/qrcode');
 					return;
 				}
+
+				toast.error(
+					'The survey was completed but could not be saved. Check the connection and try again.'
+				);
 			} catch (error) {
-				// TODO: handle error (e.g., show notification)
 				console.error('Error saving survey:', error);
+				toast.error(
+					'The survey was completed but could not be saved. Check the connection and try again.'
+				);
 			}
 		});
 	};
