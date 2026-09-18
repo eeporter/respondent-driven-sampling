@@ -1,13 +1,14 @@
 # Grant County WA coupon. Select with COUPON_TEMPLATE=grant-county-wa.
 #
-# Designed in Word by GCHD ("Coupon_SPandEng 1.docx", exported to PDF 2026-09-15):
-# page 1 English, page 2 Spanish. Each seed prints both pages, with its QR code and
-# survey code in the red "For Internal Use" / "Para uso interno" box on each page.
+# Designed in Word by GCHD ("Coupon_SPandEng_schedule-update and reviewed", exported
+# to PDF 2026-09-18): page 1 English, page 2 Spanish. Each seed prints both pages,
+# with its QR code and survey code in the red "For Internal Use" / "Para uso interno"
+# box on each page.
 #
-# To change the design: edit the Word file, Save As PDF, replace grant-county-wa.pdf.
-# If the red boxes move, re-measure them - positions are in points (1/72 in) from the
-# top-left corner of the page, measured to the outside of the box outline.
+# To change the design: edit the Word file, Save As PDF, replace grant-county-wa.pdf,
+# then RE-MEASURE the boxes - editing the schedule moves them. Positions are in points
+# (1/72 in) from the top-left of the page, measured to the outside of the box outline.
 pdf: 'coupon-templates/grant-county-wa.pdf'
 qrBoxes:
-    - { page: 1, x: 46.5, y: 572.5, width: 128.5, height: 132.5 } # For Internal Use
-    - { page: 2, x: 45.5, y: 587.5, width: 133.5, height: 132.5 } # Para uso interno
+  - { page: 1, x: 46.5, y: 551.5, width: 128.5, height: 132.0 } # For Internal Use
+  - { page: 2, x: 45.5, y: 578.5, width: 133.5, height: 131.5 } # Para uso interno
