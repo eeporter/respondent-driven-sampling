@@ -71,17 +71,16 @@ describe('bundled templates', () => {
 		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
 	});
 
-	it('grant-county-wa uses the designed PDF with a box on each page', async () => {
-		const { assertPdfTemplate } = await import('../couponPdf');
-		const loaded = loadCouponTemplate('grant-county-wa', scriptsDir);
-		expect(loaded.pdfPath).not.toBeNull();
-		expect(loaded.template.qrBoxes?.map(box => box.page)).toEqual([1, 2]);
-		await expect(assertPdfTemplate(loaded)).resolves.toBeUndefined();
+	it('la-county-ca is a text draft until LA fills in its TODOs', () => {
+		const loaded = loadCouponTemplate('la-county-ca', scriptsDir);
+		expect(loaded.pdfPath).toBeNull();
+		expect(loaded.placeholders.length).toBeGreaterThan(0);
+		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
 	});
 
 	it('names the available templates when one is missing', () => {
 		expect(() => loadCouponTemplate('nope', scriptsDir)).toThrow(
-			/Available templates: .*grant-county-wa.*king-county/
+			/Available templates: .*king-county.*la-county-ca/
 		);
 	});
 });

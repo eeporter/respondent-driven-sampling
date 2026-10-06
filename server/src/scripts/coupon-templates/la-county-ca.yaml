@@ -1,0 +1,19 @@
+# Los Angeles County CA coupon. Select with COUPON_TEMPLATE=la-county-ca.
+# Draft: every TODO below must be filled in from LA's materials. Until then pages
+# are stamped DRAFT. To switch to a designed PDF later, see grant-county-wa.yaml in
+# the grant-county-wa branch for the `pdf:` + `qrBoxes:` form.
+title: 'TODO: coupon title'
+intro:
+    before: 'TODO: intro sentence before the gift card amount, e.g. "Bring this coupon to one of the locations below to complete a survey and receive a "'
+    highlight: 'TODO: amount'
+    after: ' Gift Card.'
+notes:
+    - 'TODO: accessibility / parking / pets notes'
+locations:
+    - name: 'TODO: hub name'
+      address: 'TODO: hub address, Los Angeles, CA'
+      schedule:
+          - 'TODO: interview dates'
+          - 'TODO: interview hours'
+contact: 'TODO: contact phone number'
+logo: 'assets/logo.png'

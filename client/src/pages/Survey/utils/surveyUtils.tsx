@@ -10,7 +10,7 @@ import { themeJson } from './surveyTheme';
 // SurveyJS refuses to move on when someone picks "Other" and writes nothing, and
 // offers no setting to change it: the "Other" item is hard-coded comment-required, and
 // questions built as the respondent goes (repeating sections, table rows) rebuild it.
-// GCHD wants the write-in optional everywhere, so switch off the single check that
+// The write-in is optional everywhere, so switch off the single check that
 // raises that error - `hasEmptyComments` is used for nothing else in survey-core.
 const selectBaseProto = QuestionSelectBase.prototype as unknown as {
 	hasEmptyComments?: () => boolean;
