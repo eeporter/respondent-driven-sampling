@@ -160,7 +160,7 @@ export function findPlaceholders(value: unknown, prefix = ''): string[] {
 
 /**
  * Load a coupon template by name from `<scriptsDir>/coupon-templates/`.
- * @param templateName - Template name without extension (e.g. "la-county-ca").
+ * @param templateName - Template name without extension (e.g. "contra-costa-ca").
  * @param scriptsDir - Directory containing coupon-templates/ and logo assets.
  * @throws Error if the template doesn't exist or fails validation.
  */

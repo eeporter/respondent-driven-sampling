@@ -1,4 +1,4 @@
-# Los Angeles County CA coupon. Select with COUPON_TEMPLATE=la-county-ca.
+# Contra Costa County CA coupon. Select with COUPON_TEMPLATE=contra-costa-ca.
 # Draft: every TODO below must be filled in from LA's materials. Until then pages
 # are stamped DRAFT. To switch to a designed PDF later, see grant-county-wa.yaml in
 # the grant-county-wa branch for the `pdf:` + `qrBoxes:` form.
@@ -11,7 +11,7 @@ notes:
     - 'TODO: accessibility / parking / pets notes'
 locations:
     - name: 'TODO: hub name'
-      address: 'TODO: hub address, Los Angeles, CA'
+      address: 'TODO: hub address, Contra Costa County, CA'
       schedule:
           - 'TODO: interview dates'
           - 'TODO: interview hours'

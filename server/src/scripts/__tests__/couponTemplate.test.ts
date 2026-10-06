@@ -71,8 +71,8 @@ describe('bundled templates', () => {
 		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
 	});
 
-	it('la-county-ca is a text draft until LA fills in its TODOs', () => {
-		const loaded = loadCouponTemplate('la-county-ca', scriptsDir);
+	it('contra-costa-ca is a text draft until its TODOs are filled in', () => {
+		const loaded = loadCouponTemplate('contra-costa-ca', scriptsDir);
 		expect(loaded.pdfPath).toBeNull();
 		expect(loaded.placeholders.length).toBeGreaterThan(0);
 		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
@@ -80,7 +80,7 @@ describe('bundled templates', () => {
 
 	it('names the available templates when one is missing', () => {
 		expect(() => loadCouponTemplate('nope', scriptsDir)).toThrow(
-			/Available templates: .*king-county.*la-county-ca/
+			/Available templates: .*contra-costa-ca.*king-county/
 		);
 	});
 });
