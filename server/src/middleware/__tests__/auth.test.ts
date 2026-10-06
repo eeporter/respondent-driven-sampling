@@ -7,30 +7,70 @@ import {
 	it,
 	jest
 } from '@jest/globals';
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 
-import User from '../../models/users';
+import Location from '../../database/location/mongoose/location.model';
+import Survey from '../../database/survey/mongoose/survey.model';
+import User from '../../database/user/mongoose/user.model';
+import {
+	ApprovalStatus,
+	HubType,
+	LocationType
+} from '../../database/utils/constants';
+import { ACTIONS, ROLES, SUBJECTS } from '../../permissions/constants';
 import { AuthenticatedRequest } from '../../types/auth';
 import { generateAuthToken } from '../../utils/authTokenHandler';
 import { auth } from '../auth';
 
-// Mock environment variable for testing
 const TEST_SECRET = 'test-secret-key';
 const originalEnv = process.env.AUTH_SECRET;
 
 describe('Auth Middleware', () => {
 	let mongoServer: MongoMemoryServer;
+	let locationId: mongoose.Types.ObjectId;
 	let mockReq: Partial<AuthenticatedRequest>;
 	let mockRes: Partial<Response>;
 	let mockNext: jest.MockedFunction<NextFunction>;
 
+	// Insert a user directly (as the model tests do) and return its id
+	async function createUser(
+		role: string,
+		approvalStatus: ApprovalStatus
+	): Promise<string> {
+		const [user] = await User.insertMany([
+			{
+				firstName: 'John',
+				lastName: 'Doe',
+				email: `john+${new mongoose.Types.ObjectId()}@example.com`,
+				phone: '0000000000',
+				role,
+				approvalStatus,
+				approvedByUserObjectId: new mongoose.Types.ObjectId(),
+				locationObjectId: locationId,
+				permissions: []
+			}
+		]);
+		return user._id.toString();
+	}
+
+	function withToken(token: string) {
+		mockReq.headers = { authorization: `Bearer ${token}` };
+	}
+
+	async function runAuth() {
+		await auth(
+			mockReq as AuthenticatedRequest,
+			mockRes as Response,
+			mockNext
+		);
+	}
+
 	beforeAll(async () => {
 		process.env.AUTH_SECRET = TEST_SECRET;
 		mongoServer = await MongoMemoryServer.create();
-		const mongoUri = mongoServer.getUri();
-		await mongoose.connect(mongoUri);
+		await mongoose.connect(mongoServer.getUri());
 	});
 
 	afterAll(async () => {
@@ -41,62 +81,69 @@ describe('Auth Middleware', () => {
 
 	beforeEach(async () => {
 		await User.deleteMany({});
+		await Survey.deleteMany({});
+		await Location.deleteMany({});
 
-		mockReq = {
-			headers: {}
-		};
+		const location = await new Location({
+			hubName: 'Test Hub',
+			hubType: HubType.ESTABLISHMENT,
+			locationType: LocationType.ROOFTOP,
+			address: '123 Test St'
+		}).save();
+		locationId = location._id as mongoose.Types.ObjectId;
+
+		mockReq = { headers: {} };
 		mockRes = {
 			status: jest.fn().mockReturnThis(),
-			json: jest.fn().mockReturnThis()
-		};
+			json: jest.fn().mockReturnThis(),
+			sendStatus: jest.fn().mockReturnThis()
+		} as Partial<Response>;
 		mockNext = jest.fn() as jest.MockedFunction<NextFunction>;
-
-		// Mock console.log to prevent test output noise
-		jest.spyOn(console, 'log').mockImplementation(() => {});
 	});
 
-	it('should pass authentication for valid token and approved user', async () => {
-		// Create an approved user
-		const user = new User({
-			firstName: 'John',
-			lastName: 'Doe',
-			email: 'john@example.com',
-			phone: '+1234567890',
-			role: 'Volunteer',
-			approvalStatus: 'Approved'
-		});
-		await user.save();
+	it('passes an approved user and attaches their permissions', async () => {
+		const userId = await createUser(ROLES.VOLUNTEER, ApprovalStatus.APPROVED);
+		withToken(generateAuthToken(userId));
 
-		// Generate valid token
-		const token = generateAuthToken(
-			user.firstName,
-			user.role,
-			user.employeeId
-		);
-		mockReq.headers = {
-			authorization: `Bearer ${token}`
-		};
-
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
+		await runAuth();
 
 		expect(mockNext).toHaveBeenCalled();
-		expect(mockReq.user).toBeDefined();
-		expect(mockReq.user?.employeeId).toBe(user.employeeId);
-		expect(mockReq.user?.role).toBe(user.role);
+		expect(mockRes.status).not.toHaveBeenCalled();
+		const ability = mockReq.authorization!;
+		expect(ability).toBeDefined();
+		// Volunteer role rules, scoped to this user
+		expect(
+			ability.can(ACTIONS.CASL.READ, {
+				__caslSubjectType__: SUBJECTS.USER,
+				_id: userId
+			} as any)
+		).toBe(true);
+		expect(
+			ability.can(ACTIONS.CASL.READ, {
+				__caslSubjectType__: SUBJECTS.USER,
+				_id: new mongoose.Types.ObjectId().toString()
+			} as any)
+		).toBe(false);
 	});
 
-	it('should reject request when no token provided', async () => {
-		mockReq.headers = {};
+	it('uses the role stored in the database, not anything in the token', async () => {
+		const userId = await createUser(ROLES.ADMIN, ApprovalStatus.APPROVED);
+		withToken(generateAuthToken(userId));
 
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
+		await runAuth();
+
+		expect(mockNext).toHaveBeenCalled();
+		// Admins can read every user; a volunteer could not
+		expect(
+			mockReq.authorization!.can(ACTIONS.CASL.READ, {
+				__caslSubjectType__: SUBJECTS.USER,
+				_id: new mongoose.Types.ObjectId().toString()
+			} as any)
+		).toBe(true);
+	});
+
+	it('rejects a request with no token', async () => {
+		await runAuth();
 
 		expect(mockRes.status).toHaveBeenCalledWith(401);
 		expect(mockRes.json).toHaveBeenCalledWith({
@@ -105,16 +152,10 @@ describe('Auth Middleware', () => {
 		expect(mockNext).not.toHaveBeenCalled();
 	});
 
-	it('should reject request when authorization header is malformed', async () => {
-		mockReq.headers = {
-			authorization: 'InvalidFormat'
-		};
+	it('rejects a malformed authorization header', async () => {
+		mockReq.headers = { authorization: 'InvalidFormat' };
 
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
+		await runAuth();
 
 		expect(mockRes.status).toHaveBeenCalledWith(401);
 		expect(mockRes.json).toHaveBeenCalledWith({
@@ -123,140 +164,54 @@ describe('Auth Middleware', () => {
 		expect(mockNext).not.toHaveBeenCalled();
 	});
 
-	it('should reject request with invalid token', async () => {
-		mockReq.headers = {
-			authorization: 'Bearer invalid.token.here'
-		};
+	it('rejects an invalid token', async () => {
+		withToken('invalid.token.here');
 
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
+		await runAuth();
 
 		expect(mockRes.status).toHaveBeenCalledWith(401);
-		expect(mockRes.json).toHaveBeenCalledWith({
-			message: expect.stringContaining('Invalid Token')
-		});
 		expect(mockNext).not.toHaveBeenCalled();
 	});
 
-	it('should reject request when user does not exist in database', async () => {
-		// Generate token for non-existent user
-		const token = generateAuthToken('John', 'Volunteer', 'EMP9999');
-		mockReq.headers = {
-			authorization: `Bearer ${token}`
-		};
+	it('rejects a token signed with a different secret', async () => {
+		const userId = await createUser(ROLES.ADMIN, ApprovalStatus.APPROVED);
+		process.env.AUTH_SECRET = 'some-other-secret';
+		const forged = generateAuthToken(userId);
+		process.env.AUTH_SECRET = TEST_SECRET;
+		withToken(forged);
 
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
+		await runAuth();
+
+		expect(mockRes.status).toHaveBeenCalledWith(401);
+		expect(mockNext).not.toHaveBeenCalled();
+	});
+
+	it('rejects a valid token for a user that no longer exists', async () => {
+		withToken(generateAuthToken(new mongoose.Types.ObjectId().toString()));
+
+		await runAuth();
 
 		expect(mockRes.status).toHaveBeenCalledWith(400);
 		expect(mockRes.json).toHaveBeenCalledWith({
-			message: 'User account not found. Please contact your admin.'
+			message: 'User account not found. Please contact Administration.'
 		});
 		expect(mockNext).not.toHaveBeenCalled();
 	});
 
-	it('should reject request when user is not approved', async () => {
-		// Create a pending user
-		const user = new User({
-			firstName: 'John',
-			lastName: 'Doe',
-			email: 'john@example.com',
-			phone: '+1234567890',
-			role: 'Volunteer',
-			approvalStatus: 'Pending'
-		});
-		await user.save();
+	it.each([ApprovalStatus.PENDING, ApprovalStatus.REJECTED])(
+		'rejects a %s user',
+		async status => {
+			const userId = await createUser(ROLES.VOLUNTEER, status);
+			withToken(generateAuthToken(userId));
 
-		const token = generateAuthToken(
-			user.firstName,
-			user.role,
-			user.employeeId
-		);
-		mockReq.headers = {
-			authorization: `Bearer ${token}`
-		};
+			await runAuth();
 
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
-
-		expect(mockRes.status).toHaveBeenCalledWith(403);
-		expect(mockRes.json).toHaveBeenCalledWith({
-			message: 'User account not approved yet. Please contact your admin.'
-		});
-		expect(mockNext).not.toHaveBeenCalled();
-	});
-
-	it('should reject request when user is rejected', async () => {
-		// Create a rejected user
-		const user = new User({
-			firstName: 'John',
-			lastName: 'Doe',
-			email: 'john@example.com',
-			phone: '+1234567890',
-			role: 'Volunteer',
-			approvalStatus: 'Rejected'
-		});
-		await user.save();
-
-		const token = generateAuthToken(
-			user.firstName,
-			user.role,
-			user.employeeId
-		);
-		mockReq.headers = {
-			authorization: `Bearer ${token}`
-		};
-
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
-
-		expect(mockRes.status).toHaveBeenCalledWith(403);
-		expect(mockRes.json).toHaveBeenCalledWith({
-			message: 'User account not approved yet. Please contact your admin.'
-		});
-		expect(mockNext).not.toHaveBeenCalled();
-	});
-
-	it('should handle bearer token with correct format', async () => {
-		// Create an approved user
-		const user = new User({
-			firstName: 'John',
-			lastName: 'Doe',
-			email: 'john@example.com',
-			phone: '+1234567890',
-			role: 'Admin',
-			approvalStatus: 'Approved'
-		});
-		await user.save();
-
-		const token = generateAuthToken(
-			user.firstName,
-			user.role,
-			user.employeeId
-		);
-		mockReq.headers = {
-			authorization: `Bearer ${token}`
-		};
-
-		await auth(
-			mockReq as AuthenticatedRequest,
-			mockRes as Response,
-			mockNext
-		);
-
-		expect(mockNext).toHaveBeenCalled();
-		expect(mockReq.user?.role).toBe('Admin');
-	});
+			expect(mockRes.status).toHaveBeenCalledWith(403);
+			expect(mockRes.json).toHaveBeenCalledWith({
+				message:
+					'User account not approved yet. Please contact Administration.'
+			});
+			expect(mockNext).not.toHaveBeenCalled();
+		}
+	);
 });
