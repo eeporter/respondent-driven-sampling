@@ -141,1487 +141,1182 @@
    "navigationTitle": "Survey Validation"
   },
   {
-   "name": "personal_living_situation",
-   "title": "Personal Living Situation",
+   "name": "about_you",
+   "title": "About You",
    "elements": [
     {
-     "type": "dropdown",
-     "name": "sleeping_situation",
-     "title": "Where did you stay last night?",
-     "choices": [
+     "type": "text",
+     "name": "respondent_age",
+     "title": "How old are you?",
+     "inputType": "number",
+     "validators": [
       {
-       "value": "outside_in_tent",
-       "text": "Outside in a tent (or tent-like structure)"
-      },
-      {
-       "value": "outside_no_tent",
-       "text": "Outside, not in a tent"
-      },
-      {
-       "value": "small_vehicle",
-       "text": "In a car, truck, or van (smaller vehicle)"
-      },
-      {
-       "value": "large_vehicle",
-       "text": "In an RV, trailer, or bus/boat (larger vehicle)"
-      },
-      {
-       "value": "park",
-       "text": "In a park (uncovered, like on a bench)"
-      },
-      {
-       "value": "shelter",
-       "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
-      },
-      {
-       "value": "hotel",
-       "text": "In a hotel or motel"
-      },
-      {
-       "value": "abandoned_building",
-       "text": "In an abandoned building/backyard or storage structure"
-      },
-      {
-       "value": "public_facility",
-       "text": "In a public facility or transit (bus/train station, transit center, airport, hospital waiting room)"
-      },
-      {
-       "value": "tiny_home",
-       "text": "In a tiny home"
-      },
-      {
-       "value": "public_transit",
-       "text": "On public transit (e.g. slept on bus, train, etc.)"
-      },
-      {
-       "value": "jail",
-       "text": "In jail or prison"
-      },
-      {
-       "value": "hospital",
-       "text": "In a hospital (stayed as a patient overnight)"
-      },
-      {
-       "value": "drug_alcohol_treatment",
-       "text": "In a drug or alcohol treatment/detox center"
-      },
-      {
-       "value": "friend_family",
-       "text": "In a friend or family member's house/apartment"
-      },
-      {
-       "value": "do_not_know",
-       "text": "Do not know"
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 120
       }
-     ],
-     "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Choose not to answer",
-     "otherText": "Other (please specify)"
-    },
-    {
-     "type": "dropdown",
-     "name": "sleeping_situation_30_days",
-     "title": "Where have you spent most of your nights in the last 30 days?",
-     "choices": [
-      {
-       "value": "outside_in_tent",
-       "text": "Outside in a tent (or tent-like structure)"
-      },
-      {
-       "value": "outside_no_tent",
-       "text": "Outside, not in a tent"
-      },
-      {
-       "value": "small_vehicle",
-       "text": "In a car, truck, or van (smaller vehicle)"
-      },
-      {
-       "value": "large_vehicle",
-       "text": "In an RV, trailer, or bus/boat (larger vehicle)"
-      },
-      {
-       "value": "park",
-       "text": "In a park (uncovered, like on a bench)"
-      },
-      {
-       "value": "shelter",
-       "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
-      },
-      {
-       "value": "hotel",
-       "text": "In a hotel or motel"
-      },
-      {
-       "value": "abandoned_building",
-       "text": "In an abandoned building/backyard or storage structure"
-      },
-      {
-       "value": "public_facility",
-       "text": "In a public facility or transit (bus/train station, transit center, airport, hospital waiting room)"
-      },
-      {
-       "value": "tiny_home",
-       "text": "In a tiny home"
-      },
-      {
-       "value": "public_transit",
-       "text": "On public transit (e.g. slept on bus, train, etc.)"
-      },
-      {
-       "value": "jail",
-       "text": "In jail or prison"
-      },
-      {
-       "value": "hospital",
-       "text": "In a hospital (stayed as a patient overnight)"
-      },
-      {
-       "value": "drug_alcohol_treatment",
-       "text": "In a drug or alcohol treatment/detox center"
-      },
-      {
-       "value": "friend_family",
-       "text": "In a friend or family member's house/apartment"
-      },
-      {
-       "value": "do_not_know",
-       "text": "Do not know"
-      }
-     ],
-     "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Choose not to answer",
-     "otherText": "Other (please specify)",
-     "description": "Wait for response, then select choice closest to their answer. If asked to clarify, ask \"Have you spent more than two weeks out of the past month in the same place? If so, where was that?\""
-    },
-    {
-     "type": "checkbox",
-     "name": "vehicle_amenities",
-     "visibleIf": "{sleeping_situation} = 'large_vehicle' or {sleeping_situation_30_days} = 'large_vehicle'",
-     "title": "Does your vehicle have access to any of the following?",
-     "choices": [
-      "Drinking water",
-      "Restroom/Toilet",
-      "Heat and/or Cooling",
-      "Ability to bathe",
-      "Ability to cook hot food"
-     ],
-     "showSelectAllItem": true,
-     "selectAllText": "All of the above",
-     "separateSpecialChoices": true,
-     "showNoneItem": true
-    },
-    {
-     "type": "checkbox",
-     "name": "personal_amenities",
-     "title": "Do you generally have access to the following basic needs?",
-     "choices": [
-      "Drinking water",
-      "Restroom/Toilet",
-      "Heat and/or Cooling",
-      "Ability to bathe",
-      "Ability to cook hot food"
-     ],
-     "showSelectAllItem": true,
-     "selectAllText": "All of the above",
-     "showNoneItem": true
+     ]
     }
    ],
-   "navigationTitle": "Personal Living Situation"
+   "navigationTitle": "About You"
   },
   {
    "name": "network_questions_p1",
-   "title": "Network Module",
+   "title": "Network",
    "elements": [
     {
      "type": "html",
      "name": "network_size_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> If the respondent says \"hundreds\" or \"too many\" emphasize the \"personally know\" part of the question. They would need to both recognize each other and know some information about each other.\n\t\t\t</div>"
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> If the respondent says \"hundreds\" or \"too many\", emphasize \"know personally\": someone they have seen or talked to in the past 3 months and could reach out to.</div>"
     },
     {
      "type": "text",
      "name": "non_family_network_size",
-     "title": "Other than any family living with you, how many people do you closely know who are also unhoused or experiencing homelessness today?",
+     "title": "Not counting family, how many young people 26 and under do you know personally who are homeless in Contra Costa County today? By “know,” we mean someone you have seen or talked to in the past 3 months and could reach out to.",
+     "inputType": "number",
      "validators": [
       {
        "type": "numeric",
        "minValue": 0,
        "maxValue": 100
       }
-     ],
-     "inputType": "number"
+     ]
+    },
+    {
+     "type": "expression",
+     "name": "network_panel_count",
+     "visible": false,
+     "expression": "iif({non_family_network_size} > 12, 12, {non_family_network_size})"
     }
    ],
-   "navigationTitle": "Network Module"
+   "navigationTitle": "Network"
   },
   {
    "name": "network_questions_p2",
-   "title": "Network Module",
+   "title": "Network",
    "elements": [
     {
      "type": "html",
      "name": "network_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Please fill in information for each person below. You can add or remove tabs as needed.</div>"
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> I will now ask a couple questions about each of these people. I will refer to them by their initials. If it is helpful, you might want to start by thinking about the person you are closest to, followed by your next closest contact, and so on.</div>"
     },
     {
      "type": "paneldynamic",
      "name": "non_family_network",
-     "title": "For those {non_family_network_size} people, please fill in as much of the following information as you are able:\n",
+     "title": "For those {non_family_network_size} people (up to 12), please answer:",
      "bindings": {
-      "panelCount": "non_family_network_size"
+      "panelCount": "network_panel_count"
      },
+     "maxPanelCount": 12,
+     "templateTitle": "Person {panelIndex}",
      "templateElements": [
       {
        "type": "text",
        "name": "network_person_name",
-       "title": "Name/Nickname/Initials",
-       "placeholder": "Name or nickname"
+       "title": "Initials",
+       "placeholder": "F. L."
       },
       {
-       "type": "dropdown",
+       "type": "radiogroup",
        "name": "network_person_age",
        "title": "How old is {panel.network_person_name}?",
        "choices": [
-        "Under 18 years old",
-        "18–24",
-        "25–29",
-        "30–34",
-        "35–39",
-        "40–44",
-        "45–49",
-        "50–54",
-        "55–59",
-        "60–64",
-        "65 or older",
-        "Choose not to answer",
-        "Do not know"
-       ],
-       "placeholder": "Select age..."
+        "Under 18",
+        "18-26",
+        "Don't Know"
+       ]
       },
       {
        "type": "dropdown",
        "name": "relationship",
-       "title": "What is your relationship to {panel.network_person_name}?",
+       "title": "How is {panel.network_person_name} related to you?",
        "choices": [
         "Friend",
-        "Acquaintance",
-        "Partner (husband/wife, fiancé/fiancée, boyfriend/girlfriend, etc.)",
-        "Immediate family (parent/father/mother, sibling/brother/sister, child/son/daughter)",
-        "Extended family (cousin, nephew/niece, uncle/aunt, grandparent/grandfather/grandmother)",
-        "Neighbor (people you live near)"
+        "Acquaintance (person you know casually)",
+        "Partner (husband/wife, fiancé/fiancée, boyfriend/girlfriend)",
+        "Immediate Family (parent, stepparent, sibling, stepsibling, child, stepchild)",
+        "Extended Family (cousin, nephew, uncle/aunt)",
+        "Neighbor (people you live near)",
+        "Don't Know"
        ],
        "showOtherItem": true,
-       "otherText": "Other (please specify)",
-       "placeholder": "Select relationship..."
+       "otherText": "Other (write in)"
       },
       {
        "type": "dropdown",
        "name": "network_sleeping_situation",
-       "title": "Where does {panel.network_person_name} currently sleep?",
+       "title": "What is {panel.network_person_name}'s sleeping situation?",
        "choices": [
-        {
-         "value": "outside_in_tent",
-         "text": "Outside in a tent (or tent-like structure)"
-        },
-        {
-         "value": "outside_no_tent",
-         "text": "Outside, not in a tent"
-        },
-        {
-         "value": "small_vehicle",
-         "text": "In a car, truck, or van (smaller vehicle)"
-        },
-        {
-         "value": "large_vehicle",
-         "text": "In an RV, trailer, or bus/boat (larger vehicle)"
-        },
-        {
-         "value": "park",
-         "text": "In a park (uncovered, like on a bench)"
-        },
-        {
-         "value": "shelter",
-         "text": "In an overnight shelter (e.g. mission, church, resource shelter, etc.)"
-        },
-        {
-         "value": "hotel",
-         "text": "In a hotel or motel"
-        },
-        {
-         "value": "abandoned_building",
-         "text": "In an abandoned building/backyard or storage structure"
-        },
-        {
-         "value": "public_facility",
-         "text": "In a public facility or transit (bus/train station, transit center, airport, hospital waiting room)"
-        },
-        {
-         "value": "tiny_home",
-         "text": "In a tiny home"
-        },
-        {
-         "value": "public_transit",
-         "text": "On public transit (e.g. slept on bus, train, etc.)"
-        },
-        {
-         "value": "jail",
-         "text": "In jail or prison"
-        },
-        {
-         "value": "hospital",
-         "text": "In a hospital (stayed as a patient overnight)"
-        },
-        {
-         "value": "drug_alcohol_treatment",
-         "text": "In a drug or alcohol treatment/detox center"
-        },
-        {
-         "value": "friend_family",
-         "text": "In a friend or family member's house/apartment"
-        },
-        {
-         "value": "do_not_know",
-         "text": "Do not know"
-        }
+        "Outside, in a tent (or tent-like structure)",
+        "Outside, not in a tent",
+        "In a car, truck, or van (smaller vehicle)",
+        "In an RV, trailer, or bus/boat (larger vehicle)",
+        "In a tiny home (such as Richmond Village)",
+        "On public transit (bus, train, etc.)",
+        "In jail or prison",
+        "In a hospital (stayed as patient overnight)",
+        "In a park (uncovered, like on a beach)",
+        "In an overnight shelter (mission, church, resource shelter)",
+        "In a hotel or motel",
+        "In an abandoned building/backyard or storage structure",
+        "In a public facility or transit (bus/train station, transit center, airport, hospital waiting room)",
+        "In a drug or alcohol treatment/detox center",
+        "In a friend or family member's house/apartment",
+        "Deceased",
+        "Do Not Know"
        ],
        "showOtherItem": true,
-       "showNoneItem": true,
-       "noneText": "Choose not to answer",
-       "otherText": "Other (please specify)"
-      }
-     ],
-     "templateTitle": "Person: {panel.network_person_name}",
-     "maxPanelCount": 50,
-     "addPanelText": "+ Add new person",
-     "removePanelText": "Remove",
-     "displayMode": "tab"
-    }
-   ],
-   "navigationTitle": "Network Module"
-  },
-  {
-   "name": "duration_homelessness",
-   "title": "Duration of Homelessness",
-   "elements": [
-    {
-     "type": "radiogroup",
-     "name": "episode_lot_homeless",
-     "title": "How long have you been homeless this time?",
-     "choices": [
-      "1 night or less",
-      "2-6 nights",
-      "1 week or more, but less than 1 month",
-      "1 month or more, but less than 90 days",
-      "90 days or more, but less than 1 year",
-      "1 year or longer",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "num_episodes",
-     "title": "Including this time, how many different times have you been homeless in the past 3 years?",
-     "choices": [
-      "1 time",
-      "2 times",
-      "3 times",
-      "4 or more times",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "multipletext",
-     "name": "overall_lot_homeless",
-     "title": "If you added up all the time you have been homeless in the past 3 years, about how long would that be?",
-     "description": "Feel free to enter any variations of the respondent's answer. For example: 1.5 years, 18 months, 1 year and 6 months.",
-     "items": [
-      {
-       "name": "overall_lot_homeless_years",
-       "inputType": "number",
-       "title": "Years"
-      },
-      {
-       "name": "overall_lot_homeless_months",
-       "inputType": "number",
-       "title": "Months"
-      },
-      {
-       "name": "overall_lot_homeless_days",
-       "inputType": "number",
-       "title": "Days"
+       "otherText": "Other (write in)"
       }
      ]
     }
    ],
-   "navigationTitle": "Duration of Homelessness"
+   "navigationTitle": "Network"
   },
   {
-   "name": "shelter_services_panel",
-   "title": "Housing Assistance Services",
+   "name": "housing_current",
+   "title": "Housing Status – Current",
    "elements": [
     {
      "type": "radiogroup",
-     "name": "shelter_services",
-     "title": "In the past 3 years, have you enrolled in an Emergency Shelter or received any other form of housing assistance from an organization that serves people experiencing homelessness (includes referrals, vouchers, hygiene support, etc.)?",
+     "name": "lives_in_county",
+     "title": "Do you live in Contra Costa County?",
      "choices": [
       "Yes",
       "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
+      "Don't Know"
+     ]
     },
     {
-     "type": "matrixdynamic",
-     "name": "shelter_services_details",
-     "visibleIf": "{shelter_services} = 'Yes'",
-     "title": "Housing Assistance Services",
-     "description": "Fill out the table below as much as possible. If a respondent received a service multiple times, include only the last service.",
-     "validators": [
-      {
-       "type": "expression"
-      }
-     ],
-     "columns": [
-      {
-       "name": "shelter_service_year",
-       "title": "Date Service Received (MM/YYYY)",
-       "cellType": "text",
-       "maskType": "datetime",
-       "maskSettings": {
-        "pattern": "mm/yyyy",
-        "min": "2023-01-01",
-        "max": "2026-02-15"
-       }
-      },
-      {
-       "name": "shelter_service_type",
-       "title": "Type of Service Received",
-       "cellType": "dropdown",
-       "choices": [
-        "Street Outreach",
-        "Diversion",
-        "Emergency Shelter",
-        "Temporary Housing",
-        "Coordinated Entry",
-        "Severe Weather Shelter",
-        "Day Center",
-        "Food bank",
-        "Case Management"
-       ],
-       "showOtherItem": true
-      },
-      {
-       "name": "shelter_service_agency",
-       "title": "Name of Service Providing Agency",
-       "cellType": "text"
-      }
-     ],
-     "rowCount": 3,
-     "addRowText": "Add Service",
-     "removeRowText": "Remove"
-    }
-   ],
-   "navigationTitle": "Housing Assistance Services"
-  },
-  {
-   "name": "demographics",
-   "title": "Demographics",
-   "elements": [
-    {
-     "type": "html",
-     "name": "demographics_instruction",
-     "visibleIf": "{is_adult} = 'No'",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has already indicated they are under 18, you may select 12-17 without asking this question.</strong></div>"
+     "type": "radiogroup",
+     "name": "time_in_county",
+     "title": "How long have you lived in Contra Costa County?",
+     "choices": [
+      "Less than a year",
+      "1 to 4 years",
+      "5 to 9 years",
+      "10 years or longer",
+      "Don't Know"
+     ]
     },
     {
      "type": "checkbox",
-     "name": "gender_id",
-     "title": "Which of the following best describes your gender? (Select all that apply)",
+     "name": "last_night_location",
+     "title": "Where did you spend last night? (Choose all that apply)",
      "choices": [
-      "Woman",
-      "Man",
-      "Culturally Specific Identity (e.g., Two-spirit)",
-      "Transgender",
-      "Non-binary",
-      "Questioning",
-      "Different identity",
-      "Do not know"
+      "Parent or guardian's home",
+      "Other relative's home without paying rent",
+      "Home of friend or friend's family without paying rent",
+      "Home of boyfriend/girlfriend/partner without paying rent",
+      "Foster family's home",
+      "Apartment or home where I pay the rent or mortgage and I am up to date on rent",
+      "Apartment or home where I pay the rent or mortgage, but I am behind on rent",
+      "Couch surfing",
+      "Hotel or Motel",
+      "Car or other vehicle",
+      "Abandoned building, vacant unit, or squat",
+      "On a train/bus or in train/bus station",
+      "24-hour restaurant, laundromat, or other business/retail establishment",
+      "Anywhere outside (street, park, viaduct)",
+      "Juvenile detention center or jail",
+      "Transitional Housing Program",
+      "Shelter (emergency or crisis)",
+      "Mental health residential treatment facility",
+      "Substance use residential treatment facility/detox center",
+      "Hospital or emergency room",
+      "Don't Know"
      ],
      "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Choose not to answer",
-     "otherText": "Other (please specify)"
-    },
-    {
-     "type": "radiogroup",
-     "name": "ethnicity",
-     "title": "Are you Hispanic/ Latina/e/o?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
+     "otherText": "Other (write in)"
     },
     {
      "type": "checkbox",
-     "name": "racial_id",
-     "title": "Which of the following best describes your racial identity? (Select all that apply)",
+     "name": "last_night_city",
+     "title": "Which city/cities did you spend the nights in last night? (Choose all that apply)",
      "choices": [
-      "American Indian or Alaska Native",
-      "Asian",
-      "Black or African American",
-      "Hispanic/Latina/e/o",
-      "Middle Eastern or North African",
-      "Native Hawaiian or Pacific Islander",
-      "White",
-      "Do not know"
+      "Alamo",
+      "Antioch",
+      "Bay Point",
+      "Bethel Island",
+      "Blackhawk",
+      "Brentwood",
+      "Briones",
+      "Byron",
+      "Clayton",
+      "Clyde",
+      "Concord",
+      "Contra Costa Centre",
+      "Crockett",
+      "Danville",
+      "Discovery Bay",
+      "El Cerrito",
+      "El Sobrante",
+      "Hercules",
+      "Kensington",
+      "Knightsen",
+      "Lafayette",
+      "Martinez",
+      "Moraga",
+      "North Richmond",
+      "Oakley",
+      "Orinda",
+      "Pacheco",
+      "Pinole",
+      "Pittsburg",
+      "Pleasant Hill",
+      "Richmond",
+      "Rodeo",
+      "San Pablo",
+      "San Ramon",
+      "Saranap/Parkmead",
+      "Walnut Creek",
+      "Other County in CA",
+      "Outside of CA",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "last_night_duration",
+     "title": "How long have you slept at this location in a row?",
+     "choices": [
+      "Just a few nights or less",
+      "One to three weeks",
+      "One to Six weeks",
+      "More than six months",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "most_nights_30d",
+     "title": "Where have you spent MOST of your nights in the last 30 days? (Choose all that apply)",
+     "choices": [
+      "Parent or guardian's home",
+      "Other relative's home without paying rent",
+      "Home of friend or friend's family without paying rent",
+      "Home of boyfriend/girlfriend/partner without paying rent",
+      "Foster family's home",
+      "Apartment or home where I pay the rent or mortgage and I am up to date on rent",
+      "Apartment or home where I pay the rent or mortgage, but I am behind on rent",
+      "Couch surfing",
+      "Hotel or Motel",
+      "Car or other vehicle",
+      "Abandoned building, vacant unit, or squat",
+      "On a train/bus or in train/bus station",
+      "24-hour restaurant, laundromat, or other business/retail establishment",
+      "Anywhere outside (street, park, viaduct)",
+      "Juvenile detention center or jail",
+      "Transitional Housing Program",
+      "Shelter (emergency or crisis)",
+      "Mental health residential treatment facility",
+      "Substance use residential treatment facility/detox center",
+      "Hospital or emergency room",
+      "Don't Know"
      ],
      "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Choose not to answer",
-     "otherText": "Other (please specify)"
-    },
-    {
-     "type": "text",
-     "name": "tribal_affil",
-     "title": "Do you have a Tribal Affiliation? If so, what is it?"
-    },
-    {
-     "type": "html",
-     "name": "va_health_eligible_instruction",
-     "visibleIf": "{is_adult} = 'No'",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, only ask about <i>family members'</i> status</strong></div>"
-    },
-    {
-     "type": "radiogroup",
-     "name": "veteran_self",
-     "title": "Are you a veteran?",
-     "choices": [
-      "Yes, I am a veteran",
-      "No, I am not a veteran",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "veteran_family",
-     "title": "Is a member of your immediate family a veteran?",
-     "choices": [
-      "Yes, a member of my immediate family is a veteran",
-      "No, no one in my immediate family is a veteran",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "va_health_eligible",
-     "visibleIf": "{veteran_self} = 'Yes, I am a veteran' or {veteran_family} = 'Yes, a member of my immediate family is a veteran'",
-     "title": "Have you ever received health care of other benefits from a Veterans Administration (VA) center?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    }
-   ],
-   "navigationTitle": "Demographics"
-  },
-  {
-   "name": "health",
-   "title": "Health",
-   "elements": [
-    {
-     "type": "radiogroup",
-     "name": "fleeing_dv",
-     "visibleIf": "{is_adult} = 'Yes'",
-     "title": "Are you currently experiencing homelessness because you are/were fleeing domestic violence, dating violence, sexual assault, or stalking?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "disabled",
-     "title": "Do you identify as having a disability?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "mental_health",
-     "visibleIf": "{is_adult} = 'Yes'",
-     "title": "Do you identify as having a severe mental illness?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "radiogroup",
-     "name": "substance_use",
-     "visibleIf": "{is_adult} = 'Yes'",
-     "title": "Do you identify as having a substance use disorder?",
-     "choices": [
-      "Yes",
-      "No",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
+     "otherText": "Other (write in)"
     },
     {
      "type": "checkbox",
-     "name": "substances_used",
-     "visibleIf": "{substance_use} = 'Yes'",
-     "title": "What drugs are you currently/actively using? (Select all that apply)",
+     "name": "most_nights_30d_city",
+     "title": "Which city/cities were MOST of your nights spent in the last 30 days? (Choose all that apply)",
      "choices": [
-      "Alcohol",
-      "Cannabis",
-      "Methamphetamine",
-      "Opioids/Heroin",
-      "Fentanyl",
-      "Cocaine",
-      "Prescription medication misuse"
-     ],
-     "hasOther": true,
-     "otherText": "Other (write in)",
-     "showNoneItem": false,
-     "choicesOrder": "none"
-    },
-    {
-     "type": "radiogroup",
-     "name": "substance_housing_impact",
-     "title": "Has substance use impacted your access to housing, either currently or in the past?",
-     "choices": [
-      "Yes",
-      "No",
-      "Choose not to answer",
-      "Do not know"
+      "Alamo",
+      "Antioch",
+      "Bay Point",
+      "Bethel Island",
+      "Blackhawk",
+      "Brentwood",
+      "Briones",
+      "Byron",
+      "Clayton",
+      "Clyde",
+      "Concord",
+      "Contra Costa Centre",
+      "Crockett",
+      "Danville",
+      "Discovery Bay",
+      "El Cerrito",
+      "El Sobrante",
+      "Hercules",
+      "Kensington",
+      "Knightsen",
+      "Lafayette",
+      "Martinez",
+      "Moraga",
+      "North Richmond",
+      "Oakley",
+      "Orinda",
+      "Pacheco",
+      "Pinole",
+      "Pittsburg",
+      "Pleasant Hill",
+      "Richmond",
+      "Rodeo",
+      "San Pablo",
+      "San Ramon",
+      "Saranap/Parkmead",
+      "Walnut Creek",
+      "Other County in CA",
+      "Outside of CA",
+      "Don't Know"
      ]
-    },
-    {
-     "type": "comment",
-     "name": "substance_housing_impact_detail",
-     "visibleIf": "{substance_housing_impact} = 'Yes'",
-     "title": "Please describe (optional)",
-     "isRequired": false
     }
    ],
-   "navigationTitle": "Health"
+   "navigationTitle": "Housing Status – Current"
   },
   {
-   "name": "tobacco_nicotine",
-   "title": "Tobacco / Nicotine Use",
+   "name": "housing_past",
+   "title": "Housing Status – Past",
    "elements": [
     {
-     "type": "radiogroup",
-     "name": "tobacco_use",
-     "title": "Do you use tobacco or nicotine products?",
-     "choices": [
-      "Yes",
-      "No",
-      "Choose not to answer",
-      "Do not know"
-     ]
-    },
-    {
      "type": "checkbox",
-     "name": "tobacco_forms",
-     "visibleIf": "{tobacco_use} = 'Yes'",
-     "title": "What form of tobacco or nicotine products do you use? (Select all that apply)",
+     "name": "lost_housing_reasons",
+     "title": "Which of the following contributed to you losing stable housing? (Check all that apply)",
      "choices": [
-      "Cigarettes",
-      "Vaping",
-      "Nicotine gum",
-      "Chewing tobacco",
-      "Nicotine patches"
+      "Community violence",
+      "Couldn't pay rent/utilities",
+      "Rent Increase",
+      "Death of family member",
+      "Dispute with family",
+      "Dispute with landlord",
+      "Dispute with roommates",
+      "Divorce/separation/break-up",
+      "Domestic violence",
+      "Eviction",
+      "Illness/health condition",
+      "Immigration Issues (yours or family member)",
+      "Lack of transition plan from foster care",
+      "Lack of transition plan from jail",
+      "Lost a job",
+      "Low paying job(s)",
+      "Mental Health",
+      "Physical Health needs",
+      "Substance Use",
+      "Don't Know",
+      "I have never been without stable housing"
      ],
-     "hasOther": true,
+     "showOtherItem": true,
      "otherText": "Other (write in)"
     },
     {
      "type": "radiogroup",
-     "name": "tobacco_start_age_known",
-     "visibleIf": "{tobacco_use} = 'Yes'",
-     "title": "What age did you start using tobacco or nicotine products?",
+     "name": "age_first_lost_housing_known",
+     "title": "How old were you when you first lost stable housing?",
      "choices": [
       "Enter age",
-      "Choose not to answer",
-      "Do not know"
-     ]
+      "Don't Know"
+     ],
+     "visibleIf": "{lost_housing_reasons} notcontains 'I have never been without stable housing'"
     },
     {
      "type": "text",
-     "name": "tobacco_start_age",
-     "inputType": "number",
-     "visibleIf": "{tobacco_start_age_known} = 'Enter age'",
+     "name": "age_first_lost_housing",
      "title": "Age in years",
-     "min": 0,
-     "max": 120
-    }
-   ],
-   "navigationTitle": "Tobacco / Nicotine Use"
-  },
-  {
-   "name": "service_support",
-   "title": "Service Support",
-   "navigationTitle": "Service Support",
-   "elements": [
-    {
-     "type": "html",
-     "name": "service_support_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Read Q26a, then record each person named below. Entries appear for the number given; you can add or remove tabs as needed.</div>"
-    },
-    {
-     "type": "text",
-     "name": "service_support_size",
-     "title": "Now I'd like to ask about people who have helped you with things like food, shelter, healthcare, or other needs in the past 6 months. Please tell me how many people have helped you in the last 6 months. This can include outreach workers, case managers, shelter staff, doctors, clinics, food banks, friends, or family who help connect you to services — anyone who provides you with a service, even informally.",
+     "inputType": "number",
      "validators": [
       {
        "type": "numeric",
        "minValue": 0,
-       "maxValue": 100
+       "maxValue": 120
       }
      ],
-     "inputType": "number"
+     "visibleIf": "{lost_housing_reasons} notcontains 'I have never been without stable housing'"
     },
     {
-     "type": "paneldynamic",
-     "name": "service_support_network",
-     "title": "Can you provide the first name or nickname of each person and the organization of those who have helped you?",
-     "description": "For each person named, record as much of the following as possible.",
-     "bindings": {
-      "panelCount": "service_support_size"
-     },
-     "templateElements": [
+     "type": "radiogroup",
+     "name": "unhoused_12_months",
+     "title": "Have you been without stable housing for 12 months or longer non-stop?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ],
+     "visibleIf": "{lost_housing_reasons} notcontains 'I have never been without stable housing'"
+    },
+    {
+     "type": "radiogroup",
+     "name": "age_left_home_known",
+     "title": "How old were you the first time you left home to be out on your own?",
+     "choices": [
+      "Enter age",
+      "Don't Know",
+      "I never left home to be on my own"
+     ]
+    },
+    {
+     "type": "text",
+     "name": "age_left_home",
+     "title": "Age in years",
+     "inputType": "number",
+     "validators": [
       {
-       "type": "text",
-       "name": "service_provider_name",
-       "title": "Name/Nickname",
-       "placeholder": "Name or nickname"
-      },
-      {
-       "type": "text",
-       "name": "service_provider_org",
-       "title": "Organization"
-      },
-      {
-       "type": "checkbox",
-       "name": "service_assistance_type",
-       "title": "Type of assistance",
-       "choices": [
-        "Emergency shelter or transitional housing",
-        "Permanent housing / housing navigation",
-        "Food (food bank, meal program, SNAP assistance)",
-        "Physical healthcare (clinic, hospital, EMT/paramedic contact)",
-        "Mental health / substance use services",
-        "Case management / outreach worker",
-        "Legal aid or ID recovery",
-        "Employment / job training",
-        "Transportation",
-        "Financial assistance (cash aid, utility help)",
-        "Childcare / family services (if relevant to family homelessness project)",
-        "Veterans services (if applicable)",
-        "Faith-based or mutual-aid support"
-       ],
-       "showOtherItem": true,
-       "otherText": "Other (please specify)"
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 120
       }
      ],
-     "templateTitle": "Person: {panel.service_provider_name}",
-     "maxPanelCount": 50,
-     "addPanelText": "+ Add new person",
-     "removePanelText": "Remove",
-     "displayMode": "tab"
+     "visibleIf": "{age_left_home_known} = 'Enter age'"
+    },
+    {
+     "type": "checkbox",
+     "name": "reasons_left_home",
+     "title": "What were the reasons you left home? (Choose all that apply)",
+     "choices": [
+      "I was fighting with my parent/guardian/foster parent",
+      "My parent/guardian/foster parent abused drugs or alcohol",
+      "My parent/guardian died",
+      "My house was too small for everyone to live here",
+      "I was abused or neglected (physically, emotionally, or sexually)",
+      "I did not feel safe due to violence or unsafe activities in my house",
+      "I left foster care",
+      "I was/am pregnant or got someone else pregnant",
+      "My sexual orientation and/or gender identity",
+      "My use of alcohol or drugs",
+      "I was told to leave",
+      "I wanted to leave",
+      "I had to move out because of COVID-19",
+      "Being deported",
+      "The loss of a family member",
+      "I went into foster care",
+      "Don't Know"
+     ],
+     "visibleIf": "{age_left_home_known} <> 'I never left home to be on my own'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "first_stay_after_leaving",
+     "title": "When you left home the first time, where did you stay?",
+     "choices": [
+      "Other relative's home without paying rent",
+      "Home of friend or friend's family without paying rent",
+      "With a boyfriend/girlfriend/partner without paying rent",
+      "Own apartment where you paid the rent",
+      "Foster family's home",
+      "Hotel/Motel",
+      "Car or other vehicle",
+      "Abandoned building, vacant unit, or squat",
+      "On a train/bus or in train/bus station",
+      "24-hour restaurant, laundromat, or other business/retail establishment",
+      "Anywhere outside (street, park, viaduct)",
+      "Program for minors without a place to stay",
+      "Shelter (emergency or crisis)",
+      "Transitional Housing",
+      "Don't Know"
+     ],
+     "visibleIf": "{age_left_home_known} <> 'I never left home to be on my own'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
     }
-   ]
+   ],
+   "navigationTitle": "Housing Status – Past"
   },
   {
-   "name": "special-questions",
-   "title": "Special Questions",
+   "name": "other_experiences",
+   "title": "Other Experiences",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "in_school",
+     "title": "Are you currently in school?",
+     "choices": [
+      "Yes, in middle school",
+      "Yes, in high school",
+      "Yes, in college or trade school",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "highest_education",
+     "title": "What is the highest grade level of schooling you completed?",
+     "choices": [
+      "Did not complete high school",
+      "Graduated high school or completed GED",
+      "Some post-secondary/college",
+      "Completed college or trade school",
+      "Completed master's degree or higher",
+      "Don't Know"
+     ],
+     "visibleIf": "{in_school} = 'No' or {in_school} = 'Don\\'t Know'"
+    },
+    {
+     "type": "radiogroup",
+     "name": "foster_care",
+     "title": "Have you ever been in foster care?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "living_with_partner",
+     "title": "Are you currently living with a partner/spouse?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "has_children",
+     "title": "Do you have any children or dependents?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "children_reside",
+     "title": "Does the child/children reside with you?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ],
+     "visibleIf": "{has_children} = 'Yes'"
+    },
+    {
+     "type": "multipletext",
+     "name": "children_ages",
+     "title": "What are their ages?",
+     "visibleIf": "{has_children} = 'Yes'",
+     "items": [
+      {
+       "name": "child_1",
+       "title": "Child 1",
+       "inputType": "number"
+      },
+      {
+       "name": "child_2",
+       "title": "Child 2",
+       "inputType": "number"
+      },
+      {
+       "name": "child_3",
+       "title": "Child 3",
+       "inputType": "number"
+      },
+      {
+       "name": "child_4",
+       "title": "Child 4",
+       "inputType": "number"
+      },
+      {
+       "name": "child_5",
+       "title": "Child 5",
+       "inputType": "number"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "pregnant",
+     "title": "Are you currently pregnant or expecting to become pregnant in the next 9 months?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "juvenile_detention",
+     "title": "Have you ever spent time in juvenile detention (a secure facility or residential program for young people) after being charged with a criminal offense?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "juvenile_detention_where",
+     "title": "Check all that apply:",
+     "choices": [
+      "I was committed to Juvenile Hall in Contra Costa County",
+      "I was committed to a Juvenile Justice System somewhere else in California",
+      "I was committed to a Juvenile Justice System in another state",
+      "Don't Know"
+     ],
+     "visibleIf": "{juvenile_detention} = 'Yes'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "adult_jail",
+     "title": "Have you ever spent time in an adult jail or prison after being charged with a criminal offense?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "public_benefits",
+     "title": "Do you receive any public or government benefits, such as Medicaid, food stamps, SSI, or welfare assistance?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "income_sources",
+     "title": "What are the ways that you currently make money? (Choose all that apply)",
+     "choices": [
+      "Full-time job",
+      "Part-time job and/or temporary job",
+      "Money from “under the table” work",
+      "Cash assistance from CalWORKs, TANF, CDSS, or Welfare",
+      "Social Security/Disability payments",
+      "Unemployment benefits",
+      "Hustling/selling drugs",
+      "Exchanging sex/sexual content including Only Fans or other phone or video platforms",
+      "Panhandling/spanging",
+      "Child support",
+      "Money from family members or friends",
+      "Money from college financial aid",
+      "Self-employed/my own business",
+      "None",
+      "Don't Know"
+     ],
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "moved_by_officials",
+     "title": "In the past year, did police or city workers make you move from where you were staying?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "lost_belongings",
+     "title": "When you were required to move, did you lose any belongings or did officials take them?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ],
+     "visibleIf": "{moved_by_officials} = 'Yes'"
+    },
+    {
+     "type": "checkbox",
+     "name": "services_offered_when_moved",
+     "title": "When you were required to move, which services were offered?",
+     "choices": [
+      "CORE Services (Shelter, Emergency Supplies)",
+      "Crisis Team (A3)",
+      "No Services Offered",
+      "Don't Know"
+     ],
+     "visibleIf": "{moved_by_officials} = 'Yes'"
+    },
+    {
+     "type": "matrix",
+     "name": "conditions",
+     "title": "Do you experience any of the following?",
+     "columns": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ],
+     "rows": [
+      {
+       "value": "physical_disability",
+       "text": "Physical Disability"
+      },
+      {
+       "value": "psychiatric_condition",
+       "text": "Psychiatric or emotional condition"
+      },
+      {
+       "value": "chronic_health",
+       "text": "Chronic health problem/medical condition"
+      },
+      {
+       "value": "drug_alcohol",
+       "text": "Drug or alcohol abuse"
+      },
+      {
+       "value": "hiv_aids",
+       "text": "HIV/AIDS"
+      },
+      {
+       "value": "developmental_disability",
+       "text": "Developmental Disability"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "disability_impacts_work_housing",
+     "title": "Does your disability keep you from maintaining work or housing?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ],
+     "visibleIf": "{conditions.physical_disability} = 'Yes' or {conditions.psychiatric_condition} = 'Yes' or {conditions.chronic_health} = 'Yes' or {conditions.drug_alcohol} = 'Yes' or {conditions.hiv_aids} = 'Yes' or {conditions.developmental_disability} = 'Yes'"
+    },
+    {
+     "type": "radiogroup",
+     "name": "military_service",
+     "title": "Have you served in the U.S. Military (Army, Navy, Air Force, Marine Corps, or Coast Guard)?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    }
+   ],
+   "navigationTitle": "Other Experiences"
+  },
+  {
+   "name": "access_to_services",
+   "title": "Access to Services",
+   "elements": [
+    {
+     "type": "html",
+     "name": "access_to_services_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> In the last year, have you needed any of the following types of help? If you needed it, please let us know if you got the help you needed. If you were unable to get the help you needed, please let us know what got in the way for you.</div>"
+    },
+    {
+     "type": "radiogroup",
+     "name": "health_care_need",
+     "title": "Needed help with health care services. Did you need help and were you able to access the services?",
+     "choices": [
+      "Yes, and I got all the help I needed",
+      "Yes, and I got some of the help I needed",
+      "Yes, but I got none of the help I needed",
+      "I needed this help, but I didn't try to get it",
+      "No, I didn't need this type of help",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "health_care_barriers",
+     "title": "Select any barriers (choose all that apply)",
+     "choices": [
+      "Transportation",
+      "Sent somewhere else",
+      "Language barrier",
+      "Put on a waiting list",
+      "Paperwork",
+      "Didn't have ID",
+      "Didn't hear back",
+      "Didn't know where to go",
+      "Didn't qualify",
+      "Didn't feel comfortable/safe",
+      "Felt too overwhelmed to seek help",
+      "Didn't follow through or return to services",
+      "Didn't ask for help",
+      "Didn't have money",
+      "Didn't have a phone to follow up",
+      "Didn't have health insurance",
+      "Legal barriers",
+      "Discrimination due to sexual orientation/gender identity",
+      "None",
+      "Don't Know"
+     ],
+     "visibleIf": "{health_care_need} = 'Yes, and I got some of the help I needed' or {health_care_need} = 'Yes, but I got none of the help I needed' or {health_care_need} = 'I needed this help, but I didn\\'t try to get it'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "food_need",
+     "title": "Needed help with food such as CalFresh, SNAP, food from soup kitchen or food pantry. Did you need help and were you able to access the services?",
+     "choices": [
+      "Yes, and I got all the help I needed",
+      "Yes, and I got some of the help I needed",
+      "Yes, but I got none of the help I needed",
+      "I needed this help, but I didn't try to get it",
+      "No, I didn't need this type of help",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "food_barriers",
+     "title": "Select any barriers (choose all that apply)",
+     "choices": [
+      "Transportation",
+      "Sent somewhere else",
+      "Language barrier",
+      "Put on a waiting list",
+      "Paperwork",
+      "Didn't have ID",
+      "Didn't hear back",
+      "Didn't know where to go",
+      "Didn't qualify",
+      "Didn't feel comfortable/safe",
+      "Felt too overwhelmed to seek help",
+      "Didn't follow through or return to services",
+      "Didn't ask for help",
+      "Didn't have money",
+      "Didn't have a phone to follow up",
+      "Didn't have health insurance",
+      "Legal barriers",
+      "Discrimination due to sexual orientation/gender identity",
+      "None",
+      "Don't Know"
+     ],
+     "visibleIf": "{food_need} = 'Yes, and I got some of the help I needed' or {food_need} = 'Yes, but I got none of the help I needed' or {food_need} = 'I needed this help, but I didn\\'t try to get it'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "cash_assistance_need",
+     "title": "Needed help with cash assistance like CalWORKs/welfare benefits, or Social Security Disability benefits. Did you need help and were you able to access the services?",
+     "choices": [
+      "Yes, and I got all the help I needed",
+      "Yes, and I got some of the help I needed",
+      "Yes, but I got none of the help I needed",
+      "I needed this help, but I didn't try to get it",
+      "No, I didn't need this type of help",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "cash_assistance_barriers",
+     "title": "Select any barriers (choose all that apply)",
+     "choices": [
+      "Transportation",
+      "Sent somewhere else",
+      "Language barrier",
+      "Put on a waiting list",
+      "Paperwork",
+      "Didn't have ID",
+      "Didn't hear back",
+      "Didn't know where to go",
+      "Didn't qualify",
+      "Didn't feel comfortable/safe",
+      "Felt too overwhelmed to seek help",
+      "Didn't follow through or return to services",
+      "Didn't ask for help",
+      "Didn't have money",
+      "Didn't have a phone to follow up",
+      "Didn't have health insurance",
+      "Legal barriers",
+      "Discrimination due to sexual orientation/gender identity",
+      "None",
+      "Don't Know"
+     ],
+     "visibleIf": "{cash_assistance_need} = 'Yes, and I got some of the help I needed' or {cash_assistance_need} = 'Yes, but I got none of the help I needed' or {cash_assistance_need} = 'I needed this help, but I didn\\'t try to get it'",
+     "showOtherItem": true,
+     "otherText": "Other (write in)"
+    },
+    {
+     "type": "radiogroup",
+     "name": "program_welcome",
+     "title": "How welcome did you feel while receiving program services?",
+     "choices": [
+      "Very welcome",
+      "Somewhat welcome",
+      "Somewhat unwelcome",
+      "Very unwelcome",
+      "I have not received program services",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "text",
+     "name": "program_welcome_name",
+     "title": "Please provide the name of the most recent program where you received services (Optional):"
+    },
+    {
+     "type": "radiogroup",
+     "name": "program_lgbtq_knowledge",
+     "title": "How knowledgeable were program staff about LGBTQ+ resources?",
+     "choices": [
+      "Very knowledgeable",
+      "Somewhat knowledgeable",
+      "Not very knowledgeable",
+      "Not knowledgeable at all",
+      "Not requested LGBTQ+ resources",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "text",
+     "name": "program_lgbtq_name",
+     "title": "Please provide the name of the most recent program where you received services (Optional):"
+    },
+    {
+     "type": "radiogroup",
+     "name": "judged_sogie",
+     "title": "Did you ever feel judged, discriminated against or treated unfairly because of your sexual orientation, gender identity or gender expression while accessing services?",
+     "choices": [
+      "Yes",
+      "No",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "comment",
+     "name": "program_experience_comments",
+     "title": "Is there anything else you would like to share about your experience when receiving program services?"
+    }
+   ],
+   "navigationTitle": "Access to Services"
+  },
+  {
+   "name": "demographics",
+   "title": "Demographics and Location",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "sex",
+     "title": "What is your sex?",
+     "choices": [
+      "Male",
+      "Female",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "gender",
+     "title": "What is your gender?",
+     "choices": [
+      "Man (Boy if child)",
+      "Woman (Girl if child)",
+      "Transgender",
+      "Questioning",
+      "Non-Binary",
+      "Culturally Specific Identity (e.g., Two-Spirit)",
+      "Other-Different Identity",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "sexual_orientation",
+     "title": "Do you consider yourself …",
+     "choices": [
+      "Straight",
+      "Gay",
+      "Lesbian",
+      "Bisexual",
+      "Questioning/Unsure",
+      "Don't Know"
+     ],
+     "showOtherItem": true,
+     "otherText": "Other"
+    },
+    {
+     "type": "checkbox",
+     "name": "racial_id",
+     "title": "Which racial group(s) do you most identify with? (Choose all that apply)",
+     "choices": [
+      "American Indian/Alaska Native/or Indigenous",
+      "Asian/Asian American",
+      "Black/African American/African",
+      "Hispanic/Latina/e/o",
+      "Middle Eastern/North African",
+      "Native Hawaiian/Pacific Islander",
+      "White",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "dropdown",
+     "name": "survey_city",
+     "title": "Where are you taking this survey?",
+     "choices": [
+      "Alamo",
+      "Antioch",
+      "Bay Point",
+      "Bethel Island",
+      "Blackhawk",
+      "Brentwood",
+      "Briones",
+      "Byron",
+      "Clayton",
+      "Clyde",
+      "Concord",
+      "Contra Costa Centre",
+      "Crockett",
+      "Danville",
+      "Discovery Bay",
+      "El Cerrito",
+      "El Sobrante",
+      "Hercules",
+      "Kensington",
+      "Knightsen",
+      "Lafayette",
+      "Martinez",
+      "Moraga",
+      "North Richmond",
+      "Oakley",
+      "Orinda",
+      "Pacheco",
+      "Pinole",
+      "Pittsburg",
+      "Pleasant Hill",
+      "Richmond",
+      "Rodeo",
+      "San Pablo",
+      "San Ramon",
+      "Saranap/Parkmead",
+      "Walnut Creek",
+      "Other County in CA",
+      "Outside of CA",
+      "Don't Know"
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "learned_about_survey",
+     "title": "How did you learn about this survey? (Choose all that apply)",
+     "choices": [
+      "At a shelter",
+      "At a social service agency",
+      "Through a Youth Ambassador",
+      "Through a street outreach worker/street count",
+      "At an event",
+      "At a school/educational program",
+      "Social media/website",
+      "An email from a friend or acquaintance",
+      "Don't Know"
+     ],
+     "showOtherItem": true,
+     "otherText": "Other"
+    }
+   ],
+   "navigationTitle": "Demographics and Location"
+  },
+  {
+   "name": "distance",
+   "title": "Distance",
    "elements": [
     {
      "type": "dropdown",
      "name": "travel_location",
-     "visibleIf": "{location} notcontains 'Phone'",
-     "title": "Where did you travel from today? (Town or City)",
+     "title": "Where did you travel from today?",
      "choices": [
-      "TODO: Contra Costa cities/communities (replace this list)",
-      "Unincorporated Contra Costa County",
-      "Choose not to answer",
-      "Do not know"
+      "Alamo",
+      "Antioch",
+      "Bay Point",
+      "Bethel Island",
+      "Blackhawk",
+      "Brentwood",
+      "Briones",
+      "Byron",
+      "Clayton",
+      "Clyde",
+      "Concord",
+      "Contra Costa Centre",
+      "Crockett",
+      "Danville",
+      "Discovery Bay",
+      "El Cerrito",
+      "El Sobrante",
+      "Hercules",
+      "Kensington",
+      "Knightsen",
+      "Lafayette",
+      "Martinez",
+      "Moraga",
+      "North Richmond",
+      "Oakley",
+      "Orinda",
+      "Pacheco",
+      "Pinole",
+      "Pittsburg",
+      "Pleasant Hill",
+      "Richmond",
+      "Rodeo",
+      "San Pablo",
+      "San Ramon",
+      "Saranap/Parkmead",
+      "Walnut Creek",
+      "Other County in CA",
+      "Outside of CA",
+      "Don't Know"
      ],
-     "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Do not know",
-     "otherText": "Other (write in)",
-     "hasOther": true
+     "visibleIf": "{location} notcontains 'Phone'"
     },
     {
      "type": "checkbox",
      "name": "travel_transport",
-     "visibleIf": "{location} notcontains 'Phone'",
-     "title": "What transportation did you use to come to {location}?",
+     "title": "What transportation did you use to come to this location? (Choose all that apply)",
      "choices": [
       "Bus",
-      "Car",
-      "Bicycle/bike",
+      "BART",
+      "Ferry",
+      "Train (Amtrak)",
+      "Car (personal “self” or ride from family/friend)",
+      "Ride Share (Uber/Lyft/Taxi)",
+      "Bicycle/Bike/Scooter",
       "Walking"
      ],
+     "visibleIf": "{location} notcontains 'Phone'",
      "showOtherItem": true,
-     "otherText": "Other (write in)",
-     "hasOther": true
+     "otherText": "Other (write in)"
     },
     {
      "type": "panel",
      "name": "travel_time",
-     "title": "How long did it take you to travel to get to {location}?",
+     "title": "How long did it take you to get to this location?",
      "visibleIf": "{location} notcontains 'Phone'",
      "elements": [
       {
        "type": "text",
        "name": "travel_time_hours",
        "title": "Hours",
-       "inputType": "number",
-       "placeholder": "Enter a number"
+       "inputType": "number"
       },
       {
        "type": "text",
        "name": "travel_time_minutes",
        "title": "Minutes",
        "inputType": "number",
-       "placeholder": "Enter a number"
+       "startWithNewLine": false
       }
      ]
     },
     {
-     "type": "checkbox",
+     "type": "radiogroup",
      "name": "travel_distance",
-     "visibleIf": "{location} notcontains 'Phone'",
-     "title": "About how many miles did you travel to {location}?",
+     "title": "About how many miles did you travel to get to this location?",
      "choices": [
       "Less than half a mile",
-      "Half a mile to 1 mile"
+      "One-half to one mile",
+      "Enter miles"
      ],
-     "showOtherItem": true,
-     "otherPlaceholder": "e.g. 4.3",
-     "otherText": "Other - enter miles (decimals allowed, e.g. 4.3)"
-    },
-    {
-     "type": "panel",
-     "name": "last_stable_panel",
-     "elements": [
-      {
-       "type": "radiogroup",
-       "name": "last_stable_loc",
-       "title": "Where did you live the last time you had stable housing such as an apartment or a house?",
-       "choices": [
-        "Contra Costa County",
-        "California (Outside of Contra Costa County)",
-        "United States (Outside of California)",
-        "Outside of the United States"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "dropdown",
-       "name": "last_stable_loc_city",
-       "visibleIf": "{last_stable_loc} = 'Contra Costa County'",
-       "title": "Which city or community in Contra Costa County was it?",
-       "choices": [
-        "TODO: Contra Costa cities/communities (replace this list)",
-        "Unincorporated Contra Costa County"
-       ],
-       "hasOther": true,
-       "otherText": "Other (write in)"
-      },
-      {
-       "type": "dropdown",
-       "name": "last_stable_loc_county",
-       "visibleIf": "{last_stable_loc} = 'California (Outside of Contra Costa County)'",
-       "title": "Which county in California was it?",
-       "choices": [
-        "Alameda",
-        "Alpine",
-        "Amador",
-        "Butte",
-        "Calaveras",
-        "Colusa",
-        "Del Norte",
-        "El Dorado",
-        "Fresno",
-        "Glenn",
-        "Humboldt",
-        "Imperial",
-        "Inyo",
-        "Kern",
-        "Kings",
-        "Lake",
-        "Lassen",
-        "Los Angeles",
-        "Madera",
-        "Marin",
-        "Mariposa",
-        "Mendocino",
-        "Merced",
-        "Modoc",
-        "Mono",
-        "Monterey",
-        "Napa",
-        "Nevada",
-        "Orange",
-        "Placer",
-        "Plumas",
-        "Riverside",
-        "Sacramento",
-        "San Benito",
-        "San Bernardino",
-        "San Diego",
-        "San Francisco",
-        "San Joaquin",
-        "San Luis Obispo",
-        "San Mateo",
-        "Santa Barbara",
-        "Santa Clara",
-        "Santa Cruz",
-        "Shasta",
-        "Sierra",
-        "Siskiyou",
-        "Solano",
-        "Sonoma",
-        "Stanislaus",
-        "Sutter",
-        "Tehama",
-        "Trinity",
-        "Tulare",
-        "Tuolumne",
-        "Ventura",
-        "Yolo",
-        "Yuba"
-       ]
-      },
-      {
-       "type": "dropdown",
-       "name": "last_stable_loc_state",
-       "visibleIf": "{last_stable_loc} = 'United States (Outside of California)'",
-       "title": "Which  state in the United States?",
-       "choices": [
-        "Alabama",
-        "Alaska",
-        "Arizona",
-        "Arkansas",
-        "Colorado",
-        "Connecticut",
-        "Delaware",
-        "Florida",
-        "Georgia",
-        "Hawaii",
-        "Idaho",
-        "Illinois",
-        "Indiana",
-        "Iowa",
-        "Kansas",
-        "Kentucky",
-        "Louisiana",
-        "Maine",
-        "Maryland",
-        "Massachusetts",
-        "Michigan",
-        "Minnesota",
-        "Mississippi",
-        "Missouri",
-        "Montana",
-        "Nebraska",
-        "Nevada",
-        "New Hampshire",
-        "New Jersey",
-        "New Mexico",
-        "New York",
-        "North Carolina",
-        "North Dakota",
-        "Ohio",
-        "Oklahoma",
-        "Oregon",
-        "Pennsylvania",
-        "Rhode Island",
-        "South Carolina",
-        "South Dakota",
-        "Tennessee",
-        "Texas",
-        "Utah",
-        "Vermont",
-        "Virginia",
-        "Washington",
-        "West Virginia",
-        "Wisconsin",
-        "Wyoming"
-       ]
-      }
-     ]
-    },
-    {
-     "type": "html",
-     "name": "age_first_hmlss_instruction",
-     "visibleIf": "{is_adult} = 'No'",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>INTERVIEWER: Because the respondent has indicated they are under 18, you may select 12-17 without asking the question.</strong></div>"
-    },
-    {
-     "type": "dropdown",
-     "name": "age_first_hmlss",
-     "title": "How old were you the first time you experienced homelessness?",
-     "choices": [
-      "0-17",
-      "18-24",
-      "25-35",
-      "36-49",
-      "50-65",
-      "66 or older",
-      "Do not know"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "tagbox",
-     "name": "precipitating_events",
-     "title": "What events or conditions contributed to you becoming homeless at this time? (Select all that apply)",
-     "choices": [
-      "Lost job",
-      "Eviction",
-      "Foreclosure",
-      "Incarceration/detention",
-      "Illness/medical problem",
-      {
-       "value": "Substance Use Disorder",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      {
-       "value": "Mental health issues",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      {
-       "value": "Hospitalization/treatment",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      "Divorce/separation/breakup",
-      "Could not afford rent increase",
-      {
-       "value": "Argument with family/friend/roommate",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      {
-       "value": "Family domestic violence",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      "Family/friend's housing wouldn't let me stay",
-      "Family/friend couldn't afford to let me stay",
-      {
-       "value": "Safety",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      "Resettlement transition",
-      "Aging out of foster care",
-      "Death of a parent/spouse/child",
-      "Do not know"
-     ],
-     "choicesOrder": "random",
-     "showOtherItem": true,
-     "showNoneItem": true,
-     "noneText": "Choose not to answer",
-     "otherText": "Other (please specify)",
-     "searchMode": "startsWith"
-    },
-    {
-     "type": "tagbox",
-     "name": "shelter_priorities",
-     "title": "If you were to seek out a shelter program, what top shelter features would be most important to you? (Please select up to 5)",
-     "choices": [
-      "Ease of access/enrollment",
-      "Close to where I stay now/ In my current community",
-      "Enough space to keep my distance from others",
-      "Clean facilities free of germs/illness",
-      "Ability to store my belongings",
-      "Ability to bring my pet/service animal",
-      "Ability to bring my partner",
-      "Ability to move in with a friend",
-      "Minimal rules so I can do as I please",
-      "Culturally specific services",
-      "Meals provided daily",
-      "A private room",
-      "Ability to return if I don't stay there one night",
-      "Support to find permanent housing",
-      {
-       "value": "Support for decreasing substance use",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      {
-       "value": "Support for mental health conditions",
-       "visibleIf": "{is_adult} = 'Yes'"
-      },
-      "On-site health services such as a nurse"
-     ],
-     "choicesOrder": "random",
-     "showOtherItem": true,
-     "otherText": "Other (please specify)",
-     "maxSelectedChoices": 5
-    },
-    {
-     "type": "radiogroup",
-     "name": "pet_animal",
-     "title": "Do you have a pet or animal companion?",
-     "choices": [
-      "Yes",
-      "No"
-     ],
-     "showNoneItem": true,
-     "noneText": "Choose not to answer"
-    },
-    {
-     "type": "paneldynamic",
-     "name": "pet_animal_details",
-     "visibleIf": "{pet_animal} = 'Yes'",
-     "title": "Pet Information",
-     "templateElements": [
-      {
-       "type": "text",
-       "name": "pet_name",
-       "title": "Pet Name (optional)",
-       "placeholder": "e.g., Fluffy"
-      },
-      {
-       "type": "radiogroup",
-       "name": "pet_animal_type",
-       "title": "Type of Animal",
-       "choices": [
-        "Cat",
-        "Dog",
-        "Pocket pet / rodent"
-       ],
-       "showOtherItem": true,
-       "showNoneItem": true,
-       "noneText": "Choose not to answer",
-       "otherText": "Specify other animal type"
-      },
-      {
-       "type": "radiogroup",
-       "name": "pet_animal_weight",
-       "title": "Approximate Weight of {panel.pet_name}",
-       "choices": [
-        "40 lbs or less",
-        "More than 40 lbs"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "pet_animal_vet_care",
-       "title": "Has {panel.pet_name} seen vet care in last 3 years (such as for wellness visits, vaccines, or an illness)?",
-       "choices": [
-        "Yes",
-        "No"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "pet_medical_needs",
-       "title": "How long have you been responsible for {panel.pet_name}?",
-       "choices": [
-        "Less than 1 year",
-        "1-3 years",
-        "More than 3 years"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      }
-     ],
-     "templateTitle": "Pet: {panel.pet_name}",
-     "maxPanelCount": 10,
-     "addPanelText": "+ Add new pet",
-     "removePanelText": "Remove",
-     "displayMode": "tab"
-    }
-   ],
-   "navigationTitle": "Special Questions"
-  },
-  {
-   "name": "social_support",
-   "title": "Social Support / Housing Network",
-   "elements": [
-    {
-     "type": "radiogroup",
-     "name": "support_network_housed",
-     "title": "Do you have friends or family with stable housing elsewhere who may be able to support you?",
-     "choices": [
-      "Yes",
-      "No",
-      "Choose not to answer",
-      "Do not know"
-     ]
-    },
-    {
-     "type": "radiogroup",
-     "name": "support_network_family_count_known",
-     "visibleIf": "{support_network_housed} = 'Yes'",
-     "title": "How many family members with stable housing could you turn to for support?",
-     "choices": [
-      "Enter number",
-      "Choose not to answer",
-      "Do not know"
-     ]
+     "visibleIf": "{location} notcontains 'Phone'"
     },
     {
      "type": "text",
-     "name": "support_network_family_count",
+     "name": "travel_distance_miles",
+     "title": "Miles",
      "inputType": "number",
-     "visibleIf": "{support_network_family_count_known} = 'Enter number'",
-     "title": "Number of family members",
-     "min": 0,
-     "max": 100
-    },
-    {
-     "type": "radiogroup",
-     "name": "support_network_friends_count_known",
-     "visibleIf": "{support_network_housed} = 'Yes'",
-     "title": "How many friends with stable housing could you turn to for support?",
-     "choices": [
-      "Enter number",
-      "Choose not to answer",
-      "Do not know"
-     ]
-    },
-    {
-     "type": "text",
-     "name": "support_network_friends_count",
-     "inputType": "number",
-     "visibleIf": "{support_network_friends_count_known} = 'Enter number'",
-     "title": "Number of friends",
-     "min": 0,
-     "max": 100
-    },
-    {
-     "type": "radiogroup",
-     "name": "support_network_transport",
-     "visibleIf": "{support_network_housed} = 'Yes'",
-     "title": "Would transportation availability affect your ability to get to them?",
-     "choices": [
-      "Yes",
-      "No",
-      "Choose not to answer",
-      "Do not know"
-     ]
-    },
-    {
-     "type": "comment",
-     "name": "support_network_transport_detail",
-     "visibleIf": "{support_network_housed} = 'Yes'",
-     "title": "Please describe (optional)",
-     "isRequired": false
+     "visibleIf": "{travel_distance} = 'Enter miles'"
     }
    ],
-   "navigationTitle": "Social Support / Housing Network"
-  },
-  {
-   "name": "household",
-   "title": "Household",
-   "elements": [
-    {
-     "type": "html",
-     "name": "household_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Please list the initials of all the people in your household (anyone who shares the same dwelling with you)</strong></div>"
-    },
-    {
-     "type": "paneldynamic",
-     "name": "household_members",
-     "title": "Household Members",
-     "templateElements": [
-      {
-       "type": "text",
-       "name": "hh_member_initials",
-       "title": "Initials",
-       "validators": [
-        {
-         "type": "regex",
-         "text": "Please enter initials (1-4 letters)",
-         "regex": "^[A-Za-z]{1,4}$"
-        }
-       ],
-       "placeholder": "e.g., JD"
-      },
-      {
-       "type": "dropdown",
-       "name": "hh_member_relation",
-       "title": "How is {panel.hh_member_initials} related to you?",
-       "choices": [
-        "Parent/Legal guardian",
-        "Other adult family member",
-        "Sibling",
-        "My own child",
-        "Spouse",
-        "Non-married partner",
-        "Other non-family member"
-       ]
-      },
-      {
-       "type": "dropdown",
-       "name": "hh_member_age",
-       "title": "How old is {panel.hh_member_initials}?",
-       "choices": [
-        "Under 18 years old",
-        "18–24",
-        "25–29",
-        "30–34",
-        "35–39",
-        "40–44",
-        "45–49",
-        "50–54",
-        "55–59",
-        "60–64",
-        "65 or older",
-        "Choose not to answer",
-        "Do not know"
-       ]
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_gender_id",
-       "title": "Which of the following best describes the gender of {panel.hh_member_initials}?",
-       "choices": [
-        "Woman (Girl if child)",
-        "Man (Boy if child)",
-        "Culturally Specific Identity (e.g., Two-spirit)",
-        "Transgender",
-        "Non-binary",
-        "Questioning",
-        "Different identity",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_ethnicity",
-       "title": "Is {panel.hh_member_initials} Hispanic/Latina/e/o?\n",
-       "choices": [
-        "Yes",
-        "No",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "checkbox",
-       "name": "hh_member_race",
-       "title": "Which of the following best describes the racial identity of {panel.hh_member_initials}? (Note, you may report more than one group.)",
-       "choices": [
-        "American Indian or Alaska Native",
-        "Asian",
-        "Black or African American",
-        "Hispanic/Latina/e/o",
-        "Middle Eastern or North African",
-        "Native Hawaiian or Pacific Islander",
-        "White",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "text",
-       "name": "hh_member_tribal_id",
-       "title": "Does {panel.hh_member_initials} have a Tribal Affiliation? If so, what is their Tribal Affiliation?"
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_vet_status",
-       "visibleIf": "{panel.hh_member_age} notempty and {panel.hh_member_age} <> 'Under 18 years old'",
-       "title": "Is {panel.hh_member_initials} a veteran?",
-       "choices": [
-        "Yes",
-        "No",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_disability",
-       "title": "Does {panel.hh_member_initials} identify as having a disability?",
-       "choices": [
-        "Yes",
-        "No",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_smi",
-       "visibleIf": "{is_adult} = 'Yes' and {panel.hh_member_age} notempty and {panel.hh_member_age} <> 'Under 18 years old'",
-       "title": "Does {panel.hh_member_initials} identify as having a severe mental illness?",
-       "choices": [
-        "Yes",
-        "No",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      },
-      {
-       "type": "radiogroup",
-       "name": "hh_member_sud",
-       "visibleIf": "{is_adult} = 'Yes' and {panel.hh_member_age} notempty and {panel.hh_member_age} <> 'Under 18 years old'",
-       "title": "Does {panel.hh_member_initials} identify as having a substance use disorder?",
-       "choices": [
-        "Yes",
-        "No",
-        "Do not know"
-       ],
-       "showNoneItem": true,
-       "noneText": "Choose not to answer"
-      }
-     ],
-     "templateTitle": "Household Member: {panel.hh_member_initials}",
-     "maxPanelCount": 10,
-     "addPanelText": "+ Add household member",
-     "removePanelText": "Remove",
-     "displayMode": "tab"
-    }
-   ],
-   "navigationTitle": "Household"
+   "navigationTitle": "Distance"
   },
   {
    "name": "survey_deduplication",
@@ -1776,7 +1471,7 @@
  "calculatedValues": [
   {
    "name": "has_minor_child",
-   "expression": "countInArray({household_members}, 'hh_member_age', {hh_member_age} = 'Under 18 years old') > 0"
+   "expression": "{children_reside} = 'Yes'"
   }
  ],
  "partialSendEnabled": true,
