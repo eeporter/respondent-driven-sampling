@@ -93,8 +93,8 @@
      "type": "html",
      "name": "consent_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\">THIS SURVEY IS USED TO UNDERSTAND THE EXPERIENCES OF YOUNG PEOPLE EXPERIENCING HOMELESSNESS IN LA COUNTY. BEFORE STARTING, I WANT TO REMIND YOU THAT THIS INTERVIEW IS COMPLETELY VOLUNTARY. CHOOSING TO PARTICIPATE OR NOT PARTICIPATE WILL NOT AFFECT ANY SERVICES, HOUSING, OR SUPPORT YOU RECEIVE NOW OR IN THE FUTURE. YOUR ANSWERS WILL BE KEPT CONFIDENTIAL AND WILL NOT BE SHARED WITH OUTSIDE INDIVIDUALS OR ORGANIZATIONS, INCLUDING CASE MANAGERS, SHELTER STAFF, SERVICE PROVIDERS, OR LAW ENFORCEMENT AGENCIES, INCLUDING THE LAPD OR ICE. WE ASK FOR ONLY MINIMAL PERSONAL INFORMATION - BIRTHDATE & INITIALS - FOR DATA ANALYSIS PURPOSES ONLY. IF THERE ARE ANY QUESTIONS YOU DON'T WANT TO ANSWER, JUST LET ME KNOW & WE WILL SKIP THEM. AS PART OF THE SURVEY, I'LL BE ASKING QUESTIONS ABOUT YOUR HOUSING HISTORY, USE OF SERVICES, HEALTH & OTHER PERSONAL QUESTIONS. YOUR RESPONSES ARE CONFIDENTIAL & WILL NEVER BE USED TO TRACK OR IDENTIFY YOU. THE INFORMATION YOU PROVIDE WILL BE COMBINED & ANALYZED WITH THE RESPONSES FROM OTHERS. OUR FINDINGS ARE REPORTED AT THE POPULATION LEVEL & NOT AT AN INDIVIDUAL LEVEL. I AM REQUIRED TO ASK ALL OF THE QUESTIONS ON THE SURVEY EXACTLY AS THEY ARE WRITTEN. PLEASE LET ME KNOW IF YOU DO NOT UNDERSTAND ANY QUESTION & I WILL DO MY BEST TO EXPLAIN. REMEMBER THAT YOU CAN SKIP ANY QUESTION YOU ARE NOT COMFORTABLE ANSWERING. IF YOU QUALIFY FOR & PARTICIPATE IN THE SURVEY, YOU WILL RECEIVE A $20 VISA CARD FOR YOUR TIME. THE FULL SURVEY TAKES AROUND 15-20 MINUTES & YOUR RESPONSES TO ANY OF THE SURVEY QUESTIONS WILL NOT AFFECT WHETHER YOU RECEIVE THE VISA CARD.</div>",
-      "es": "<div style=\"margin: 6px 0;\">ESTA ENCUESTA SE UTILIZA PARA COMPRENDER LAS EXPERIENCIAS DE JÓVENES SIN HOGAR EN EL CONDADO DE LOS ÁNGELES. ANTES DE EMPEZAR, QUIERO RECORDARLE QUE ESTA ENTREVISTA ES COMPLETAMENTE VOLUNTARIA. DECIDIR PARTICIPAR O NO PARTICIPAR NO AFECTARÁ LOS SERVICIOS, LA VIVIENDA NI EL APOYO QUE RECIBA AHORA O EN EL FUTURO. SUS RESPUESTAS SON CONFIDENCIALES. NO SE COMPARTIRÁN SUS RESPUESTAS CON OTRAS PERSONAS NI ORGANIZACIONES, INCLUYENDO TRABAJADORES SOCIALES, PERSONAL DE REFUGIOS, LA POLICÍA/LAPD O INMIGRACIÓN/ICE. SOLO LE PEDIREMOS UN POCO DE INFORMACIÓN PERSONAL —SU FECHA DE NACIMIENTO Y SUS INICIALES— Y ESO ES ÚNICAMENTE PARA PODER ANALIZAR LOS DATOS. SI HAY ALGUNA PREGUNTA QUE NO QUIERA CONTESTAR, DÍGAME Y LA SALTAMOS. COMO PARTE DE LA ENCUESTA, LE VOY A HACER PREGUNTAS SOBRE SU HISTORIA DE VIVIENDA, USO DE SERVICIOS, SALUD Y OTRAS PREGUNTAS PERSONALES. SUS RESPUESTAS SON CONFIDENCIALES Y NUNCA SE USARÁN PARA RASTREARLO NI IDENTIFICARLO. LA INFORMACIÓN QUE NOS DÉ SE VA A JUNTAR CON LA DE OTRAS PERSONAS, Y LOS RESULTADOS SE REPORTAN A NIVEL DE TODA LA POBLACIÓN, NO DE MANERA INDIVIDUAL. ESTOY OBLIGADO(A) A LEER TODAS LAS PREGUNTAS DE LA ENCUESTA EXACTAMENTE COMO ESTÁN ESCRITAS. SI NO ENTIENDE ALGUNA PREGUNTA, POR FAVOR DÍGAMELO Y HARÉ LO POSIBLE POR EXPLICÁRSELO CON CLARIDAD. RECUERDE QUE PUEDE OMITIR CUALQUIER PREGUNTA QUE NO DESEE RESPONDER. SI CALIFICA Y PARTICIPA EN LA ENCUESTA, RECIBIRÁ UNA TARJETA VISA DE $20 POR SU TIEMPO. LA ENCUESTA COMPLETA TOMA ENTRE 15 A 20 MINUTOS Y SUS RESPUESTAS NO AFECTAN SI RECIBE LA TARJETA.</div>"
+      "default": "<div style=\"margin: 6px 0;\">This survey is used to understand the experiences of young people experiencing homelessness in LA County. Before starting, I want to remind you that this interview is completely voluntary. Choosing to participate or not participate will not affect any services, housing, or support you receive now or in the future. Your answers will be kept confidential and will not be shared with outside individuals or organizations, including case managers, shelter staff, service providers, or law enforcement agencies, including the LAPD or ICE. We ask for only minimal personal information - birthdate & initials - for data analysis purposes only. If there are any questions you don't want to answer, just let me know & we will skip them. As part of the survey, I'll be asking questions about your housing history, use of services, health & other personal questions. Your responses are confidential & will never be used to track or identify you. The information you provide will be combined & analyzed with the responses from others. Our findings are reported at the population level & not at an individual level. I am required to ask all of the questions on the survey exactly as they are written. Please let me know if you do not understand any question & I will do my best to explain. Remember that you can skip any question you are not comfortable answering. If you qualify for & participate in the survey, you will receive a $20 Visa card for your time. The full survey takes around 15-20 minutes & your responses to any of the survey questions will not affect whether you receive the Visa card.</div>",
+      "es": "<div style=\"margin: 6px 0;\">Esta encuesta se utiliza para comprender las experiencias de jóvenes sin hogar en el condado de Los Ángeles. Antes de empezar, quiero recordarle que esta entrevista es completamente voluntaria. Decidir participar o no participar no afectará los servicios, la vivienda ni el apoyo que reciba ahora o en el futuro. Sus respuestas son confidenciales. No se compartirán sus respuestas con otras personas ni organizaciones, incluyendo trabajadores sociales, personal de refugios, la policía/LAPD o inmigración/ICE. Solo le pediremos un poco de información personal —su fecha de nacimiento y sus iniciales— y eso es únicamente para poder analizar los datos. Si hay alguna pregunta que no quiera contestar, dígame y la saltamos. Como parte de la encuesta, le voy a hacer preguntas sobre su historia de vivienda, uso de servicios, salud y otras preguntas personales. Sus respuestas son confidenciales y nunca se usarán para rastrearlo ni identificarlo. La información que nos dé se va a juntar con la de otras personas, y los resultados se reportan a nivel de toda la población, no de manera individual. Estoy obligado(a) a leer todas las preguntas de la encuesta exactamente como están escritas. Si no entiende alguna pregunta, por favor dígamelo y haré lo posible por explicárselo con claridad. Recuerde que puede omitir cualquier pregunta que no desee responder. Si califica y participa en la encuesta, recibirá una tarjeta Visa de $20 por su tiempo. La encuesta completa toma entre 15 a 20 minutos y sus respuestas no afectan si recibe la tarjeta.</div>"
      }
     },
     {
@@ -102,8 +102,8 @@
      "name": "consent_given",
      "isRequired": true,
      "title": {
-      "default": "DO YOU UNDERSTAND THE PURPOSE OF THE SURVEY, AND THAT YOUR ANSWERS WILL BE KEPT CONFIDENTIAL?",
-      "es": "¿COMPRENDE EL PROPÓSITO DE LA ENCUESTA, Y QUE SUS RESPUESTAS SE MANTENDRÁN DE MANERA CONFIDENCIAL?"
+      "default": "Do you understand the purpose of the survey, and that your answers will be kept confidential?",
+      "es": "¿Comprende el propósito de la encuesta, y que sus respuestas se mantendrán de manera confidencial?"
      },
      "choices": [
       {
@@ -178,8 +178,8 @@
      "type": "html",
      "name": "eligibility_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THE NEXT FEW QUESTIONS WILL HELP US TO DETERMINE IF YOU ARE ELIGIBLE TO TAKE THE FULL SURVEY.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>LAS SIGUIENTES PREGUNTAS NOS AYUDARAN A DETERMINAR SI ES ELEGIBLE PARA PARTICIPAR EN LA ENCUESTA ENTERA.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>The next few questions will help us to determine if you are eligible to take the full survey.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas nos ayudaran a determinar si es elegible para participar en la encuesta entera.</strong></div>"
      }
     },
     {
@@ -192,8 +192,8 @@
      "type": "dropdown",
      "name": "Q2",
      "title": {
-      "default": "WHERE HAVE YOU SPENT MOST OF YOUR NIGHTS IN THE LAST 30 DAYS?",
-      "es": "2. ¿DÓNDE HA PASADO LA MAYORÍA DE LAS ÚLTIMAS 30 NOCHES?"
+      "default": "Where have you spent most of your nights in the last 30 days?",
+      "es": "2. ¿Dónde ha pasado la mayoría de las últimas 30 noches?"
      },
      "description": "Wait for response, then select choice closest to their answer. If asked to clarify, ask \"Have you spent more than two weeks out of the past month in the same place? If so, where was that?\"",
      "choices": [
@@ -441,8 +441,8 @@
      "type": "dropdown",
      "name": "Q3",
      "title": {
-      "default": "YOU TOLD ME WHERE YOU HAD SPENT THE MOST NIGHTS IN THE PAST 30 DAYS. WHERE DID YOU SPEND LAST NIGHT?",
-      "es": "3. ME COMPARTIÓ DONDE PASÓ LA MAYORÍA DE LAS NOCHES EN LOS ÚLTIMOS 30 DÍAS. ¿DÓNDE PASÓ LA ÚLTIMA NOCHE?"
+      "default": "You told me where you had spent the most nights in the past 30 days. Where did you spend last night?",
+      "es": "3. Me compartió donde pasó la mayoría de las noches en los últimos 30 días. ¿Dónde pasó la última noche?"
      },
      "description": "Wait for response, then select choice closest to their answer.",
      "choices": [
@@ -690,8 +690,8 @@
      "type": "dropdown",
      "name": "Q431",
      "title": {
-      "default": "WHERE DO YOU EXPECT TO SPEND THE NIGHT TONIGHT?",
-      "es": "¿DÓNDE ESPERA PASAR LA NOCHE ESTA NOCHE?"
+      "default": "Where do you expect to spend the night tonight?",
+      "es": "¿Dónde espera pasar la noche esta noche?"
      },
      "description": "Wait for response, then select choice closest to their answer.",
      "choices": [
@@ -950,8 +950,8 @@
      "type": "html",
      "name": "network_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>YOU ARE ELIGIBLE TO COMPLETE THE SURVEY. FIRST I'M GOING TO ASK YOU SOME QUESTIONS ABOUT OTHER YOUNG PEOPLE YOU KNOW. THIS INFORMATION WILL HELP MAKE SURE YOUTH EXPERIENCING HOMELESSNESS ARE ACCURATELY REPRESENTED AND COUNTED.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>USTED ES ELEGIBLE PARA COMPLETAR LA ENCUESTA. PRIMERO, VOY A HACERLE ALGUNAS PREGUNTAS SOBRE OTROS JÓVENES QUE USTED CONOCE. SUS RESPUESTAS NOS AYUDAN A CONTAR MEJOR A LOS JÓVENES SIN HOGAR.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>You are eligible to complete the survey. First I'm going to ask you some questions about other young people you know. This information will help make sure youth experiencing homelessness are accurately represented and counted.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Usted es elegible para completar la encuesta. Primero, voy a hacerle algunas preguntas sobre otros jóvenes que usted conoce. Sus respuestas nos ayudan a contar mejor a los jóvenes sin hogar.</strong></div>"
      }
     },
     {
@@ -967,8 +967,8 @@
       }
      ],
      "title": {
-      "default": "1. NOT COUNTING FAMILY, HOW MANY YOUNG PEOPLE UNDER 25 DO YOU KNOW PERSONALLY WHO ARE HOMELESS IN LOS ANGELES COUNTY TODAY? BY \"KNOW,\" WE MEAN SOMEONE YOU HAVE SEEN OR TALKED TO IN THE PAST 3 MONTHS AND COULD REACH OUT TO.",
-      "es": "1. SIN CONTAR A SU FAMILIA, ¿A CUÁNTOS JÓVENES MENORES DE 25 AÑOS CONOCE PERSONALMENTE QUE ESTÁN SIN HOGAR EN EL CONDADO DE LOS ÁNGELES HOY? POR “CONOCER,” NOS REFERIMOS A ALGUIEN QUE USTED HAYA VISTO O CON QUIEN HAYA HABLADO EN LOS ÚLTIMOS 3 MESES Y A QUIEN PODRÍA CONTACTAR."
+      "default": "1. Not counting family, how many young people under 25 do you know personally who are homeless in Los Angeles County today? By \"know,\" we mean someone you have seen or talked to in the past 3 months and could reach out to.",
+      "es": "1. Sin contar a su familia, ¿a cuántos jóvenes menores de 25 años conoce personalmente que están sin hogar en el condado de Los Ángeles hoy? Por “conocer,” nos referimos a alguien que usted haya visto o con quien haya hablado en los últimos 3 meses y a quien podría contactar."
      },
      "description": "If the individual says they do not know anyone else or they do not want to answer the question, please input 0."
     }
@@ -986,8 +986,8 @@
      "type": "html",
      "name": "Q399",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>I WILL NOW ASK A COUPLE QUESTIONS ABOUT EACH OF THESE PEOPLE. I WILL REFER TO THEM BY THEIR INITIALS OR A NICKNAME THAT YOU GIVE ME. IF IT IS HELPFUL, YOU MIGHT WANT TO START BY THINKING ABOUT THE PERSON YOU ARE CLOSEST TO FOLLOWED BY YOUR NEXT CLOSEST CONTACT, AND SO ON.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>AHORA LE VOY A HACER ALGUNAS PREGUNTAS SOBRE CADA UNA DE ESTAS PERSONAS. ME VOY A REFERIR A ELLOS/ELLAS USANDO SUS INICIALES O UN APODO QUE USTED ME DIGA. PUEDE EMPEZAR PENSANDO EN LA PERSONA CON QUIEN TENGA MÁS CERCANÍA, LUEGO EN SU SIGUIENTE CONTACTO MÁS CERCANO, Y ASÍ SUCESIVAMENTE.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>I will now ask a couple questions about each of these people. I will refer to them by their initials or a nickname that you give me. If it is helpful, you might want to start by thinking about the person you are closest to followed by your next closest contact, and so on.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Ahora le voy a hacer algunas preguntas sobre cada una de estas personas. Me voy a referir a ellos/ellas usando sus iniciales o un apodo que usted me diga. Puede empezar pensando en la persona con quien tenga más cercanía, luego en su siguiente contacto más cercano, y así sucesivamente.</strong></div>"
      }
     },
     {
@@ -1018,8 +1018,8 @@
        "type": "text",
        "name": "network_person_name",
        "title": {
-        "default": "2. WHAT ARE THE INITIALS OR THE NICKNAME OF PERSON {panelIndex}?",
-        "es": "2. ¿CUÁLES SON LAS INICIALES O EL APODO DE LA PERSONA {panelIndex}?"
+        "default": "2. What are the initials or the nickname of person {panelIndex}?",
+        "es": "2. ¿Cuáles son las iniciales o el apodo de la persona {panelIndex}?"
        },
        "description": "Record initials or nickname only. Do not record full names. If the participant says they don't know anyone else please enter 999."
       },
@@ -1027,8 +1027,8 @@
        "type": "dropdown",
        "name": "relationship",
        "title": {
-        "default": "3. WHAT IS YOUR RELATIONSHIP TO \"{panel.network_person_name}\"?",
-        "es": "3. ¿CUÁL ES SU RELACIÓN CON \"{panel.network_person_name}\"?"
+        "default": "3. What is your relationship to \"{panel.network_person_name}\"?",
+        "es": "3. ¿Cuál es su relación con \"{panel.network_person_name}\"?"
        },
        "choices": [
         {
@@ -1109,8 +1109,8 @@
        "type": "radiogroup",
        "name": "network_person_age",
        "title": {
-        "default": "4. HOW OLD IS \"{panel.network_person_name}\"?",
-        "es": "4. ¿QUÉ EDAD TIENE \"{panel.network_person_name}\"?"
+        "default": "4. How old is \"{panel.network_person_name}\"?",
+        "es": "4. ¿Qué edad tiene \"{panel.network_person_name}\"?"
        },
        "choices": [
         {
@@ -1154,8 +1154,8 @@
        "type": "dropdown",
        "name": "network_sleeping_situation",
        "title": {
-        "default": "5. WHERE HAS \"{panel.network_person_name}\" SLEPT MOST OFTEN IN THE LAST 30 DAYS?",
-        "es": "5. ¿DÓNDE HA DORMIDO \"{panel.network_person_name}\" CON MÁS FRECUENCIA EN LOS ÚLTIMOS 30 DÍAS?"
+        "default": "5. Where has \"{panel.network_person_name}\" slept most often in the last 30 days?",
+        "es": "5. ¿Dónde ha dormido \"{panel.network_person_name}\" con más frecuencia en los últimos 30 días?"
        },
        "description": "If respondent does not know where individual is currently sleeping, ask them to specify last known place or where they usually are. If they still do not know, select “don’t know.”",
        "choices": [
@@ -1340,14 +1340,14 @@
     {
      "type": "html",
      "name": "Q423",
-     "html": "<div style=\"margin: 6px 0;\"><h4>EXPERIENCE OF HOMELESSNESS</h4></div>"
+     "html": "<div style=\"margin: 6px 0;\"><h4>Experience of homelessness</h4></div>"
     },
     {
      "type": "radiogroup",
      "name": "Q424",
      "title": {
-      "default": "6. YOU INDICATED BEING IN YOUR OWN HOME OR SOMEONE ELSE'S HOME LAST NIGHT AND MOST OF THE TIME IN THE PAST 30 DAYS. IS YOUR NAME LISTED ON THE LEASE, RENTAL, OR HOUSING AGREEMENT?",
-      "es": "6. USTED INDICÓ HABER ESTADO EN SU PROPIO HOGAR O EN EL HOGAR DE OTRA PERSONA ANOCHE O LA MAYOR PARTE DEL TIEMPO EN LOS ÚLTIMOS 30 DÍAS. ¿SU NOMBRE APARECE EN EL CONTRATO DE ARRENDAMIENTO, ALQUILER O VIVIENDA?"
+      "default": "6. You indicated being in your own home or someone else's home last night and most of the time in the past 30 days. Is your name listed on the lease, rental, or housing agreement?",
+      "es": "6. Usted indicó haber estado en su propio hogar o en el hogar de otra persona anoche o la mayor parte del tiempo en los últimos 30 días. ¿Su nombre aparece en el contrato de arrendamiento, alquiler o vivienda?"
      },
      "choices": [
       {
@@ -1381,8 +1381,8 @@
      "type": "checkbox",
      "name": "Q415",
      "title": {
-      "default": "7. HAVE YOU EVER EXPERIENCED SHELTERED OR UNSHELTERED HOMELESSNESS?",
-      "es": "7. ¿ALGUNA VEZ HA ESTADO SIN HOGAR (YA SEA EN UN REFUGIO O SIN REFUGIO)?"
+      "default": "7. Have you ever experienced sheltered or unsheltered homelessness?",
+      "es": "7. ¿Alguna vez ha estado sin hogar (ya sea en un refugio o sin refugio)?"
      },
      "description": "Select ALL that apply.",
      "choices": [
@@ -1430,8 +1430,8 @@
      "type": "radiogroup",
      "name": "Q420_choice",
      "title": {
-      "default": "8. HOW OLD WERE YOU THE FIRST TIME YOU EXPERIENCED HOMELESSNESS?",
-      "es": "8. ¿QUÉ EDAD TENÍA LA PRIMERA VEZ QUE ESTUVO SIN HOGAR?"
+      "default": "8. How old were you the first time you experienced homelessness?",
+      "es": "8. ¿Qué edad tenía la primera vez que estuvo sin hogar?"
      },
      "description": "Enter age in years in the box below.",
      "choices": [
@@ -1467,8 +1467,8 @@
      "type": "radiogroup",
      "name": "Q416",
      "title": {
-      "default": "9. HOW LONG AGO DID YOU LAST EXPERIENCE HOMELESSNESS?",
-      "es": "9. ¿HACE CUÁNTO TIEMPO FUE LA ÚLTIMA VEZ QUE ESTUVO SIN HOGAR?"
+      "default": "9. How long ago did you last experience homelessness?",
+      "es": "9. ¿Hace cuánto tiempo fue la última vez que estuvo sin hogar?"
      },
      "choices": [
       {
@@ -1533,8 +1533,8 @@
      "type": "radiogroup",
      "name": "Q417",
      "title": {
-      "default": "10. WHEN YOU WERE LAST HOMELESS, HOW LONG DID THAT EPISODE LAST?",
-      "es": "10. LA ÚLTIMA VEZ QUE ESTUVO SIN HOGAR, ¿CUÁNTO TIEMPO DURÓ ESE PERIODO?"
+      "default": "10. When you were last homeless, how long did that episode last?",
+      "es": "10. La última vez que estuvo sin hogar, ¿cuánto tiempo duró ese periodo?"
      },
      "choices": [
       {
@@ -1594,18 +1594,6 @@
        }
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "Q427",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Experience of Homelessness",
@@ -1622,8 +1610,8 @@
      "type": "radiogroup",
      "name": "Q418",
      "title": {
-      "default": "11. HAVE YOU FACED ANY CHALLENGES THAT HAVE MADE IT HARD TO KEEP YOUR CURRENT HOUSING?",
-      "es": "11. ¿HA TENIDO ALGUNA DIFICULTAD PARA MANTENER SU VIVIENDA ACTUAL?"
+      "default": "11. Have you faced any challenges that have made it hard to keep your current housing?",
+      "es": "11. ¿Ha tenido alguna dificultad para mantener su vivienda actual?"
      },
      "choices": [
       {
@@ -1657,8 +1645,8 @@
      "type": "checkbox",
      "name": "Q419",
      "title": {
-      "default": "12. WHAT CHALLENGES HAVE YOU",
-      "es": "12. ¿QUÉ DIFICULTADES HA TENIDO?"
+      "default": "12. What challenges have you",
+      "es": "12. ¿Qué dificultades ha tenido?"
      },
      "description": "FACED?Wait for response and then select ALL that apply.",
      "choices": [
@@ -1738,22 +1726,10 @@
       "es": "Otra (especifique): – especifique"
      },
      "visibleIf": "{Q419} contains 'Other (please specify:)'"
-    },
-    {
-     "type": "checkbox",
-     "name": "Q428",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']) and {Q427} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']"
   },
   {
    "name": "yc_housed_4",
@@ -1766,8 +1742,8 @@
      "type": "radiogroup",
      "name": "Q421",
      "title": {
-      "default": "13. HOW CONFIDENT ARE YOU THAT YOU WILL BE ABLE TO STAY IN YOUR CURRENT HOUSING FOR THE NEXT 6 MONTHS?",
-      "es": "13. ¿QUÉ TAN SEGURO/A SE SIENTE DE PODER SEGUIR VIVIENDO EN SU VIVIENDA ACTUAL DURANTE LOS PRÓXIMOS 6 MESES?"
+      "default": "13. How confident are you that you will be able to stay in your current housing for the next 6 months?",
+      "es": "13. ¿Qué tan seguro/a se siente de poder seguir viviendo en su vivienda actual durante los próximos 6 meses?"
      },
      "choices": [
       {
@@ -1806,22 +1782,10 @@
        }
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "Q429",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_cvrtm",
@@ -1834,8 +1798,8 @@
      "type": "html",
      "name": "cvrtm_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THIS NEXT SET OF QUESTIONS WILL BE ABOUT YOUR EXPERIENCE IN VARIOUS LIVING SITUATIONS AND OTHER INDIVIDUALS WHO LIVE OR HAVE LIVED WITH YOU. PLEASE REMEMBER THAT ALL YOUR RESPONSES ARE COMPLETELY CONFIDENTIAL. YOUR RESPONSES WILL NEVER BE USED TO REPORT, LOCATE, OR OTHERWISE INCRIMINATE ANY INDIVIDUAL.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>LAS SIGUIENTES PREGUNTAS SE ENFOCARÁN EN LA EXPERIENCIA DE VARIAS SITUACIONES DE VIVIENDA Y OTRAS PERSONAS QUE VIVEN O LLEGARON A VIVIR CONTIGO. POR FAVOR RECUERDA QUE TODAS TUS RESPUESTAS SERÁN COMPLETAMENTE CONFIDENCIALES, Y NINGUNA DE LA INFORMACIÓN COMPARTIDA SERÁ USADA PARA REPORTAR, ENCONTRAR, O INCRIMINAR A ALGUNA PERSONA.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>This next set of questions will be about your experience in various living situations and other individuals who live or have lived with you. Please remember that all your responses are completely confidential. Your responses will never be used to report, locate, or otherwise incriminate any individual.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas se enfocarán en la experiencia de varias situaciones de vivienda y otras personas que viven o llegaron a vivir contigo. Por favor recuerda que todas tus respuestas serán completamente confidenciales, y ninguna de la información compartida será usada para reportar, encontrar, o incriminar a alguna persona.</strong></div>"
      }
     },
     {
@@ -1847,16 +1811,16 @@
      "type": "html",
      "name": "Q21_spoken",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>14. & 15. IN THE PAST 6 MONTHS, HAVE YOU LIVED IN ANY OF THESE FOLLOWING SITUATIONS:</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>14. & 15. EN LOS ÚLTIMOS 6 MESES, ¿HAS VIVIDO EN ALGUNA DE LAS SIGUIENTES SITUACIONES?:</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>14. & 15. In the past 6 months, have you lived in any of these following situations:</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>14. & 15. En los últimos 6 meses, ¿has vivido en alguna de las siguientes situaciones?:</strong></div>"
      }
     },
     {
      "type": "checkbox",
      "name": "Q21_Car",
      "title": {
-      "default": "HAVE YOU LIVED IN A",
-      "es": "HAS VIVIDO EN:"
+      "default": "Have you lived in a",
+      "es": "Has vivido en:"
      },
      "choices": [
       {
@@ -1872,8 +1836,8 @@
      "type": "radiogroup",
      "name": "Q22_Car_choice",
      "title": {
-      "default": "AT ANY GIVEN TIME, HOW MANY OTHER PEOPLE LIVED WITH YOU IN THE CAR?",
-      "es": "EN CUALQUIER DADO MOMENTO, ¿CUÁNTAS PERSONAS VIVIERON EN TU COCHE?"
+      "default": "At any given time, how many other people lived with you in the car?",
+      "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu coche?"
      },
      "description": "If the individual lived alone, please input 0.",
      "choices": [
@@ -1916,8 +1880,8 @@
      "type": "checkbox",
      "name": "Q21_Van",
      "title": {
-      "default": "HAVE YOU LIVED IN A",
-      "es": "HAS VIVIDO EN:"
+      "default": "Have you lived in a",
+      "es": "Has vivido en:"
      },
      "choices": [
       {
@@ -1933,8 +1897,8 @@
      "type": "radiogroup",
      "name": "Q22_Van_choice",
      "title": {
-      "default": "AT ANY GIVEN TIME, HOW MANY OTHER PEOPLE LIVED WITH YOU IN THE VAN?",
-      "es": "EN CUALQUIER DADO MOMENTO, ¿CUÁNTAS PERSONAS VIVIERON EN TU VAN O SUV?"
+      "default": "At any given time, how many other people lived with you in the van?",
+      "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu van o SUV?"
      },
      "description": "If the individual lived alone, please input 0.",
      "choices": [
@@ -1977,8 +1941,8 @@
      "type": "checkbox",
      "name": "Q21_RV",
      "title": {
-      "default": "HAVE YOU LIVED IN AN",
-      "es": "HAS VIVIDO EN:"
+      "default": "Have you lived in an",
+      "es": "Has vivido en:"
      },
      "choices": [
       {
@@ -1994,8 +1958,8 @@
      "type": "radiogroup",
      "name": "Q22_RV_choice",
      "title": {
-      "default": "AT ANY GIVEN TIME, HOW MANY OTHER PEOPLE LIVED WITH YOU IN THE RV OR CAMPER?",
-      "es": "EN CUALQUIER DADO MOMENTO, ¿CUÁNTAS PERSONAS VIVIERON EN TU RV O CAMPER?"
+      "default": "At any given time, how many other people lived with you in the RV or camper?",
+      "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu RV o camper?"
      },
      "description": "If the individual lived alone, please input 0.",
      "choices": [
@@ -2038,8 +2002,8 @@
      "type": "checkbox",
      "name": "Q21_Tent",
      "title": {
-      "default": "HAVE YOU LIVED IN A",
-      "es": "HAS VIVIDO EN:"
+      "default": "Have you lived in a",
+      "es": "Has vivido en:"
      },
      "choices": [
       {
@@ -2055,8 +2019,8 @@
      "type": "radiogroup",
      "name": "Q22_Tent_choice",
      "title": {
-      "default": "AT ANY GIVEN TIME, HOW MANY OTHER PEOPLE LIVED WITH YOU IN THE TENT?",
-      "es": "EN CUALQUIER DADO MOMENTO, ¿CUÁNTAS PERSONAS VIVIERON EN TU CASA DE CAMPAR?"
+      "default": "At any given time, how many other people lived with you in the tent?",
+      "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu casa de campar?"
      },
      "description": "If the individual lived alone, please input 0.",
      "choices": [
@@ -2099,8 +2063,8 @@
      "type": "checkbox",
      "name": "Q21_MSh",
      "title": {
-      "default": "HAVE YOU LIVED IN A",
-      "es": "HAS VIVIDO EN:"
+      "default": "Have you lived in a",
+      "es": "Has vivido en:"
      },
      "choices": [
       {
@@ -2116,8 +2080,8 @@
      "type": "radiogroup",
      "name": "Q22_MSh_choice",
      "title": {
-      "default": "AT ANY GIVEN TIME, HOW MANY OTHER PEOPLE LIVED WITH YOU IN THE MAKESHIFT SHELTER?",
-      "es": "EN CUALQUIER DADO MOMENTO, ¿CUÁNTAS PERSONAS VIVIERON EN TU REFUGIO PROVISIONAL?"
+      "default": "At any given time, how many other people lived with you in the makeshift shelter?",
+      "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu refugio provisional?"
      },
      "description": "If the individual lived alone, please input 0.",
      "choices": [
@@ -2187,22 +2151,10 @@
       }
      ],
      "visibleIf": "{Q21_Car} empty and {Q21_Van} empty and {Q21_RV} empty and {Q21_Tent} empty and {Q21_MSh} empty"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_8",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Experience of Homelessness: CVRTM",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
   },
   {
    "name": "yc_spells_1",
@@ -2215,8 +2167,8 @@
      "type": "radiogroup",
      "name": "Q15",
      "title": {
-      "default": "16. IS THIS THE FIRST TIME YOU HAVE EXPERIENCED HOMELESSNESS, ON THE STREET, IN A VEHICLE, OR IN SHELTERS?",
-      "es": "16. ¿ES LA PRIMERA VEZ QUE HA ESTADO SIN HOGAR, EN LA CALLE, EN UN VEHÍCULO O EN REFUGIOS?"
+      "default": "16. Is this the first time you have experienced homelessness, on the street, in a vehicle, or in shelters?",
+      "es": "16. ¿Es la primera vez que ha estado sin hogar, en la calle, en un vehículo o en refugios?"
      },
      "choices": [
       {
@@ -2250,8 +2202,8 @@
      "type": "radiogroup",
      "name": "Q16_choice",
      "title": {
-      "default": "17. HOW OLD WERE YOU THE FIRST TIME YOU EXPERIENCED HOMELESSNESS?",
-      "es": "17. ¿QUÉ EDAD TENÍA LA PRIMERA VEZ QUE ESTUVO SIN HOGAR?"
+      "default": "17. How old were you the first time you experienced homelessness?",
+      "es": "17. ¿Qué edad tenía la primera vez que estuvo sin hogar?"
      },
      "description": "Enter age in years in the box below.",
      "choices": [
@@ -2289,22 +2241,10 @@
      "inputType": "number",
      "min": 0,
      "visibleIf": "({Q16_choice} = 'Enter age in years:') and {Q15} anyof ['No', 'Declined', 'Don\\'t know']"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_5",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
   },
   {
    "name": "yc_spells_2",
@@ -2317,8 +2257,8 @@
      "type": "html",
      "name": "Q17_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>18. HOW LONG HAVE YOU BEEN EXPERIENCING HOMELESSNESS THIS TIME?</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>18. ¿POR CUÁNTO TIEMPO HA ESTADO SIN HOGAR ESTA VEZ?</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>18. How long have you been experiencing homelessness this time?</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>18. ¿Por cuánto tiempo ha estado sin hogar esta vez?</strong></div>"
      }
     },
     {
@@ -2330,8 +2270,8 @@
      "type": "checkbox",
      "name": "Q17_units",
      "title": {
-      "default": "WHAT UNIT(S) OF TIME?",
-      "es": "¿QUÉ UNIDAD(ES) DE TIEMPO?"
+      "default": "What unit(s) of time?",
+      "es": "¿Qué unidad(es) de tiempo?"
      },
      "choices": [
       {
@@ -2415,22 +2355,10 @@
       "es": "AÑOS (≥1)"
      },
      "visibleIf": "{Q17_units} contains 'Years (≥1)'"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_6",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
   },
   {
    "name": "yc_spells_3",
@@ -2443,8 +2371,8 @@
      "type": "radiogroup",
      "name": "Q18",
      "title": {
-      "default": "19. IN THE PAST YEAR, INCLUDING THIS TIME, HOW MANY SEPARATE TIMES HAVE YOU EXPERIENCED HOMELESSNESS?",
-      "es": "19. DURANTE EL AÑO PASADO, INCLUYENDO ESTA OCASIÓN, ¿CUÁNTAS VECES POR SEPARADO HA ESTADO SIN HOGAR?"
+      "default": "19. In the past year, including this time, how many separate times have you experienced homelessness?",
+      "es": "19. Durante el año pasado, incluyendo esta ocasión, ¿cuántas veces por separado ha estado sin hogar?"
      },
      "description": "Example: respondent was housed for a short time in the past year and experienced homelessness before and after = two separate episodes of homelessness",
      "choices": [
@@ -2489,8 +2417,8 @@
      "type": "radiogroup",
      "name": "Q19",
      "title": {
-      "default": "20. IN THE PAST THREE YEARS, INCLUDING THIS TIME, HOW MANY SEPARATE TIMES HAVE YOU EXPERIENCED HOMELESSNESS?",
-      "es": "20. DURANTE LOS ÚLTIMOS TRES AÑOS, INCLUYENDO ESTA OCASIÓN, ¿CUÁNTAS VECES POR SEPARADO HA ESTADO SIN HOGAR?"
+      "default": "20. In the past three years, including this time, how many separate times have you experienced homelessness?",
+      "es": "20. Durante los últimos tres años, incluyendo esta ocasión, ¿cuántas veces por separado ha estado sin hogar?"
      },
      "choices": [
       {
@@ -2534,8 +2462,8 @@
      "type": "radiogroup",
      "name": "Q20",
      "title": {
-      "default": "21. IN THE PAST 3 YEARS, HAVE YOU EXPERIENCED HOMELESSNESS FOR MORE THAN 12 MONTHS TOTAL?",
-      "es": "21. EN LOS ÚLTIMOS TRES AÑOS, ¿HA ESTADO SIN HOGAR DURANTE MÁS DE 12 MESES EN TOTAL?"
+      "default": "21. In the past 3 years, have you experienced homelessness for more than 12 months total?",
+      "es": "21. En los últimos tres años, ¿ha estado sin hogar durante más de 12 meses en total?"
      },
      "choices": [
       {
@@ -2564,22 +2492,10 @@
        }
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_7",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
   },
   {
    "name": "yc_demographics_1",
@@ -2592,16 +2508,16 @@
      "type": "html",
      "name": "demographics_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THE NEXT FEW QUESTIONS ASK ABOUT YOUR BACKGROUND, SUCH AS YOUR SEX, GENDER, AND RACE OR ETHNICITY. I AM REQUIRED TO READ EACH QUESTION EXACTLY AS IT IS WRITTEN. PLEASE REMEMBER THAT YOUR ANSWERS ARE CONFIDENTIAL AND YOU CAN SKIP ANY QUESTION YOU ARE NOT COMFORTABLE WITH. DUE TO THE PERSONAL NATURE OF THE QUESTIONS, WE ALSO HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER IF NEEDED.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>LAS SIGUIENTES PREGUNTAS SON SOBRE SU INFORMACIÓN PERSONAL, INCLUYENDO SU SEXO, GÉNERO, Y RAZA O ETNICIDAD. TENGO QUE LEER CADA PREGUNTA EXACTAMENTE COMO ESTÁ ESCRITA. QUIERO RECORDARLE QUE SUS RESPUESTAS SON CONFIDENCIALES Y QUE PUEDE SALTAR CUALQUIER PREGUNTA CON LA QUE NO SE SIENTA CÓMODO/A. DEBIDO A QUE LAS SIGUIENTES PREGUNTAS SON PERSONALES, TAMBIÉN TENEMOS TARJETAS DE RESPUESTA PARA QUE ME INDIQUE EL NÚMERO QUE CORRESPONDA A SU RESPUESTA, SI ES NECESARIO.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>The next few questions ask about your background, such as your sex, gender, and race or ethnicity. I am required to read each question exactly as it is written. Please remember that your answers are confidential and you can skip any question you are not comfortable with. Due to the personal nature of the questions, we also have response cards for you to tell me the number that corresponds to your answer if needed.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas son sobre su información personal, incluyendo su sexo, género, y raza o etnicidad. Tengo que leer cada pregunta exactamente como está escrita. Quiero recordarle que sus respuestas son confidenciales y que puede saltar cualquier pregunta con la que no se sienta cómodo/a. Debido a que las siguientes preguntas son personales, también tenemos tarjetas de respuesta para que me indique el número que corresponda a su respuesta, si es necesario.</strong></div>"
      }
     },
     {
      "type": "radiogroup",
      "name": "Q378",
      "title": {
-      "default": "22. WHAT SEX WERE YOU ASSIGNED AT BIRTH?",
-      "es": "22. ¿QUÉ SEXO SE LE ASIGNÓ AL NACER?"
+      "default": "22. What sex were you assigned at birth?",
+      "es": "22. ¿Qué sexo se le asignó al nacer?"
      },
      "description": "Response card available.",
      "choices": [
@@ -2639,8 +2555,8 @@
      "type": "checkbox",
      "name": "Q6",
      "title": {
-      "default": "23. WHAT GENDER OR GENDERS DO YOU IDENTIFY WITH?",
-      "es": "23. ¿CON QUÉ GÉNERO O GÉNEROS SE IDENTIFICA?"
+      "default": "23. What gender or genders do you identify with?",
+      "es": "23. ¿Con qué género o géneros se identifica?"
      },
      "description": "Wait for response, and select ALL that apply. If response is not listed, indicate options and ask: “which options do you prefer?\" Response card available.",
      "choices": [
@@ -2724,8 +2640,8 @@
      "type": "radiogroup",
      "name": "Q8",
      "title": {
-      "default": "24. WHICH OF THE FOLLOWING BEST REPRESENTS YOUR SEXUAL ORIENTATION?",
-      "es": "24. ¿CUÁL DE LAS SIGUIENTES RESPUESTAS REPRESENTA DE MANERA MÁS CORRECTA SU ORIENTACIÓN SEXUAL?"
+      "default": "24. Which of the following best represents your sexual orientation?",
+      "es": "24. ¿Cuál de las siguientes respuestas representa de manera más correcta su orientación sexual?"
      },
      "description": "Response card available.",
      "choices": [
@@ -2793,22 +2709,10 @@
       "es": "Otro (especifique): – especifique"
      },
      "visibleIf": "{Q8} contains 'Other (specify):'"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_1",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Individual Demographics",
-   "visibleIf": "((({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') or {yc_age} >= 25) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty"
+   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') or {yc_age} >= 25"
   },
   {
    "name": "yc_demographics_2",
@@ -2821,8 +2725,8 @@
      "type": "checkbox",
      "name": "Q10",
      "title": {
-      "default": "25. WHAT RACES AND/OR ETHNICITIES DO YOU IDENTIFY AS?",
-      "es": "25. ¿CON QUÉ RAZAS Y/O ETNIAS SE IDENTIFICA?"
+      "default": "25. What races and/or ethnicities do you identify as?",
+      "es": "25. ¿Con qué razas y/o etnias se identifica?"
      },
      "description": "Wait for response and choose ALL that apply. Read each category if response is not listed and/or select “Other race” & specify.",
      "choices": [
@@ -3047,25 +2951,13 @@
      "type": "html",
      "name": "Q10_followup",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>ARE THERE ANY OTHER RACES OR ETHNICITIES WITH WHICH YOU IDENTIFY?</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>¿USTED SE IDENTIFICA CON OTRAS RAZAS Y/O ETNIAS?</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Are there any other races or ethnicities with which you identify?</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>¿Usted se identifica con otras razas y/o etnias?</strong></div>"
      }
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_2",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Individual Demographics",
-   "visibleIf": "((({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') or {yc_age} >= 25) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty"
+   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') or {yc_age} >= 25"
   },
   {
    "name": "yc_veteran_1",
@@ -3078,8 +2970,8 @@
      "type": "checkbox",
      "name": "Q11",
      "title": {
-      "default": "26. HAVE YOU SERVED ON ACTIVE DUTY IN THE FOLLOWING?",
-      "es": "26. ¿HA CUMPLIDO SERVICIO ACTIVO EN LO SIGUIENTE?"
+      "default": "26. Have you served on active duty in the following?",
+      "es": "26. ¿Ha cumplido servicio activo en lo siguiente?"
      },
      "description": "Read each of the response options below (U.S. Armed Forces, National Guard, Reserves).",
      "choices": [
@@ -3129,22 +3021,10 @@
        "isExclusive": true
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_3",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Veteran Status",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18"
   },
   {
    "name": "yc_veteran_2",
@@ -3157,8 +3037,8 @@
      "type": "radiogroup",
      "name": "Q13",
      "title": {
-      "default": "27. WHAT IS YOUR DISCHARGE STATUS?",
-      "es": "27. ¿CUÁL FUE SU TIPO DE BAJA DEL SERVICIO MILITAR?"
+      "default": "27. What is your discharge status?",
+      "es": "27. ¿Cuál fue su tipo de baja del servicio militar?"
      },
      "description": "If none of the below answers are given, select Other.",
      "choices": [
@@ -3235,22 +3115,10 @@
       "es": "Otro (especifique): – especifique"
      },
      "visibleIf": "{Q13} contains 'Other, specify'"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_4",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Veteran Status",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18 and {Q11} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18 and {Q11} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']"
   },
   {
    "name": "yc_household",
@@ -3263,8 +3131,8 @@
      "type": "html",
      "name": "Q23_txt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THIS NEXT QUESTION IS ABOUT YOUR CURRENT LIVING SITUATION AND ANY FAMILY MEMBERS LIVING WITH YOU. DEPENDING ON WHO LIVES WITH YOU, I MAY HAVE MORE QUESTIONS. PLEASE REMEMBER, ALL YOUR ANSWERS ARE CONFIDENTIAL. YOUR RESPONSES WILL NEVER BE USED TO REPORT, LOCATE OR INCRIMINATE YOU OR ANYONE ELSE. 28. NOT INCLUDING YOURSELF, HOW MANY OTHER ADULTS AND/OR CHILDREN ARE CURRENTLY LIVING WITH YOU?</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>AHORA VOY A HACERLE ALGUNAS PREGUNTAS SOBRE LAS PERSONAS CON LAS QUE USTED VIVE. DEPENDIENDO DEL NÚMERO DE PERSONAS CON LAS QUE VIVE Y QUIÉNES SON, PODRÉ HACERLE PREGUNTAS ADICIONALES SOBRE ELLOS. POR FAVOR RECUERDA QUE TODAS TUS RESPUESTAS SERÁN COMPLETAMENTE CONFIDENCIALES. NINGUNA DE LA INFORMACIÓN COMPARTIDA SERÁ USADA PARA REPORTAR, ENCONTRAR, O INCRIMINAR A ALGUNA PERSONA. 28. SIN INCLUIRLO A USTED, ¿CUÁNTAS PERSONAS ADULTAS Y/O NIÑOS/AS VIVEN ACTUALMENTE CON USTED?</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>This next question is about your current living situation and any family members living with you. Depending on who lives with you, I may have more questions. Please remember, all your answers are confidential. Your responses will never be used to report, locate or incriminate you or anyone else. 28. Not including yourself, how many other adults and/or children are currently living with you?</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Ahora voy a hacerle algunas preguntas sobre las personas con las que usted vive. Dependiendo del número de personas con las que vive y quiénes son, podré hacerle preguntas adicionales sobre ellos. Por favor recuerda que todas tus respuestas serán completamente confidenciales. Ninguna de la información compartida será usada para reportar, encontrar, o incriminar a alguna persona. 28. Sin incluirlo a usted, ¿cuántas personas adultas y/o niños/as viven actualmente con usted?</strong></div>"
      }
     },
     {
@@ -3273,8 +3141,8 @@
      "inputType": "number",
      "min": 0,
      "title": {
-      "default": "NUMBER OF PEOPLE UNDER 18 LIVING WITH PARTICIPANT",
-      "es": "NÚMERO DE NIÑOS/AS MENORES DE 18 AÑOS"
+      "default": "Number of people under 18 living with participant",
+      "es": "Número de niños/as menores de 18 años"
      }
     },
     {
@@ -3283,8 +3151,8 @@
      "inputType": "number",
      "min": 0,
      "title": {
-      "default": "NUMBER OF PEOPLE 18 AND OLDER LIVING WITH PARTICIPANT",
-      "es": "NÚMERO DE ADULTOS MAYORES DE 18 AÑOS"
+      "default": "Number of people 18 and older living with participant",
+      "es": "Número de adultos mayores de 18 años"
      }
     },
     {
@@ -3312,22 +3180,10 @@
        "isExclusive": true
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_9",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Household",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_children",
@@ -3340,8 +3196,8 @@
      "type": "html",
      "name": "children_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THANK YOU AGAIN. NEXT I'M GOING TO ASK SOME PERSONAL QUESTIONS ABOUT THE CHILDREN YOU LIVE WITH, AND YOU'LL GET AN ADDITIONAL $20 IN COMPENSATION FOR THESE EXTRA QUESTIONS. AGAIN, ALL RESPONSES ARE CONFIDENTIAL. I'LL REFER TO THEM BY THE INITIAL(S) OR NICKNAME(S) YOU GIVE ME. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>GRACIAS DE NUEVO. AHORA VOY A HACERLE ALGUNAS PREGUNTAS SOBRE LOS/LAS NIÑOS/AS MENORES DE EDAD QUE VIVEN CON USTED. RECIBIRÁ $20 ADICIONALES COMO COMPENSACIÓN POR ESTAS PREGUNTAS EXTRA. NUEVAMENTE, TODAS SUS RESPUESTAS SON CONFIDENCIALES. VOY A TRATAR DE REFERIRME A ELLAS/OS CON LAS INICIALES DE SUS NOMBRES O LOS APODOS QUE ME DIO. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Thank you again. Next I'm going to ask some personal questions about the children you live with, and you'll get an additional $20 in compensation for these extra questions. Again, all responses are confidential. I'll refer to them by the initial(s) or nickname(s) you give me. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Gracias de nuevo. Ahora voy a hacerle algunas preguntas sobre los/las niños/as menores de edad que viven con usted. Recibirá $20 adicionales como compensación por estas preguntas extra. Nuevamente, todas sus respuestas son confidenciales. Voy a tratar de referirme a ellas/os con las iniciales de sus nombres o los apodos que me dio. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>"
      }
     },
     {
@@ -3372,8 +3228,8 @@
        "type": "text",
        "name": "Q24c",
        "title": {
-        "default": "29. WHAT ARE THE INITIALS OR A NICKNAME OF CHILD # {panelIndex}?",
-        "es": "29. ¿CUÁLES SON LAS INICIALES O EL APODO DE LAS OTRAS PERSONAS DE SU HOGAR # {panelIndex}?"
+        "default": "29. What are the initials or a nickname of child # {panelIndex}?",
+        "es": "29. ¿Cuáles son las iniciales o el apodo de las otras personas de su hogar # {panelIndex}?"
        },
        "description": "Please suggest listing children from youngest to oldest; fill in the initials of the person below."
       },
@@ -3381,8 +3237,8 @@
        "type": "radiogroup",
        "name": "Q25c",
        "title": {
-        "default": "30. HOW IS {panel.Q24c} RELATED TO YOU?",
-        "es": "30. ¿QUÉ RELACIÓN FAMILIAR TIENE USTED Y {panel.Q24c}?"
+        "default": "30. How is {panel.Q24c} related to you?",
+        "es": "30. ¿Qué relación familiar tiene usted y {panel.Q24c}?"
        },
        "choices": [
         {
@@ -3440,8 +3296,8 @@
        "type": "radiogroup",
        "name": "Q26c_unit",
        "title": {
-        "default": "31. HOW OLD IS {panel.Q24c}?",
-        "es": "31. ¿QUÉ EDAD TIENE {panel.Q24c}?"
+        "default": "31. How old is {panel.Q24c}?",
+        "es": "31. ¿Qué edad tiene {panel.Q24c}?"
        },
        "description": "Choose one unit of time, and estimate using decimals. For example, select Months: 18 OR select Years: 1.5 If {panel.Q24c} is not under 18, confirm there are no others under 18 in the household, and select Respondent does not have a child under 18 to skip to Health and Disability questions.",
        "choices": [
@@ -3483,8 +3339,8 @@
        "type": "checkbox",
        "name": "Q28c",
        "title": {
-        "default": "32. WHAT RACE AND/OR ETHNICITIES DOES {panel.Q24c} IDENTIFY AS?",
-        "es": "32. ¿CON QUÉ RAZAS Y/O ETNIAS SE IDENTIFICA {panel.Q24c}?"
+        "default": "32. What race and/or ethnicities does {panel.Q24c} identify as?",
+        "es": "32. ¿Con qué razas y/o etnias se identifica {panel.Q24c}?"
        },
        "description": "Wait for response and choose ALL that apply. Read each category if response is not listed and/or select “Other race” & specify.",
        "choices": [
@@ -3710,8 +3566,8 @@
        "type": "radiogroup",
        "name": "Q30c",
        "title": {
-        "default": "DUE TO THE PERSONAL NATURE OF THE FOLLOWING QUESTIONS, WE HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER IF NEEDED. 33. WHAT SEX WAS {panel.Q24c} ASSIGNED AT BIRTH?",
-        "es": "DEBIDO A QUE LAS SIGUIENTES PREGUNTAS SON PERSONALES, TAMBIÉN TENEMOS LAS OPCIONES PRESENTADAS EN UNA TARJETA PARA QUE ME DIGA EL NÚMERO QUE CORRESPONDE A SU RESPUESTA. 33. ¿QUÉ SEXO SE LE ASIGNÓ A {panel.Q24c} AL NACER?"
+        "default": "Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer if needed. 33. What sex was {panel.Q24c} assigned at birth?",
+        "es": "Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta. 33. ¿Qué sexo se le asignó a {panel.Q24c} al nacer?"
        },
        "description": "Response card available.",
        "choices": [
@@ -3750,8 +3606,8 @@
        "type": "checkbox",
        "name": "Q29c",
        "title": {
-        "default": "34. WHAT GENDER OR GENDERS DOES {panel.Q24c} IDENTIFY WITH?",
-        "es": "34. ¿CON QUÉ GÉNERO O GÉNEROS SE IDENTIFICA {panel.Q24c}?"
+        "default": "34. What gender or genders does {panel.Q24c} identify with?",
+        "es": "34. ¿Con qué género o géneros se identifica {panel.Q24c}?"
        },
        "description": "Wait for response, and select ALL that apply. If response is not listed, indicate options, and ask: “which options do you prefer?” Response card available.",
        "choices": [
@@ -3836,8 +3692,8 @@
        "type": "html",
        "name": "Q34c_txt",
        "html": {
-        "default": "<div style=\"margin: 6px 0;\"><strong>35. & 36. DOES {panel.Q24c} HAVE OR HAS {panel.Q24c} EVER BEEN DIAGNOSED WITH ANY OF THE FOLLOWING HEALTH CONDITIONS?</strong></div>",
-        "es": "<div style=\"margin: 6px 0;\"><strong>35. & 36. ¿{panel.Q24c} TIENE O HA SIDO DIAGNOSTICADO/A CON ALGUNO DE LAS SIGUIENTES CONDICIONES MÉDICAS?</strong></div>"
+        "default": "<div style=\"margin: 6px 0;\"><strong>35. & 36. Does {panel.Q24c} have or has {panel.Q24c} ever been diagnosed with any of the following health conditions?</strong></div>",
+        "es": "<div style=\"margin: 6px 0;\"><strong>35. & 36. ¿{panel.Q24c} Tiene o ha sido diagnosticado/a con alguno de las siguientes condiciones médicas?</strong></div>"
        },
        "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       },
@@ -3864,8 +3720,8 @@
        "type": "radiogroup",
        "name": "Q35c_AU",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -3919,8 +3775,8 @@
        "type": "radiogroup",
        "name": "Q35c_SU",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4002,8 +3858,8 @@
        "type": "radiogroup",
        "name": "Q35c_SMI",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4057,8 +3913,8 @@
        "type": "radiogroup",
        "name": "Q35c_PhysD",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4112,8 +3968,8 @@
        "type": "radiogroup",
        "name": "Q35c_PhysIll",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4167,8 +4023,8 @@
        "type": "radiogroup",
        "name": "Q35c_TBI",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4250,8 +4106,8 @@
        "type": "radiogroup",
        "name": "Q35c_Oth",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -4315,22 +4171,10 @@
        "visibleIf": "({panel.Q34c_AU} empty and {panel.Q34c_SU} empty and {panel.Q34c_HIV} empty and {panel.Q34c_SMI} empty and {panel.Q34c_PhysD} empty and {panel.Q34c_PhysIll} empty and {panel.Q34c_TBI} empty and {panel.Q34c_DD} empty and {panel.Q34c_Oth} empty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_14",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Household Children",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0"
   },
   {
    "name": "yc_adults",
@@ -4343,8 +4187,8 @@
      "type": "html",
      "name": "adults_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>NEXT I'M GOING TO ASK SOME QUESTIONS ABOUT THE FAMILY MEMBERS OVER 18 YOU LIVE WITH AND TOLD ME ABOUT. I'M GOING TO REFER TO THEM BY THE INITIAL(S) OR NICKNAME(S) YOU GAVE ME.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>A CONTINUACIÓN, VOY A HACERLE ALGUNAS PREGUNTAS SOBRE LOS ADULTOS MAYORES DE 18 AÑOS CON LAS QUE USTED VIVE. VOY A REFERIRME A ELLOS CON LAS INICIALES O LOS SEUDÓNIMOS QUE ME DIO.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Next I'm going to ask some questions about the family members over 18 you live with and told me about. I'm going to refer to them by the initial(s) or nickname(s) you gave me.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>A continuación, voy a hacerle algunas preguntas sobre los adultos mayores de 18 años con las que usted vive. Voy a referirme a ellos con las iniciales o los seudónimos que me dio.</strong></div>"
      }
     },
     {
@@ -4375,16 +4219,16 @@
        "type": "text",
        "name": "Q24f",
        "title": {
-        "default": "37. WHAT ARE THE INITIALS OR A NICKNAME OF NEXT OLDEST FAMILY MEMBER LIVING WITH YOU?",
-        "es": "37. ¿CUÁLES SON LAS INICIALES O EL APODO DE LA SIGUIENTE PERSONA DE SU HOGAR?"
+        "default": "37. What are the initials or a nickname of next oldest family member living with you?",
+        "es": "37. ¿Cuáles son las iniciales o el apodo de la siguiente persona de su hogar?"
        }
       },
       {
        "type": "radiogroup",
        "name": "Q25f",
        "title": {
-        "default": "38. HOW IS {panel.Q24f} RELATED TO YOU?",
-        "es": "38. ¿QUÉ RELACIÓN FAMILIAR TIENE USTED Y {panel.Q24f}?"
+        "default": "38. How is {panel.Q24f} related to you?",
+        "es": "38. ¿Qué relación familiar tiene usted y {panel.Q24f}?"
        },
        "choices": [
         {
@@ -4442,8 +4286,8 @@
        "type": "radiogroup",
        "name": "Q26f_unit",
        "title": {
-        "default": "39. HOW OLD IS {panel.Q24f}?",
-        "es": "39. ¿QUÉ EDAD TIENE {panel.Q24f}?"
+        "default": "39. How old is {panel.Q24f}?",
+        "es": "39. ¿Qué edad tiene {panel.Q24f}?"
        },
        "choices": [
         {
@@ -4477,8 +4321,8 @@
        "type": "checkbox",
        "name": "Q28f",
        "title": {
-        "default": "40. WHAT RACES AND/OR ETHNICITIES DOES {panel.Q24f} IDENTIFY AS?",
-        "es": "40. ¿CON QUÉ RAZAS Y/O ETNIAS SE IDENTIFICA {panel.Q24f}?"
+        "default": "40. What races and/or ethnicities does {panel.Q24f} identify as?",
+        "es": "40. ¿Con qué razas y/o etnias se identifica {panel.Q24f}?"
        },
        "description": "Wait for response and choose ALL that apply. Read each category if response is not listed and/or select “Other race” & specify",
        "choices": [
@@ -4704,8 +4548,8 @@
        "type": "radiogroup",
        "name": "Q30f",
        "title": {
-        "default": "DUE TO THE PERSONAL NATURE OF THE FOLLOWING QUESTIONS, WE HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER. 41. WHAT SEX WAS {panel.Q24f} ASSIGNED AT BIRTH?",
-        "es": "DEBIDO A QUE LAS SIGUIENTES PREGUNTAS SON PERSONALES, TAMBIÉN TENEMOS LAS OPCIONES PRESENTADAS EN UNA TARJETA PARA QUE ME DIGA EL NÚMERO QUE CORRESPONDE A SU RESPUESTA. 41. ¿QUÉ SEXO SE LE ASIGNÓ A {panel.Q24f} AL NACER?"
+        "default": "Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer. 41. What sex was {panel.Q24f} assigned at birth?",
+        "es": "Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta. 41. ¿Qué sexo se le asignó a {panel.Q24f} al nacer?"
        },
        "description": "Response card available.",
        "choices": [
@@ -4744,8 +4588,8 @@
        "type": "checkbox",
        "name": "Q29f",
        "title": {
-        "default": "42. WHAT GENDER OR GENDERS DOES {panel.Q24f} IDENTIFY WITH?",
-        "es": "42. ¿CON QUÉ GÉNERO O GÉNEROS SE IDENTIFICA {panel.Q24f}?"
+        "default": "42. What gender or genders does {panel.Q24f} identify with?",
+        "es": "42. ¿Con qué género o géneros se identifica {panel.Q24f}?"
        },
        "description": "Wait for response, and select ALL that apply. If response is not listed, indicate options, and ask: “which options do you prefer?” Response card available.",
        "choices": [
@@ -4830,8 +4674,8 @@
        "type": "radiogroup",
        "name": "Q31f",
        "title": {
-        "default": "43. WHICH OF THE FOLLOWING BEST REPRESENTS {panel.Q24f}'S SEXUAL ORIENTATION?",
-        "es": "43. ¿CUÁL DE LAS SIGUIENTES RESPUESTAS REPRESENTA MEJOR LA ORIENTACIÓN SEXUAL DE {panel.Q24f}?"
+        "default": "43. Which of the following best represents {panel.Q24f}'s sexual orientation?",
+        "es": "43. ¿Cuál de las siguientes respuestas representa mejor la orientación sexual de {panel.Q24f}?"
        },
        "description": "Response card available.",
        "choices": [
@@ -4904,8 +4748,8 @@
        "type": "checkbox",
        "name": "Q32f",
        "title": {
-        "default": "44. HAS {panel.Q24f} SERVED ANY ACTIVE DUTY IN THE FOLLOWING?",
-        "es": "44. ¿{panel.Q24f} HA CUMPLIDO SERVICIO ACTIVO EN LO SIGUIENTE?"
+        "default": "44. Has {panel.Q24f} served any active duty in the following?",
+        "es": "44. ¿{panel.Q24f} Ha cumplido servicio activo en lo siguiente?"
        },
        "description": "Read each of the response options (U.S. Armed Forces, National Guard, Reserves)",
        "choices": [
@@ -4961,8 +4805,8 @@
        "type": "radiogroup",
        "name": "Q33f",
        "title": {
-        "default": "45. WHAT IS {panel.Q24f}'S DISCHARGE STATUS?",
-        "es": "45. ¿EN QUÉ TIPO DE ESTADO FUE DADO/A DE BAJA MILITAR {panel.Q24f}?"
+        "default": "45. What is {panel.Q24f}'s discharge status?",
+        "es": "45. ¿En qué tipo de estado fue dado/a de baja militar {panel.Q24f}?"
        },
        "description": "If none of the below answers are given, select Other.",
        "choices": [
@@ -5045,8 +4889,8 @@
        "type": "html",
        "name": "Q35_txt",
        "html": {
-        "default": "<div style=\"margin: 6px 0;\"><strong>46. & 47. DOES {panel.Q24f} HAVE, OR HAS {panel.Q24f} EVER BEEN DIAGNOSED WITH ANY OF THE FOLLOWING HEALTH CONDITIONS?</strong></div>",
-        "es": "<div style=\"margin: 6px 0;\"><strong>46. & 47. ¿ {panel.Q24f} TIENE O HA SIDO DIAGNOSTICADO/A CON ALGUNO DE LAS SIGUIENTES CONDICIONES MÉDICAS?</strong></div>"
+        "default": "<div style=\"margin: 6px 0;\"><strong>46. & 47. Does {panel.Q24f} have, or has {panel.Q24f} ever been diagnosed with any of the following health conditions?</strong></div>",
+        "es": "<div style=\"margin: 6px 0;\"><strong>46. & 47. ¿ {panel.Q24f} Tiene o ha sido diagnosticado/a con alguno de las siguientes condiciones médicas?</strong></div>"
        },
        "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
@@ -5073,8 +4917,8 @@
        "type": "radiogroup",
        "name": "Q35f_AU",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5128,8 +4972,8 @@
        "type": "radiogroup",
        "name": "Q35f_SU",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5211,8 +5055,8 @@
        "type": "radiogroup",
        "name": "Q35f_SMI",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5266,8 +5110,8 @@
        "type": "radiogroup",
        "name": "Q35f_PhysD",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5321,8 +5165,8 @@
        "type": "radiogroup",
        "name": "Q35f_PhysIll",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5376,8 +5220,8 @@
        "type": "radiogroup",
        "name": "Q35f_TBI",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5459,8 +5303,8 @@
        "type": "radiogroup",
        "name": "Q35f_Oth",
        "title": {
-        "default": "AND IS THEIR CONDITION PERMANENT OR LONG-TERM?",
-        "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+        "default": "And is their condition permanent or long-term?",
+        "es": "¿Y esta condícion es a largo plazo o permanente?"
        },
        "choices": [
         {
@@ -5524,22 +5368,10 @@
        "visibleIf": "({panel.Q34f_AU} empty and {panel.Q34f_SU} empty and {panel.Q34f_HIV} empty and {panel.Q34f_SMI} empty and {panel.Q34f_PhysD} empty and {panel.Q34f_PhysIll} empty and {panel.Q34f_TBI} empty and {panel.Q34f_DD} empty and {panel.Q34f_Oth} empty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_20",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Household Family Over 18",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_18p} > 0) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_18p} > 0"
   },
   {
    "name": "yc_health",
@@ -5552,8 +5384,8 @@
      "type": "html",
      "name": "health_prompt_family",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THANK YOU FOR ANSWERING THOSE QUESTIONS ABOUT YOUR HOUSEHOLD. YOU WILL RECEIVE AN ADDITIONAL $20 IN COMPENSATION FOR YOUR FAMILY. NEXT I’M GOING TO ASK YOU SOME ADDITIONAL PERSONAL QUESTIONS ABOUT YOUR HEALTH AND DIFFERENT LIVED EXPERIENCES YOU HAVE HAD. DUE TO THE PERSONAL NATURE OF THESE QUESTIONS, WE HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER. PLEASE REMEMBER THAT YOUR ANSWERS WILL BE KEPT CONFIDENTIAL.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>GRACIAS POR RESPONDER ESTAS PREGUNTAS SOBRE SU HOGAR. RECIBIRÁ $20 ADICIONALES EN COMPENSACIÓN POR SU FAMILIA. A CONTINUACIÓN LE HARÉ ALGUNAS PREGUNTAS PERSONALES ADICIONALES SOBRE USTED. ESTAS PREGUNTAS SON SOBRE SU SALUD Y ALGUNAS EXPERIENCIAS QUE HAYA TENIDO. POR SER PREGUNTAS PERSONALES, TENEMOS UNA TARJETA DE RESPUESTAS PARA QUE ME DIGA EL NÚMERO QUE CORRESPONDA A SU RESPUESTA. LE RECUERDO QUE SUS RESPUESTAS SON CONFIDENCIALES.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Thank you for answering those questions about your household. You will receive an additional $20 in compensation for your family. Next I’m going to ask you some additional personal questions about your health and different lived experiences you have had. Due to the personal nature of these questions, we have response cards for you to tell me the number that corresponds to your answer. Please remember that your answers will be kept confidential.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Gracias por responder estas preguntas sobre su hogar. Recibirá $20 adicionales en compensación por su familia. A continuación le haré algunas preguntas personales adicionales sobre usted. Estas preguntas son sobre su salud y algunas experiencias que haya tenido. Por ser preguntas personales, tenemos una tarjeta de respuestas para que me diga el número que corresponda a su respuesta. Le recuerdo que sus respuestas son confidenciales.</strong></div>"
      },
      "visibleIf": "{Q23_U18} > 0"
     },
@@ -5561,8 +5393,8 @@
      "type": "html",
      "name": "health_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>THANK YOU FOR ANSWERING THOSE QUESTIONS ABOUT YOUR HOUSEHOLD. YOU WILL RECEIVE AN ADDITIONAL $20 IN COMPENSATION FOR YOUR FAMILY. NEXT I’M GOING TO ASK YOU SOME ADDITIONAL PERSONAL QUESTIONS ABOUT YOUR HEALTH AND DIFFERENT LIVED EXPERIENCES YOU HAVE HAD. DUE TO THE PERSONAL NATURE OF THESE QUESTIONS, WE HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER. PLEASE REMEMBER THAT YOUR ANSWERS WILL BE KEPT CONFIDENTIAL.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>GRACIAS POR RESPONDER ESTAS PREGUNTAS SOBRE SU HOGAR. RECIBIRÁ $20 ADICIONALES EN COMPENSACIÓN POR SU FAMILIA. A CONTINUACIÓN LE HARÉ ALGUNAS PREGUNTAS PERSONALES ADICIONALES SOBRE USTED. ESTAS PREGUNTAS SON SOBRE SU SALUD Y ALGUNAS EXPERIENCIAS QUE HAYA TENIDO. POR SER PREGUNTAS PERSONALES, TENEMOS UNA TARJETA DE RESPUESTAS PARA QUE ME DIGA EL NÚMERO QUE CORRESPONDA A SU RESPUESTA. LE RECUERDO QUE SUS RESPUESTAS SON CONFIDENCIALES.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Thank you for answering those questions about your household. You will receive an additional $20 in compensation for your family. Next I’m going to ask you some additional personal questions about your health and different lived experiences you have had. Due to the personal nature of these questions, we have response cards for you to tell me the number that corresponds to your answer. Please remember that your answers will be kept confidential.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Gracias por responder estas preguntas sobre su hogar. Recibirá $20 adicionales en compensación por su familia. A continuación le haré algunas preguntas personales adicionales sobre usted. Estas preguntas son sobre su salud y algunas experiencias que haya tenido. Por ser preguntas personales, tenemos una tarjeta de respuestas para que me diga el número que corresponda a su respuesta. Le recuerdo que sus respuestas son confidenciales.</strong></div>"
      },
      "visibleIf": "{Q23_U18} empty or {Q23_U18} = 0"
     },
@@ -5570,8 +5402,8 @@
      "type": "html",
      "name": "Q36_spoken",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>48. & 49. DO YOU HAVE, OR HAVE YOU EVER BEEN DIAGNOSED WITH ANY OF THE FOLLOWING HEALTH CONDITIONS?</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>48. & 49. ¿USTED TIENE O HA SIDO DIAGNOSTICADO/A CON ALGUNO DE LAS SIGUIENTES CONDICIONES MÉDICAS?</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>48. & 49. Do you have, or have you ever been diagnosed with any of the following health conditions?</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>48. & 49. ¿Usted tiene o ha sido diagnosticado/a con alguno de las siguientes condiciones médicas?</strong></div>"
      }
     },
     {
@@ -5601,8 +5433,8 @@
      "type": "radiogroup",
      "name": "Q37_AU",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
      },
      "choices": [
       {
@@ -5655,8 +5487,8 @@
      "type": "radiogroup",
      "name": "Q37_SU",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
      },
      "choices": [
       {
@@ -5735,8 +5567,8 @@
      "type": "radiogroup",
      "name": "Q37_SMI",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO-PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo-plazo o permanente?"
      },
      "choices": [
       {
@@ -5789,8 +5621,8 @@
      "type": "radiogroup",
      "name": "Q37_PhysD",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO-PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo-plazo o permanente?"
      },
      "choices": [
       {
@@ -5843,8 +5675,8 @@
      "type": "radiogroup",
      "name": "Q37_PhysIll",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
      },
      "choices": [
       {
@@ -5897,8 +5729,8 @@
      "type": "radiogroup",
      "name": "Q37_TBI",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
      },
      "choices": [
       {
@@ -5978,8 +5810,8 @@
      "type": "radiogroup",
      "name": "Q37_Oth",
      "title": {
-      "default": "IS THIS CONDITION PERMANENT OR LONG-TERM?",
-      "es": "¿Y ESTA CONDÍCION ES A LARGO PLAZO O PERMANENTE?"
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
      },
      "choices": [
       {
@@ -6041,22 +5873,10 @@
       }
      ],
      "visibleIf": "{Q36_AU} empty and {Q36_SU} empty and {Q36_HIV} empty and {Q36_SMI} empty and {Q36_PhysD} empty and {Q36_PhysIll} empty and {Q36_TBI} empty and {Q36_DD} empty and {Q36_Oth} empty"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_21",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Health & Safety",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_safety_1",
@@ -6076,8 +5896,8 @@
       {
        "value": "SAFETY CONCERN",
        "text": {
-        "default": "SAFETY CONCERN",
-        "es": "PROBLEMA DE SEGURIDAD"
+        "default": "Safety concern",
+        "es": "Problema de seguridad"
        }
       },
       {
@@ -6091,7 +5911,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_safety_2",
@@ -6104,8 +5924,8 @@
      "type": "radiogroup",
      "name": "Q38_Consent",
      "title": {
-      "default": "50. THE NEXT QUESTIONS ARE SENSITIVE AND PERSONAL BECAUSE THEY ASK ABOUT EXPERIENCES WITH VIOLENCE. DO YOU CURRENTLY FEEL COMFORTABLE ANSWERING THOSE QUESTIONS?",
-      "es": "32. VOY A HACERLE TRES PREGUNTAS SENSIBLES Y PERSONALES SOBRE EXPERIENCIAS CON VIOLENCIA. ¿SE SIENTE CÓMODO RESPONDIENDO?"
+      "default": "50. The next questions are sensitive and personal because they ask about experiences with violence. Do you currently feel comfortable answering those questions?",
+      "es": "32. Voy a hacerle tres preguntas sensibles y personales sobre experiencias con violencia. ¿Se siente cómodo respondiendo?"
      },
      "description": "After assessing that there are no safety concerns, please check that respondent also feels safe:",
      "choices": [
@@ -6124,7 +5944,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern'"
   },
   {
    "name": "yc_safety_3",
@@ -6137,8 +5957,8 @@
      "type": "checkbox",
      "name": "Q39",
      "title": {
-      "default": "51. HAVE YOU EXPERIENCED ANY OF THE FOLLOWING FORMS OF VIOLENCE OR ABUSE?",
-      "es": "51. ¿HA ESTADO EXPUESTO/A A ALGUNA DE LAS SIGUIENTES FORMAS DE VIOLENCIA O ABUSO?"
+      "default": "51. Have you experienced any of the following forms of violence or abuse?",
+      "es": "51. ¿Ha estado expuesto/a a alguna de las siguientes formas de violencia o abuso?"
      },
      "description": "Please use response card. If the person is not comfortable responding to the question, select Declined.",
      "choices": [
@@ -6240,7 +6060,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes'"
   },
   {
    "name": "yc_safety_4",
@@ -6253,8 +6073,8 @@
      "type": "radiogroup",
      "name": "Q41",
      "title": {
-      "default": "52. ARE YOU CURRENTLY EXPERIENCING HOMELESSNESS BECAUSE YOU ARE FLEEING DOMESTIC VIOLENCE, DATING VIOLENCE, SEXUAL ASSAULT, OR STALKING?",
-      "es": "52. ¿ESTÁ ACTUALMENTE SIN HOGAR DEBIDO A QUE ESTÁ HUYENDO DE VIOLENCIA DOMÉSTICA, VIOLENCIA DE PAREJA, ACOSO SEXUAL, O DE ACOSO GENERAL?"
+      "default": "52. Are you currently experiencing homelessness because you are fleeing domestic violence, dating violence, sexual assault, or stalking?",
+      "es": "52. ¿Está actualmente sin hogar debido a que está huyendo de violencia doméstica, violencia de pareja, acoso sexual, o de acoso general?"
      },
      "description": "Please use the response card. If the person is not comfortable responding to the question, select Declined.",
      "choices": [
@@ -6284,22 +6104,10 @@
        }
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_22",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes' and {Q39} notcontains 'None of the Above' and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes' and {Q39} notcontains 'None of the Above' and {yc_homeless} = true"
   },
   {
    "name": "yc_systems",
@@ -6312,8 +6120,8 @@
      "type": "checkbox",
      "name": "Q42",
      "title": {
-      "default": "53. THIS NEXT QUESTION IS ABOUT INVOLVEMENT IN DIFFERENT SYSTEMS, INCLUDING CHILD WELFARE SYSTEMS. IF YOU DON'T KNOW OR DON'T WANT TO ANSWER, LET ME KNOW. OTHERWISE, SAY \"YES\" IF YOU HAVE EVER BEEN INVOLVED IN ANY OF THE FOLLOWING SYSTEMS:",
-      "es": "53. LA SIGUIENTE PREGUNTA ES SOBRE SU PARTICIPACIÓN EN VARIOS SISTEMAS. SI NO SABE O NO DESEA RESPONDER, HÁGAMELO SABER. DE LO CONTRARIO, DIGA \"SÍ\" SI HA PARTICIPADO EN ALGUNO DE LOS SIGUIENTES SISTEMAS."
+      "default": "53. This next question is about involvement in different systems, including child welfare systems. If you don't know or don't want to answer, let me know. Otherwise, say \"yes\" if you have ever been involved in any of the following systems:",
+      "es": "53. La siguiente pregunta es sobre su participación en varios sistemas. Si no sabe o no desea responder, hágamelo saber. De lo contrario, diga \"sí\" si ha participado en alguno de los siguientes sistemas."
      },
      "description": "Please read each option and choose ALL that apply.",
      "choices": [
@@ -6433,22 +6241,10 @@
        "isExclusive": true
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_23",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Systems Involvement",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_residence_1",
@@ -6461,16 +6257,16 @@
      "type": "html",
      "name": "residence_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>NOW I'M GOING TO ASK YOU A SERIES OF QUESTIONS ABOUT WHERE YOU LIVED BEFORE YOU LOST STABLE HOUSING.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>AHORA VOY A HACERLE UNA SERIE DE PREGUNTAS SOBRE DÓNDE VIVIÓ ANTES DE PERDER SU VIVIENDA ESTABLE.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Now I'm going to ask you a series of questions about where you lived before you lost stable housing.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Ahora voy a hacerle una serie de preguntas sobre dónde vivió antes de perder su vivienda estable.</strong></div>"
      }
     },
     {
      "type": "radiogroup",
      "name": "Q46",
      "title": {
-      "default": "54. HAVE YOU EVER LIVED OUTSIDE OF LOS ANGELES COUNTY?",
-      "es": "54. ¿HA VIVIDO FUERA DEL CONDADO DE LOS ÁNGELES?"
+      "default": "54. Have you ever lived outside of Los Angeles County?",
+      "es": "54. ¿Ha vivido fuera del condado de Los Ángeles?"
      },
      "choices": [
       {
@@ -6502,7 +6298,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
   },
   {
    "name": "yc_residence_2",
@@ -6515,8 +6311,8 @@
      "type": "checkbox",
      "name": "Q47_units",
      "title": {
-      "default": "55. HOW LONG HAS IT BEEN SINCE YOU MOVED INTO LA COUNTY?",
-      "es": "55. ¿HACE CUÁNTO TIEMPO SE MUDÓ AL CONDADO DE LOS ÁNGELES?"
+      "default": "55. How long has it been since you moved into LA County?",
+      "es": "55. ¿Hace cuánto tiempo se mudó al condado de Los Ángeles?"
      },
      "description": "If respondent is unsure use an example, e.g, \"six months ago I move from out of state.\"",
      "choices": [
@@ -6610,22 +6406,10 @@
       "es": "Años"
      },
      "visibleIf": "{Q47_units} contains 'Year(s)'"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_36",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\") and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
   },
   {
    "name": "yc_residence_3",
@@ -6638,8 +6422,8 @@
      "type": "radiogroup",
      "name": "Q48",
      "title": {
-      "default": "56. WHERE WERE YOU LIVING BEFORE THE LAST TIME YOU LOST YOUR HOUSING?",
-      "es": "56. ANTES DE LA ÚLTIMA VEZ QUE PERDIÓ SU VIVIENDA, ¿DÓNDE VIVÍA?"
+      "default": "56. Where were you living before the last time you lost your housing?",
+      "es": "56. Antes de la última vez que perdió su vivienda, ¿dónde vivía?"
      },
      "description": "Read each response and choose one answer.",
      "choices": [
@@ -6699,8 +6483,8 @@
      "type": "dropdown",
      "name": "Q48_Followup",
      "title": {
-      "default": "57. WHERE DID YOU FIRST STAY WHEN YOU CAME TO THE L.A. AREA?",
-      "es": "57. ¿DÓNDE VIVIÓ POR PRIMERA VEZ CUANDO LLEGÓ AL ÁREA DE LOS ÁNGELES?"
+      "default": "57. Where did you first stay when you came to the L.A. area?",
+      "es": "57. ¿Dónde vivió por primera vez cuando llegó al área de Los Ángeles?"
      },
      "description": "Read the first two responses then say, \"Or someplace else\". Wait for response, then select choice closest to their answer.",
      "choices": [
@@ -6940,7 +6724,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\") and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
   },
   {
    "name": "yc_residence_4",
@@ -6953,8 +6737,8 @@
      "type": "checkbox",
      "name": "Q50",
      "title": {
-      "default": "58. WHAT DO YOU THINK ARE SOME OF THE MAIN REASONS OR CONDITIONS THAT LED TO YOUR LOSS OF HOUSING?",
-      "es": "58. ¿CUÁLES CREE USTED QUE SON ALGUNAS DE LAS PRINCIPALES RAZONES O CONDICIONES QUE LO/LA LLEVARON A PERDER SU VIVIENDA?"
+      "default": "58. What do you think are some of the main reasons or conditions that led to your loss of housing?",
+      "es": "58. ¿Cuáles cree usted que son algunas de las principales razones o condiciones que lo/la llevaron a perder su vivienda?"
      },
      "description": "Wait for response and choose ALL that apply.",
      "choices": [
@@ -7160,22 +6944,10 @@
       "es": "Otra opción (especifique) – especifique"
      },
      "visibleIf": "{Q50} contains 'Other (Specify):'"
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_24",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true) and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
   },
   {
    "name": "yc_education_1",
@@ -7188,8 +6960,8 @@
      "type": "radiogroup",
      "name": "Q45",
      "title": {
-      "default": "59. WHAT IS THE HIGHEST LEVEL OF EDUCATION YOU HAVE COMPLETED?",
-      "es": "59. ¿CUÁL ES EL NIVEL DE EDUCACIÓN MÁS ALTO QUE HA COMPLETADO?"
+      "default": "59. What is the highest level of education you have completed?",
+      "es": "59. ¿Cuál es el nivel de educación más alto que ha completado?"
      },
      "description": "Wait for response and select the response that applies best.",
      "choices": [
@@ -7255,8 +7027,8 @@
      "type": "checkbox",
      "name": "Q405",
      "title": {
-      "default": "60. ARE YOU CURRENTLY ENROLLED IN SCHOOL OR AN EDUCATIONAL PROGRAM?",
-      "es": "60. ¿ESTÁ ACTUALMENTE INSCRITO/A EN LA ESCUELA O EN UN PROGRAMA EDUCATIVO?"
+      "default": "60. Are you currently enrolled in school or an educational program?",
+      "es": "60. ¿Está actualmente inscrito/a en la escuela o en un programa educativo?"
      },
      "description": "If yes, read each category that starts with \"Yes\" and choose ALL that apply. If no, select \"No, not currently enrolled\".",
      "choices": [
@@ -7327,22 +7099,10 @@
        "isExclusive": true
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "EXIT_25",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_2",
@@ -7355,8 +7115,8 @@
      "type": "radiogroup",
      "name": "Q52",
      "title": {
-      "default": "61. HOW WOULD YOU DESCRIBE YOUR CURRENT EMPLOYMENT SITUATION?",
-      "es": "61. ¿CUÁL DE LAS SIGUIENTES OPCIONES DESCRIBIRÍA MEJOR SU SITUACIÓN DE EMPLEO?"
+      "default": "61. How would you describe your current employment situation?",
+      "es": "61. ¿Cuál de las siguientes opciones describiría mejor su situación de empleo?"
      },
      "description": "Wait for response and choose the most appropriate response. If unemployed or not working, ask for clarification.",
      "choices": [
@@ -7452,22 +7212,10 @@
        }
       }
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "Q447",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty and {EXIT_25} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_3",
@@ -7480,8 +7228,8 @@
      "type": "radiogroup",
      "name": "Q53",
      "title": {
-      "default": "THE NEXT QUESTION IS ABOUT FORCED LABOR. WE HAVE RESPONSE CARDS FOR YOU TO TELL ME THE NUMBER THAT CORRESPONDS TO YOUR ANSWER 62. HAVE YOU EVER BEEN FORCED TO WORK, WHERE YOU DIDN’T GET PAID OR YOU GOT PAID LESS THAN EXPECTED?",
-      "es": "LA SIGUIENTE PREGUNTA ES SOBRE TRABAJO FORZADO. TENEMOS TARJETAS DE RESPUESTA PARA QUE ME DIGA EL NÚMERO QUE CORRESPONDA A SU RESPUESTA. 62. ¿ALGUNA VEZ HA SIDO FORZADO A REALIZAR UN TRABAJO DONDE NO LE PAGARON O DONDE LE PAGARON MENOS DE LO DEBIDO?"
+      "default": "The next question is about forced labor. We have response cards for you to tell me the number that corresponds to your answer 62. Have you ever been forced to work, where you didn’t get paid or you got paid less than expected?",
+      "es": "La siguiente pregunta es sobre trabajo forzado. Tenemos tarjetas de respuesta para que me diga el número que corresponda a su respuesta. 62. ¿Alguna vez ha sido forzado a realizar un trabajo donde no le pagaron o donde le pagaron menos de lo debido?"
      },
      "description": "Please use the response card.",
      "choices": [
@@ -7516,8 +7264,8 @@
      "type": "checkbox",
      "name": "Q54",
      "title": {
-      "default": "63. WHAT TYPE OF WORK DID YOU HAVE TO DO?",
-      "es": "63. ¿QUÉ TIPO DE TRABAJO TUVO QUE REALIZAR?"
+      "default": "63. What type of work did you have to do?",
+      "es": "63. ¿Qué tipo de trabajo tuvo que realizar?"
      },
      "description": "Please use the response card.",
      "choices": [
@@ -7604,22 +7352,10 @@
       "es": "Otro, especificar – especifique"
      },
      "visibleIf": "{Q54} contains 'Other, specify'"
-    },
-    {
-     "type": "checkbox",
-     "name": "Q448",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty and {EXIT_25} empty and {Q447} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_4",
@@ -7638,14 +7374,14 @@
      "type": "checkbox",
      "name": "Q55",
      "title": {
-      "default": "64. DO YOU CURRENTLY RECEIVE ANY OF THE FOLLOWING TYPES OF SERVICES, BENEFITS, OR ASSISTANCE?",
-      "es": "64. ¿ACTUALMENTE RECIBE ALGUNO DE LOS SIGUIENTES TIPOS DE SERVICIOS, BENEFICIOS O ASISTENCIA?"
+      "default": "64. Do you currently receive any of the following types of services, benefits, or assistance?",
+      "es": "64. ¿Actualmente recibe alguno de los siguientes tipos de servicios, beneficios o asistencia?"
      },
      "description": "Read each category and choose ALL that apply",
      "choices": [
       {
        "value": "CalWORKS / TANF",
-       "text": "CalWORKS / TANF"
+       "text": "Calworks / tanf"
       },
       {
        "value": "CAPI - Cash Assistance Program for Immigrants",
@@ -7868,22 +7604,10 @@
       "es": "Otro servicio, beneficio o asistencia (por favor, especifique): – especifique"
      },
      "visibleIf": "{Q55} contains 'Other (please specify):'"
-    },
-    {
-     "type": "checkbox",
-     "name": "Q449",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty and {EXIT_25} empty and {Q447} empty and {Q448} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_special",
@@ -7896,8 +7620,8 @@
      "type": "multipletext",
      "name": "Q400",
      "title": {
-      "default": "65. HOW LONG DID IT TAKE YOU TO GET TO THIS LOCATION TODAY?",
-      "es": "65. ¿CUÁNTO TIEMPO LE TOMÓ LLEGAR A ESTE LUGAR?"
+      "default": "65. How long did it take you to get to this location today?",
+      "es": "65. ¿Cuánto tiempo le tomó llegar a este lugar?"
      },
      "description": "Enter hours (decimals allowed, e.g., 1.5) or minutes (whole numbers only, e.g., 45). Either field can be blank if the other is filled. If the participant cannot answer, select Declined or Don’t know.",
      "items": [
@@ -7947,8 +7671,8 @@
      "type": "radiogroup",
      "name": "Q402",
      "title": {
-      "default": "66. APPROXIMATELY HOW MANY MILES DID YOU TRAVEL TO GET TO THIS LOCATION TODAY?",
-      "es": "66. ¿APROXIMADAMENTE CUÁNTAS MILLAS RECORRIÓ PARA LLEGAR A ESTE LUGAR?"
+      "default": "66. Approximately how many miles did you travel to get to this location today?",
+      "es": "66. ¿Aproximadamente cuántas millas recorrió para llegar a este lugar?"
      },
      "description": "Wait for a response and then select the option that best reflects the individual's answer.",
      "choices": [
@@ -8014,8 +7738,8 @@
      "type": "checkbox",
      "name": "Q403",
      "title": {
-      "default": "67. WHAT TRANSPORTATION DID YOU USE TO COME TO THIS LOCATION TODAY?",
-      "es": "67. ¿QUÉ MEDIO DE TRANSPORTE UTILIZÓ PARA LLEGAR A ESTE LUGAR?"
+      "default": "67. What transportation did you use to come to this location today?",
+      "es": "67. ¿Qué medio de transporte utilizó para llegar a este lugar?"
      },
      "description": "Wait for response and choose ALL that apply.",
      "choices": [
@@ -8115,22 +7839,10 @@
       "es": "Otro (especifique): – especifique"
      },
      "visibleIf": "{Q403} contains 'Other (specify):'"
-    },
-    {
-     "type": "checkbox",
-     "name": "Exit_37",
-     "title": "If participant no longer wishes to continue the survey, exit survey by selecting button below and give participant a gift card.",
-     "description": "Selecting this ends the questions and goes to the gift card pages.",
-     "choices": [
-      {
-       "value": "Exit survey",
-       "text": "EXIT SURVEY (CANNOT BE UNDONE)"
-      }
-     ]
     }
    ],
    "navigationTitle": "Special Questions",
-   "visibleIf": "(({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness') and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty and {EXIT_25} empty and {Q447} empty and {Q448} empty and {Q449} empty"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_future_research",
@@ -8167,7 +7879,7 @@
     }
    ],
    "navigationTitle": "Future Research",
-   "visibleIf": "({location} notcontains \"Phone\") and {Q427} empty and {Q428} empty and {Q429} empty and {EXIT_8} empty and {EXIT_5} empty and {EXIT_6} empty and {EXIT_7} empty and {EXIT_1} empty and {EXIT_2} empty and {EXIT_3} empty and {EXIT_4} empty and {EXIT_9} empty and {EXIT_14} empty and {EXIT_20} empty and {EXIT_21} empty and {EXIT_22} empty and {EXIT_23} empty and {EXIT_36} empty and {EXIT_24} empty and {EXIT_25} empty and {Q447} empty and {Q448} empty and {Q449} empty and {Exit_37} empty"
+   "visibleIf": "{location} notcontains \"Phone\""
   },
   {
    "name": "survey_deduplication",
