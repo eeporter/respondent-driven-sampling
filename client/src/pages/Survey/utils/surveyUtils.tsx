@@ -1,4 +1,6 @@
 import { Model, PageModel, QuestionSelectBase } from 'survey-core';
+// registers SurveyJS's Spanish strings (buttons, validation messages) for locale 'es'
+import 'survey-core/i18n/spanish';
 
 import { SurveyDocument } from '@/types/Survey';
 
@@ -29,6 +31,16 @@ if (typeof selectBaseProto.hasEmptyComments === 'function') {
  * the interviewer stopped, instead of back at the first page.
  */
 export const LAST_PAGE_KEY = 'last_page_name';
+
+/**
+ * Answer key holding the language the respondent chose. Question text carries an
+ * English default and a Spanish ("es") version; answers are stored in English either way.
+ */
+export const LANGUAGE_KEY = 'survey_language';
+
+const applySurveyLanguage = (survey: Model) => {
+	survey.locale = survey.getValue(LANGUAGE_KEY) === 'es' ? 'es' : '';
+};
 
 const restoreLastPage = (survey: Model) => {
 	const pageName = survey.data?.[LAST_PAGE_KEY];
@@ -146,9 +158,14 @@ export const initializeSurvey = (
 	// Apply custom theme
 	survey.applyTheme(themeJson);
 
+	survey.onValueChanged.add((sender, options) => {
+		if (options.name === LANGUAGE_KEY) applySurveyLanguage(sender);
+	});
+
 	// Populate with existing data from objectId if found
 	if (surveyByObjectId) {
 		survey.data = surveyByObjectId.responses;
+		applySurveyLanguage(survey);
 		if (!isEditMode) restoreLastPage(survey);
 		return {
 			survey,
@@ -162,6 +179,7 @@ export const initializeSurvey = (
 	// Populate with existing data from coupon code if found
 	else if (surveyByRefCode) {
 		survey.data = surveyByRefCode.responses;
+		applySurveyLanguage(survey);
 		if (!isEditMode) restoreLastPage(survey);
 		return {
 			survey,
