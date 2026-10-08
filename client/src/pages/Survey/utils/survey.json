@@ -971,12 +971,6 @@
       "es": "1. SIN CONTAR A SU FAMILIA, ¿A CUÁNTOS JÓVENES MENORES DE 25 AÑOS CONOCE PERSONALMENTE QUE ESTÁN SIN HOGAR EN EL CONDADO DE LOS ÁNGELES HOY? POR “CONOCER,” NOS REFERIMOS A ALGUIEN QUE USTED HAYA VISTO O CON QUIEN HAYA HABLADO EN LOS ÚLTIMOS 3 MESES Y A QUIEN PODRÍA CONTACTAR."
      },
      "description": "If the individual says they do not know anyone else or they do not want to answer the question, please input 0."
-    },
-    {
-     "type": "expression",
-     "name": "network_panel_count",
-     "visible": false,
-     "expression": "iif({non_family_network_size} > 10, 10, {non_family_network_size})"
     }
    ],
    "navigationTitle": "Network"
@@ -1000,16 +994,24 @@
      "type": "paneldynamic",
      "name": "non_family_network",
      "title": {
-      "default": "People you know (up to 10)",
-      "es": "Personas que conoce (hasta 10)"
+      "default": "People you know",
+      "es": "Personas que conoce"
      },
-     "bindings": {
-      "panelCount": "network_panel_count"
+     "panelCount": 0,
+     "minPanelCount": 0,
+     "maxPanelCount": 50,
+     "displayMode": "tab",
+     "addPanelText": {
+      "default": "+ Add new person",
+      "es": "+ Agregar persona"
      },
-     "maxPanelCount": 10,
+     "removePanelText": {
+      "default": "Remove",
+      "es": "Quitar"
+     },
      "templateTitle": {
-      "default": "Person {panelIndex}",
-      "es": "Persona {panelIndex}"
+      "default": "Person: {panel.network_person_name}",
+      "es": "Persona: {panel.network_person_name}"
      },
      "templateElements": [
       {
@@ -3349,13 +3351,21 @@
       "default": "Children",
       "es": "Niños"
      },
-     "bindings": {
-      "panelCount": "Q23_U18"
+     "panelCount": 0,
+     "minPanelCount": 0,
+     "maxPanelCount": 10,
+     "displayMode": "tab",
+     "addPanelText": {
+      "default": "+ Add child",
+      "es": "+ Agregar niño/a"
      },
-     "maxPanelCount": 15,
+     "removePanelText": {
+      "default": "Remove",
+      "es": "Quitar"
+     },
      "templateTitle": {
-      "default": "Child {panelIndex}",
-      "es": "Niño/a {panelIndex}"
+      "default": "Child: {panel.Q24c}",
+      "es": "Niño/a: {panel.Q24c}"
      },
      "templateElements": [
       {
@@ -4344,13 +4354,21 @@
       "default": "Family members 18 and older",
       "es": "Familiares de 18 años o más"
      },
-     "bindings": {
-      "panelCount": "Q23_18p"
+     "panelCount": 0,
+     "minPanelCount": 0,
+     "maxPanelCount": 10,
+     "displayMode": "tab",
+     "addPanelText": {
+      "default": "+ Add family member",
+      "es": "+ Agregar familiar"
      },
-     "maxPanelCount": 15,
+     "removePanelText": {
+      "default": "Remove",
+      "es": "Quitar"
+     },
      "templateTitle": {
-      "default": "Family member {panelIndex}",
-      "es": "Familiar {panelIndex}"
+      "default": "Family member: {panel.Q24f}",
+      "es": "Familiar: {panel.Q24f}"
      },
      "templateElements": [
       {
