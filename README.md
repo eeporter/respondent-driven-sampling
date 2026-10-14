@@ -1,3 +1,24 @@
+# RDS App: Grant County, WA
+
+The `grant-county-wa` branch holds the Grant County, Washington deployment of the RDS App, used for the Grant County Health District (GCHD) unsheltered Point-in-Time count. It is based on the open-source [RDS App](https://github.com/SSDALab/respondent-driven-sampling) and carries the Grant County changes on top of it.
+
+> **No data or credentials belong in this repository.** Survey responses, participant details, phone numbers, generated coupons and seeds, gift-card lists, SMS logs and `.env` files stay out of git. The relevant folders and `.env.*` files are already ignored.
+
+### What differs from the base app
+
+- **Survey:** Grant County IRB V3 survey instrument (`client/src/pages/Survey/utils/survey.json`), with custom page navigation, an optional "Other" text field, and resume-where-you-left-off.
+- **Test-site banner:** any host that is not the production host is labelled as a test site (`client/src/utils/environment.ts`).
+- **Coupons:** English/Spanish GCHD coupon template (`server/src/scripts/coupon-templates/grant-county-wa.*`). Generate with `COUPON_TEMPLATE=grant-county-wa npm run generate-coupons` from `server/`.
+- **Scripts:** test-database targets (`npm run location:test`, `npm run generate-seeds:test`, using `server/.env.test`) and safe location retirement.
+
+### Branches
+
+- `grant-county-wa`: the Grant County app as deployed. Only Grant County work is committed here.
+- `main`: the shared base app. Fixes that apply to every site (for example security fixes) land on `main` and are merged into this branch.
+- Sibling site branches: `la-county-ca`, `contra-costa-ca`.
+
+---
+
 <!-- Zenodo badge links to the concept DOI (stable across releases). -->
 [![ssec](https://img.shields.io/badge/SSEC-Project-purple?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAQAAABedl5ZAAAACXBIWXMAAAHKAAABygHMtnUxAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAMNJREFUGBltwcEqwwEcAOAfc1F2sNsOTqSlNUopSv5jW1YzHHYY/6YtLa1Jy4mbl3Bz8QIeyKM4fMaUxr4vZnEpjWnmLMSYCysxTcddhF25+EvJia5hhCudULAePyRalvUteXIfBgYxJufRuaKuprKsbDjVUrUj40FNQ11PTzEmrCmrevPhRcVQai8m1PRVvOPZgX2JttWYsGhD3atbHWcyUqX4oqDtJkJiJHUYv+R1JbaNHJmP/+Q1HLu2GbNoSm3Ft0+Y1YMdPSTSwQAAAABJRU5ErkJggg==&style=plastic)](https://escience.washington.edu/software-engineering/ssec/)
 [![DOI](https://zenodo.org/badge/1016172754.svg)](https://doi.org/10.5281/zenodo.19393410)
@@ -16,7 +37,7 @@ The codebase is a TypeScript monorepo: React frontend (`client/`), Node.js/Expre
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/SSDALab/respondent-driven-sampling.git
+git clone -b grant-county-wa https://github.com/eeporter/respondent-driven-sampling.git
 cd respondent-driven-sampling
 ```
 
