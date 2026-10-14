@@ -3,6 +3,24 @@
 [![DOI](https://zenodo.org/badge/1016172754.svg)](https://doi.org/10.5281/zenodo.19393410)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+# RDS App: Contra Costa County, CA
+
+The `contra-costa-ca` branch holds the Contra Costa County deployment of the RDS App. It was branched from `main` via the Grant County (`grant-county-wa`) and LA County (`la-county-ca`) site branches, and carries Contra Costa's own survey and settings. Shared fixes land on `main` and are merged into this branch.
+
+**What is specific to Contra Costa**
+
+- Survey questions from the 2026 Youth Housing Survey (`client/src/pages/Survey/utils/survey.json`). Partner agency and city names are still marked TODO in the survey.
+- Production hostname setting in `client/src/utils/environment.ts`.
+- Coupon template `server/src/scripts/coupon-templates/contra-costa-ca.yaml`, selected with `COUPON_TEMPLATE=contra-costa-ca`. It is still a draft: every field is a TODO and pages print as DRAFT.
+
+**Not yet set up**
+
+- A deployment workflow for Contra Costa. The Azure deploy workflows in `.github/workflows/` only run on pushes to the King County branch (`kc-pit-2026`), so pushes to this branch deploy nothing.
+
+**Data and credentials stay out of this branch.** Never commit `.env` files, database exports, participant data, coupon codes or phone numbers. Use `server/.env.example` as the template for local settings and get real values from a project maintainer.
+
+The rest of this README is the base app's documentation.
+
 ## Overview
 
 > **Documentation:** [MKDocs GitHub Site](https://ssdalab.github.io/respondent-driven-sampling/)
