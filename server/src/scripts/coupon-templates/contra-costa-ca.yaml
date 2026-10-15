@@ -1,19 +1,17 @@
 # Contra Costa County CA coupon. Select with COUPON_TEMPLATE=contra-costa-ca.
-# Draft: every TODO below must be filled in from LA's materials. Until then pages
-# are stamped DRAFT. To switch to a designed PDF later, see grant-county-wa.yaml in
-# the grant-county-wa branch for the `pdf:` + `qrBoxes:` form.
-title: 'TODO: coupon title'
-intro:
-    before: 'TODO: intro sentence before the gift card amount, e.g. "Bring this coupon to one of the locations below to complete a survey and receive a "'
-    highlight: 'TODO: amount'
-    after: ' Gift Card.'
-notes:
-    - 'TODO: accessibility / parking / pets notes'
-locations:
-    - name: 'TODO: hub name'
-      address: 'TODO: hub address, Contra Costa County, CA'
-      schedule:
-          - 'TODO: interview dates'
-          - 'TODO: interview hours'
-contact: 'TODO: contact phone number'
-logo: 'assets/logo.png'
+#
+# Designed by Contra Costa Health ("YHS Coupon Template", 2026 Youth Housing Survey,
+# 2026-10-15), then relaid out so the two QR codes cannot be confused: the large
+# box is labelled as the survey coupon code (staff scan it at the hub), and the
+# Uber ride QR sits in its own "Transportation only" panel at the bottom.
+# The box itself is unchanged, so the printed RDS QR sticker still fits.
+#
+# contra-costa-ca.pdf is NOT in git (it contains a live Uber ride-voucher QR code).
+# Copy it into this folder from the project's files before generating coupons.
+#
+# To change the design: replace contra-costa-ca.pdf, then RE-MEASURE the box if it
+# moved. Positions are in points (1/72 in) from the top-left of the page, measured
+# to the outside of the box outline.
+pdf: 'coupon-templates/contra-costa-ca.pdf'
+qrBoxes:
+    - { page: 1, x: 354.0, y: 390.5, width: 182.75, height: 173.25 } # Your survey coupon code

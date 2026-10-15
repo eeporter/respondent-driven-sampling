@@ -11,7 +11,7 @@ The `contra-costa-ca` branch holds the Contra Costa County deployment of the RDS
 
 - Survey questions from the 2026 Youth Housing Survey (`client/src/pages/Survey/utils/survey.json`). Partner agency and city names are still marked TODO in the survey.
 - Production hostname setting in `client/src/utils/environment.ts`.
-- Coupon template `server/src/scripts/coupon-templates/contra-costa-ca.yaml`, selected with `COUPON_TEMPLATE=contra-costa-ca`. It is still a draft: every field is a TODO and pages print as DRAFT.
+- Coupon template `server/src/scripts/coupon-templates/contra-costa-ca.yaml`, selected with `COUPON_TEMPLATE=contra-costa-ca`. It uses Contra Costa Health's designed coupon (`contra-costa-ca.pdf`) with the four library hub sites. That PDF is not in git because it holds a live Uber ride-voucher QR code; copy it into `server/src/scripts/coupon-templates/` from the project's files before generating coupons. Each seed's QR code goes in the large "Your survey coupon code" box; the Uber QR in the "Transportation only" panel is for rides.
 
 **Not yet set up**
 

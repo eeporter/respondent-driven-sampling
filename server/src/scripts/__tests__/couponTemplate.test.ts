@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import PDFDocument from 'pdfkit';
 
@@ -71,11 +72,21 @@ describe('bundled templates', () => {
 		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
 	});
 
-	it('contra-costa-ca is a text draft until its TODOs are filled in', () => {
-		const loaded = loadCouponTemplate('contra-costa-ca', scriptsDir);
-		expect(loaded.pdfPath).toBeNull();
-		expect(loaded.placeholders.length).toBeGreaterThan(0);
-		expect(() => assertCouponFits(loaded, 165)).not.toThrow();
+	it('contra-costa-ca points at a designed PDF with one box on page 1', async () => {
+		const yamlText = fs.readFileSync(
+			path.join(scriptsDir, 'coupon-templates/contra-costa-ca.yaml'),
+			'utf8'
+		);
+		const template = parseCouponTemplate(yamlText, 'contra-costa-ca');
+		expect(template.pdf).toBe('coupon-templates/contra-costa-ca.pdf');
+		expect(template.qrBoxes?.map(box => box.page)).toEqual([1]);
+
+		// The PDF is kept out of git (live ride-voucher QR), so only check it when present
+		if (fs.existsSync(path.join(scriptsDir, template.pdf!))) {
+			const { assertPdfTemplate } = await import('../couponPdf');
+			const loaded = loadCouponTemplate('contra-costa-ca', scriptsDir);
+			await expect(assertPdfTemplate(loaded)).resolves.toBeUndefined();
+		}
 	});
 
 	it('names the available templates when one is missing', () => {
