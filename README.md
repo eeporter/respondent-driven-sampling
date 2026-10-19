@@ -10,6 +10,8 @@ The `grant-county-wa` branch holds the Grant County, Washington deployment of th
 - **Test-site banner:** any host that is not the production host is labelled as a test site (`client/src/utils/environment.ts`).
 - **Coupons:** English/Spanish GCHD coupon template (`server/src/scripts/coupon-templates/grant-county-wa.*`). Generate with `COUPON_TEMPLATE=grant-county-wa npm run generate-coupons` from `server/`.
 - **Scripts:** test-database targets (`npm run location:test`, `npm run generate-seeds:test`, using `server/.env.test`) and safe location retirement.
+- **Referral credit report:** `npm run referral-report` (from `server/`) writes a CSV of participants with referral credit, grouped by survey location, to `server/src/scripts/gift-cards/` (git-ignored, contains participant information). Every survey started with a participant's coupon counts as one credit.
+- **Database firewall:** `npm run db:allow-my-ip` keeps this computer's current IP on the `rds-db-grant` firewall (one rule, `AutoMac`); add `-- --install` to re-check every 10 minutes on macOS. Needs the Azure CLI signed in.
 
 ### Branches
 
