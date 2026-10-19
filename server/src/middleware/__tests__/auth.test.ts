@@ -191,10 +191,21 @@ describe('Auth Middleware', () => {
 
 		await runAuth();
 
-		expect(mockRes.status).toHaveBeenCalledWith(400);
+		expect(mockRes.status).toHaveBeenCalledWith(401);
 		expect(mockRes.json).toHaveBeenCalledWith({
 			message: 'User account not found. Please contact Administration.'
 		});
+		expect(mockNext).not.toHaveBeenCalled();
+	});
+
+	it('rejects a deleted user even though their token is still valid', async () => {
+		const userId = await createUser(ROLES.ADMIN, ApprovalStatus.APPROVED);
+		await User.findByIdAndUpdate(userId, { deletedAt: new Date() });
+		withToken(generateAuthToken(userId));
+
+		await runAuth();
+
+		expect(mockRes.status).toHaveBeenCalledWith(401);
 		expect(mockNext).not.toHaveBeenCalled();
 	});
 

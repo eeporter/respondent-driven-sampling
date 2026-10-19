@@ -12,6 +12,7 @@ import { validate } from '@/middleware/validate';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { DEFAULT_TIMEZONE } from '@/permissions/utils';
 import { AuthenticatedRequest } from '@/types/auth';
+import { toEqualityFilter } from '@/utils/queryFilter';
 
 const router = express.Router();
 
@@ -42,7 +43,7 @@ router.get(
 		try {
 			const result = await User.find({
 				$and: [
-					req.query,
+					toEqualityFilter(req.query),
 					accessibleBy(req.authorization, ACTIONS.CASL.READ).ofType(
 						User.modelName
 					),
@@ -145,7 +146,14 @@ router.post(
 	'/',
 	[auth, validate(createUserSchema)],
 	async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
-		if (!req.authorization?.can(ACTIONS.CASL.CREATE, SUBJECTS.USER)) {
+		// Check against the user being created, so role and location
+		// conditions apply (e.g. managers may only create volunteers at their location)
+		if (
+			!req.authorization?.can(
+				ACTIONS.CASL.CREATE,
+				subject(SUBJECTS.USER, { ...req.body })
+			)
+		) {
 			return res.status(403).json({ message: 'Forbidden' });
 		}
 		try {
@@ -207,13 +215,29 @@ router.patch(
 			// These checks depend on interactions between our current user's role and location and the target user's role and location
 			// ex. a manager can only approve users with 'VOLUNTEER' role at their current location today, but are also allowed to update their own profile
 			// if the request tries to update a field that is impermissible for the document we fetched, we will return a 403 error
+			// The approver is always whoever makes the approval change
+			if ('approvalStatus' in req.body) {
+				req.body.approvedByUserObjectId = req.userObjectId;
+			}
+
+			// Each field must be allowed both on the user as they are now and on
+			// the user as they would be after the update. Checking only the
+			// current state let an admin set a volunteer's role to SUPER_ADMIN.
+			const before = user.toObject();
+			const after = { ...before, ...req.body };
 			if (
-				!Object.keys(req.body).every(field =>
-					req.authorization?.can(
-						ACTIONS.CASL.UPDATE,
-						subject(SUBJECTS.USER, user.toObject()),
-						field
-					)
+				!Object.keys(req.body).every(
+					field =>
+						req.authorization?.can(
+							ACTIONS.CASL.UPDATE,
+							subject(SUBJECTS.USER, before),
+							field
+						) &&
+						req.authorization?.can(
+							ACTIONS.CASL.UPDATE,
+							subject(SUBJECTS.USER, after),
+							field
+						)
 				)
 			) {
 				return res.status(403).json({

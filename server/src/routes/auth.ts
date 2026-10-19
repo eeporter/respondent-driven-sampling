@@ -11,6 +11,7 @@ import {
 	verifyOtpSignupSchema
 } from '@/database/user/zod/auth.validator';
 import { ApprovalStatus } from '@/database/utils/constants';
+import { otpRateLimit } from '@/middleware/rateLimit';
 import { validate } from '@/middleware/validate';
 import { generateAuthToken } from '@/utils/authTokenHandler';
 
@@ -23,10 +24,16 @@ const verifySid = process.env.TWILIO_VERIFY_SID as string;
 const client = twilio(accountSid, authToken);
 const verifyService = client.verify.v2.services(verifySid);
 
+// Twilio answers 404 when there is no pending code for the number (never sent,
+// expired, or already used); that is a wrong code to the user, not a server error
+function isTwilioNotFound(err: unknown): boolean {
+	return (err as { status?: number })?.status === 404;
+}
+
 // ─── Send OTP for SIGNUP ─────────────────────────────────────────────
 router.post(
 	'/send-otp-signup',
-	[validate(sendOtpSignupSchema)],
+	[validate(sendOtpSignupSchema), otpRateLimit],
 	async (req: Request, res: Response): Promise<void> => {
 		const { phone, email }: z.infer<typeof sendOtpSignupSchema> = req.body;
 		try {
@@ -54,15 +61,15 @@ router.post(
 // ─── Send OTP for LOGIN ──────────────────────────────────────────────
 router.post(
 	'/send-otp-login',
-	[validate(sendOtpLoginSchema)],
+	[validate(sendOtpLoginSchema), otpRateLimit],
 	async (req: Request, res: Response): Promise<void> => {
 		const { phone }: z.infer<typeof sendOtpLoginSchema> = req.body;
 		try {
-			const user = await User.findOne({ phone });
+			// Same response whether or not the phone is registered, so this
+			// endpoint cannot be used to find out who has an account
+			const user = await User.findOne({ phone, deletedAt: null });
 			if (!user) {
-				res.status(400).json({
-					message: 'No account for this phone – please sign up.'
-				});
+				res.json({ message: 'OTP sent!' });
 				return;
 			}
 			await verifyService.verifications.create({
@@ -80,7 +87,7 @@ router.post(
 // ─── Verify OTP for SIGNUP ──────────────────────────────────────────
 router.post(
 	'/verify-otp-signup',
-	[validate(verifyOtpSignupSchema)],
+	[validate(verifyOtpSignupSchema), otpRateLimit],
 	async (req: Request, res: Response): Promise<void> => {
 		const {
 			phone,
@@ -123,6 +130,10 @@ router.post(
 				token: token
 			});
 		} catch (err) {
+			if (isTwilioNotFound(err)) {
+				res.status(400).json({ message: 'Invalid OTP' });
+				return;
+			}
 			console.error('Verify OTP signup error:', err);
 			res.status(500).json({
 				message: 'Failed to verify OTP during signup'
@@ -134,7 +145,7 @@ router.post(
 // ─── Verify OTP for LOGIN ────────────────────────────────────────────
 router.post(
 	'/verify-otp-login',
-	[validate(verifyOtpLoginSchema)],
+	[validate(verifyOtpLoginSchema), otpRateLimit],
 	async (req: Request, res: Response): Promise<void> => {
 		const { phone, code }: z.infer<typeof verifyOtpLoginSchema> = req.body;
 		try {
@@ -146,11 +157,9 @@ router.post(
 				res.status(400).json({ message: 'Invalid OTP' });
 				return;
 			}
-			const user = await User.findOne({ phone });
+			const user = await User.findOne({ phone, deletedAt: null });
 			if (!user) {
-				res.status(400).json({
-					message: 'No account for this phone – please sign up.'
-				});
+				res.status(400).json({ message: 'Invalid OTP' });
 				return;
 			}
 			if (user.approvalStatus !== ApprovalStatus.APPROVED) {
@@ -168,6 +177,10 @@ router.post(
 				redirectTo: '/dashboard'
 			});
 		} catch (err) {
+			if (isTwilioNotFound(err)) {
+				res.status(400).json({ message: 'Invalid OTP' });
+				return;
+			}
 			console.error('Verify OTP login error:', err);
 			res.status(500).json({
 				message: 'Failed to verify OTP during login'

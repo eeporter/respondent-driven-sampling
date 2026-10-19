@@ -17,7 +17,9 @@ export const createSurveySchema = baseSurveySchema
 		// Optional fields
 		parentSurveyCode: true,
 		coordinates: true,
-		isCompleted: true
+		isCompleted: true,
+		// Ignored if sent: the server always records the logged-in user
+		createdByUserObjectId: true
 	})
 	.refine(
 		data =>

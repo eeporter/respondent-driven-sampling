@@ -3,13 +3,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import compression from 'compression';
 import cors from 'cors';
-import express, { NextFunction, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import nocache from 'nocache';
 
 import { setupSwagger } from '@/config/swagger';
 import connectDB from '@/database/index';
+import { errorHandler } from '@/middleware/errorHandler';
 import authRoutes from '@/routes/auth';
 import locationsRoutes from '@/routes/locations';
 import seedsRoutes from '@/routes/seeds';
@@ -26,207 +27,103 @@ await connectDB();
 
 const app = express();
 
-app.use(morgan('combined'));
+const isDev = process.env.NODE_ENV === 'development';
+
+// Azure App Service sits behind one proxy; trust it so req.ip is the client's
+// address (used by the login rate limiter)
+app.set('trust proxy', 1);
+
+// Log the path without the query string: list filters can carry names or
+// phone numbers, which should not end up in server logs
+morgan.token(
+	'path-only',
+	req => ((req as Request).originalUrl ?? req.url ?? '').split('?')[0]
+);
+app.use(
+	morgan(
+		':remote-addr - :remote-user [:date[clf]] ":method :path-only HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'
+	)
+);
 
 // SECURITY FIRST - Apply security middleware before any other middleware
 // This ensures all requests are protected from the start
-
-// 1. Disable X-Powered-By header
 app.disable('x-powered-by');
 
-// 2. Apply Helmet for security headers - using strongest settings
-app.use(helmet());
-
-// 3. Explicit CSP settings - ensuring Content-Security-Policy is set correctly
+// One Helmet configuration sets every security header for every response
+// (routes, static files, the SPA fallback and errors alike)
 app.use(
-	helmet.contentSecurityPolicy({
-		directives: {
-			defaultSrc: ["'self'"],
-			scriptSrc: ["'self'"],
-			styleSrc: ["'self'", "'unsafe-inline'"],
-			imgSrc: ["'self'", 'data:'],
-			connectSrc: ["'self'"],
-			fontSrc: ["'self'"],
-			objectSrc: ["'none'"],
-			mediaSrc: ["'self'"],
-			frameSrc: ["'none'"],
-			sandbox: ['allow-forms', 'allow-scripts', 'allow-same-origin'],
-			reportUri: '/report-violation',
-			reportTo: 'report-endpoint',
-			upgradeInsecureRequests: []
-		}
+	helmet({
+		contentSecurityPolicy: {
+			useDefaults: false,
+			directives: {
+				defaultSrc: ["'self'"],
+				scriptSrc: ["'self'"],
+				objectSrc: ["'none'"],
+				imgSrc: ["'self'", 'data:'],
+				styleSrc: ["'self'", "'unsafe-inline'"]
+			}
+		},
+		frameguard: { action: 'deny' },
+		strictTransportSecurity: {
+			maxAge: 31536000, // 1 year in seconds
+			includeSubDomains: true,
+			preload: true
+		},
+		referrerPolicy: { policy: 'same-origin' }
 	})
 );
 
-// 4. Explicit X-Frame-Options setting - preventing clickjacking
-app.use(helmet.frameguard({ action: 'deny' }));
-
-// 5. Strict Transport Security - forcing HTTPS
-app.use(
-	helmet.hsts({
-		maxAge: 31536000, // 1 year in seconds
-		includeSubDomains: true,
-		preload: true
-	})
-);
-
-// 6. X-Content-Type-Options - preventing MIME type sniffing
-app.use(helmet.noSniff());
-
-// 7. X-XSS-Protection - adding browser XSS filtering
-app.use(helmet.xssFilter());
-
-// 8. Referrer Policy - controlling referrer information
-app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
-
-// 9. Prevent browser caching for all responses to ensure fresh security headers
+// Prevent browser caching of API responses and pages
 app.use(nocache());
 
-// 10. Compression for better performance
 app.use(compression());
 
-// 11. Custom middleware to force security headers on every response
-app.use((_req: Request, res: Response, next: NextFunction) => {
-	// Ensuring these headers are explicitly set on every response
-	res.setHeader(
-		'Content-Security-Policy',
-		"default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
+// The client is served from this same server, so cross-origin requests are
+// only allowed for origins listed in CORS_ORIGIN (comma-separated), if any
+const corsOrigins = (process.env.CORS_ORIGIN ?? '')
+	.split(',')
+	.map(origin => origin.trim())
+	.filter(Boolean);
+if (corsOrigins.length > 0) {
+	app.use(
+		cors({
+			origin: corsOrigins,
+			methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+			allowedHeaders: ['Content-Type', 'Authorization'],
+			maxAge: 86400
+		})
 	);
-	res.setHeader('X-Frame-Options', 'DENY');
-	res.setHeader(
-		'Strict-Transport-Security',
-		'max-age=31536000; includeSubDomains; preload'
-	);
-	res.setHeader('X-Content-Type-Options', 'nosniff');
-	res.setHeader('X-XSS-Protection', '1; mode=block');
-	res.setHeader('Referrer-Policy', 'same-origin');
+}
 
-	// Cookie security
-	res.setHeader('Set-Cookie', 'HttpOnly; Secure; SameSite=Strict');
-
-	// Removing unwanted headers
-	res.removeHeader('X-Powered-By');
-	res.removeHeader('Server');
-
-	next();
-});
-
-// 12. Strict CORS settings - controlling cross-origin requests
-app.use(
-	cors({
-		origin: '*', // Replace with specific domains in production
-		methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-		allowedHeaders: ['Content-Type', 'Authorization'],
-		credentials: true,
-		maxAge: 86400
-	})
-);
-
-// 13. Body parsing middleware
+// Body parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes - each with enforced security headers
-const securityWrapper = (router: express.Router) => {
-	return (req: Request, res: Response, next: NextFunction) => {
-		// Set security headers before passing to router
-		res.setHeader(
-			'Content-Security-Policy',
-			"default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
-		);
-		res.setHeader('X-Frame-Options', 'DENY');
-		res.setHeader(
-			'Strict-Transport-Security',
-			'max-age=31536000; includeSubDomains; preload'
-		);
-		res.setHeader('X-Content-Type-Options', 'nosniff');
-		res.setHeader('X-XSS-Protection', '1; mode=block');
-		router(req, res, next);
-	};
-};
+// API documentation is only served in development
+if (isDev) {
+	setupSwagger(app);
+}
 
-// Setup Swagger documentation
-setupSwagger(app);
+app.use('/api/auth', authRoutes);
+app.use('/api/surveys', surveyRoutes);
+app.use('/api/seeds', seedsRoutes);
+app.use('/api/locations', locationsRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/', validateReferralCodeRoute);
 
-// Apply routes with security wrapper
-app.use('/api/auth', securityWrapper(authRoutes));
-app.use('/api/surveys', securityWrapper(surveyRoutes));
-app.use('/api/seeds', securityWrapper(seedsRoutes));
-app.use('/api/locations', securityWrapper(locationsRoutes));
-app.use('/api/users', securityWrapper(usersRoutes));
-app.use('/api/', securityWrapper(validateReferralCodeRoute));
-
-// Serve static files with security headers
+// Serve the built client
 const clientBuildPath = path.join(__dirname, '../dist');
-app.use(
-	express.static(clientBuildPath, {
-		setHeaders: (res: Response) => {
-			res.setHeader(
-				'Content-Security-Policy',
-				"default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
-			);
-			res.setHeader('X-Frame-Options', 'DENY');
-			res.setHeader(
-				'Strict-Transport-Security',
-				'max-age=31536000; includeSubDomains; preload'
-			);
-			res.setHeader('X-Content-Type-Options', 'nosniff');
-			res.setHeader('X-XSS-Protection', '1; mode=block');
-			res.setHeader('Referrer-Policy', 'same-origin');
-			res.setHeader(
-				'Cache-Control',
-				'no-store, no-cache, must-revalidate, proxy-revalidate'
-			);
-			res.setHeader('Pragma', 'no-cache');
-			res.setHeader('Expires', '0');
-			res.setHeader('Surrogate-Control', 'no-store');
-		}
-	})
-);
+app.use(express.static(clientBuildPath));
 
-// Catch-all route handler with security headers
+// Unknown API routes get a JSON 404; everything else is the single-page app
 app.get('*', (req: Request, res: Response) => {
-	// Set security headers
-	res.setHeader(
-		'Content-Security-Policy',
-		"default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
-	);
-	res.setHeader('X-Frame-Options', 'DENY');
-	res.setHeader(
-		'Strict-Transport-Security',
-		'max-age=31536000; includeSubDomains; preload'
-	);
-	res.setHeader('X-Content-Type-Options', 'nosniff');
-	res.setHeader('X-XSS-Protection', '1; mode=block');
-
 	if (req.originalUrl.startsWith('/api/')) {
 		return res.status(404).json({ message: 'API endpoint not found' });
 	}
 	res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
 
-console.log(process.env.NODE_ENV);
-// Error handler with security headers
-app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-	// Set security headers
-	res.setHeader(
-		'Content-Security-Policy',
-		"default-src 'self'; script-src 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'"
-	);
-	res.setHeader('X-Frame-Options', 'DENY');
-	res.setHeader(
-		'Strict-Transport-Security',
-		'max-age=31536000; includeSubDomains; preload'
-	);
-	res.setHeader('X-Content-Type-Options', 'nosniff');
-	res.setHeader('X-XSS-Protection', '1; mode=block');
-
-	console.error(err.stack);
-	const isDev = process.env.NODE_ENV === 'development';
-	res.status(500).json({
-		message: isDev ? err.message : 'Internal server error'
-	});
-});
+app.use(errorHandler);
 
 const PORT = parseInt(process.env.PORT ?? '1234', 10);
 app.listen(PORT, '0.0.0.0', () => {

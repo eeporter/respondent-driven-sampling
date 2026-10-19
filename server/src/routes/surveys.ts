@@ -17,6 +17,7 @@ import { auth } from '@/middleware/auth';
 import { validate } from '@/middleware/validate';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { AuthenticatedRequest } from '@/types/auth';
+import { toEqualityFilter } from '@/utils/queryFilter';
 
 const router = express.Router();
 
@@ -45,7 +46,7 @@ router.get(
 		try {
 			const result = await Survey.find({
 				$and: [
-					req.query,
+					toEqualityFilter(req.query),
 					accessibleBy(req.authorization, ACTIONS.CASL.READ).ofType(
 						Survey.modelName
 					),
@@ -239,6 +240,11 @@ router.post(
 		}
 		try {
 			const surveyData: ISurvey = req.body;
+
+			// The author is always the logged-in user, whatever the client sent
+			Object.assign(surveyData, {
+				createdByUserObjectId: req.userObjectId
+			});
 
 			// Generate unique child survey codes for the new survey
 			surveyData.childSurveyCodes =

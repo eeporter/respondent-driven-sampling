@@ -6,6 +6,7 @@ interface RoleSelectProps extends Omit<SelectProps, 'variant'> {
 	canEdit?: boolean;
 	showTooltip?: boolean;
 	includeEmptyOption?: boolean;
+	allowedRoles?: string[];
 }
 
 const ROLE_OPTIONS = [
@@ -18,11 +19,15 @@ export const RoleSelect = ({
 	canEdit = true,
 	showTooltip = false,
 	includeEmptyOption = true,
+	allowedRoles,
 	...props
 }: RoleSelectProps) => {
-	const options = includeEmptyOption
-		? [{ value: '', label: 'Select a role' }, ...ROLE_OPTIONS]
+	const roleOptions = allowedRoles
+		? ROLE_OPTIONS.filter(option => allowedRoles.includes(option.value))
 		: ROLE_OPTIONS;
+	const options = includeEmptyOption
+		? [{ value: '', label: 'Select a role' }, ...roleOptions]
+		: roleOptions;
 
 	return (
 		<FormSelect

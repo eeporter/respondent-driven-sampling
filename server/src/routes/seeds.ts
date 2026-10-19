@@ -5,8 +5,9 @@ import { createSeedSchema } from '@/database/seed/zod/seed.validator';
 import { generateUniqueSurveyCode } from '@/database/survey/survey.controller';
 import { auth } from '@/middleware/auth';
 import { validate } from '@/middleware/validate';
-import { ACTIONS, SUBJECTS } from '@/permissions/constants';
+import { ACTIONS, ROLES, SUBJECTS } from '@/permissions/constants';
 import { AuthenticatedRequest } from '@/types/auth';
+import { toEqualityFilter } from '@/utils/queryFilter';
 
 const router = express.Router();
 
@@ -35,9 +36,18 @@ router.get(
 			return res.sendStatus(403);
 		}
 		try {
-			const result = await Seed.find({
-				$and: [req.query]
-			});
+			const filter = toEqualityFilter(req.query);
+			// Unused seed codes start new referral chains, so only admins may list
+			// them all; everyone else may only look up a specific code
+			const canListAll =
+				req.userRole === ROLES.ADMIN ||
+				req.userRole === ROLES.SUPER_ADMIN;
+			if (!canListAll && !filter.surveyCode) {
+				return res.status(403).json({
+					message: 'Please look up a seed by its survey code.'
+				});
+			}
+			const result = await Seed.find(filter);
 			// Successfully fetched seeds
 			res.status(200).json({
 				message: 'Seeds fetched successfully',

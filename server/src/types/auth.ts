@@ -11,6 +11,9 @@ export interface AuthenticatedRequest extends Request {
 		locationObjectId: string;
 	};
 	authorization?: Ability;
+	// Set by the auth middleware from the verified token
+	userObjectId?: string;
+	userRole?: string;
 }
 
 export interface JWTPayload extends JwtPayload {

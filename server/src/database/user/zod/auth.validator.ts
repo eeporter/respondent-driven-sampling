@@ -8,7 +8,16 @@ const otpCodeSchema = z
 	.length(6, 'OTP code must be 6 digits')
 	.regex(/^\d{6}$/, 'OTP code must contain only digits');
 
-export const sendOtpSignupSchema = createUserSchema.strict();
+// Public signup can only ask for these roles; admins are created or promoted
+// by an existing admin, never by self-signup
+export const SIGNUP_ROLES = ['VOLUNTEER', 'MANAGER'] as const;
+const signupRoleSchema = z.enum(SIGNUP_ROLES, {
+	message: 'You can sign up as a volunteer or manager only'
+});
+
+export const sendOtpSignupSchema = createUserSchema
+	.extend({ role: signupRoleSchema })
+	.strict();
 
 export const sendOtpLoginSchema = createUserSchema
 	.pick({
@@ -20,6 +29,7 @@ export const sendOtpLoginSchema = createUserSchema
 
 export const verifyOtpSignupSchema = createUserSchema
 	.extend({
+		role: signupRoleSchema,
 		code: otpCodeSchema
 	})
 	.strict();
