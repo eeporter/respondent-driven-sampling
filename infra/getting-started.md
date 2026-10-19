@@ -70,6 +70,7 @@ pulumi up
 | `mongoServerVersion` | No | `8.0` | MongoDB server version |
 | `mongoSku` | No | `M20` | MongoDB vCore cluster SKU |
 | `mongoDiskSizeGb` | No | `128` | MongoDB disk size in GB |
+| `mongoFirewallRules` | No | none | IP ranges allowed to reach the database, as a list of `{ name, startIpAddress, endIpAddress }`. Set with `pulumi config set --path 'mongoFirewallRules[0].name' webapp1` and so on. With no rules the database refuses every connection. After the first `pulumi up`, add each address from the `webAppOutboundIps` output. |
 
 ## Importing Existing Resources
 
