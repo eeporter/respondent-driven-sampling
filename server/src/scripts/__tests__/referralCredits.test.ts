@@ -80,7 +80,23 @@ describe('buildReferralCreditRows', () => {
 		expect(rows[0].phone).toBe('');
 	});
 
-	test('sorts by most credits first', () => {
+	test('sorts by survey location, then most credits first', () => {
+		const other = new Map(locations).set('loc0', { hubName: 'Ephrata Train Depot', address: '90 Alder St NW' });
+		const rows = buildReferralCreditRows(
+			[
+				survey({ surveyCode: 'ML', childSurveyCodes: ['M1', 'M2'] }),
+				survey({ surveyCode: 'M1', parentSurveyCode: 'ML' }),
+				survey({ surveyCode: 'M2', parentSurveyCode: 'ML' }),
+				survey({ surveyCode: 'EP', childSurveyCodes: ['E1'], locationObjectId: 'loc0' }),
+				survey({ surveyCode: 'E1', parentSurveyCode: 'EP' })
+			],
+			other
+		);
+
+		expect(rows.map(r => r.surveyCode)).toEqual(['EP', 'ML']);
+	});
+
+	test('sorts by most credits first within a location', () => {
 		const rows = buildReferralCreditRows(
 			[
 				survey({ surveyCode: 'ONE', childSurveyCodes: ['O1'] }),

@@ -63,7 +63,8 @@ const formatDate = (value: unknown): string => {
 };
 
 /**
- * One row per participant with at least one referral credit, most credits first.
+ * One row per participant with at least one referral credit, grouped by survey
+ * location, most credits first within each location.
  * `surveys` must already exclude deleted surveys.
  */
 export function buildReferralCreditRows(
@@ -111,7 +112,10 @@ export function buildReferralCreditRows(
 	}
 
 	return rows.sort(
-		(a, b) => b.referralCredits - a.referralCredits || a.surveyCode.localeCompare(b.surveyCode)
+		(a, b) =>
+			a.surveyLocation.localeCompare(b.surveyLocation) ||
+			b.referralCredits - a.referralCredits ||
+			a.surveyCode.localeCompare(b.surveyCode)
 	);
 }
 
