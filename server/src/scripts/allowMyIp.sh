@@ -10,7 +10,8 @@
 # Only this computer's own firewall rule (AutoMac by default) is created or updated;
 # other rules, such as AllowAzureServices for the App Service, are never touched.
 # Needs the Azure CLI (`az`), signed in with `az login`.
-# Account: COSMOS_ACCOUNT env var, else COSMOS_ACCOUNT= in server/.env, else rds-db-grant.
+# Cluster: COSMOS_ACCOUNT env var, else COSMOS_ACCOUNT= in server/.env, else the cluster
+# name in MONGO_URI's host (<cluster>.mongocluster.cosmos.azure.com).
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -22,7 +23,10 @@ AGENT_PLIST="$HOME/Library/LaunchAgents/$AGENT_LABEL.plist"
 if [[ -z "${COSMOS_ACCOUNT:-}" && -f "$ENV_FILE" ]]; then
 	COSMOS_ACCOUNT="$(sed -n 's/^COSMOS_ACCOUNT=["'\'']\{0,1\}\([^"'\'']*\).*/\1/p' "$ENV_FILE" | tail -1)"
 fi
-COSMOS_ACCOUNT="${COSMOS_ACCOUNT:-rds-db-grant}"
+if [[ -z "${COSMOS_ACCOUNT:-}" && -f "$ENV_FILE" ]]; then
+	COSMOS_ACCOUNT="$(sed -n 's/^MONGO_URI=.*@\([A-Za-z0-9-]*\)\.mongocluster\.cosmos\.azure\.com.*/\1/p' "$ENV_FILE" | tail -1)"
+fi
+[[ -n "${COSMOS_ACCOUNT:-}" ]] || { echo "Set COSMOS_ACCOUNT (the Cosmos DB cluster name) in server/.env" >&2; exit 1; }
 
 case "${1:-}" in
 --install)
@@ -62,7 +66,7 @@ esac
 
 command -v az >/dev/null || { echo "Azure CLI (az) not found. Install it, then run: az login" >&2; exit 1; }
 
-# rds-db-grant is a Cosmos DB for MongoDB vCore cluster: its firewall is a set of named
+# The database is a Cosmos DB for MongoDB vCore cluster: its firewall is a set of named
 # rules, so this computer keeps exactly one rule (RULE_NAME) pointed at its current IP.
 RULE_NAME="${RULE_NAME:-AutoMac}"
 API_VERSION="2024-07-01"
