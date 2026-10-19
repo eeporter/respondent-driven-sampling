@@ -1,4 +1,6 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+
+import { useApi } from '@/hooks';
 
 import { useSurveyStore } from '@/stores';
 import { QRCodeCanvas } from 'qrcode.react';
@@ -15,6 +17,22 @@ export default function QrPage() {
 	const { surveyData } = useSurveyStore();
 	const childSurveyCodes = surveyData?.childSurveyCodes ?? [];
 	const qrRefs = useRef<(HTMLDivElement | null)[]>([]);
+	const { surveyService } = useApi();
+	const objectId = surveyData?.objectId ?? null;
+
+	// Reaching this page means the survey counts as submitted. The survey page
+	// already saves it as completed before coming here; marking it again on
+	// arrival makes sure that holds even if that save was lost or the flow
+	// changes. Only isCompleted is sent so no answers can be overwritten.
+	useEffect(() => {
+		if (!objectId) return;
+		surveyService
+			.updateSurvey(objectId, { isCompleted: true })
+			.catch(error =>
+				console.error('Could not mark survey as completed:', error)
+			);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [objectId]);
 
 	// Print PDF with custom paper size (62mm width)
 	const handlePrint = () => {

@@ -41,6 +41,9 @@ export const updateSurveySchema = baseSurveySchema
 		responses: true,
 		isCompleted: true
 	})
+	// responses may be left out so the coupon-code page can mark a survey
+	// completed without resending (and possibly overwriting) its answers
+	.partial({ responses: true })
 	.strict()
 	.meta({ model: Survey });
 
