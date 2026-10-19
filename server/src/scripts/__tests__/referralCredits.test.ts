@@ -35,7 +35,7 @@ describe('buildReferralCreditRows', () => {
 		}
 	});
 
-	test('counts only completed surveys taken with the participant’s coupons', () => {
+	test('counts every survey started with the participant’s coupons, completed or not', () => {
 		const rows = buildReferralCreditRows(
 			[
 				parent,
@@ -55,24 +55,27 @@ describe('buildReferralCreditRows', () => {
 			surveyDate: '2026-09-17',
 			email: 'person@example.org',
 			phone: '5095550100',
-			referralCredits: 2,
+			referralCredits: 3,
+			referralsCompleted: 2,
 			referralsNotCompleted: 1,
-			creditedSurveyCodes: 'C1, C3'
+			creditedSurveyCodes: 'C1, C2, C3'
 		});
 	});
 
-	test('leaves out participants with no completed referrals and blanks missing contact info', () => {
+	test('leaves out participants whose coupons were never used and blanks missing contact info', () => {
 		const rows = buildReferralCreditRows(
 			[
 				survey({ surveyCode: 'NOCRED', childSurveyCodes: ['Z1'] }),
-				survey({ surveyCode: 'Z1', parentSurveyCode: 'NOCRED', isCompleted: false }),
+				survey({ surveyCode: 'INCOMPLETE', childSurveyCodes: ['Y1'] }),
+				survey({ surveyCode: 'Y1', parentSurveyCode: 'INCOMPLETE', isCompleted: false }),
 				survey({ surveyCode: 'BBB', childSurveyCodes: ['D1'] }),
 				survey({ surveyCode: 'D1', parentSurveyCode: 'BBB' })
 			],
 			locations
 		);
 
-		expect(rows.map(r => r.surveyCode)).toEqual(['BBB']);
+		expect(rows.map(r => r.surveyCode)).toEqual(['BBB', 'INCOMPLETE']);
+		expect(rows[1]).toMatchObject({ referralCredits: 1, referralsCompleted: 0 });
 		expect(rows[0].email).toBe('');
 		expect(rows[0].phone).toBe('');
 	});

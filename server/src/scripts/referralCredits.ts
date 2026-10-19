@@ -1,6 +1,6 @@
 /**
- * Referral credit: a participant earns one credit for each completed survey taken
- * with one of the referral coupons (child survey codes) they were handed.
+ * Referral credit: a participant earns one credit for each survey started with one
+ * of the referral coupons (child survey codes) they were handed, completed or not.
  *
  * Pure logic only, so it can be tested without a database. The script that reads
  * the database and writes the spreadsheet is referralCreditReport.ts.
@@ -33,6 +33,7 @@ export interface ReferralCreditRow {
 	email: string;
 	phone: string;
 	referralCredits: number;
+	referralsCompleted: number;
 	referralsNotCompleted: number;
 	creditedSurveyCodes: string;
 }
@@ -48,8 +49,9 @@ export const REFERRAL_CREDIT_COLUMNS: { key: keyof ReferralCreditRow; header: st
 	{ key: 'surveyDate', header: 'Survey date' },
 	{ key: 'email', header: 'Email' },
 	{ key: 'phone', header: 'Phone' },
-	{ key: 'referralCredits', header: 'Referral credits (completed referrals)' },
-	{ key: 'referralsNotCompleted', header: 'Referrals started, not completed' },
+	{ key: 'referralCredits', header: 'Referral credits (surveys started with their coupons)' },
+	{ key: 'referralsCompleted', header: 'Of which completed' },
+	{ key: 'referralsNotCompleted', header: 'Of which not completed' },
 	{ key: 'creditedSurveyCodes', header: 'Credited referral survey codes' }
 ];
 
@@ -84,8 +86,8 @@ export function buildReferralCreditRows(
 		const referred = (childrenByParent.get(survey.surveyCode) ?? []).filter(child =>
 			coupons.has(child.surveyCode)
 		);
+		if (referred.length === 0) continue;
 		const completed = referred.filter(child => child.isCompleted === true);
-		if (completed.length === 0) continue;
 
 		const responses = survey.responses ?? {};
 		const firstNameLetters = text(responses.first_two_letters_fname).toUpperCase();
@@ -103,9 +105,10 @@ export function buildReferralCreditRows(
 			surveyDate: formatDate(survey.createdAt),
 			email: text(responses.email),
 			phone: text(responses.phone),
-			referralCredits: completed.length,
+			referralCredits: referred.length,
+			referralsCompleted: completed.length,
 			referralsNotCompleted: referred.length - completed.length,
-			creditedSurveyCodes: completed.map(child => child.surveyCode).join(', ')
+			creditedSurveyCodes: referred.map(child => child.surveyCode).join(', ')
 		});
 	}
 
