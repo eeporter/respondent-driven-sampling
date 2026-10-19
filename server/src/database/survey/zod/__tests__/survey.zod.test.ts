@@ -162,6 +162,11 @@ describe('Survey Type Validation Schemas', () => {
 			expect(result.success).toBe(true);
 		});
 
+		test('should validate with only isCompleted', () => {
+			const result = updateSurveySchema.safeParse({ isCompleted: true });
+			expect(result.success).toBe(true);
+		});
+
 		test('should reject empty responses object', () => {
 			const invalidData = {
 				responses: {}
