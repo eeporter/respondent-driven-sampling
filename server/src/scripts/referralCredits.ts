@@ -49,9 +49,7 @@ export const REFERRAL_CREDIT_COLUMNS: { key: keyof ReferralCreditRow; header: st
 	{ key: 'surveyDate', header: 'Survey date' },
 	{ key: 'email', header: 'Email' },
 	{ key: 'phone', header: 'Phone' },
-	{ key: 'referralCredits', header: 'Referral credits (surveys started with their coupons)' },
-	{ key: 'referralsCompleted', header: 'Of which completed' },
-	{ key: 'referralsNotCompleted', header: 'Of which not completed' },
+	{ key: 'referralCredits', header: 'Referral credits' },
 	{ key: 'creditedSurveyCodes', header: 'Credited referral survey codes' }
 ];
 
