@@ -155,7 +155,7 @@ export default function Login() {
 				>
 					{otpSent
 						? 'Verify OTP'
-						: 'Hi, Welcome to Point-in-Time Count 2026!'}
+						: 'Hi, Welcome to the 2026 Youth Housing Survey!'}
 				</Typography>
 
 				{/* Initial login page */}
