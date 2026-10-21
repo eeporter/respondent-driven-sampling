@@ -198,7 +198,7 @@
     {
      "type": "html",
      "name": "network_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> I will now ask a couple questions about each of these people. I will refer to them by their initials. If it is helpful, you might want to start by thinking about the person you are closest to, followed by your next closest contact, and so on.</div>"
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Read this out loud: The next couple of questions will be about each of these people. You only need to give their initials, not their names. We will not reach out to or contact anyone you list. We are only collecting this information to help Contra Costa Health understand how to make sure people have the resources they need most. If it helps, you can start with the person you are closest to, then your next closest, and so on.</div>"
     },
     {
      "type": "paneldynamic",
