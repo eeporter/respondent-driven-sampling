@@ -1339,15 +1339,9 @@
    "title": "Gift Card Contacts",
    "elements": [
     {
-     "type": "html",
-     "name": "referral_instruction",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> Please read the following information out loud to the respondent. Encourage an email address, and try to collect both an email address and a phone number.\n\t\t\t</div>\n\t\t\t<br />\n\t\t\t<p>\n\t\t\t\tAt the end of this survey, we will give you <strong>referral coupons</strong>.\n\t\t\t\tPlease give them to other people who may be experiencing homelessness or housing instability.\n\t\t\t\tIf they come and take our survey using your coupon, we can send you a <strong>$10 gift card</strong> for each completed referral, up to <strong>$30</strong> total.\n\t\t\t\tTo receive these gift cards, we need an <strong>email address</strong> or a <strong>phone number</strong>. Email is the most reliable way for us to send them, and giving us both makes sure you get them.\n\t\t\t</p>"
-    },
-    {
      "type": "checkbox",
      "name": "email_phone_consent",
-     "title": "Do you consent to receive your gift cards via SMS or email?",
-     "description": "Email is the most reliable way to receive gift cards. Please give both an email address and a phone number if you can.",
+     "title": "Can we have your email address or phone number so we can email or text you to schedule pickup for any referral gift cards you earn?",
      "choices": [
       {
        "value": "email",
