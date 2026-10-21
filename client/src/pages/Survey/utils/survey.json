@@ -505,22 +505,28 @@
      "name": "age_first_lost_housing_known",
      "title": "How old were you when you first lost stable housing?",
      "choices": [
-      "Enter age",
-      "Don't Know"
-     ],
-     "visibleIf": "{lost_housing_reasons} notcontains 'I have never been without stable housing'"
-    },
-    {
-     "type": "text",
-     "name": "age_first_lost_housing",
-     "title": "Age in years",
-     "inputType": "number",
-     "validators": [
       {
-       "type": "numeric",
-       "minValue": 0,
-       "maxValue": 120
-      }
+       "value": "Enter age",
+       "text": "Enter age",
+       "elements": [
+        {
+         "type": "text",
+         "name": "age_first_lost_housing",
+         "title": "Age in years",
+         "titleLocation": "hidden",
+         "placeholder": "Enter age",
+         "inputType": "number",
+         "validators": [
+          {
+           "type": "numeric",
+           "minValue": 0,
+           "maxValue": 120
+          }
+         ]
+        }
+       ]
+      },
+      "Don't Know"
      ],
      "visibleIf": "{lost_housing_reasons} notcontains 'I have never been without stable housing'"
     },
@@ -623,7 +629,6 @@
      "name": "in_school",
      "title": "Are you currently in school?",
      "choices": [
-      "Yes, in middle school",
       "Yes, in high school",
       "Yes, in college or trade school",
       "No",
@@ -1185,24 +1190,6 @@
       "Outside of CA",
       "Don't Know"
      ]
-    },
-    {
-     "type": "checkbox",
-     "name": "learned_about_survey",
-     "title": "How did you learn about this survey? (Choose all that apply)",
-     "choices": [
-      "At a shelter",
-      "At a social service agency",
-      "Through a Youth Ambassador",
-      "Through a street outreach worker/street count",
-      "At an event",
-      "At a school/educational program",
-      "Social media/website",
-      "An email from a friend or acquaintance",
-      "Don't Know"
-     ],
-     "showOtherItem": true,
-     "otherText": "Other"
     }
    ],
    "navigationTitle": "Demographics and Location"
