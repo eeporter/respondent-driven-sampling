@@ -1,13 +1,13 @@
 import { describe, expect, test } from '@jest/globals';
 import { Types } from 'mongoose';
 
+import Seed from '../../../seed/mongoose/seed.model';
 import { SYSTEM_SURVEY_CODE } from '../../../utils/constants';
 import {
 	createSurveySchema,
 	readSurveySchema,
 	updateSurveySchema
 } from '../survey.validator';
-import Seed from '../../../seed/mongoose/seed.model';
 
 const validObjectId = new Types.ObjectId().toString();
 const validLocationObjectId = new Types.ObjectId().toString();
@@ -51,6 +51,22 @@ describe('Survey Type Validation Schemas', () => {
 			expect(result.success).toBe(false);
 		});
 
+		test("should accept a survey code starting with '@'", () => {
+			const result = createSurveySchema.safeParse({
+				...validCreateData,
+				surveyCode: '@3F9A0C1B'
+			});
+			expect(result.success).toBe(true);
+		});
+
+		test("should reject a 9-character survey code without the '@'", () => {
+			const result = createSurveySchema.safeParse({
+				...validCreateData,
+				surveyCode: '13F9A0C1B'
+			});
+			expect(result.success).toBe(false);
+		});
+
 		test('should reject invalid survey code length', () => {
 			const invalidData = {
 				...validCreateData,
@@ -61,7 +77,7 @@ describe('Survey Type Validation Schemas', () => {
 			expect(result.success).toBe(false);
 			if (!result.success) {
 				expect(result.error.issues[0].message).toContain(
-					'exactly 8 characters'
+					'@ followed by 8 characters'
 				);
 			}
 		});
@@ -94,47 +110,49 @@ describe('Survey Type Validation Schemas', () => {
 			}
 		});
 
-	test('should accept minimal required fields', () => {
-		const minimalData = {
-			surveyCode: '12345678',
-			createdByUserObjectId: validObjectId,
-			locationObjectId: validLocationObjectId,
-			responses: { question1: 'answer1', question2: 'answer2' }
-		};
+		test('should accept minimal required fields', () => {
+			const minimalData = {
+				surveyCode: '12345678',
+				createdByUserObjectId: validObjectId,
+				locationObjectId: validLocationObjectId,
+				responses: { question1: 'answer1', question2: 'answer2' }
+			};
 
-		const result = createSurveySchema.safeParse(minimalData);
-		expect(result.success).toBe(true);
+			const result = createSurveySchema.safeParse(minimalData);
+			expect(result.success).toBe(true);
+		});
+
+		test('should accept parentSurveyCode when it is SYSTEM_SURVEY_CODE', () => {
+			const seedSurveyData = {
+				...validCreateData,
+				parentSurveyCode: SYSTEM_SURVEY_CODE
+			};
+
+			const result = createSurveySchema.safeParse(seedSurveyData);
+			expect(result.success).toBe(true);
+			if (result.success) {
+				expect(result.data.parentSurveyCode).toBe(SYSTEM_SURVEY_CODE);
+			}
+		});
+
+		test('should reject parentSurveyCode when it is not SYSTEM_SURVEY_CODE', () => {
+			const nonSeedSurveyData = {
+				...validCreateData,
+				parentSurveyCode: 'ABCD1234' // Regular survey code
+			};
+
+			const result = createSurveySchema.safeParse(nonSeedSurveyData);
+			expect(result.success).toBe(false);
+			if (!result.success) {
+				expect(result.error.issues[0].message).toContain(
+					'Cannot create a survey with a pre-defined parentSurveyCode'
+				);
+				expect(result.error.issues[0].path).toEqual([
+					'parentSurveyCode'
+				]);
+			}
+		});
 	});
-
-	test('should accept parentSurveyCode when it is SYSTEM_SURVEY_CODE', () => {
-		const seedSurveyData = {
-			...validCreateData,
-			parentSurveyCode: SYSTEM_SURVEY_CODE
-		};
-
-		const result = createSurveySchema.safeParse(seedSurveyData);
-		expect(result.success).toBe(true);
-		if (result.success) {
-			expect(result.data.parentSurveyCode).toBe(SYSTEM_SURVEY_CODE);
-		}
-	});
-
-	test('should reject parentSurveyCode when it is not SYSTEM_SURVEY_CODE', () => {
-		const nonSeedSurveyData = {
-			...validCreateData,
-			parentSurveyCode: 'ABCD1234' // Regular survey code
-		};
-
-		const result = createSurveySchema.safeParse(nonSeedSurveyData);
-		expect(result.success).toBe(false);
-		if (!result.success) {
-			expect(result.error.issues[0].message).toContain(
-				'Cannot create a survey with a pre-defined parentSurveyCode'
-			);
-			expect(result.error.issues[0].path).toEqual(['parentSurveyCode']);
-		}
-	});
-});
 
 	describe('updateSurveySchema', () => {
 		const validUpdateData = {

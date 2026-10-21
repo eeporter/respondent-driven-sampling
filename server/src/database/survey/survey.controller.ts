@@ -2,6 +2,7 @@ import { randomBytes } from 'crypto';
 
 import Seed from '@/database/seed/mongoose/seed.model';
 import Survey from '@/database/survey/mongoose/survey.model';
+import { SURVEY_CODE_PREFIX } from '@/database/utils/constants';
 import { errors } from '@/database/utils/errors';
 
 /**
@@ -48,15 +49,16 @@ function isUniqueSurveyCodeArray(codes: Array<string>): boolean {
 }
 
 /**
- * Generates a random coupon code consisting of 8 hexadecimal characters.
+ * Generates a random coupon code consisting of '@' followed by 8 hexadecimal characters.
  * The code is case-insensitive and can be used for tracking referrals in a system.
  * Guaranteed to be unique across all surveys within the database.
- * @returns string - A unique 8-character hexadecimal code in uppercase
+ * @returns string - A unique code: '@' plus 8 uppercase hexadecimal characters
  * @throws {Error} - Throws SURVEY_CODE_GENERATION_ERROR if unable to generate unique code after 3 retries
  */
 export async function generateUniqueSurveyCode(): Promise<string> {
 	for (let retries = 0; retries < 3; retries++) {
-		const code = randomBytes(4).toString('hex').toUpperCase();
+		const code =
+			SURVEY_CODE_PREFIX + randomBytes(4).toString('hex').toUpperCase();
 		// Enforce individual code uniqueness
 		if (await isUniqueSurveyCode(code)) {
 			return code;

@@ -417,7 +417,7 @@ export const useApi = () => {
 		code: string
 	): Promise<ReferralCodeValidation | null> => {
 		return await fetchAndDeserialize<ReferralCodeValidation>(
-			`/api/validate-referral-code/${code}`
+			`/api/validate-referral-code/${encodeURIComponent(code)}`
 		);
 	};
 

@@ -5,7 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 import '@/styles/ApplyReferral.css';
 
-import { SURVEY_CODE_LENGTH } from '@/constants';
+import {
+	isValidSurveyCodeFormat,
+	normalizeSurveyCode,
+	SURVEY_CODE_FORMAT_MESSAGE
+} from '@/constants';
 import { useAbility, useApi } from '@/hooks';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { useSurveyStore } from '@/stores';
@@ -58,7 +62,7 @@ export default function ApplyReferral() {
 			}
 
 			// If valid, navigate to the survey page with the coupon code
-			navigate(`/survey?ref=${code}`);
+			navigate(`/survey?ref=${encodeURIComponent(code)}`);
 		} catch (error) {
 			console.error('Error validating coupon code:', error);
 			setErrorMessage(
@@ -132,10 +136,10 @@ export default function ApplyReferral() {
 			return;
 		}
 
-		if (referralCode.length !== SURVEY_CODE_LENGTH) {
-			setErrorMessage(
-				`Please enter a valid ${SURVEY_CODE_LENGTH}-character coupon code.`
-			);
+		// the '@' is added for the interviewer if they leave it off
+		const code = normalizeSurveyCode(referralCode);
+		if (!isValidSurveyCodeFormat(code)) {
+			setErrorMessage(`The coupon code ${SURVEY_CODE_FORMAT_MESSAGE}.`);
 			return;
 		}
 
@@ -145,8 +149,7 @@ export default function ApplyReferral() {
 		clearSurvey();
 
 		try {
-			const data =
-				await surveyService.fetchReferralCodeValidation(referralCode);
+			const data = await surveyService.fetchReferralCodeValidation(code);
 
 			if (!data?.isValid) {
 				setErrorMessage(data?.message ?? 'Invalid coupon code.');
@@ -155,7 +158,7 @@ export default function ApplyReferral() {
 			}
 
 			// If valid, navigate to the survey page with the coupon code
-			navigate(`/survey?ref=${referralCode}`);
+			navigate(`/survey?ref=${encodeURIComponent(code)}`);
 		} catch (error) {
 			console.error('Error validating coupon code:', error);
 			setErrorMessage(
@@ -176,7 +179,7 @@ export default function ApplyReferral() {
 
 				{/* <input
 					type="text"
-					placeholder="Enter coupon code..."
+					placeholder="@XXXXXXXX"
 					value={referralCode}
 					onChange={e =>
 						setReferralCode(e.target.value.toUpperCase())
@@ -186,7 +189,7 @@ export default function ApplyReferral() {
 				<TextField
 					type="text"
 					label="Coupon code"
-					placeholder="Enter coupon code..."
+					placeholder="@XXXXXXXX"
 					value={referralCode}
 					onChange={e =>
 						setReferralCode(e.target.value.toUpperCase())

@@ -3,7 +3,10 @@ import { z } from 'zod';
 
 import Seed, { ISeed } from '@/database/seed/mongoose/seed.model';
 import Survey, { ISurvey } from '@/database/survey/mongoose/survey.model';
-import { SURVEY_CODE_LENGTH } from '@/database/utils/constants';
+import {
+	isValidSurveyCodeFormat,
+	SURVEY_CODE_FORMAT_MESSAGE
+} from '@/database/utils/constants';
 import { auth } from '@/middleware/auth';
 import { AuthenticatedRequest } from '@/types/auth';
 
@@ -13,9 +16,9 @@ const validateReferralCodeSchema = z
 	.object({
 		code: z
 			.string()
-			.length(
-				SURVEY_CODE_LENGTH,
-				`Coupon code must be exactly ${SURVEY_CODE_LENGTH} characters`
+			.refine(
+				isValidSurveyCodeFormat,
+				`Coupon code ${SURVEY_CODE_FORMAT_MESSAGE}`
 			)
 	})
 	.strict()

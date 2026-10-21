@@ -4,7 +4,8 @@ import { z } from 'zod';
 import Survey from '@/database/survey/mongoose/survey.model';
 import {
 	GENERATED_SURVEY_CODES_LENGTH,
-	SURVEY_CODE_LENGTH
+	isValidSurveyCodeFormat,
+	SURVEY_CODE_FORMAT_MESSAGE
 } from '@/database/utils/constants';
 
 // Base field definitions - reusable across all survey schemas
@@ -12,25 +13,25 @@ export const baseSurveySchema = z
 	.object({
 		surveyCode: z
 			.string()
-			.length(
-				SURVEY_CODE_LENGTH,
-				`Survey code must be exactly ${SURVEY_CODE_LENGTH} characters`
+			.refine(
+				isValidSurveyCodeFormat,
+				`Survey code ${SURVEY_CODE_FORMAT_MESSAGE}`
 			),
 
 		parentSurveyCode: z
 			.string()
-			.length(
-				SURVEY_CODE_LENGTH,
-				`Referral survey code must be exactly ${SURVEY_CODE_LENGTH} characters`
+			.refine(
+				isValidSurveyCodeFormat,
+				`Referral survey code ${SURVEY_CODE_FORMAT_MESSAGE}`
 			),
 
 		childSurveyCodes: z
 			.array(
 				z
 					.string()
-					.length(
-						SURVEY_CODE_LENGTH,
-						`Child survey code must be exactly ${SURVEY_CODE_LENGTH} characters`
+					.refine(
+						isValidSurveyCodeFormat,
+						`Child survey code ${SURVEY_CODE_FORMAT_MESSAGE}`
 					)
 			)
 			.length(
