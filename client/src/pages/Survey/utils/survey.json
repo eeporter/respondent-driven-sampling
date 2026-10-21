@@ -1366,6 +1366,21 @@
     },
     {
      "type": "text",
+     "name": "email_confirm",
+     "visibleIf": "{email_phone_consent} contains 'email'",
+     "title": "Please enter the email address again",
+     "requiredIf": "{email_phone_consent} contains 'email'",
+     "inputType": "email",
+     "validators": [
+      {
+       "type": "expression",
+       "expression": "{email_confirm} = {email}",
+       "text": "The two email addresses don't match. Please check them for typos."
+      }
+     ]
+    },
+    {
+     "type": "text",
      "name": "phone",
      "visibleIf": "{email_phone_consent} contains 'phone'",
      "title": "What's your phone number?",
@@ -1374,6 +1389,24 @@
      "maskSettings": {
       "pattern": "(999) 999-9999"
      }
+    },
+    {
+     "type": "text",
+     "name": "phone_confirm",
+     "visibleIf": "{email_phone_consent} contains 'phone'",
+     "title": "Please enter the phone number again",
+     "requiredIf": "{email_phone_consent} contains 'phone'",
+     "maskType": "pattern",
+     "maskSettings": {
+      "pattern": "(999) 999-9999"
+     },
+     "validators": [
+      {
+       "type": "expression",
+       "expression": "{phone_confirm} = {phone}",
+       "text": "The two phone numbers don't match. Please check them for typos."
+      }
+     ]
     }
    ],
    "navigationTitle": "Gift Card Contacts"
