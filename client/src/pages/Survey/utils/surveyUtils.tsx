@@ -94,7 +94,7 @@ export const initializeSurvey = (
 
 	if (isEditMode) {
 		let pageNames: string[] = [];
-		let title = 'Homelessness Experience Survey (Edit Mode)';
+		let title = '2026 Youth Housing Survey (Edit Mode)';
 
 		// Determine which pages to show based on edit mode
 		if (editMode === 'details') {
