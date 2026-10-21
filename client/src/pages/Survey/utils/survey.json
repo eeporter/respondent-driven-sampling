@@ -172,7 +172,7 @@
     {
      "type": "text",
      "name": "non_family_network_size",
-     "title": "Not counting family, how many young people 26 and under do you know personally who may be experiencing homelessness or housing instability in Contra Costa County today? By “know,” we mean someone you have seen or talked to in the past 3 months and could reach out to.",
+     "title": "Not counting family, how many young people 26 and under do you know personally who are homeless, experiencing housing instability, or who “lack a fixed, regular, and adequate nighttime residence” in Contra Costa County today? By “know,” we mean someone you have seen or talked to in the past 3 months and could reach out to.",
      "inputType": "number",
      "validators": [
       {
