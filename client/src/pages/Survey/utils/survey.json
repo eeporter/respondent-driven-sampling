@@ -992,7 +992,7 @@
     {
      "type": "radiogroup",
      "name": "cash_assistance_need",
-     "title": "Needed help with cash assistance like CalWORKs/welfare benefits, or Social Security Disability benefits. Did you need help and were you able to access the services?",
+     "title": "Needed help with cash assistance, such as CalWORKs (cash assistance for eligible families), or Social Security Disability benefits. Did you need help, and were you able to access these services?",
      "choices": [
       "Yes, and I got all the help I needed",
       "Yes, and I got some of the help I needed",
