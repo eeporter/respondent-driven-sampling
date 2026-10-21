@@ -1,8 +1,7 @@
+import { isTestEnvironment } from '@/utils/environment';
 import { Model, PageModel, QuestionSelectBase } from 'survey-core';
 
 import { SurveyDocument } from '@/types/Survey';
-
-import { isTestEnvironment } from '@/utils/environment';
 
 import surveyJsonData from './survey.json';
 import { themeJson } from './surveyTheme';
@@ -48,6 +47,40 @@ const restoreLastPage = (survey: Model) => {
 export const SKIPPED_KEY = 'skipped_questions';
 
 const SKIP_EXEMPT_TYPES = ['paneldynamic', 'matrixdynamic', 'matrixdropdown'];
+
+/**
+ * Let a selected radio answer be cleared by clicking it again. SurveyJS radio
+ * groups cannot be un-answered once tapped, which strands a mistaken tap on an
+ * optional question. The selection is read on pointerdown because by the time
+ * the click arrives the browser has already marked the radio as checked.
+ */
+export const enableRadioDeselect = (survey: Model) => {
+	survey.onAfterRenderQuestion.add((_, { question, htmlElement }) => {
+		if (question.getType() !== 'radiogroup') return;
+
+		const radioFor = (target: EventTarget | null) =>
+			(target as HTMLElement | null)
+				?.closest('label')
+				?.querySelector<HTMLInputElement>('input[type="radio"]') ??
+			null;
+
+		let clickedSelected = false;
+		htmlElement.addEventListener('pointerdown', event => {
+			const radio = radioFor(event.target);
+			clickedSelected =
+				!!radio &&
+				!question.isEmpty() &&
+				radio.value === String(question.value);
+		});
+		htmlElement.addEventListener('click', event => {
+			if (!clickedSelected || !radioFor(event.target)) return;
+			clickedSelected = false;
+			// stop the label re-checking the radio, then clear the answer
+			event.preventDefault();
+			question.clearValue();
+		});
+	});
+};
 
 /** Note every question left empty on the page being left behind. */
 export const recordSkippedAnswers = (
@@ -104,7 +137,7 @@ export const initializeSurvey = (
 				'volunteer-pre-screen',
 				'age_check',
 				'consent',
-				'survey-validation',
+				'survey-validation'
 			];
 		} else if (editMode === 'giftcard') {
 			// Edit Gift Card Information
@@ -123,7 +156,7 @@ export const initializeSurvey = (
 				'survey-validation',
 				'giftCards',
 				'giftCards2',
-				'end_page',
+				'end_page'
 			];
 		}
 

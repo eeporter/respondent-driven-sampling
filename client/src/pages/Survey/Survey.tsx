@@ -18,6 +18,7 @@ import { SurveyDocument } from '@/types/Survey';
 
 import SurveyPageNav from './components/SurveyPageNav';
 import {
+	enableRadioDeselect,
 	initializeSurvey,
 	LAST_PAGE_KEY,
 	recordSkippedAnswers
@@ -94,6 +95,9 @@ const Survey = () => {
 		survey.onCurrentPageChanging.clear();
 		survey.onValueChanged.clear();
 		survey.onComplete.clear();
+		survey.onAfterRenderQuestion.clear();
+
+		enableRadioDeselect(survey);
 
 		const pushHistoryState = (pageNo: number) => {
 			const currentState = window.history.state;
@@ -120,7 +124,6 @@ const Survey = () => {
 				objectId: getObjectId() ?? null
 			};
 		};
-
 
 		// Progress-bar navigation is visited-based: a volunteer may click back to
 		// any page they have already been to, but cannot jump ahead. Jumping ahead
