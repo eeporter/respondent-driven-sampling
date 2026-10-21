@@ -46,7 +46,7 @@
     {
      "type": "radiogroup",
      "name": "is_adult",
-     "title": "Are you 18 and over?",
+     "title": "Are you between the ages of 18 and 26?",
      "isRequired": true,
      "choices": [
       "Yes",
