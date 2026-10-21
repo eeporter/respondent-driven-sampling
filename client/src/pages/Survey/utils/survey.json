@@ -1313,6 +1313,7 @@
      "type": "radiogroup",
      "name": "deduplication",
      "title": "Not counting this time, do you believe you’ve completed this survey in 2026 already?",
+     "isRequired": true,
      "choices": [
       "Yes",
       "No",
