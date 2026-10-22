@@ -149,6 +149,7 @@
      "name": "respondent_age",
      "title": "How old are you?",
      "inputType": "number",
+     "min": 0,
      "validators": [
       {
        "type": "numeric",
@@ -174,6 +175,7 @@
      "name": "non_family_network_size",
      "title": "Not counting family, how many young people 26 and under do you know personally who are homeless, experiencing housing instability, or who “lack a fixed, regular, and adequate nighttime residence” in Contra Costa County today? By “know,” we mean someone you have seen or talked to in the past 3 months and could reach out to.",
      "inputType": "number",
+     "min": 0,
      "validators": [
       {
        "type": "numeric",
@@ -516,6 +518,7 @@
          "titleLocation": "hidden",
          "placeholder": "Enter age",
          "inputType": "number",
+         "min": 0,
          "validators": [
           {
            "type": "numeric",
@@ -556,6 +559,7 @@
      "name": "age_left_home",
      "title": "Age in years",
      "inputType": "number",
+     "min": 0,
      "validators": [
       {
        "type": "numeric",
@@ -1276,13 +1280,15 @@
        "type": "text",
        "name": "travel_time_hours",
        "title": "Hours",
-       "inputType": "number"
+       "inputType": "number",
+       "min": 0
       },
       {
        "type": "text",
        "name": "travel_time_minutes",
        "title": "Minutes",
        "inputType": "number",
+       "min": 0,
        "startWithNewLine": false
       }
      ]
@@ -1303,6 +1309,7 @@
      "name": "travel_distance_miles",
      "title": "Miles",
      "inputType": "number",
+     "min": 0,
      "visibleIf": "{travel_distance} = 'Enter miles'"
     }
    ],
