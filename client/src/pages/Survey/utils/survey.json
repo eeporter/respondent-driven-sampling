@@ -785,7 +785,10 @@
       "Full-time job",
       "Part-time job and/or temporary job",
       "Money from “under the table” work",
-      "Cash assistance from CalWORKs, TANF, CDSS, or Welfare",
+      {
+       "value": "Cash assistance from CalWORKs, TANF, CDSS, or Welfare",
+       "text": "Cash assistance from CalWORKs, TANF, CDSS, or Welfare (any government-based cash or income assistance program)"
+      },
       "Social Security/Disability payments",
       "Unemployment benefits",
       "Hustling/selling drugs",
