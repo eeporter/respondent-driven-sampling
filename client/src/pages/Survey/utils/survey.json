@@ -525,8 +525,7 @@
           {
            "type": "numeric",
            "minValue": 0,
-           "maxValue": 27,
-           "text": "Enter an age from 0 to 27."
+           "maxValue": 27
           }
          ]
         }
@@ -551,6 +550,7 @@
      "type": "radiogroup",
      "name": "age_left_home_known",
      "title": "How old were you the first time you left home to be out on your own?",
+     "description": "If they give an age, it must be from 0 to 26.",
      "choices": [
       "Enter age",
       "Don't Know",
@@ -563,11 +563,12 @@
      "title": "Age in years",
      "inputType": "number",
      "min": 0,
+     "max": 26,
      "validators": [
       {
        "type": "numeric",
        "minValue": 0,
-       "maxValue": 120
+       "maxValue": 26
       }
      ],
      "visibleIf": "{age_left_home_known} = 'Enter age'"
