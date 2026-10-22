@@ -382,9 +382,9 @@
      "name": "last_night_duration",
      "title": "How long have you slept at this location in a row?",
      "choices": [
-      "Just a few nights or less",
+      "Less than one week",
       "One to three weeks",
-      "One to Six weeks",
+      "One to six months",
       "More than six months",
       "Don't Know"
      ]
