@@ -1350,9 +1350,14 @@
    "title": "Gift Card Contacts",
    "elements": [
     {
+     "type": "html",
+     "name": "referral_instruction",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions:</strong> Read this out loud: At the end of this survey, you'll get 3 referral coupons. Please give them to other young people between the ages of 18 and 26 who may be experiencing homelessness or housing instability. For every eligible person who takes the survey using one of your coupons, you'll get a $10 gift card, up to 3 gift cards or $30 total. People who are not 18 to 26 or who have already taken the survey won't count toward your gift cards.</div>"
+    },
+    {
      "type": "checkbox",
      "name": "email_phone_consent",
-     "title": "Can we have your email address or phone number so we can email or text you to schedule pickup for any referral gift cards you earn?",
+     "title": "Can we have your email address or phone number so we can contact you to arrange pickup of any referral gift cards after the 2026 Youth Housing Survey ends?",
      "choices": [
       {
        "value": "email",
