@@ -82,6 +82,39 @@ export const enableRadioDeselect = (survey: Model) => {
 	});
 };
 
+/**
+ * Keep number boxes from ever holding a negative value. The spinner is stopped at
+ * zero with `min`, and the minus sign (plus "e" and "+", which would let one in
+ * as an exponent) is refused when typed or pasted. Covers every number box a
+ * question renders, including the ones inside multiple-text questions.
+ */
+export const enableNonNegativeNumbers = (survey: Model) => {
+	const blocked = ['-', '+', 'e', 'E'];
+	survey.onAfterRenderQuestion.add((_, { htmlElement }) => {
+		htmlElement
+			.querySelectorAll<HTMLInputElement>('input[type="number"]')
+			.forEach(input => {
+				if (!input.min || Number(input.min) < 0) input.min = '0';
+			});
+		htmlElement.addEventListener('keydown', event => {
+			const target = event.target as HTMLInputElement;
+			if (target.type === 'number' && blocked.includes(event.key)) {
+				event.preventDefault();
+			}
+		});
+		htmlElement.addEventListener('paste', event => {
+			const target = event.target as HTMLInputElement;
+			const text = event.clipboardData?.getData('text') ?? '';
+			if (
+				target.type === 'number' &&
+				blocked.some(c => text.includes(c))
+			) {
+				event.preventDefault();
+			}
+		});
+	});
+};
+
 /** Note every question left empty on the page being left behind. */
 export const recordSkippedAnswers = (
 	survey: Model,

@@ -18,6 +18,7 @@ import { SurveyDocument } from '@/types/Survey';
 
 import SurveyPageNav from './components/SurveyPageNav';
 import {
+	enableNonNegativeNumbers,
 	enableRadioDeselect,
 	initializeSurvey,
 	LAST_PAGE_KEY,
@@ -98,6 +99,7 @@ const Survey = () => {
 		survey.onAfterRenderQuestion.clear();
 
 		enableRadioDeselect(survey);
+		enableNonNegativeNumbers(survey);
 
 		const pushHistoryState = (pageNo: number) => {
 			const currentState = window.history.state;

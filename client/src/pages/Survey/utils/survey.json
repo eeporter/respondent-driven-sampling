@@ -506,6 +506,7 @@
      "type": "radiogroup",
      "name": "age_first_lost_housing_known",
      "title": "How old were you when you first lost stable housing?",
+     "description": "If they give an age, it must be from 0 to 27.",
      "choices": [
       {
        "value": "Enter age",
@@ -516,14 +517,16 @@
          "name": "age_first_lost_housing",
          "title": "Age in years",
          "titleLocation": "hidden",
-         "placeholder": "Enter age",
+         "placeholder": "Enter age (0 to 27)",
          "inputType": "number",
          "min": 0,
+         "max": 27,
          "validators": [
           {
            "type": "numeric",
            "minValue": 0,
-           "maxValue": 120
+           "maxValue": 27,
+           "text": "Enter an age from 0 to 27."
           }
          ]
         }
