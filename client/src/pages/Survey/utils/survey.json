@@ -1460,16 +1460,6 @@
      "inputType": "number",
      "min": 0,
      "max": 9999
-    },
-    {
-     "type": "text",
-     "name": "gift_card_2",
-     "visibleIf": "{gift_card_check} = 'Yes' and {has_minor_child} = true",
-     "title": "Please enter the last 4 digits of the 2nd Gift Card:",
-     "description": "Note: Families with minor children receive two gift cards.",
-     "inputType": "number",
-     "min": 0,
-     "max": 9999
     }
    ],
    "navigationTitle": "Gift Card Details"
