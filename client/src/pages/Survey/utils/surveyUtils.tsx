@@ -39,6 +39,13 @@ const restoreLastPage = (survey: Model) => {
 };
 
 /**
+ * Answer key set on surveys started without a referral or seed coupon. Questions
+ * meant only for those respondents (such as how they heard about the survey) show
+ * on `{started_without_coupon} = true`.
+ */
+export const STARTED_WITHOUT_COUPON_KEY = 'started_without_coupon';
+
+/**
  * Answer key listing questions the respondent was asked but left unanswered.
  * SurveyJS drops empty values from the answers entirely, so a skipped question and a
  * question never reached look identical. Recording the skips keeps a continued survey

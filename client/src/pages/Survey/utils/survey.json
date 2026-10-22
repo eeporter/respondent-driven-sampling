@@ -1201,6 +1201,12 @@
       "Outside of CA",
       "Don't Know"
      ]
+    },
+    {
+     "type": "text",
+     "name": "learned_about_survey",
+     "title": "How did you learn about this survey?",
+     "visibleIf": "{started_without_coupon} = true"
     }
    ],
    "navigationTitle": "Demographics and Location"

@@ -22,7 +22,8 @@ import {
 	enableRadioDeselect,
 	initializeSurvey,
 	LAST_PAGE_KEY,
-	recordSkippedAnswers
+	recordSkippedAnswers,
+	STARTED_WITHOUT_COUPON_KEY
 } from './utils/surveyUtils';
 
 // This component is responsible for rendering the survey and handling its logic
@@ -383,6 +384,10 @@ const Survey = () => {
 			setObjectId(existingData.objectId);
 			setParentSurveyCode(existingData.parentSurveyCode as string);
 		} else {
+			// Kept with the answers so a survey continued later still knows it had no coupon
+			if (!surveyCodeInUrl && !isEditMode) {
+				survey.setValue(STARTED_WITHOUT_COUPON_KEY, true);
+			}
 			setSurveyData(survey.data);
 			setParentSurveyCode(parentSurvey?.surveyCode as string);
 		}
