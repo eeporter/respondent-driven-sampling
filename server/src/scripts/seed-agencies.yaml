@@ -40,3 +40,9 @@
 - name: 'Los Medanos College-Basic Needs Program'
   location: 'Brentwood'
   site: 'Brentwood Library'
+
+# "Seed Coupons" table on the same sheet (9 coupons). The sheet gives no agency
+# location, so the site's city is used until Contra Costa Health says otherwise.
+- name: 'YAB'
+  location: 'Brentwood'
+  site: 'Brentwood Library'
