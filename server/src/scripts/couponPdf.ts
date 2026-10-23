@@ -3,10 +3,11 @@
  *
  * Every page of the template is copied once per coupon. For seeds, each page's
  * `qrBoxes` get that seed's QR code with the code printed underneath; blank
- * coupons leave the boxes empty for a sticker.
+ * coupons leave the boxes empty for a sticker. A coupon can also carry a header
+ * line across the top of its first page, such as the agency it is meant for.
  */
 import fs from 'fs';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument, PDFFont, PDFPage, rgb, StandardFonts } from 'pdf-lib';
 import QRCode from 'qrcode';
 
 import { LoadedCouponTemplate, QrBox } from './couponTemplate';
@@ -14,6 +15,8 @@ import { LoadedCouponTemplate, QrBox } from './couponTemplate';
 const BOX_PADDING = 8;
 const CODE_FONT_SIZE = 9;
 const CODE_GAP = 3;
+const HEADER_FONT_SIZE = 11;
+const HEADER_TOP = 24; // baseline, measured down from the top of the page
 
 /**
  * Check the template PDF opens and every QR box sits inside its page.
@@ -59,10 +62,12 @@ export async function assertPdfTemplate(
 /**
  * Build one PDF containing a full copy of the template per coupon.
  * @param codes - One survey code per coupon, or null for a blank coupon.
+ * @param headers - Optional line for the top of each coupon, matched to codes by position.
  */
 export async function renderPdfCoupons(
 	loaded: LoadedCouponTemplate,
-	codes: (string | null)[]
+	codes: (string | null)[],
+	headers: (string | null)[] = []
 ): Promise<Uint8Array> {
 	const template = await loadTemplatePdf(loaded);
 	const output = await PDFDocument.create();
@@ -70,9 +75,13 @@ export async function renderPdfCoupons(
 	const pageIndices = template.getPageIndices();
 	const boxes = loaded.template.qrBoxes ?? [];
 
-	for (const code of codes) {
+	for (const [index, code] of codes.entries()) {
 		const pages = await output.copyPages(template, pageIndices);
 		pages.forEach(page => output.addPage(page));
+		const header = headers[index];
+		if (header) {
+			drawHeader(pages[0], header, font);
+		}
 		if (code === null) {
 			continue;
 		}
@@ -113,6 +122,24 @@ export async function renderPdfCoupons(
 	}
 
 	return output.save();
+}
+
+/** Centre a header line at the top of the page, shrinking it to fit the width. */
+function drawHeader(page: PDFPage, text: string, font: PDFFont): void {
+	const maxWidth = page.getWidth() - 36;
+	const size = Math.min(
+		HEADER_FONT_SIZE,
+		(HEADER_FONT_SIZE * maxWidth) /
+			font.widthOfTextAtSize(text, HEADER_FONT_SIZE)
+	);
+	const width = font.widthOfTextAtSize(text, size);
+	page.drawText(text, {
+		x: (page.getWidth() - width) / 2,
+		y: page.getHeight() - HEADER_TOP,
+		size,
+		font,
+		color: rgb(0, 0, 0)
+	});
 }
 
 /** Largest square QR that fits in the box above the code text. */

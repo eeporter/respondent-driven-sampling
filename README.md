@@ -13,6 +13,7 @@ The `contra-costa-ca` branch holds the Contra Costa County deployment of the RDS
 - Hub sites: the four libraries on the coupon (Brentwood, San Pablo, Concord, Pittsburg) in `server/src/scripts/locations.yaml`. Load them into a database with `npm run location -- import src/scripts/locations.yaml` (or `location:test` for the test database).
 - Production hostname setting in `client/src/utils/environment.ts`.
 - Coupon template `server/src/scripts/coupon-templates/contra-costa-ca.yaml`, selected with `COUPON_TEMPLATE=contra-costa-ca`. It uses Contra Costa Health's designed coupon (`contra-costa-ca.pdf`) with the four library hub sites. That PDF is not in git because it holds a live Uber ride-voucher QR code; copy it into `server/src/scripts/coupon-templates/` from the project's files before generating coupons. Each seed's QR code goes in the large "Your survey coupon code" box; the Uber QR in the "Transportation only" panel is for rides.
+- Seed agencies: `server/src/scripts/seed-agencies.yaml` lists the agencies that hand out seed coupons, each with its city and survey site (from the "Seed Sites" sheet of Contra Costa Health's workbook). `npm run generate-seeds -- --agency "RYSE" 10` makes 10 seeds at that agency's site, saves the agency name and location on each seed, and prints "Seed coupon for: RYSE (Richmond) · Survey site: San Pablo Library" across the top of each coupon. `--all-agencies 10` makes 10 for every agency, one PDF each. An agency at two sites needs `--agency-location`.
 
 **Not yet set up**
 

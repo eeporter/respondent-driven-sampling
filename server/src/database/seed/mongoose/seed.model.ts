@@ -15,7 +15,10 @@ const seedSchema = new Schema(
 			required: true,
 			immutable: true
 		},
-		isFallback: { type: Boolean, default: false, immutable: true } // If true, was a fallback code generated in app after survey code validation failed
+		isFallback: { type: Boolean, default: false, immutable: true }, // If true, was a fallback code generated in app after survey code validation failed
+		// Agency that hands out this seed coupon (see scripts/seed-agencies.yaml); unset for fallback seeds
+		agencyName: { type: String, immutable: true },
+		agencyLocation: { type: String, immutable: true }
 	},
 	{
 		timestamps: {

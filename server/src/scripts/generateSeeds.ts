@@ -1,9 +1,16 @@
 #!/usr/bin/env tsx
 /**
- * Script to generate N seeds for a given location
+ * Script to generate N seeds for a given location, or for the agencies that hand them out
  * Usage: npm run generate-seeds -- <hubName|objectId> <count>
+ * Usage: npm run generate-seeds -- --agency "<agency>" [--agency-location "<city>"] <count>
+ * Usage: npm run generate-seeds -- --all-agencies <count>
  * Example: npm run generate-seeds -- "Main Hub" 10
  * Example: npm run generate-seeds -- 507f1f77bcf86cd799439011 10
+ * Example: npm run generate-seeds -- --agency "RYSE" 10
+ * Example: npm run generate-seeds -- --all-agencies 10   (10 per agency, one PDF each)
+ *
+ * Agency seeds go to the agency's survey site (seed-agencies.yaml), save the agency's
+ * name and location on each seed, and print the agency at the top of each coupon.
  *
  * `generate-seeds` reads server/.env; `generate-seeds:test` reads server/.env.test.
  * Coupon text comes from coupon-templates/, chosen by COUPON_TEMPLATE (see couponTemplate.ts).
@@ -27,6 +34,13 @@ import {
 	loadCouponTemplateFromEnv,
 	LoadedCouponTemplate
 } from './couponTemplate';
+import {
+	describeSeedAgency,
+	findSeedAgency,
+	loadSeedAgencies,
+	SeedAgency,
+	seedCouponHeader
+} from './seedAgencies';
 
 // Get current directory
 const __filename = fileURLToPath(import.meta.url);
@@ -49,7 +63,7 @@ function createOutputDirectory(): string {
 }
 
 function generateTimestampFilename(
-	locationName: string,
+	batchName: string,
 	outputDir: string
 ): string {
 	const now = new Date();
@@ -61,10 +75,10 @@ function generateTimestampFilename(
 		String(now.getMinutes()).padStart(2, '0'),
 		String(now.getSeconds()).padStart(2, '0')
 	].join('');
-	const sanitizedLocationName = locationName
+	const sanitizedBatchName = batchName
 		.replace(/[^a-z0-9]/gi, '-')
 		.toLowerCase();
-	const filename = `seeds-${sanitizedLocationName}-${timestamp}.pdf`;
+	const filename = `seeds-${sanitizedBatchName}-${timestamp}.pdf`;
 	return path.join(outputDir, filename);
 }
 
@@ -85,10 +99,20 @@ async function addQRCodePage(
 	doc: PDFKit.PDFDocument,
 	surveyCode: string,
 	couponTemplate: LoadedCouponTemplate,
-	isFirstPage: boolean
+	isFirstPage: boolean,
+	header?: string
 ): Promise<void> {
 	if (!isFirstPage) {
 		doc.addPage();
+	}
+	if (header) {
+		doc.fontSize(11)
+			.font('Helvetica-Bold')
+			.text(header, 20, 14, {
+				align: 'center',
+				width: doc.page.width - 40,
+				lineBreak: false
+			});
 	}
 
 	const pageWidth = doc.page.width;
@@ -119,17 +143,22 @@ async function addQRCodePage(
 
 async function generatePDF(
 	seeds: ISeed[],
-	locationName: string,
-	couponTemplate: LoadedCouponTemplate
+	batchName: string,
+	couponTemplate: LoadedCouponTemplate,
+	header?: string
 ): Promise<void> {
 	const outputDir = createOutputDirectory();
-	const filepath = generateTimestampFilename(locationName, outputDir);
+	const filepath = generateTimestampFilename(batchName, outputDir);
 
 	if (couponTemplate.pdfPath) {
 		const codes = seeds.map(seed => seed.surveyCode);
 		fs.writeFileSync(
 			filepath,
-			await renderPdfCoupons(couponTemplate, codes)
+			await renderPdfCoupons(
+				couponTemplate,
+				codes,
+				codes.map(() => header ?? null)
+			)
 		);
 		console.log(`\n✓ PDF generated: ${filepath}`);
 		console.log(
@@ -149,7 +178,13 @@ async function generatePDF(
 
 	// Generate one page per seed
 	for (let i = 0; i < seeds.length; i++) {
-		await addQRCodePage(doc, seeds[i].surveyCode, couponTemplate, i === 0);
+		await addQRCodePage(
+			doc,
+			seeds[i].surveyCode,
+			couponTemplate,
+			i === 0,
+			header
+		);
 	}
 
 	doc.end();
@@ -204,13 +239,18 @@ async function createSeed(
 	surveyCode: string,
 	locationId: mongoose.Types.ObjectId,
 	index: number,
-	total: number
+	total: number,
+	agency?: SeedAgency
 ): Promise<ISeed> {
 	try {
 		const seed = await Seed.create({
 			surveyCode,
 			locationObjectId: locationId,
-			isFallback: false
+			isFallback: false,
+			...(agency && {
+				agencyName: agency.name,
+				agencyLocation: agency.location
+			})
 		});
 
 		console.log(
@@ -228,23 +268,30 @@ async function createSeed(
 
 async function generateSeedsForLocation(
 	location: { _id: mongoose.Types.ObjectId; hubName: string },
-	count: number
+	count: number,
+	agency?: SeedAgency
 ): Promise<ISeed[]> {
 	console.log(`Generating ${count} seed(s)...\n`);
 	const createdSeeds: ISeed[] = [];
 
 	for (let i = 0; i < count; i++) {
 		const surveyCode = await generateUniqueSurveyCode();
-		const seed = await createSeed(surveyCode, location._id, i, count);
+		const seed = await createSeed(
+			surveyCode,
+			location._id,
+			i,
+			count,
+			agency
+		);
 		createdSeeds.push(seed);
 	}
 
 	return createdSeeds;
 }
 
-function printSeedsSummary(seeds: ISeed[], locationName: string): void {
+function printSeedsSummary(seeds: ISeed[], batchName: string): void {
 	console.log(
-		`\n✓ Successfully generated ${seeds.length} seed(s) for location "${locationName}"`
+		`\n✓ Successfully generated ${seeds.length} seed(s) for ${batchName}`
 	);
 	console.log('\nGenerated Survey Codes:');
 	seeds.forEach((seed, index) => {
@@ -252,10 +299,12 @@ function printSeedsSummary(seeds: ISeed[], locationName: string): void {
 	});
 }
 
-async function generateSeeds(
-	locationIdentifier: string,
-	count: number
-): Promise<void> {
+/** What to make seeds for: a survey site, or one or more agencies. */
+type SeedTarget =
+	| { kind: 'location'; identifier: string }
+	| { kind: 'agencies'; agencies: SeedAgency[] };
+
+async function generateSeeds(target: SeedTarget, count: number): Promise<void> {
 	try {
 		// Check the coupon template before creating any seeds, so a bad template
 		// cannot leave seeds in the database without a printable PDF.
@@ -270,13 +319,46 @@ async function generateSeeds(
 		await connectDB();
 		console.log(`Connected to database "${process.env.MONGO_DB_NAME}" ✓\n`);
 
-		const location = await findLocationByIdentifier(locationIdentifier);
-		const createdSeeds = await generateSeedsForLocation(location, count);
+		if (target.kind === 'location') {
+			const location = await findLocationByIdentifier(target.identifier);
+			const createdSeeds = await generateSeedsForLocation(
+				location,
+				count
+			);
 
-		printSeedsSummary(createdSeeds, location.hubName);
+			printSeedsSummary(createdSeeds, `location "${location.hubName}"`);
 
-		console.log('\n📄 Generating PDF with QR codes...');
-		await generatePDF(createdSeeds, location.hubName, couponTemplate);
+			console.log('\n📄 Generating PDF with QR codes...');
+			await generatePDF(createdSeeds, location.hubName, couponTemplate);
+			return;
+		}
+
+		// Look up every agency's site first, so a typo stops the run before any seeds exist
+		const batches = [];
+		for (const agency of target.agencies) {
+			batches.push({
+				agency,
+				location: await findLocationByIdentifier(agency.site)
+			});
+		}
+		for (const { agency, location } of batches) {
+			console.log(`\n== ${describeSeedAgency(agency)} ==`);
+			const createdSeeds = await generateSeedsForLocation(
+				location,
+				count,
+				agency
+			);
+			printSeedsSummary(
+				createdSeeds,
+				`${describeSeedAgency(agency)}, survey site "${location.hubName}"`
+			);
+			await generatePDF(
+				createdSeeds,
+				`${agency.name}-${agency.location}`,
+				couponTemplate,
+				seedCouponHeader(agency)
+			);
+		}
 	} catch (error) {
 		console.error(
 			'\n✗ Error:',
@@ -290,27 +372,71 @@ async function generateSeeds(
 	}
 }
 
-// Parse command line arguments
-const args = process.argv.slice(2);
+const USAGE = [
+	'Usage: npm run generate-seeds -- <hubName|objectId> <count>',
+	'       npm run generate-seeds -- --agency "<agency>" [--agency-location "<city>"] <count>',
+	'       npm run generate-seeds -- --all-agencies <count>',
+	'Example: npm run generate-seeds -- "Main Hub" 10',
+	'Example: npm run generate-seeds -- --agency "RYSE" 10'
+].join('\n');
 
-if (args.length !== 2) {
-	console.error(
-		'Usage: npm run generate-seeds -- <hubName|objectId> <count>'
-	);
-	console.error('Example: npm run generate-seeds -- "Main Hub" 10');
-	console.error(
-		'Example: npm run generate-seeds -- 507f1f77bcf86cd799439011 10'
-	);
+function fail(message: string): never {
+	console.error(`Error: ${message}\n\n${USAGE}`);
 	process.exit(1);
 }
 
-const [locationIdentifier, countStr] = args;
-const count = parseInt(countStr, 10);
+/** Read the command line into what to seed and how many. */
+function parseArgs(args: string[]): { target: SeedTarget; count: number } {
+	const flags = new Map<string, string | true>();
+	const positional: string[] = [];
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg === '--all-agencies') {
+			flags.set(arg, true);
+		} else if (arg === '--agency' || arg === '--agency-location') {
+			const value = args[++i];
+			if (!value) fail(`${arg} needs a value`);
+			flags.set(arg, value);
+		} else if (arg.startsWith('--')) {
+			fail(`unknown option ${arg}`);
+		} else {
+			positional.push(arg);
+		}
+	}
 
-if (isNaN(count) || count <= 0) {
-	console.error('Error: count must be a positive number');
-	process.exit(1);
+	const countStr = positional.pop();
+	const count = parseInt(countStr ?? '', 10);
+	if (isNaN(count) || count <= 0) fail('count must be a positive number');
+
+	const agencyName = flags.get('--agency');
+	const agencyLocation = flags.get('--agency-location');
+	if (flags.has('--all-agencies') || typeof agencyName === 'string') {
+		if (positional.length > 0) {
+			fail('give either a survey site or agency options, not both');
+		}
+		const agencies = loadSeedAgencies(__dirname);
+		if (flags.has('--all-agencies')) {
+			if (agencyName) fail('use --agency or --all-agencies, not both');
+			return { target: { kind: 'agencies', agencies }, count };
+		}
+		const agency = findSeedAgency(
+			agencies,
+			agencyName as string,
+			typeof agencyLocation === 'string' ? agencyLocation : undefined
+		);
+		return { target: { kind: 'agencies', agencies: [agency] }, count };
+	}
+	if (agencyLocation) fail('--agency-location goes with --agency');
+	if (positional.length !== 1) fail('give one survey site and a count');
+	return { target: { kind: 'location', identifier: positional[0] }, count };
+}
+
+let parsed: { target: SeedTarget; count: number };
+try {
+	parsed = parseArgs(process.argv.slice(2));
+} catch (error) {
+	fail(error instanceof Error ? error.message : String(error));
 }
 
 // Run the script
-generateSeeds(locationIdentifier, count);
+generateSeeds(parsed.target, parsed.count);
