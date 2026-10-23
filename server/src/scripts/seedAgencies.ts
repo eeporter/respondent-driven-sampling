@@ -9,7 +9,8 @@ import { parse as parseYaml } from 'yaml';
 
 export interface SeedAgency {
 	name: string;
-	location: string;
+	/** where the agency is; some agencies have none */
+	location?: string;
 	/** hubName of the survey site the agency's seeds belong to */
 	site: string;
 }
@@ -23,7 +24,7 @@ export function parseSeedAgencies(text: string): SeedAgency[] {
 		throw new Error(`${SEED_AGENCIES_FILE} must be a list of agencies`);
 	}
 	const agencies = parsed.map((entry, i) => {
-		const fields = ['name', 'location', 'site'] as const;
+		const fields = ['name', 'site'] as const;
 		for (const field of fields) {
 			const value = entry?.[field];
 			if (typeof value !== 'string' || !value.trim()) {
@@ -32,18 +33,26 @@ export function parseSeedAgencies(text: string): SeedAgency[] {
 				);
 			}
 		}
+		if (
+			entry.location !== undefined &&
+			(typeof entry.location !== 'string' || !entry.location.trim())
+		) {
+			throw new Error(
+				`${SEED_AGENCIES_FILE} entry ${i + 1} has an empty "location"`
+			);
+		}
 		return {
 			name: entry.name.trim(),
-			location: entry.location.trim(),
+			...(entry.location && { location: entry.location.trim() }),
 			site: entry.site.trim()
 		};
 	});
 	const seen = new Set<string>();
 	for (const agency of agencies) {
-		const key = `${agency.name}|${agency.location}`.toLowerCase();
+		const key = `${agency.name}|${agency.location ?? ''}`.toLowerCase();
 		if (seen.has(key)) {
 			throw new Error(
-				`${SEED_AGENCIES_FILE} lists "${agency.name}" in ${agency.location} twice`
+				`${SEED_AGENCIES_FILE} lists ${describeSeedAgency(agency)} twice`
 			);
 		}
 		seen.add(key);
@@ -78,7 +87,7 @@ export function findSeedAgency(
 		);
 	}
 	const matches = location
-		? byName.filter(agency => same(agency.location, location))
+		? byName.filter(agency => same(agency.location ?? '', location))
 		: byName;
 	if (matches.length === 1) {
 		return matches[0];
@@ -89,12 +98,19 @@ export function findSeedAgency(
 	);
 }
 
-/** "RYSE (Richmond)" */
+/** "RYSE (Richmond)", or just the name when the agency has no location */
 export function describeSeedAgency(agency: SeedAgency): string {
-	return `${agency.name} (${agency.location})`;
+	return agency.location
+		? `${agency.name} (${agency.location})`
+		: agency.name;
 }
 
-/** The line printed at the top of an agency's seed coupons. */
+/**
+ * The line printed at the top of an agency's seed coupons. Agencies without a
+ * location get only their name, as Contra Costa Health asked for YAB.
+ */
 export function seedCouponHeader(agency: SeedAgency): string {
-	return `Seed coupon for: ${describeSeedAgency(agency)} · Survey site: ${agency.site}`;
+	return agency.location
+		? `Seed coupon for: ${describeSeedAgency(agency)} · Survey site: ${agency.site}`
+		: `Seed coupon for: ${agency.name}`;
 }

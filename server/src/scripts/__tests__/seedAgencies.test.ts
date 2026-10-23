@@ -53,6 +53,13 @@ describe('seed agencies', () => {
 		expect(() => parseSeedAgencies(twice)).toThrow(/twice/);
 	});
 
+	test('an agency without a location prints only its name', () => {
+		const yab = findSeedAgency(agencies, 'YAB');
+		expect(yab.location).toBeUndefined();
+		expect(yab.site).toBe('Brentwood Library');
+		expect(seedCouponHeader(yab)).toBe('Seed coupon for: YAB');
+	});
+
 	test('coupon header names the agency and its site', () => {
 		expect(seedCouponHeader(findSeedAgency(agencies, 'RYSE'))).toBe(
 			'Seed coupon for: RYSE (Richmond) · Survey site: San Pablo Library'

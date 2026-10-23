@@ -249,7 +249,7 @@ async function createSeed(
 			isFallback: false,
 			...(agency && {
 				agencyName: agency.name,
-				agencyLocation: agency.location
+				...(agency.location && { agencyLocation: agency.location })
 			})
 		});
 
@@ -354,7 +354,7 @@ async function generateSeeds(target: SeedTarget, count: number): Promise<void> {
 			);
 			await generatePDF(
 				createdSeeds,
-				`${agency.name}-${agency.location}`,
+				describeSeedAgency(agency),
 				couponTemplate,
 				seedCouponHeader(agency)
 			);
