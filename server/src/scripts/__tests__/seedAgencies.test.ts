@@ -60,9 +60,9 @@ describe('seed agencies', () => {
 		expect(seedCouponHeader(yab)).toBe('Seed coupon for: YAB');
 	});
 
-	test('coupon header names the agency and its site', () => {
+	test('coupon header names the agency but not its site', () => {
 		expect(seedCouponHeader(findSeedAgency(agencies, 'RYSE'))).toBe(
-			'Seed coupon for: RYSE (Richmond) · Survey site: San Pablo Library'
+			'Seed coupon for: RYSE (Richmond)'
 		);
 	});
 });

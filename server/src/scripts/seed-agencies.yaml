@@ -1,6 +1,6 @@
 # Agencies that hand out seed coupons, and the survey site each one's seeds belong to.
 # From the "Seed Sites" sheet of Contra Costa Health's Youth Survey Details workbook.
-#   name:     agency name, printed at the top of its coupons and saved on each seed
+#   name:     agency name, printed (with location) at the top of its coupons and saved on each seed
 #   location: where the agency is (city); leave out when there is none
 #   site:     hubName of the survey site (see locations.yaml) the seeds are made for
 # The same agency can appear twice when it seeds two sites; tell them apart by location.

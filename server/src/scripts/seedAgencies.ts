@@ -105,12 +105,7 @@ export function describeSeedAgency(agency: SeedAgency): string {
 		: agency.name;
 }
 
-/**
- * The line printed at the top of an agency's seed coupons. Agencies without a
- * location get only their name, as Contra Costa Health asked for YAB.
- */
+/** The line printed at the top of an agency's seed coupons: "Seed coupon for: RYSE (Richmond)". */
 export function seedCouponHeader(agency: SeedAgency): string {
-	return agency.location
-		? `Seed coupon for: ${describeSeedAgency(agency)} · Survey site: ${agency.site}`
-		: `Seed coupon for: ${agency.name}`;
+	return `Seed coupon for: ${describeSeedAgency(agency)}`;
 }
