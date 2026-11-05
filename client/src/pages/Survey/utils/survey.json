@@ -73,26 +73,24 @@
    },
    "elements": [
     {
-     "type": "radiogroup",
-     "name": "is_under_25",
-     "title": {
-      "default": "Are you under 25 years old?",
-      "es": "¿Tiene menos de 25 años?"
-     },
+     "type": "text",
+     "name": "screening_age",
+     "inputType": "number",
      "isRequired": true,
-     "choices": [
+     "min": 0,
+     "max": 120,
+     "title": {
+      "default": "How old are you?",
+      "es": "¿Cuántos años tiene?"
+     },
+     "validators": [
       {
-       "value": "Yes",
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 120,
        "text": {
-        "default": "Yes",
-        "es": "Sí"
-       }
-      },
-      {
-       "value": "No",
-       "text": {
-        "default": "No",
-        "es": "No"
+        "default": "Enter an age in whole years.",
+        "es": "Ingrese una edad en años completos."
        }
       }
      ]
@@ -8207,7 +8205,7 @@
   },
   {
    "type": "complete",
-   "expression": "{is_under_25} = 'No'"
+   "expression": "{screening_age} >= 25"
   }
  ],
  "calculatedValues": [

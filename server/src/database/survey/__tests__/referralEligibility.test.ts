@@ -4,7 +4,7 @@ import { ageOn, isReferralEligible } from '../referralEligibility';
 
 const base = {
 	consent_given: 'Yes',
-	is_under_25: 'Yes',
+	screening_age: 19,
 	date_of_birth: '2006-06-15',
 	deduplication: 'No'
 };
@@ -121,9 +121,9 @@ describe('isReferralEligible', () => {
 		).toBe(false);
 	});
 
-	test('25 and over is ineligible, by screening answer or date of birth', () => {
+	test('25 and over is ineligible, by screening age or date of birth', () => {
 		expect(
-			isReferralEligible({ ...base, Q2: 'Tent', is_under_25: 'No' })
+			isReferralEligible({ ...base, Q2: 'Tent', screening_age: 25 })
 		).toBe(false);
 		expect(
 			isReferralEligible({
