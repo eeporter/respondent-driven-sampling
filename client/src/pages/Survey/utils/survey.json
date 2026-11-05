@@ -2019,7 +2019,19 @@
       "es": "Numero de personas"
      },
      "visibleIf": "{Q21_Car} notempty and {Q22_Car_choice} = 'Number of people'",
-     "isRequired": true
+     "isRequired": true,
+     "max": 10,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 10,
+       "text": {
+        "default": "Enter a number from 0 to 10.",
+        "es": "Ingrese un número del 0 al 10."
+       }
+      }
+     ]
     },
     {
      "type": "checkbox",
@@ -2082,7 +2094,19 @@
       "es": "Numero de personas"
      },
      "visibleIf": "{Q21_Van} notempty and {Q22_Van_choice} = 'Number of people'",
-     "isRequired": true
+     "isRequired": true,
+     "max": 10,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 10,
+       "text": {
+        "default": "Enter a number from 0 to 10.",
+        "es": "Ingrese un número del 0 al 10."
+       }
+      }
+     ]
     },
     {
      "type": "checkbox",
@@ -2145,7 +2169,19 @@
       "es": "Numero de personas"
      },
      "visibleIf": "{Q21_RV} notempty and {Q22_RV_choice} = 'Number of people'",
-     "isRequired": true
+     "isRequired": true,
+     "max": 10,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 10,
+       "text": {
+        "default": "Enter a number from 0 to 10.",
+        "es": "Ingrese un número del 0 al 10."
+       }
+      }
+     ]
     },
     {
      "type": "checkbox",
@@ -2208,7 +2244,19 @@
       "es": "Numero de personas"
      },
      "visibleIf": "{Q21_Tent} notempty and {Q22_Tent_choice} = 'Number of people'",
-     "isRequired": true
+     "isRequired": true,
+     "max": 10,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 10,
+       "text": {
+        "default": "Enter a number from 0 to 10.",
+        "es": "Ingrese un número del 0 al 10."
+       }
+      }
+     ]
     },
     {
      "type": "checkbox",
@@ -2271,7 +2319,19 @@
       "es": "Numero de personas"
      },
      "visibleIf": "{Q21_MSh} notempty and {Q22_MSh_choice} = 'Number of people'",
-     "isRequired": true
+     "isRequired": true,
+     "max": 10,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 0,
+       "maxValue": 10,
+       "text": {
+        "default": "Enter a number from 0 to 10.",
+        "es": "Ingrese un número del 0 al 10."
+       }
+      }
+     ]
     },
     {
      "type": "radiogroup",
