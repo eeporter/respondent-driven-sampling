@@ -959,7 +959,8 @@
       "default": "1. Not counting family, how many young people under 25 do you know personally who are homeless in Los Angeles County today? By \"know,\" we mean someone you have seen or talked to in the past 3 months and could reach out to.",
       "es": "1. Sin contar a su familia, ¿a cuántos jóvenes menores de 25 años conoce personalmente que están sin hogar en el condado de Los Ángeles hoy? Por “conocer,” nos referimos a alguien que usted haya visto o con quien haya hablado en los últimos 3 meses y a quien podría contactar."
      },
-     "description": "If the individual says they do not know anyone else or they do not want to answer the question, please input 0."
+     "description": "If the individual says they do not know anyone else or they do not want to answer the question, please input 0.",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Network"
@@ -1010,7 +1011,8 @@
         "default": "2. What are the initials or the nickname of person {panelIndex}?",
         "es": "2. ¿Cuáles son las iniciales o el apodo de la persona {panelIndex}?"
        },
-       "description": "Record initials or nickname only. Do not record full names. If the participant says they don't know anyone else please enter 999."
+       "description": "Record initials or nickname only. Do not record full names. If the participant says they don't know anyone else please enter 999.",
+       "isRequired": true
       },
       {
        "type": "dropdown",
@@ -1456,7 +1458,8 @@
      "title": "Enter age in years:",
      "inputType": "number",
      "min": 0,
-     "visibleIf": "{Q420_choice} = 'Enter age in years:'"
+     "visibleIf": "{Q420_choice} = 'Enter age in years:'",
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -1875,7 +1878,8 @@
       "default": "Number of people",
       "es": "Numero de personas"
      },
-     "visibleIf": "{Q21_Car} notempty and {Q22_Car_choice} = 'Number of people'"
+     "visibleIf": "{Q21_Car} notempty and {Q22_Car_choice} = 'Number of people'",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -1937,7 +1941,8 @@
       "default": "Number of people",
       "es": "Numero de personas"
      },
-     "visibleIf": "{Q21_Van} notempty and {Q22_Van_choice} = 'Number of people'"
+     "visibleIf": "{Q21_Van} notempty and {Q22_Van_choice} = 'Number of people'",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -1999,7 +2004,8 @@
       "default": "Number of people",
       "es": "Numero de personas"
      },
-     "visibleIf": "{Q21_RV} notempty and {Q22_RV_choice} = 'Number of people'"
+     "visibleIf": "{Q21_RV} notempty and {Q22_RV_choice} = 'Number of people'",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -2061,7 +2067,8 @@
       "default": "Number of people",
       "es": "Numero de personas"
      },
-     "visibleIf": "{Q21_Tent} notempty and {Q22_Tent_choice} = 'Number of people'"
+     "visibleIf": "{Q21_Tent} notempty and {Q22_Tent_choice} = 'Number of people'",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -2123,7 +2130,8 @@
       "default": "Number of people",
       "es": "Numero de personas"
      },
-     "visibleIf": "{Q21_MSh} notempty and {Q22_MSh_choice} = 'Number of people'"
+     "visibleIf": "{Q21_MSh} notempty and {Q22_MSh_choice} = 'Number of people'",
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -2248,7 +2256,8 @@
      },
      "inputType": "number",
      "min": 0,
-     "visibleIf": "({Q16_choice} = 'Enter age in years:') and {Q15} anyof ['No', 'Declined', 'Don\\'t know']"
+     "visibleIf": "({Q16_choice} = 'Enter age in years:') and {Q15} anyof ['No', 'Declined', 'Don\\'t know']",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Spells and Duration",
@@ -2330,7 +2339,8 @@
       "default": "DAYS (<7)",
       "es": "DÍAS ("
      },
-     "visibleIf": "{Q17_units} contains 'Days (<7)'"
+     "visibleIf": "{Q17_units} contains 'Days (<7)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2341,7 +2351,8 @@
       "default": "WEEKS (<4)",
       "es": "SEMANAS ("
      },
-     "visibleIf": "{Q17_units} contains 'Weeks (<4)'"
+     "visibleIf": "{Q17_units} contains 'Weeks (<4)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2352,7 +2363,8 @@
       "default": "MONTHS (<12)",
       "es": "MESES ("
      },
-     "visibleIf": "{Q17_units} contains 'Months (<12)'"
+     "visibleIf": "{Q17_units} contains 'Months (<12)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2363,7 +2375,8 @@
       "default": "YEARS (≥1)",
       "es": "AÑOS (≥1)"
      },
-     "visibleIf": "{Q17_units} contains 'Years (≥1)'"
+     "visibleIf": "{Q17_units} contains 'Years (≥1)'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Spells and Duration",
@@ -3161,7 +3174,8 @@
      "title": {
       "default": "Number of people under 18 living with participant",
       "es": "Número de niños/as menores de 18 años"
-     }
+     },
+     "isRequired": true
     },
     {
      "type": "text",
@@ -3171,7 +3185,8 @@
      "title": {
       "default": "Number of people 18 and older living with participant",
       "es": "Número de adultos mayores de 18 años"
-     }
+     },
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -3250,7 +3265,8 @@
         "default": "29. What are the initials or a nickname of child # {panelIndex}?",
         "es": "29. ¿Cuáles son las iniciales o el apodo de las otras personas de su hogar # {panelIndex}?"
        },
-       "description": "Please suggest listing children from youngest to oldest; fill in the initials of the person below."
+       "description": "Please suggest listing children from youngest to oldest; fill in the initials of the person below.",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -3342,7 +3358,8 @@
           "es": "El encuestado no tiene familiares menores de 18 años que vivan con él"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "text",
@@ -3353,7 +3370,8 @@
         "default": "Age",
         "es": "Edad"
        },
-       "visibleIf": "{panel.Q26c_unit} anyof ['Years', 'Months']"
+       "visibleIf": "{panel.Q26c_unit} anyof ['Years', 'Months']",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -4252,7 +4270,8 @@
        "title": {
         "default": "37. What are the initials or a nickname of next oldest family member living with you?",
         "es": "37. ¿Cuáles son las iniciales o el apodo de la siguiente persona de su hogar?"
-       }
+       },
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4336,7 +4355,8 @@
           "es": "El encuestado no tiene familiares mayores de 18 años que vivan con él"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4347,7 +4367,8 @@
         "default": "Age in years",
         "es": "Edad en años"
        },
-       "visibleIf": "{panel.Q26f_unit} = 'Age in Years'"
+       "visibleIf": "{panel.Q26f_unit} = 'Age in Years'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5961,7 +5982,8 @@
         "es": "Ningún problema de seguridad evidente"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Health & Safety, continued",
@@ -5994,7 +6016,8 @@
        "value": "No",
        "text": "No"
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Health & Safety, continued",
@@ -6431,7 +6454,8 @@
       "default": "Day(s)",
       "es": "Día(s)"
      },
-     "visibleIf": "{Q47_units} contains 'Day(s)'"
+     "visibleIf": "{Q47_units} contains 'Day(s)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -6442,7 +6466,8 @@
       "default": "Week(s)",
       "es": "Semana(s)"
      },
-     "visibleIf": "{Q47_units} contains 'Week(s)'"
+     "visibleIf": "{Q47_units} contains 'Week(s)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -6453,7 +6478,8 @@
       "default": "Month(s)",
       "es": "Mes(es)"
      },
-     "visibleIf": "{Q47_units} contains 'Month(s)'"
+     "visibleIf": "{Q47_units} contains 'Month(s)'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -6464,7 +6490,8 @@
       "default": "Year(s)",
       "es": "Años"
      },
-     "visibleIf": "{Q47_units} contains 'Year(s)'"
+     "visibleIf": "{Q47_units} contains 'Year(s)'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Residence",
