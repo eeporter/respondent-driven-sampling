@@ -3445,8 +3445,8 @@
      "type": "html",
      "name": "children_prompt",
      "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>Thank you again. Next I'm going to ask some personal questions about the children you live with, and you'll get an additional $20 in compensation for these extra questions. Again, all responses are confidential. I'll refer to them by the initial(s) or nickname(s) you give me. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>Gracias de nuevo. Ahora voy a hacerle algunas preguntas sobre los/las niños/as menores de edad que viven con usted. Recibirá $20 adicionales como compensación por estas preguntas extra. Nuevamente, todas sus respuestas son confidenciales. Voy a tratar de referirme a ellas/os con las iniciales de sus nombres o los apodos que me dio. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>"
+      "default": "<div style=\"margin: 6px 0;\"><strong>Thank you again. Next I'm going to ask some personal questions about the children you live with, and you'll get an additional $25 in compensation for these extra questions. Again, all responses are confidential. I'll refer to them by the initial(s) or nickname(s) you give me. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Gracias de nuevo. Ahora voy a hacerle algunas preguntas sobre los/las niños/as menores de edad que viven con usted. Recibirá $25 adicionales como compensación por estas preguntas extra. Nuevamente, todas sus respuestas son confidenciales. Voy a tratar de referirme a ellas/os con las iniciales de sus nombres o los apodos que me dio. Please suggest starting with the youngest child, followed by the next youngest, up to the oldest.</strong></div>"
      }
     },
     {
