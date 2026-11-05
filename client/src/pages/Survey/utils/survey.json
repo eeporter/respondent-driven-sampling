@@ -216,8 +216,8 @@
      "name": "date_of_birth",
      "title": "Enter the respondent's date of birth",
      "inputType": "date",
-     "min": "1926-02-01",
-     "max": "2014-02-28",
+     "min": "1927-02-01",
+     "max": "2015-02-28",
      "isRequired": true
     }
    ],
@@ -241,7 +241,7 @@
     {
      "type": "html",
      "name": "Q472",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2026): <strong>{yc_age}</strong>. If this age does not seem correct, go back and confirm the date of birth again.</div>",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2027): <strong>{yc_age}</strong>. If this age does not seem correct, go back and confirm the date of birth again.</div>",
      "visibleIf": "{location} notcontains \"Phone\""
     },
     {
@@ -8213,7 +8213,7 @@
  "calculatedValues": [
   {
    "name": "yc_age",
-   "expression": "dateDiff({date_of_birth}, '2026-01-31', 'years')"
+   "expression": "dateDiff({date_of_birth}, '2027-01-31', 'years')"
   },
   {
    "name": "valid_homelessness_30d",

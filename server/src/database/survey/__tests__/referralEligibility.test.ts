@@ -5,7 +5,7 @@ import { ageOn, isReferralEligible } from '../referralEligibility';
 const base = {
 	consent_given: 'Yes',
 	is_under_25: 'Yes',
-	date_of_birth: '2005-06-15',
+	date_of_birth: '2006-06-15',
 	deduplication: 'No'
 };
 
@@ -129,14 +129,14 @@ describe('isReferralEligible', () => {
 			isReferralEligible({
 				...base,
 				Q2: 'Tent',
-				date_of_birth: '2001-01-31'
+				date_of_birth: '2002-01-31'
 			})
 		).toBe(false);
 		expect(
 			isReferralEligible({
 				...base,
 				Q2: 'Tent',
-				date_of_birth: '2001-02-01'
+				date_of_birth: '2002-02-01'
 			})
 		).toBe(true);
 	});
@@ -155,8 +155,8 @@ describe('isReferralEligible', () => {
 
 describe('ageOn', () => {
 	test('counts whole years up to the reference date', () => {
-		expect(ageOn('2001-01-31')).toBe(25);
-		expect(ageOn('2001-02-01')).toBe(24);
+		expect(ageOn('2002-01-31')).toBe(25);
+		expect(ageOn('2002-02-01')).toBe(24);
 		expect(ageOn(undefined)).toBe(null);
 	});
 });

@@ -11,7 +11,7 @@
  */
 
 // Calculated age in the survey is taken as of this date (see yc_age).
-export const AGE_REFERENCE_DATE = '2026-01-31';
+export const AGE_REFERENCE_DATE = '2027-01-31';
 
 const SHELTERED = [
 	'Emergency shelter',
