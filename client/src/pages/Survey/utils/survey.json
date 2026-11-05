@@ -3384,7 +3384,10 @@
       "default": "Number of people under 18 living with participant",
       "es": "Número de niños/as menores de 18 años"
      },
-     "isRequired": true
+     "isRequired": true,
+     "setValueIf": "{Q23_End} notempty",
+     "setValueExpression": "0",
+     "enableIf": "{Q23_End} empty"
     },
     {
      "type": "text",
@@ -3395,7 +3398,10 @@
       "default": "Number of people 18 and older living with participant",
       "es": "Número de adultos mayores de 18 años"
      },
-     "isRequired": true
+     "isRequired": true,
+     "setValueIf": "{Q23_End} notempty",
+     "setValueExpression": "0",
+     "enableIf": "{Q23_End} empty"
     },
     {
      "type": "radiogroup",
@@ -3422,7 +3428,7 @@
        "isExclusive": true
       }
      ],
-     "isRequired": true
+     "showClearButton": true
     }
    ],
    "navigationTitle": "Household",
