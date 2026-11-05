@@ -1232,7 +1232,8 @@
         "default": "Other (specify): – specify",
         "es": "Otro (especifique): – especifique"
        },
-       "visibleIf": "{panel.relationship} contains 'Other (specify):'"
+       "visibleIf": "{panel.relationship} contains 'Other (specify):'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -1453,7 +1454,8 @@
         "default": "Other location not listed (please specify): – specify",
         "es": "Otro lugar no listado (especifique): – especifique"
        },
-       "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'"
+       "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'",
+       "isRequired": true
       }
      ]
     }
@@ -1867,7 +1869,8 @@
       "default": "Other (please specify:) – specify",
       "es": "Otra (especifique): – especifique"
      },
-     "visibleIf": "{Q419} contains 'Other (please specify:)'"
+     "visibleIf": "{Q419} contains 'Other (please specify:)'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Experience of Homelessness",
@@ -2861,7 +2864,8 @@
       "default": "Different Identity – specify",
       "es": "Identidad diferente – especifique"
      },
-     "visibleIf": "{Q6} contains 'Different Identity'"
+     "visibleIf": "{Q6} contains 'Different Identity'",
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -2936,7 +2940,8 @@
       "default": "Other (specify): – specify",
       "es": "Otro (especifique): – especifique"
      },
-     "visibleIf": "{Q8} contains 'Other (specify):'"
+     "visibleIf": "{Q8} contains 'Other (specify):'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Individual Demographics",
@@ -3156,7 +3161,8 @@
       "default": "Other Asian, specify: – specify",
       "es": "Otro origen asiático(a) (especifique): – especifique"
      },
-     "visibleIf": "{Q10} contains 'Other Asian, specify:'"
+     "visibleIf": "{Q10} contains 'Other Asian, specify:'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -3165,7 +3171,8 @@
       "default": "Other Pacific Islander, specify: – specify",
       "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
      },
-     "visibleIf": "{Q10} contains 'Other Pacific Islander, specify:'"
+     "visibleIf": "{Q10} contains 'Other Pacific Islander, specify:'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -3174,7 +3181,8 @@
       "default": "Other race, specify – specify",
       "es": "De otra raza (especifique): – especifique"
      },
-     "visibleIf": "{Q10} contains 'Other race, specify'"
+     "visibleIf": "{Q10} contains 'Other race, specify'",
+     "isRequired": true
     },
     {
      "type": "html",
@@ -3782,7 +3790,8 @@
         "default": "Other Asian (specify): – specify",
         "es": "Otro origen asiático (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other Asian (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q28c} contains 'Other Asian (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -3791,7 +3800,8 @@
         "default": "Other Pacific Islander (specify): – specify",
         "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other Pacific Islander (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q28c} contains 'Other Pacific Islander (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -3800,7 +3810,8 @@
         "default": "Other race (specify): – specify",
         "es": "De otra raza (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other race (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q28c} contains 'Other race (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -3928,7 +3939,8 @@
         "default": "Different identity – specify",
         "es": "Identidad diferente – especifique"
        },
-       "visibleIf": "({panel.Q29c} contains 'Different identity') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q29c} contains 'Different identity') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "html",
@@ -4348,7 +4360,8 @@
         "default": "Other condition – specify",
         "es": "Otra condición – especifique"
        },
-       "visibleIf": "({panel.Q34c_Oth} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_Oth} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4779,7 +4792,8 @@
         "default": "Other Asian (specify): – specify",
         "es": "Otro origen asiático (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other Asian (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q28f} contains 'Other Asian (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4788,7 +4802,8 @@
         "default": "Other Pacific Islander (specify): – specify",
         "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other Pacific Islander (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q28f} contains 'Other Pacific Islander (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4797,7 +4812,8 @@
         "default": "Other race (specify): – specify",
         "es": "De otra raza (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other race (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q28f} contains 'Other race (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4925,7 +4941,8 @@
         "default": "Different identity – specify",
         "es": "Identidad diferente – especifique"
        },
-       "visibleIf": "({panel.Q29f} contains 'Different identity') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q29f} contains 'Different identity') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -5000,7 +5017,8 @@
         "default": "Other (specify) – specify",
         "es": "Otro (especifique): – especifique"
        },
-       "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5143,7 +5161,8 @@
         "default": "Other, specify – specify",
         "es": "Otro, especifique – especifique"
        },
-       "visibleIf": "({panel.Q33f} contains 'Other, specify') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q33f} contains 'Other, specify') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "html",
@@ -5563,7 +5582,8 @@
         "default": "Other condition – specify",
         "es": "Otra condición – especifique"
        },
-       "visibleIf": "({panel.Q34f_Oth} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_Oth} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -6078,7 +6098,8 @@
       "default": "Other condition – specify",
       "es": "Otra condición – especifique"
      },
-     "visibleIf": "{Q36_Oth} notempty"
+     "visibleIf": "{Q36_Oth} notempty",
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -7233,7 +7254,8 @@
       "default": "Other (Specify): – specify",
       "es": "Otra opción (especifique) – especifique"
      },
-     "visibleIf": "{Q50} contains 'Other (Specify):'"
+     "visibleIf": "{Q50} contains 'Other (Specify):'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Residence",
@@ -7646,7 +7668,8 @@
       "default": "Other, specify – specify",
       "es": "Otro, especificar – especifique"
      },
-     "visibleIf": "{Q54} contains 'Other, specify'"
+     "visibleIf": "{Q54} contains 'Other, specify'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
@@ -7863,7 +7886,8 @@
       "default": "Other income or cash assistance benefit (please specify): – specify",
       "es": "Otro tipo de ingreso o asistencia en efectivo (por favor, especifique): – especifique"
      },
-     "visibleIf": "{Q55} contains 'Other income or cash assistance benefit (please specify):'"
+     "visibleIf": "{Q55} contains 'Other income or cash assistance benefit (please specify):'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7872,7 +7896,8 @@
       "default": "Other food or nutrition assistance benefit (please specify): – specify",
       "es": "Otro beneficio de asistencia alimentaria o nutricional (por favor, especifique): – especifique"
      },
-     "visibleIf": "{Q55} contains 'Other food or nutrition assistance benefit (please specify):'"
+     "visibleIf": "{Q55} contains 'Other food or nutrition assistance benefit (please specify):'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7881,7 +7906,8 @@
       "default": "Other health coverage (please specify): – specify",
       "es": "Otro seguro de salud (por favor, especifique): – especifique"
      },
-     "visibleIf": "{Q55} contains 'Other health coverage (please specify):'"
+     "visibleIf": "{Q55} contains 'Other health coverage (please specify):'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7890,7 +7916,8 @@
       "default": "Other housing or employment benefit (please specify): – specify",
       "es": "Otros beneficios de vivienda o empleo (por favor, especifique): – especifique"
      },
-     "visibleIf": "{Q55} contains 'Other housing or employment benefit (please specify):'"
+     "visibleIf": "{Q55} contains 'Other housing or employment benefit (please specify):'",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7899,7 +7926,8 @@
       "default": "Other (please specify): – specify",
       "es": "Otro servicio, beneficio o asistencia (por favor, especifique): – especifique"
      },
-     "visibleIf": "{Q55} contains 'Other (please specify):'"
+     "visibleIf": "{Q55} contains 'Other (please specify):'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
@@ -8137,7 +8165,8 @@
       "default": "Other (specify): – specify",
       "es": "Otro (especifique): – especifique"
      },
-     "visibleIf": "{Q403} contains 'Other (specify):'"
+     "visibleIf": "{Q403} contains 'Other (specify):'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Special Questions",
