@@ -114,7 +114,6 @@ export const initializeSurvey = (
 			title = 'Edit Survey Details';
 			pageNames = [
 				'volunteer-pre-screen',
-				'age_check',
 				'consent',
 				'survey-validation',
 			];
@@ -130,7 +129,6 @@ export const initializeSurvey = (
 			// Default: all edit pages
 			pageNames = [
 				'volunteer-pre-screen',
-				'age_check',
 				'consent',
 				'survey-validation',
 				'giftCards',

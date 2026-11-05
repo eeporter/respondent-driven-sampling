@@ -66,23 +66,6 @@
    "navigationTitle": "Language"
   },
   {
-   "name": "age_check",
-   "title": "Age Verification",
-   "elements": [
-    {
-     "type": "radiogroup",
-     "name": "is_adult",
-     "title": "Are you 18 and over?",
-     "isRequired": true,
-     "choices": [
-      "Yes",
-      "No"
-     ]
-    }
-   ],
-   "navigationTitle": "Age Verification"
-  },
-  {
    "name": "consent",
    "title": {
     "default": "Consent",
