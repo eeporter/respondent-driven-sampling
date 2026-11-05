@@ -3480,7 +3480,10 @@
         "default": "29. What are the initials or a nickname of child # {panelIndex}?",
         "es": "29. ¿Cuáles son las iniciales o el apodo de las otras personas de su hogar # {panelIndex}?"
        },
-       "description": "Please suggest listing children from youngest to oldest; fill in the initials of the person below.",
+       "description": {
+        "default": "Please suggest listing children from youngest to oldest; fill in the initials of the person below. If the respondent does not want to give initials or a nickname, type \"Declined\" or \"Don't know\".",
+        "es": "Please suggest listing children from youngest to oldest; fill in the initials of the person below. If the respondent does not want to give initials or a nickname, type \"Declined\" or \"Don't know\"."
+       },
        "isRequired": true
       },
       {
@@ -3564,6 +3567,20 @@
          "text": {
           "default": "Months",
           "es": "Meses"
+         }
+        },
+        {
+         "value": "Declined",
+         "text": {
+          "default": "Declined",
+          "es": "No respondió"
+         }
+        },
+        {
+         "value": "Don't know",
+         "text": {
+          "default": "Don't know",
+          "es": "No lo sé"
          }
         },
         {
@@ -4448,6 +4465,16 @@
        "visibleIf": "({panel.Q34c_AU} empty and {panel.Q34c_SU} empty and {panel.Q34c_HIV} empty and {panel.Q34c_SMI} empty and {panel.Q34c_PhysD} empty and {panel.Q34c_PhysIll} empty and {panel.Q34c_TBI} empty and {panel.Q34c_DD} empty and {panel.Q34c_Oth} empty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
       }
+     ],
+     "validators": [
+      {
+       "type": "expression",
+       "expression": "countInArray({household_children}, 'Q24c') = {Q23_U18}",
+       "text": {
+        "default": "Add one entry for each child under 18 in the household count from question 28.",
+        "es": "Agregue una entrada por cada niño/a menor de 18 años indicado en la pregunta 28."
+       }
+      }
      ]
     }
    ],
@@ -4500,7 +4527,11 @@
         "default": "37. What are the initials or a nickname of next oldest family member living with you?",
         "es": "37. ¿Cuáles son las iniciales o el apodo de la siguiente persona de su hogar?"
        },
-       "isRequired": true
+       "isRequired": true,
+       "description": {
+        "default": "If the respondent does not want to give initials or a nickname, type \"Declined\" or \"Don't know\".",
+        "es": "If the respondent does not want to give initials or a nickname, type \"Declined\" or \"Don't know\"."
+       }
       },
       {
        "type": "radiogroup",
@@ -4575,6 +4606,20 @@
          "text": {
           "default": "Age in Years",
           "es": "Edad en años"
+         }
+        },
+        {
+         "value": "Declined",
+         "text": {
+          "default": "Declined",
+          "es": "No respondió"
+         }
+        },
+        {
+         "value": "Don't know",
+         "text": {
+          "default": "Don't know",
+          "es": "No lo sé"
          }
         },
         {
@@ -5678,6 +5723,16 @@
        ],
        "visibleIf": "({panel.Q34f_AU} empty and {panel.Q34f_SU} empty and {panel.Q34f_HIV} empty and {panel.Q34f_SMI} empty and {panel.Q34f_PhysD} empty and {panel.Q34f_PhysIll} empty and {panel.Q34f_TBI} empty and {panel.Q34f_DD} empty and {panel.Q34f_Oth} empty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
+      }
+     ],
+     "validators": [
+      {
+       "type": "expression",
+       "expression": "countInArray({household_adults}, 'Q24f') = {Q23_18p}",
+       "text": {
+        "default": "Add one entry for each adult 18 or older in the household count from question 28.",
+        "es": "Agregue una entrada por cada adulto de 18 años o más indicado en la pregunta 28."
+       }
       }
      ]
     }
