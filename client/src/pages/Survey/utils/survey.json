@@ -950,11 +950,17 @@
     {
      "type": "text",
      "name": "first_two_letters_fname",
-     "title": "Enter the first two letters of the respondent's first name",
+     "title": {
+      "default": "Enter the first two letters of the respondent's first name",
+      "es": "Ingrese las dos primeras letras del nombre de la persona encuestada"
+     },
      "validators": [
       {
        "type": "regex",
-       "text": "Please enter the first two letters of the respondent's first name.",
+       "text": {
+        "default": "Please enter the first two letters of the respondent's first name.",
+        "es": "Ingrese las dos primeras letras del nombre de la persona encuestada."
+       },
        "regex": "^[A-Za-z]{2}$"
       }
      ],
@@ -963,11 +969,17 @@
     {
      "type": "text",
      "name": "first_two_letters_lname",
-     "title": "Enter the first two letters of the respondent's last name",
+     "title": {
+      "default": "Enter the first two letters of the respondent's last name",
+      "es": "Ingrese las dos primeras letras del apellido de la persona encuestada"
+     },
      "validators": [
       {
        "type": "regex",
-       "text": "Please enter the first two letters of the respondent's last name.",
+       "text": {
+        "default": "Please enter the first two letters of the respondent's last name.",
+        "es": "Ingrese las dos primeras letras del apellido de la persona encuestada."
+       },
        "regex": "^[A-Za-z]{2}$"
       }
      ],
@@ -1580,7 +1592,10 @@
     {
      "type": "text",
      "name": "Q420",
-     "title": "Enter age in years:",
+     "title": {
+      "default": "Enter age in years:",
+      "es": "Ingrese la edad en años:"
+     },
      "inputType": "number",
      "min": 0,
      "visibleIf": "{Q420_choice} = 'Enter age in years:'",
