@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 import Seed, { ISeed } from '@/database/seed/mongoose/seed.model';
 import Survey, { ISurvey } from '@/database/survey/mongoose/survey.model';
+import { isReferralEligible } from '@/database/survey/referralEligibility';
 import { SURVEY_CODE_LENGTH } from '@/database/utils/constants';
 import { auth } from '@/middleware/auth';
 import { AuthenticatedRequest } from '@/types/auth';
@@ -61,6 +62,16 @@ router.get(
 					isValid: false,
 					message:
 						'This survey code does not exist. Please try again.'
+				});
+			}
+
+			// Codes from a survey where consent was declined or the respondent had
+			// already taken the survey are kept on record but cannot be used.
+			if (parentSurvey && !isReferralEligible(parentSurvey.responses)) {
+				return res.json({
+					isValid: false,
+					message:
+						'This coupon code is not valid: it came from a survey that is not eligible for referral coupons.'
 				});
 			}
 

@@ -9,3 +9,4 @@ export { default as ApplyReferral } from './ApplyReferral/ApplyReferral';
 export { default as Signup } from './Signup/Signup';
 export { default as StaffDashboard } from './StaffDashboard/StaffDashboard';
 export { default as NewUser } from './NewUser/NewUser';
+export { default as IneligiblePage } from './IneligiblePage/IneligiblePage';

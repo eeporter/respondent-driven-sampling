@@ -94,8 +94,8 @@ export function Header() {
 			return;
 		}
 
-		// /qrcode -> /survey-entries
-		if (path === '/qrcode') {
+		// /qrcode and /ineligible -> /survey-entries
+		if (path === '/qrcode' || path === '/ineligible') {
 			navigate('/survey-entries');
 			return;
 		}

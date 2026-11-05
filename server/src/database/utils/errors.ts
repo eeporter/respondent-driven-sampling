@@ -28,6 +28,8 @@
  *       properties:
  *         PARENT_SURVEY_NOT_FOUND:
  *           $ref: '#/components/schemas/ErrorCode'
+ *         PARENT_SURVEY_NOT_REFERRAL_ELIGIBLE:
+ *           $ref: '#/components/schemas/ErrorCode'
  *         SURVEY_CODE_NOT_FOUND_IN_PARENT_CODES:
  *           $ref: '#/components/schemas/ErrorCode'
  *         SYSTEM_GENERATED_SURVEY_CODE_FOUND_IN_PREVIOUS_CHILD_CODES:
@@ -74,6 +76,11 @@ export const errors = {
 		'PARENT_SURVEY_NOT_FOUND',
 		'Could not find parent survey with matching survey code',
 		404
+	),
+	PARENT_SURVEY_NOT_REFERRAL_ELIGIBLE: new ErrorCode(
+		'PARENT_SURVEY_NOT_REFERRAL_ELIGIBLE',
+		'This coupon code came from a survey that is not eligible for referral coupons',
+		400
 	),
 	SEED_CODE_NOT_FOUND: new ErrorCode(
 		'SEED_CODE_NOT_FOUND',

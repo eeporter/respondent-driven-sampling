@@ -11,6 +11,7 @@ import { useAuthContext } from '@/contexts';
 import { useAbility, useApi } from '@/hooks';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { useSurveyStore } from '@/stores';
+import { isReferralEligible } from '@/utils/referralEligibility';
 import { useGeolocated } from 'react-geolocated';
 import toast from 'react-hot-toast';
 
@@ -296,6 +297,13 @@ const Survey = () => {
 				// Return to Home buttons, so a survey with no codes to print must
 				// not leave the interviewer stranded on the finished survey.
 				if (result) {
+					// Declined consent or a repeat respondent: the survey is saved, but
+					// no coupons are handed out.
+					if (!isReferralEligible(surveyData.responses)) {
+						setChildSurveyCodes([]);
+						navigate('/ineligible');
+						return;
+					}
 					setChildSurveyCodes(result.childSurveyCodes ?? []);
 					navigate('/qrcode');
 					return;

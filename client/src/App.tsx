@@ -2,6 +2,7 @@ import { ProtectedRoute, TestBanner } from '@/components';
 import { AuthProvider } from '@/contexts';
 import {
 	ApplyReferral,
+	IneligiblePage,
 	LandingPage,
 	Login,
 	NewUser,
@@ -107,6 +108,14 @@ function App() {
 							element={
 								<ProtectedRoute>
 									<QrPage />
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							path="/ineligible"
+							element={
+								<ProtectedRoute>
+									<IneligiblePage />
 								</ProtectedRoute>
 							}
 						/>

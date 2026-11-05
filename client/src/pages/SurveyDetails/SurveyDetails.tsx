@@ -10,6 +10,7 @@ import '@/styles/complete.css';
 import { useAbility } from '@/hooks';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { printQrCodePdf } from '@/utils/qrCodeUtils';
+import { isReferralEligible } from '@/utils/referralEligibility';
 import { subject } from '@casl/ability';
 
 import { useApi } from '@/hooks/useApi';
@@ -107,12 +108,19 @@ export default function SurveyDetails() {
 		);
 	}
 
+	// Surveys where consent was declined or the respondent had already taken the
+	// survey keep their record but never show or print coupon codes.
+	const referralEligible = isReferralEligible(survey.responses);
+	const referralCodes: string[] = referralEligible
+		? (survey.childSurveyCodes ?? [])
+		: [];
+
 	// Generate PDF with custom paper size (62mm width)
 	const handlePrint = () => {
-		if (!survey?.childSurveyCodes || survey.childSurveyCodes.length === 0) {
+		if (referralCodes.length === 0) {
 			return;
 		}
-		printQrCodePdf(qrRefs.current, survey.childSurveyCodes);
+		printQrCodePdf(qrRefs.current, referralCodes);
 	};
 
 	// Function to handle logout
@@ -304,10 +312,9 @@ export default function SurveyDetails() {
 							<p style={{ margin: 0 }}>
 								<strong>Generated Referral Codes:</strong>
 							</p>
-							{survey.childSurveyCodes &&
-							survey.childSurveyCodes.length > 0 ? (
+							{referralCodes.length > 0 ? (
 								<ul className="referral-list" style={{ margin: 0 }}>
-									{survey.childSurveyCodes.map(
+									{referralCodes.map(
 										(code: string, index: number) => (
 											<li
 												key={index}
@@ -319,7 +326,11 @@ export default function SurveyDetails() {
 									)}
 								</ul>
 							) : (
-								<span>N/A</span>
+								<span>
+									{referralEligible
+										? 'N/A'
+										: 'Ineligible for referral coupons'}
+								</span>
 							)}
 						</div>
 						{/* Display QR Codes */}
@@ -332,9 +343,8 @@ export default function SurveyDetails() {
 									gap: '10px'
 								}}
 							>
-								{survey.childSurveyCodes &&
-								survey.childSurveyCodes.length > 0 ? (
-									survey.childSurveyCodes.map(
+								{referralCodes.length > 0 ? (
+									referralCodes.map(
 										(code: string, index: number) => {
 											const qrSurveyCode = code;
 											return (

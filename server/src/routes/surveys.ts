@@ -3,6 +3,7 @@ import express, { NextFunction, Response } from 'express';
 
 import Seed from '@/database/seed/mongoose/seed.model';
 import Survey, { ISurvey } from '@/database/survey/mongoose/survey.model';
+import { isReferralEligible } from '@/database/survey/referralEligibility';
 import {
 	generateUniqueChildSurveyCodes,
 	getParentSurveySurveyCodeUsingSurveyCode
@@ -264,7 +265,17 @@ router.post(
 						surveyData.surveyCode
 					);
 				if (parentSurveySurveyCode) {
-					// Found parent survey
+					// Found parent survey. Its codes only count if it was eligible to
+					// hand out referrals (consent given, not a repeat respondent).
+					const parentSurvey = await Survey.findOne({
+						surveyCode: parentSurveySurveyCode
+					}).select({ responses: 1 });
+					if (!isReferralEligible(parentSurvey?.responses)) {
+						const err = errors.PARENT_SURVEY_NOT_REFERRAL_ELIGIBLE;
+						return res.status(err.status).json({
+							message: err.message
+						});
+					}
 					surveyData.parentSurveyCode = parentSurveySurveyCode;
 				} else {
 					// Parent survey not found, try to find a seed
