@@ -125,7 +125,8 @@
        "text": "Please enter the first two letters of the respondent's first name.",
        "regex": "^[A-Za-z]{2}$"
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -137,7 +138,8 @@
        "text": "Please enter the first two letters of the respondent's last name.",
        "regex": "^[A-Za-z]{2}$"
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -145,7 +147,8 @@
      "title": "Enter the respondent's date of birth",
      "inputType": "date",
      "min": "1926-02-01",
-     "max": "2014-02-28"
+     "max": "2014-02-28",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Survey Validation"
@@ -418,7 +421,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "dropdown",
@@ -667,7 +671,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "dropdown",
@@ -917,7 +922,8 @@
        }
       }
      ],
-     "visibleIf": "({Q2} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q2} = 'Jail or prison' or {Q2} = 'Assisted living or Board & Care facility') and ({Q3} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q3} = 'Jail or prison' or {Q3} = 'Assisted living or Board & Care facility')"
+     "visibleIf": "({Q2} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q2} = 'Jail or prison' or {Q2} = 'Assisted living or Board & Care facility') and ({Q3} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q3} = 'Jail or prison' or {Q3} = 'Assisted living or Board & Care facility')",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Eligibility"
@@ -1077,7 +1083,8 @@
           "es": "No lo sé"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "text",
@@ -1131,7 +1138,8 @@
           "es": "No lo sé"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "dropdown",
@@ -1296,7 +1304,8 @@
           "es": "No lo sé"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "text",
@@ -1358,7 +1367,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -1396,7 +1406,8 @@
        "text": "Declined / Don't know",
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Experience of Homelessness",
@@ -1436,7 +1447,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -1510,7 +1522,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -1576,7 +1589,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Experience of Homelessness",
@@ -1622,7 +1636,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -1699,7 +1714,8 @@
        "isExclusive": true
       }
      ],
-     "visibleIf": "{Q418} = \"Yes\""
+     "visibleIf": "{Q418} = \"Yes\"",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -1764,7 +1780,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Experience of Homelessness",
@@ -1846,7 +1863,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_Car} notempty"
+     "visibleIf": "{Q21_Car} notempty",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -1907,7 +1925,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_Van} notempty"
+     "visibleIf": "{Q21_Van} notempty",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -1968,7 +1987,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_RV} notempty"
+     "visibleIf": "{Q21_RV} notempty",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2029,7 +2049,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_Tent} notempty"
+     "visibleIf": "{Q21_Tent} notempty",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2090,7 +2111,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_MSh} notempty"
+     "visibleIf": "{Q21_MSh} notempty",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2133,7 +2155,8 @@
        }
       }
      ],
-     "visibleIf": "{Q21_Car} empty and {Q21_Van} empty and {Q21_RV} empty and {Q21_Tent} empty and {Q21_MSh} empty"
+     "visibleIf": "{Q21_Car} empty and {Q21_Van} empty and {Q21_RV} empty and {Q21_Tent} empty and {Q21_MSh} empty",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Experience of Homelessness: CVRTM",
@@ -2179,7 +2202,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -2212,7 +2236,8 @@
        }
       }
      ],
-     "visibleIf": "{Q15} anyof ['No', 'Declined', 'Don\\'t know']"
+     "visibleIf": "{Q15} anyof ['No', 'Declined', 'Don\\'t know']",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2293,7 +2318,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2394,7 +2420,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -2439,7 +2466,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -2474,7 +2502,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Spells and Duration",
@@ -2532,7 +2561,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -2608,7 +2638,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2682,7 +2713,8 @@
        }
       }
      ],
-     "visibleIf": "{yc_age} >= 18"
+     "visibleIf": "{yc_age} >= 18",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -2901,7 +2933,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -3003,7 +3036,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Veteran Status",
@@ -3088,7 +3122,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -3162,7 +3197,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Household",
@@ -3273,7 +3309,8 @@
           "es": "No lo sé"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -3516,7 +3553,8 @@
          "isExclusive": true
         }
        ],
-       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -3583,7 +3621,8 @@
          }
         }
        ],
-       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -3660,7 +3699,8 @@
          "isExclusive": true
         }
        ],
-       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -3733,7 +3773,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_AU} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_AU} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -3788,7 +3829,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_SU} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_SU} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -3871,7 +3913,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_SMI} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_SMI} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -3926,7 +3969,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_PhysD} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_PhysD} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -3981,7 +4025,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_PhysIll} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_PhysIll} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -4036,7 +4081,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_TBI} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_TBI} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -4119,7 +4165,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_Oth} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_Oth} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4151,7 +4198,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34c_AU} empty and {panel.Q34c_SU} empty and {panel.Q34c_HIV} empty and {panel.Q34c_SMI} empty and {panel.Q34c_PhysD} empty and {panel.Q34c_PhysIll} empty and {panel.Q34c_TBI} empty and {panel.Q34c_DD} empty and {panel.Q34c_Oth} empty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+       "visibleIf": "({panel.Q34c_AU} empty and {panel.Q34c_SU} empty and {panel.Q34c_HIV} empty and {panel.Q34c_SMI} empty and {panel.Q34c_PhysD} empty and {panel.Q34c_PhysIll} empty and {panel.Q34c_TBI} empty and {panel.Q34c_DD} empty and {panel.Q34c_Oth} empty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
+       "isRequired": true
       }
      ]
     }
@@ -4263,7 +4311,8 @@
           "es": "No lo sé"
          }
         }
-       ]
+       ],
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4498,7 +4547,8 @@
          "isExclusive": true
         }
        ],
-       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4565,7 +4615,8 @@
          }
         }
        ],
-       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -4642,7 +4693,8 @@
          "isExclusive": true
         }
        ],
-       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4716,7 +4768,8 @@
          }
         }
        ],
-       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4782,7 +4835,8 @@
          "isExclusive": true
         }
        ],
-       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -4857,7 +4911,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q32f} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q32f} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "text",
@@ -4930,7 +4985,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_AU} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_AU} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -4985,7 +5041,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_SU} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_SU} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5068,7 +5125,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_SMI} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_SMI} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5123,7 +5181,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_PhysD} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_PhysD} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5178,7 +5237,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_PhysIll} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_PhysIll} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5233,7 +5293,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_TBI} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_TBI} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "checkbox",
@@ -5316,7 +5377,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_Oth} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_Oth} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       },
       {
        "type": "radiogroup",
@@ -5348,7 +5410,8 @@
          }
         }
        ],
-       "visibleIf": "({panel.Q34f_AU} empty and {panel.Q34f_SU} empty and {panel.Q34f_HIV} empty and {panel.Q34f_SMI} empty and {panel.Q34f_PhysD} empty and {panel.Q34f_PhysIll} empty and {panel.Q34f_TBI} empty and {panel.Q34f_DD} empty and {panel.Q34f_Oth} empty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+       "visibleIf": "({panel.Q34f_AU} empty and {panel.Q34f_SU} empty and {panel.Q34f_HIV} empty and {panel.Q34f_SMI} empty and {panel.Q34f_PhysD} empty and {panel.Q34f_PhysIll} empty and {panel.Q34f_TBI} empty and {panel.Q34f_DD} empty and {panel.Q34f_Oth} empty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
+       "isRequired": true
       }
      ]
     }
@@ -5446,7 +5509,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_AU} notempty"
+     "visibleIf": "{Q36_AU} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5500,7 +5564,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_SU} notempty"
+     "visibleIf": "{Q36_SU} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5580,7 +5645,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_SMI} notempty"
+     "visibleIf": "{Q36_SMI} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5634,7 +5700,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_PhysD} notempty"
+     "visibleIf": "{Q36_PhysD} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5688,7 +5755,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_PhysIll} notempty"
+     "visibleIf": "{Q36_PhysIll} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5742,7 +5810,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_TBI} notempty"
+     "visibleIf": "{Q36_TBI} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -5823,7 +5892,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_Oth} notempty"
+     "visibleIf": "{Q36_Oth} notempty",
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -5855,7 +5925,8 @@
        }
       }
      ],
-     "visibleIf": "{Q36_AU} empty and {Q36_SU} empty and {Q36_HIV} empty and {Q36_SMI} empty and {Q36_PhysD} empty and {Q36_PhysIll} empty and {Q36_TBI} empty and {Q36_DD} empty and {Q36_Oth} empty"
+     "visibleIf": "{Q36_AU} empty and {Q36_SU} empty and {Q36_HIV} empty and {Q36_SMI} empty and {Q36_PhysD} empty and {Q36_PhysIll} empty and {Q36_TBI} empty and {Q36_DD} empty and {Q36_Oth} empty",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Health & Safety",
@@ -6039,7 +6110,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Health & Safety, continued",
@@ -6086,7 +6158,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Health & Safety, continued",
@@ -6223,7 +6296,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Systems Involvement",
@@ -6277,7 +6351,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Residence",
@@ -6344,7 +6419,8 @@
        "isExclusive": true
       }
      ],
-     "visibleIf": "{Q46} = \"Yes\""
+     "visibleIf": "{Q46} = \"Yes\"",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -6460,7 +6536,8 @@
        }
       }
      ],
-     "visibleIf": "{Q46} = \"Yes\""
+     "visibleIf": "{Q46} = \"Yes\"",
+     "isRequired": true
     },
     {
      "type": "dropdown",
@@ -6703,7 +6780,8 @@
        }
       }
      ],
-     "visibleIf": "{Q46} = \"Yes\" and {Q48} <> 'Los Angeles County'"
+     "visibleIf": "{Q46} = \"Yes\" and {Q48} <> 'Los Angeles County'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Residence",
@@ -6917,7 +6995,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7004,7 +7083,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -7081,7 +7161,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
@@ -7194,7 +7275,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
@@ -7241,7 +7323,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -7325,7 +7408,8 @@
        "isExclusive": true
       }
      ],
-     "visibleIf": "{Q53} = \"Yes\""
+     "visibleIf": "{Q53} = \"Yes\"",
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7541,7 +7625,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7648,7 +7733,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "radiogroup",
@@ -7715,7 +7801,8 @@
         "es": "No lo sé"
        }
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "checkbox",
@@ -7812,7 +7899,8 @@
        },
        "isExclusive": true
       }
-     ]
+     ],
+     "isRequired": true
     },
     {
      "type": "text",
@@ -7876,7 +7964,8 @@
       "Yes",
       "No",
       "Do not know"
-     ]
+     ],
+     "isRequired": true
     }
    ],
    "navigationTitle": "Survey Deduplication"
