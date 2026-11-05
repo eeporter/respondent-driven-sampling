@@ -66,31 +66,6 @@
    "navigationTitle": "Language"
   },
   {
-   "name": "age_check",
-   "title": {
-    "default": "Age Verification",
-    "es": "Verificación de edad"
-   },
-   "elements": [
-    {
-     "type": "text",
-     "name": "date_of_birth",
-     "title": "Enter the respondent's date of birth",
-     "inputType": "date",
-     "min": "1927-02-01",
-     "max": "2015-02-28",
-     "isRequired": true
-    },
-    {
-     "type": "html",
-     "name": "Q472",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2027): <strong>{yc_age}</strong>. If this age does not seem correct, confirm the date of birth again.</div>",
-     "visibleIf": "{date_of_birth} notempty and {location} notcontains \"Phone\""
-    }
-   ],
-   "navigationTitle": "Age Verification"
-  },
-  {
    "name": "consent",
    "title": {
     "default": "Consent",
@@ -172,37 +147,32 @@
    "navigationTitle": "Consent"
   },
   {
-   "name": "survey-validation",
-   "title": "Survey Validation",
+   "name": "age_check",
+   "title": {
+    "default": "Age Verification",
+    "es": "Verificación de edad"
+   },
    "elements": [
     {
      "type": "text",
-     "name": "first_two_letters_fname",
-     "title": "Enter the first two letters of the respondent's first name",
-     "validators": [
-      {
-       "type": "regex",
-       "text": "Please enter the first two letters of the respondent's first name.",
-       "regex": "^[A-Za-z]{2}$"
-      }
-     ],
+     "name": "date_of_birth",
+     "title": {
+      "default": "What is your date of birth?",
+      "es": "¿Cuál es su fecha de nacimiento?"
+     },
+     "inputType": "date",
+     "min": "1927-02-01",
+     "max": "2015-02-28",
      "isRequired": true
     },
     {
-     "type": "text",
-     "name": "first_two_letters_lname",
-     "title": "Enter the first two letters of the respondent's last name",
-     "validators": [
-      {
-       "type": "regex",
-       "text": "Please enter the first two letters of the respondent's last name.",
-       "regex": "^[A-Za-z]{2}$"
-      }
-     ],
-     "isRequired": true
+     "type": "html",
+     "name": "Q472",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2027): <strong>{yc_age}</strong>. If this age does not seem correct, confirm the date of birth again.</div>",
+     "visibleIf": "{date_of_birth} notempty and {location} notcontains \"Phone\""
     }
    ],
-   "navigationTitle": "Survey Validation"
+   "navigationTitle": "Age Verification"
   },
   {
    "name": "yc_eligibility",
@@ -223,7 +193,7 @@
      "type": "dropdown",
      "name": "Q2",
      "title": {
-      "default": "Where have you spent most of your nights in the last 30 days?",
+      "default": "Where have you spent MOST of your nights in the last 30 days?",
       "es": "2. ¿Dónde ha pasado la mayoría de las últimas 30 noches?"
      },
      "description": "Wait for response, then select choice closest to their answer. If asked to clarify, ask \"Have you spent more than two weeks out of the past month in the same place? If so, where was that?\"",
@@ -969,7 +939,50 @@
      ],
      "visibleIf": "({Q2} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q2} = 'Jail or prison' or {Q2} = 'Assisted living or Board & Care facility') and ({Q3} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q3} = 'Jail or prison' or {Q3} = 'Assisted living or Board & Care facility')",
      "isRequired": true
+    }
+   ],
+   "navigationTitle": "Eligibility"
+  },
+  {
+   "name": "survey-validation",
+   "title": "Survey Validation",
+   "elements": [
+    {
+     "type": "text",
+     "name": "first_two_letters_fname",
+     "title": "Enter the first two letters of the respondent's first name",
+     "validators": [
+      {
+       "type": "regex",
+       "text": "Please enter the first two letters of the respondent's first name.",
+       "regex": "^[A-Za-z]{2}$"
+      }
+     ],
+     "isRequired": true
     },
+    {
+     "type": "text",
+     "name": "first_two_letters_lname",
+     "title": "Enter the first two letters of the respondent's last name",
+     "validators": [
+      {
+       "type": "regex",
+       "text": "Please enter the first two letters of the respondent's last name.",
+       "regex": "^[A-Za-z]{2}$"
+      }
+     ],
+     "isRequired": true
+    }
+   ],
+   "navigationTitle": "Survey Validation"
+  },
+  {
+   "name": "yc_screening_cities",
+   "title": {
+    "default": "Eligibility",
+    "es": "Elegibilidad"
+   },
+   "elements": [
     {
      "type": "text",
      "name": "community_30d",
@@ -1038,7 +1051,7 @@
      ]
     }
    ],
-   "navigationTitle": "Eligibility"
+   "navigationTitle": "Location"
   },
   {
    "name": "yc_network_size",
