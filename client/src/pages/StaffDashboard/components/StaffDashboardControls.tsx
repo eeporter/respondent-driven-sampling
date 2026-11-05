@@ -59,8 +59,8 @@ export default function StaffDashboardControls({
 				>
 					<MenuItem value="">All Roles</MenuItem>
 					<MenuItem value="ADMIN">Admin</MenuItem>
-					<MenuItem value="MANAGER">Manager</MenuItem>
-					<MenuItem value="VOLUNTEER">Volunteer</MenuItem>
+					<MenuItem value="MANAGER">Hub Site Lead</MenuItem>
+					<MenuItem value="VOLUNTEER">Hub Site Surveyor</MenuItem>
 				</Select>
 			</FormControl>
 

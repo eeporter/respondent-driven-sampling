@@ -8,11 +8,17 @@ interface RoleSelectProps extends Omit<SelectProps, 'variant'> {
 	includeEmptyOption?: boolean;
 }
 
-const ROLE_OPTIONS = [
-	{ value: 'VOLUNTEER', label: 'Volunteer' },
-	{ value: 'MANAGER', label: 'Manager' },
-	{ value: 'ADMIN', label: 'Admin' }
-];
+// Display names only; the stored role values stay VOLUNTEER / MANAGER / ADMIN.
+export const ROLE_LABELS: Record<string, string> = {
+	VOLUNTEER: 'Hub Site Surveyor',
+	MANAGER: 'Hub Site Lead',
+	ADMIN: 'Admin'
+};
+
+const ROLE_OPTIONS = Object.entries(ROLE_LABELS).map(([value, label]) => ({
+	value,
+	label
+}));
 
 export const RoleSelect = ({
 	canEdit = true,

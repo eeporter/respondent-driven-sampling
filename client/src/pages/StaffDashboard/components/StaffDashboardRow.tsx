@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 
 import { UserDocument } from '@/types/User';
+import { ROLE_LABELS } from '@/components/forms';
 
 interface StaffMember {
 	id: string;
@@ -84,7 +85,9 @@ export default function StaffDashboardRow({
 				</Typography>
 			</TableCell>
 			<TableCell>{member.name}</TableCell>
-			<TableCell>{member.position}</TableCell>
+			<TableCell>
+				{ROLE_LABELS[member.position] ?? member.position}
+			</TableCell>
 			<TableCell>
 				<Tooltip
 					title={
