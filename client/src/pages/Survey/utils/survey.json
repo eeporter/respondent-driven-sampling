@@ -3345,7 +3345,8 @@
       "default": "Other, specify – specify",
       "es": "Otro (especifique): – especifique"
      },
-     "visibleIf": "{Q13} contains 'Other, specify'"
+     "visibleIf": "{Q13} contains 'Other, specify'",
+     "isRequired": true
     }
    ],
    "navigationTitle": "Veteran Status",
