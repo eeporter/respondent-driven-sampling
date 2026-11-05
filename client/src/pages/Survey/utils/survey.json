@@ -969,6 +969,73 @@
      ],
      "visibleIf": "({Q2} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q2} = 'Jail or prison' or {Q2} = 'Assisted living or Board & Care facility') and ({Q3} = 'Hospital, substance abuse or psychiatric treatment facility' or {Q3} = 'Jail or prison' or {Q3} = 'Assisted living or Board & Care facility')",
      "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "community_30d",
+     "isRequired": true,
+     "title": {
+      "default": "In what community or city have you spent MOST of your nights in the last 30 days?",
+      "es": "¿En qué comunidad o ciudad ha pasado la MAYORÍA de sus noches en los últimos 30 días?"
+     },
+     "description": {
+      "default": "Type \"Declined\" or \"Don't know\" if the respondent does not want to answer this item or does not know where they have spent most of their time in the last 30 days.",
+      "es": "Type \"Declined\" or \"Don't know\" if the respondent does not want to answer this item or does not know where they have spent most of their time in the last 30 days."
+     }
+    },
+    {
+     "type": "matrix",
+     "name": "cities_30d",
+     "isRequired": true,
+     "isAllRowRequired": true,
+     "title": {
+      "default": "Have you spent any night in the past 30 days in any of the following cities?",
+      "es": "¿Ha pasado alguna noche en los últimos 30 días en alguna de las siguientes ciudades?"
+     },
+     "columns": [
+      {
+       "value": "Yes",
+       "text": {
+        "default": "Yes",
+        "es": "Sí"
+       }
+      },
+      {
+       "value": "No",
+       "text": {
+        "default": "No",
+        "es": "No"
+       }
+      },
+      {
+       "value": "Declined",
+       "text": {
+        "default": "Declined",
+        "es": "No respondió"
+       }
+      },
+      {
+       "value": "Don't know",
+       "text": {
+        "default": "Don't know",
+        "es": "No lo sé"
+       }
+      }
+     ],
+     "rows": [
+      {
+       "value": "Glendale",
+       "text": "Glendale"
+      },
+      {
+       "value": "Pasadena",
+       "text": "Pasadena"
+      },
+      {
+       "value": "Long Beach",
+       "text": "Long Beach"
+      }
+     ]
     }
    ],
    "navigationTitle": "Eligibility"
