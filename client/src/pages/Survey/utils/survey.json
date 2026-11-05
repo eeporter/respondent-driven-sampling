@@ -1788,10 +1788,10 @@
      "type": "checkbox",
      "name": "Q419",
      "title": {
-      "default": "12. What challenges have you",
+      "default": "12. What challenges have you faced?",
       "es": "12. ¿Qué dificultades ha tenido?"
      },
-     "description": "FACED?Wait for response and then select ALL that apply.",
+     "description": "Wait for response and then select ALL that apply.",
      "choices": [
       {
        "value": "Struggle to pay rent",
