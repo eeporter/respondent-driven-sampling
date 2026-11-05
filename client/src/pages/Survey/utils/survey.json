@@ -5665,7 +5665,7 @@
     }
    ],
    "navigationTitle": "Household Family Over 18",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_18p} > 0"
+   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0 and {Q23_18p} > 0"
   },
   {
    "name": "yc_health",
