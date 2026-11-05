@@ -19,6 +19,7 @@ import { SurveyDocument } from '@/types/Survey';
 
 import SurveyPageNav from './components/SurveyPageNav';
 import {
+	attachLanguageHandler,
 	initializeSurvey,
 	LAST_PAGE_KEY,
 	recordSkippedAnswers
@@ -95,6 +96,10 @@ const Survey = () => {
 		survey.onCurrentPageChanging.clear();
 		survey.onValueChanged.clear();
 		survey.onComplete.clear();
+		// Clearing onValueChanged also drops the language switch set up when the
+		// survey was built, which left every question in English after picking
+		// Spanish. Put it back.
+		attachLanguageHandler(survey);
 
 		const pushHistoryState = (pageNo: number) => {
 			const currentState = window.history.state;

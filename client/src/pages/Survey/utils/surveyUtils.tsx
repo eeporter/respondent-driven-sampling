@@ -42,6 +42,16 @@ const applySurveyLanguage = (survey: Model) => {
 	survey.locale = survey.getValue(LANGUAGE_KEY) === 'es' ? 'es' : '';
 };
 
+/**
+ * Switches the survey's language whenever the language answer changes. Exported
+ * so the survey page can re-attach it after clearing its own value handlers.
+ */
+export const attachLanguageHandler = (survey: Model) => {
+	survey.onValueChanged.add((sender, options) => {
+		if (options.name === LANGUAGE_KEY) applySurveyLanguage(sender);
+	});
+};
+
 const restoreLastPage = (survey: Model) => {
 	const pageName = survey.data?.[LAST_PAGE_KEY];
 	if (typeof pageName !== 'string') return;
@@ -166,9 +176,7 @@ export const initializeSurvey = (
 	// Apply custom theme
 	survey.applyTheme(themeJson);
 
-	survey.onValueChanged.add((sender, options) => {
-		if (options.name === LANGUAGE_KEY) applySurveyLanguage(sender);
-	});
+	attachLanguageHandler(survey);
 
 	// Populate with existing data from objectId if found
 	if (surveyByObjectId) {
