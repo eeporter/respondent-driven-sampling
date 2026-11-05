@@ -177,7 +177,7 @@ export function Header() {
 			</div>
 
 			{/* Centered Title */}
-			<h1 className="header-title">Point-in-Time Count 2026</h1>
+			<h1 className="header-title">Youth Count 2027</h1>
 
 			{/* Navigation Icons */}
 			<div className="nav-icons">
