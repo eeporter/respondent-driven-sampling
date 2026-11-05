@@ -8007,7 +8007,8 @@
      "html": "<strong>That completes the questions for today's survey. Thank you so much for your responses and your time. We will now issue the gift card and prepare your coupons to pass out to others in your network who are unsheltered.</strong>"
     }
    ],
-   "navigationTitle": "Outro"
+   "navigationTitle": "Outro",
+   "visibleIf": "{deduplication} <> 'Yes'"
   },
   {
    "name": "giftCards",
@@ -8056,7 +8057,8 @@
      }
     }
    ],
-   "navigationTitle": "Gift Card Contacts"
+   "navigationTitle": "Gift Card Contacts",
+   "visibleIf": "{deduplication} <> 'Yes'"
   },
   {
    "name": "giftCards2",
@@ -8100,7 +8102,8 @@
      "max": 9999
     }
    ],
-   "navigationTitle": "Gift Card Details"
+   "navigationTitle": "Gift Card Details",
+   "visibleIf": "{deduplication} <> 'Yes'"
   },
   {
    "name": "end_page",
