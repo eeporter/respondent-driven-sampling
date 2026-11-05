@@ -4469,10 +4469,10 @@
      "validators": [
       {
        "type": "expression",
-       "expression": "countInArray({household_children}, 'Q24c') = {Q23_U18}",
+       "expression": "countInArray({household_children}, 'Q24c') = iif({Q23_U18} > 10, 10, {Q23_U18})",
        "text": {
-        "default": "Add one entry for each child under 18 in the household count from question 28.",
-        "es": "Agregue una entrada por cada niño/a menor de 18 años indicado en la pregunta 28."
+        "default": "The number of child entries must match the number of children under 18 in question 28. Add or remove entries until they match.",
+        "es": "El número de niños/as aquí debe ser igual al número de menores de 18 años indicado en la pregunta 28. Agregue o quite entradas hasta que coincidan."
        }
       }
      ]
@@ -5728,10 +5728,10 @@
      "validators": [
       {
        "type": "expression",
-       "expression": "countInArray({household_adults}, 'Q24f') = {Q23_18p}",
+       "expression": "countInArray({household_adults}, 'Q24f') = iif({Q23_18p} > 10, 10, {Q23_18p})",
        "text": {
-        "default": "Add one entry for each adult 18 or older in the household count from question 28.",
-        "es": "Agregue una entrada por cada adulto de 18 años o más indicado en la pregunta 28."
+        "default": "The number of family member entries must match the number of people 18 and older in question 28. Add or remove entries until they match.",
+        "es": "El número de familiares aquí debe ser igual al número de personas de 18 años o más indicado en la pregunta 28. Agregue o quite entradas hasta que coincidan."
        }
       }
      ]

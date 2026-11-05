@@ -1,4 +1,9 @@
-import { Model, PageModel, QuestionSelectBase } from 'survey-core';
+import {
+	Model,
+	PageModel,
+	QuestionPanelDynamicModel,
+	QuestionSelectBase
+} from 'survey-core';
 // registers SurveyJS's Spanish strings (buttons, validation messages) for locale 'es'
 import 'survey-core/i18n/spanish';
 
@@ -43,12 +48,46 @@ const applySurveyLanguage = (survey: Model) => {
 };
 
 /**
- * Switches the survey's language whenever the language answer changes. Exported
- * so the survey page can re-attach it after clearing its own value handlers.
+ * Household counts (question 28) and the entry sections they drive. Each
+ * section must end up with one entry per person counted; the survey JSON's
+ * validators enforce that, and this keeps the number of entries in step so the
+ * interviewer only has to fill them in.
+ */
+const HOUSEHOLD_ENTRY_SECTIONS: Record<string, string> = {
+	Q23_U18: 'household_children',
+	Q23_18p: 'household_adults'
+};
+
+const syncHouseholdEntries = (survey: Model, countName: string) => {
+	const section = survey.getQuestionByName(
+		HOUSEHOLD_ENTRY_SECTIONS[countName]
+	) as QuestionPanelDynamicModel | null;
+	if (!section) return;
+	const count = Number(survey.getValue(countName));
+	const target = Number.isFinite(count)
+		? Math.min(Math.max(Math.floor(count), 0), section.maxPanelCount)
+		: 0;
+	// Add entries up to the count.
+	if (section.panelCount < target) section.panelCount = target;
+	// When the count goes down, drop trailing entries nobody has started; an entry
+	// with answers is left for the interviewer to remove.
+	while (section.panelCount > target) {
+		const last = section.panels[section.panelCount - 1];
+		if (!last || Object.keys(last.getValue() ?? {}).length > 0) break;
+		section.removePanel(last, false);
+	}
+};
+
+/**
+ * Switches the survey's language whenever the language answer changes, and keeps
+ * the household entry sections in step with the household counts. Exported so
+ * the survey page can re-attach it after clearing its own value handlers.
  */
 export const attachLanguageHandler = (survey: Model) => {
 	survey.onValueChanged.add((sender, options) => {
 		if (options.name === LANGUAGE_KEY) applySurveyLanguage(sender);
+		if (options.name in HOUSEHOLD_ENTRY_SECTIONS)
+			syncHouseholdEntries(sender, options.name);
 	});
 };
 
