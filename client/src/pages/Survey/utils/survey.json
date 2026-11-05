@@ -8056,7 +8056,10 @@
     {
      "type": "radiogroup",
      "name": "deduplication",
-     "title": "Not counting this time, do you believe you’ve completed this survey in 2026 already?",
+     "title": {
+      "default": "Not counting this time, do you believe you’ve completed this survey in 2027 already?",
+      "es": "Sin contar esta vez, ¿cree que ya completó esta encuesta en 2027?"
+     },
      "choices": [
       "Yes",
       "No",
