@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { deleteAuthToken, isTokenValid } from '@/utils/authTokenHandler';
 import { Alert, Box, Button, Link, Stack, Typography } from '@mui/material';
@@ -35,6 +35,10 @@ export default function Signup() {
 	const [otpSent, setOtpSent] = useState(false);
 	const [errorMessages, setErrorMessages] = useState<string[]>([]);
 	const [countdown, setCountdown] = useState(0);
+	// Blocks a second send while one is in flight (double tap, Enter + click),
+	// which would text the same code twice.
+	const sendingOtp = useRef(false);
+	const [isSendingOtp, setIsSendingOtp] = useState(false);
 	const [pendingApproval, setPendingApproval] = useState(false);
 	const [signupSuccess, setSignupSuccess] = useState(false);
 
@@ -62,6 +66,9 @@ export default function Signup() {
 
 	const sendOtp = async () => {
 		setErrorMessages([]);
+		if (sendingOtp.current) return;
+		sendingOtp.current = true;
+		setIsSendingOtp(true);
 		try {
 			const response = await fetch('/api/auth/send-otp-signup', {
 				method: 'POST',
@@ -77,6 +84,9 @@ export default function Signup() {
 			}
 		} catch {
 			setErrorMessages(['Failed to send OTP']);
+		} finally {
+			sendingOtp.current = false;
+			setIsSendingOtp(false);
 		}
 	};
 
@@ -218,6 +228,7 @@ export default function Signup() {
 							size="large"
 							fullWidth
 							onClick={sendOtp}
+							disabled={isSendingOtp}
 							sx={{ mt: 2 }}
 						>
 							Send OTP

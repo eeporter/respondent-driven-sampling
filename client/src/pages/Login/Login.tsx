@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useSurveyStore } from '@/stores';
 import { deleteAuthToken, isTokenValid } from '@/utils/authTokenHandler';
@@ -35,6 +35,10 @@ export default function Login() {
 	const [errorMessage, setErrorMessage] = useState('');
 	const [successMessage, setSuccessMessage] = useState('');
 	const [countdown, setCountdown] = useState(0);
+	// Blocks a second send while one is in flight (double tap, Enter + click),
+	// which would text the same code twice.
+	const sendingOtp = useRef(false);
+	const [isSendingOtp, setIsSendingOtp] = useState(false);
 
 	// countdown timer
 	useEffect(() => {
@@ -66,6 +70,9 @@ export default function Login() {
 			setSuccessMessage('');
 			return;
 		}
+		if (sendingOtp.current) return;
+		sendingOtp.current = true;
+		setIsSendingOtp(true);
 		try {
 			const response = await fetch('/api/auth/send-otp-login', {
 				method: 'POST',
@@ -87,6 +94,9 @@ export default function Login() {
 		} catch {
 			setErrorMessage('Failed to send OTP! Please try again.');
 			setSuccessMessage('');
+		} finally {
+			sendingOtp.current = false;
+			setIsSendingOtp(false);
 		}
 	};
 
@@ -187,6 +197,7 @@ export default function Login() {
 						/>
 						<Button
 							onClick={sendOtp}
+							disabled={isSendingOtp}
 							variant="contained"
 							size="large"
 							fullWidth
