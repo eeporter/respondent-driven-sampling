@@ -74,26 +74,18 @@
    "elements": [
     {
      "type": "text",
-     "name": "screening_age",
-     "inputType": "number",
-     "isRequired": true,
-     "min": 0,
-     "max": 120,
-     "title": {
-      "default": "How old are you?",
-      "es": "¿Cuántos años tiene?"
-     },
-     "validators": [
-      {
-       "type": "numeric",
-       "minValue": 0,
-       "maxValue": 120,
-       "text": {
-        "default": "Enter an age in whole years.",
-        "es": "Ingrese una edad en años completos."
-       }
-      }
-     ]
+     "name": "date_of_birth",
+     "title": "Enter the respondent's date of birth",
+     "inputType": "date",
+     "min": "1927-02-01",
+     "max": "2015-02-28",
+     "isRequired": true
+    },
+    {
+     "type": "html",
+     "name": "Q472",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2027): <strong>{yc_age}</strong>. If this age does not seem correct, confirm the date of birth again.</div>",
+     "visibleIf": "{date_of_birth} notempty and {location} notcontains \"Phone\""
     }
    ],
    "navigationTitle": "Age Verification"
@@ -208,15 +200,6 @@
       }
      ],
      "isRequired": true
-    },
-    {
-     "type": "text",
-     "name": "date_of_birth",
-     "title": "Enter the respondent's date of birth",
-     "inputType": "date",
-     "min": "1927-02-01",
-     "max": "2015-02-28",
-     "isRequired": true
     }
    ],
    "navigationTitle": "Survey Validation"
@@ -235,12 +218,6 @@
       "default": "<div style=\"margin: 6px 0;\"><strong>The next few questions will help us to determine if you are eligible to take the full survey.</strong></div>",
       "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas nos ayudaran a determinar si es elegible para participar en la encuesta entera.</strong></div>"
      }
-    },
-    {
-     "type": "html",
-     "name": "Q472",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> CALCULATED AGE (AS OF JANUARY 31, 2027): <strong>{yc_age}</strong>. If this age does not seem correct, go back and confirm the date of birth again.</div>",
-     "visibleIf": "{location} notcontains \"Phone\""
     },
     {
      "type": "dropdown",
@@ -8205,7 +8182,7 @@
   },
   {
    "type": "complete",
-   "expression": "{screening_age} >= 25"
+   "expression": "dateDiff({date_of_birth}, '2027-01-31', 'years') >= 25"
   }
  ],
  "calculatedValues": [
