@@ -3820,11 +3820,20 @@
        "isRequired": true
       },
       {
+       "type": "html",
+       "name": "Q30c_prompt",
+       "html": {
+        "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer if needed.</strong></div>",
+        "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta.</strong></div>"
+       },
+       "visibleIf": "{panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
+      },
+      {
        "type": "radiogroup",
        "name": "Q30c",
        "title": {
-        "default": "Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer if needed. 33. What sex was {panel.Q24c} assigned at birth?",
-        "es": "Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta. 33. ¿Qué sexo se le asignó a {panel.Q24c} al nacer?"
+        "default": "33. What sex was {panel.Q24c} assigned at birth?",
+        "es": "33. ¿Qué sexo se le asignó a {panel.Q24c} al nacer?"
        },
        "description": "Response card available.",
        "choices": [
@@ -4822,11 +4831,20 @@
        "isRequired": true
       },
       {
+       "type": "html",
+       "name": "Q30f_prompt",
+       "html": {
+        "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer.</strong></div>",
+        "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta.</strong></div>"
+       },
+       "visibleIf": "{panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
+      },
+      {
        "type": "radiogroup",
        "name": "Q30f",
        "title": {
-        "default": "Due to the personal nature of the following questions, we have response cards for you to tell me the number that corresponds to your answer. 41. What sex was {panel.Q24f} assigned at birth?",
-        "es": "Debido a que las siguientes preguntas son personales, también tenemos las opciones presentadas en una tarjeta para que me diga el número que corresponde a su respuesta. 41. ¿Qué sexo se le asignó a {panel.Q24f} al nacer?"
+        "default": "41. What sex was {panel.Q24f} assigned at birth?",
+        "es": "41. ¿Qué sexo se le asignó a {panel.Q24f} al nacer?"
        },
        "description": "Response card available.",
        "choices": [
