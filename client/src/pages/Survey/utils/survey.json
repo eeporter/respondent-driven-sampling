@@ -66,6 +66,41 @@
    "navigationTitle": "Language"
   },
   {
+   "name": "age_check",
+   "title": {
+    "default": "Age Verification",
+    "es": "Verificación de edad"
+   },
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "is_under_25",
+     "title": {
+      "default": "Are you under 25 years old?",
+      "es": "¿Tiene menos de 25 años?"
+     },
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "Yes",
+       "text": {
+        "default": "Yes",
+        "es": "Sí"
+       }
+      },
+      {
+       "value": "No",
+       "text": {
+        "default": "No",
+        "es": "No"
+       }
+      }
+     ]
+    }
+   ],
+   "navigationTitle": "Age Verification"
+  },
+  {
    "name": "consent",
    "title": {
     "default": "Consent",
@@ -8131,6 +8166,10 @@
   {
    "type": "complete",
    "expression": "({Q2} = 'Declined' or {Q2} = 'Don\\'t know') and ({Q3} = 'Declined' or {Q3} = 'Don\\'t know')"
+  },
+  {
+   "type": "complete",
+   "expression": "{is_under_25} = 'No'"
   }
  ],
  "calculatedValues": [
