@@ -6331,9 +6331,8 @@
      "name": "Q38_Consent",
      "title": {
       "default": "50. The next questions are sensitive and personal because they ask about experiences with violence. Do you currently feel comfortable answering those questions?",
-      "es": "32. Voy a hacerle tres preguntas sensibles y personales sobre experiencias con violencia. ¿Se siente cómodo respondiendo?"
+      "es": "50. Voy a hacerle tres preguntas sensibles y personales sobre experiencias con violencia. ¿Se siente cómodo respondiendo?"
      },
-     "description": "After assessing that there are no safety concerns, please check that respondent also feels safe:",
      "choices": [
       {
        "value": "Yes",
