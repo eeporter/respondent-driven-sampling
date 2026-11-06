@@ -1096,8 +1096,37 @@
       "default": "1. Not counting family, how many young people under 25 do you know personally who are homeless in Los Angeles County today? By \"know,\" we mean someone you have seen or talked to in the past 3 months and could reach out to.",
       "es": "1. Sin contar a su familia, ¿a cuántos jóvenes menores de 25 años conoce personalmente que están sin hogar en el condado de Los Ángeles hoy? Por “conocer,” nos referimos a alguien que usted haya visto o con quien haya hablado en los últimos 3 meses y a quien podría contactar."
      },
-     "description": "If the individual says they do not know anyone else or they do not want to answer the question, please input 0.",
-     "isRequired": true
+     "description": {
+      "default": "If the individual says they do not know anyone else, please input 0. If they decline or don't know, select that option below.",
+      "es": "Si la persona dice que no conoce a nadie más, ingrese 0. Si no responde o no sabe, seleccione esa opción abajo."
+     },
+     "isRequired": true,
+     "setValueIf": "{non_family_network_size_noanswer} notempty",
+     "setValueExpression": "0",
+     "enableIf": "{non_family_network_size_noanswer} empty"
+    },
+    {
+     "type": "radiogroup",
+     "name": "non_family_network_size_noanswer",
+     "titleLocation": "hidden",
+     "title": "non_family_network_size",
+     "choices": [
+      {
+       "value": "Declined",
+       "text": {
+        "default": "Declined",
+        "es": "No respondió"
+       }
+      },
+      {
+       "value": "Don't know",
+       "text": {
+        "default": "Don't know",
+        "es": "No lo sé"
+       }
+      }
+     ],
+     "showClearButton": true
     }
    ],
    "navigationTitle": "Network"
