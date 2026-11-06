@@ -7814,7 +7814,11 @@
      "choices": [
       {
        "value": "CalWORKS / TANF",
-       "text": "Calworks / tanf"
+       "text": "CalWORKS / TANF",
+       "groupTitle": {
+        "default": "Income and Cash Assistance",
+        "es": "Ingresos y asistencia en efectivo"
+       }
       },
       {
        "value": "CAPI - Cash Assistance Program for Immigrants",
@@ -7870,6 +7874,10 @@
        "text": {
         "default": "WIC (Women, Infants, and Children program)",
         "es": "Programa WIC ( para mujeres, bebés y niños)"
+       },
+       "groupTitle": {
+        "default": "Food and Nutrition Assistance",
+        "es": "Asistencia de alimentos y nutrición"
        }
       },
       {
@@ -7898,6 +7906,10 @@
        "text": {
         "default": "Medi-Cal / CHIP (Healthy Families)",
         "es": "Medi-Cal / Seguro de salud estatal para niños (CHIP/ Familias Saludables)"
+       },
+       "groupTitle": {
+        "default": "Health Coverage and Services",
+        "es": "Cobertura y servicios de salud"
        }
       },
       {
@@ -7916,6 +7928,10 @@
        "text": {
         "default": "Veteran's Disability, Pension, or Medical Center Benefits",
         "es": "Beneficios por discapacidad, pensión o servicios médicos para veteranos"
+       },
+       "groupTitle": {
+        "default": "Veteran Benefits",
+        "es": "Beneficios para veteranos"
        }
       },
       {
@@ -7923,6 +7939,10 @@
        "text": {
         "default": "Housing Voucher Program",
         "es": "Programa de vales de vivienda"
+       },
+       "groupTitle": {
+        "default": "Housing and Employment Benefits",
+        "es": "Beneficios de vivienda y empleo"
        }
       },
       {
@@ -7965,6 +7985,10 @@
        "text": {
         "default": "Other (please specify):",
         "es": "Otro servicio, beneficio o asistencia (por favor, especifique):"
+       },
+       "groupTitle": {
+        "default": "Other responses",
+        "es": "Otras respuestas"
        }
       },
       {
@@ -7992,7 +8016,8 @@
        "isExclusive": true
       }
      ],
-     "isRequired": true
+     "isRequired": true,
+     "itemComponent": "yc-grouped-checkbox-item"
     },
     {
      "type": "text",

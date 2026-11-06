@@ -11,6 +11,8 @@ import { SurveyDocument } from '@/types/Survey';
 
 import { isTestEnvironment } from '@/utils/environment';
 
+// registers the category headers used in long checkbox lists (question 64)
+import './groupedChoices';
 import surveyJsonData from './survey.json';
 import { themeJson } from './surveyTheme';
 
