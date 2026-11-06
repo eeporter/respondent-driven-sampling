@@ -8069,7 +8069,7 @@
        "isExclusive": true
       }
      ],
-     "isRequired": true
+     "requiredIf": "{Q400.hours} empty and {Q400.minutes} empty"
     },
     {
      "type": "radiogroup",
