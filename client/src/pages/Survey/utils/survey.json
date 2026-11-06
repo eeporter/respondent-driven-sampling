@@ -7647,11 +7647,19 @@
    },
    "elements": [
     {
+     "type": "html",
+     "name": "Q53_prompt",
+     "html": {
+      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>The next question is about forced labor. We have response cards for you to tell me the number that corresponds to your answer.</strong></div>",
+      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>La siguiente pregunta es sobre trabajo forzado. Tenemos tarjetas de respuesta para que me diga el número que corresponda a su respuesta.</strong></div>"
+     }
+    },
+    {
      "type": "radiogroup",
      "name": "Q53",
      "title": {
-      "default": "The next question is about forced labor. We have response cards for you to tell me the number that corresponds to your answer 62. Have you ever been forced to work, where you didn’t get paid or you got paid less than expected?",
-      "es": "La siguiente pregunta es sobre trabajo forzado. Tenemos tarjetas de respuesta para que me diga el número que corresponda a su respuesta. 62. ¿Alguna vez ha sido forzado a realizar un trabajo donde no le pagaron o donde le pagaron menos de lo debido?"
+      "default": "62. Have you ever been forced to work, where you didn’t get paid or you got paid less than expected?",
+      "es": "62. ¿Alguna vez ha sido forzado a realizar un trabajo donde no le pagaron o donde le pagaron menos de lo debido?"
      },
      "description": "Please use the response card.",
      "choices": [
