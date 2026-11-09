@@ -2489,7 +2489,25 @@
      "inputType": "number",
      "min": 0,
      "visibleIf": "({Q16_choice} = 'Enter age in years:') and {Q15} anyof ['No', 'Declined', 'Don\\'t know']",
-     "isRequired": true
+     "isRequired": true,
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d+$",
+       "text": {
+        "default": "Enter a whole number, with no decimals.",
+        "es": "Ingrese un número entero, sin decimales."
+       }
+      },
+      {
+       "type": "expression",
+       "expression": "{yc_age} empty or {Q16} <= {yc_age}",
+       "text": {
+        "default": "This age can't be older than the respondent's current age.",
+        "es": "Esta edad no puede ser mayor que la edad actual de la persona."
+       }
+      }
+     ]
     }
    ],
    "navigationTitle": "Spells and Duration",
@@ -2752,8 +2770,8 @@
      "type": "radiogroup",
      "name": "Q19",
      "title": {
-      "default": "20. In the past three years, including this time, how many separate times have you experienced homelessness?",
-      "es": "20. Durante los últimos tres años, incluyendo esta ocasión, ¿cuántas veces por separado ha estado sin hogar?"
+      "default": "20. In the past 3 years, including this time, how many separate times have you experienced homelessness?",
+      "es": "20. Durante los últimos 3 años, incluyendo esta ocasión, ¿cuántas veces por separado ha estado sin hogar?"
      },
      "choices": [
       {
@@ -2799,7 +2817,7 @@
      "name": "Q20",
      "title": {
       "default": "21. In the past 3 years, have you experienced homelessness for more than 12 months total?",
-      "es": "21. En los últimos tres años, ¿ha estado sin hogar durante más de 12 meses en total?"
+      "es": "21. En los últimos 3 años, ¿ha estado sin hogar durante más de 12 meses en total?"
      },
      "choices": [
       {
