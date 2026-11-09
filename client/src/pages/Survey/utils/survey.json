@@ -8554,9 +8554,21 @@
      "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> The HUB lead will provide the gift card to the respondent. Please record the information below before submitting this survey.\n\t\t\t</div>"
     },
     {
+     "type": "html",
+     "name": "gift_card_reminder_individual",
+     "visibleIf": "{has_minor_child} <> true",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Reminder:</strong> This respondent is eligible for a $25 Visa Gift Card.</div>"
+    },
+    {
+     "type": "html",
+     "name": "gift_card_reminder_family",
+     "visibleIf": "{has_minor_child} = true",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Reminder:</strong> This respondent is eligible for a $50 family survey incentive. Please ensure they receive TWO $25 Visa Cards.</div>"
+    },
+    {
      "type": "radiogroup",
      "name": "gift_card_check",
-     "title": "Did the respondent receive a Gift Card?",
+     "title": "Did the respondent receive their Visa Gift Card(s)?",
      "isRequired": true,
      "choices": [
       "Yes",
@@ -8568,22 +8580,38 @@
      "type": "text",
      "name": "gift_card_number",
      "visibleIf": "{gift_card_check} = 'Yes'",
-     "title": "Please enter the last 4 digits of the Gift Card:",
+     "title": "Enter the unique 4-digit number found on the label attached to the Visa Gift Card:",
      "isRequired": true,
      "requiredIf": "{gift_card_check} = 'Yes'",
      "inputType": "number",
-     "min": 0,
-     "max": 9999
+     "min": 6001,
+     "max": 6999,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 6001,
+       "maxValue": 6999,
+       "text": "Enter the 4-digit number from the gift card label. It must be between 6001 and 6999."
+      }
+     ]
     },
     {
      "type": "text",
      "name": "gift_card_2",
      "visibleIf": "{gift_card_check} = 'Yes' and {has_minor_child} = true",
-     "title": "Please enter the last 4 digits of the 2nd Gift Card:",
+     "title": "Enter the unique 4-digit number found on the label attached to the 2nd Visa Gift Card:",
      "description": "Note: Families with minor children receive two gift cards.",
      "inputType": "number",
-     "min": 0,
-     "max": 9999
+     "min": 6001,
+     "max": 6999,
+     "validators": [
+      {
+       "type": "numeric",
+       "minValue": 6001,
+       "maxValue": 6999,
+       "text": "Enter the 4-digit number from the gift card label. It must be between 6001 and 6999."
+      }
+     ]
     }
    ],
    "navigationTitle": "Gift Card Details"
