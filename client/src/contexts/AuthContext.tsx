@@ -10,7 +10,8 @@ import { Action, Condition, Subject } from '@/permissions/constants';
 import {
 	deleteAuthToken,
 	getAuthToken,
-	getDecodedAuthToken
+	getDecodedAuthToken,
+	isTokenValid
 } from '@/utils/authTokenHandler';
 
 interface AuthState {
@@ -82,6 +83,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 	const [state, setState] = useState<AuthState>(() => {
 		const token = getAuthToken(); // Reads from Zustand
 		if (!token) return getDefaultAuthState();
+		// A login lasts 12 hours. An expired one used to leave the app looking
+		// signed in but with no role, which hid "No coupon code? Start new
+		// survey" until the user logged in again; send them to log in instead.
+		if (!isTokenValid()) {
+			deleteAuthToken();
+			return getDefaultAuthState();
+		}
 
 		const decoded = getDecodedAuthToken();
 		if (!decoded) return getDefaultAuthState();
@@ -132,6 +140,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 					Authorization: `Bearer ${token}`
 				}
 			});
+			if (userResponse.status === 401 || userResponse.status === 403) {
+				// expired or revoked login: sign out rather than show a role-less app
+				clearSession();
+				return;
+			}
 			const user = await userResponse.json();
 
 			// fetch user's surveys to get latest location
@@ -216,6 +229,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 		deleteAuthToken(); // Clears from Zustand
 		setState(getDefaultAuthState());
 	};
+
+	// A tablet can stay open on one page past the 12-hour login. Check when the
+	// page comes back into view and once a minute, and sign out once it expires.
+	useEffect(() => {
+		if (!state.isLoggedIn) return;
+		const checkExpiry = () => {
+			if (getAuthToken() && !isTokenValid()) clearSession();
+		};
+		const onVisible = () => {
+			if (document.visibilityState === 'visible') checkExpiry();
+		};
+		const timer = setInterval(checkExpiry, 60_000);
+		document.addEventListener('visibilitychange', onVisible);
+		return () => {
+			clearInterval(timer);
+			document.removeEventListener('visibilitychange', onVisible);
+		};
+	}, [state.isLoggedIn]);
 
 	// The value that you want to pass to all the components reading this context inside this provider.
 	const value: AuthContextValue = {
