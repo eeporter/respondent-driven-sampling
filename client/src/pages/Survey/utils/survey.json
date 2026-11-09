@@ -8482,8 +8482,10 @@
     {
      "type": "checkbox",
      "name": "email_phone_consent",
-     "title": "Do you consent to receive your gift cards via SMS or email?",
-     "description": "Email is the most reliable way to receive gift cards. Please give both an email address and a phone number if you can.",
+     "title": {
+      "default": "Do you consent to receive your gift card via email or SMS? Email is the most reliable way to receive your electronic gift card. Please give an email address if you can.",
+      "es": "¿Acepta recibir su tarjeta de regalo por correo electrónico o por mensaje de texto (SMS)? El correo electrónico es la forma más confiable de recibir su tarjeta de regalo electrónica. Si puede, por favor denos un correo electrónico."
+     },
      "choices": [
       {
        "value": "email",
