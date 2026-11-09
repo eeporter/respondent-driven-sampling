@@ -195,14 +195,6 @@ export const initializeSurvey = (
 			pageNames.includes(page.name)
 		);
 
-		// Repeat respondents skip the gift card pages during the survey, but staff
-		// can still add a gift card afterwards (e.g. to settle a tense situation).
-		surveyJson.pages.forEach((page: any) => {
-			if (page.name === 'giftCards' || page.name === 'giftCards2') {
-				delete page.visibleIf;
-			}
-		});
-
 		// Remove any early stop triggers to allow full editing of survey
 		// Without this, the survey will stop early if consent is revoked, not allowing any edits to consecutive pages
 		if (surveyJson.triggers) {
