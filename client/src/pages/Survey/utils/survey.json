@@ -6909,25 +6909,56 @@
    "elements": [
     {
      "type": "radiogroup",
-     "name": "Q48",
+     "name": "Q48A",
      "title": {
-      "default": "56. Where were you living before the last time you lost your housing?",
-      "es": "56. Antes de la última vez que perdió su vivienda, ¿dónde vivía?"
+      "default": "56A. When you most recently lost your housing, were you living in Los Angeles County?",
+      "es": "56A. La última vez que perdió su vivienda, ¿vivía en el condado de Los Ángeles?"
      },
-     "description": "Read each response and choose one answer.",
+     "description": "If asked to clarify, ask \"Were you living in Los Angeles County when you last became homeless?\"",
      "choices": [
       {
-       "value": "Los Angeles County",
+       "value": "Yes",
        "text": {
-        "default": "Los Angeles County",
-        "es": "Condado de Los Angeles"
+        "default": "Yes",
+        "es": "Sí"
        }
       },
       {
-       "value": "Other County in Southern California (Kern, Imperial, Orange, Riverside, San Bernadino, San Diego, San Luis Obispo, or Ventura)",
+       "value": "No",
+       "text": "No"
+      },
+      {
+       "value": "Declined",
        "text": {
-        "default": "Other County in Southern California (Kern, Imperial, Orange, Riverside, San Bernadino, San Diego, San Luis Obispo, or Ventura)",
-        "es": "Otro condado al sur de California (Kern, Imperial, Orange, Riverside, San Bernadino, San Diego, San Luis Obispo o Ventura)"
+        "default": "Declined",
+        "es": "No respondió"
+       }
+      },
+      {
+       "value": "Don't know",
+       "text": {
+        "default": "Don't know",
+        "es": "No lo sé"
+       }
+      }
+     ],
+     "visibleIf": "{Q46} = \"Yes\"",
+     "isRequired": true
+    },
+    {
+     "type": "radiogroup",
+     "name": "Q48B",
+     "title": {
+      "default": "56B. Where were you living?",
+      "es": "56B. ¿Dónde vivía?"
+     },
+     "description": "Wait for response and then choose best option.",
+     "choices": [
+      {
+       "value": "Other County in Southern California (Kern, Imperial, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, or Ventura)",
+       "text": {
+        "default": "Other County in Southern California (Kern, Imperial, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo, or Ventura)",
+        "es": "Otro condado del sur de California (Kern, Imperial, Orange, Riverside, San Bernardino, San Diego, San Luis Obispo o Ventura)"
        }
       },
       {
@@ -6966,7 +6997,7 @@
        }
       }
      ],
-     "visibleIf": "{Q46} = \"Yes\"",
+     "visibleIf": "{Q46} = \"Yes\" and {Q48A} = 'No'",
      "isRequired": true
     },
     {
@@ -7210,7 +7241,7 @@
        }
       }
      ],
-     "visibleIf": "{Q46} = \"Yes\" and {Q48} <> 'Los Angeles County'",
+     "visibleIf": "{Q46} = \"Yes\" and {Q48A} <> 'Yes'",
      "isRequired": true
     }
    ],
