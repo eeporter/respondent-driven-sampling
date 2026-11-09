@@ -1258,8 +1258,8 @@
        "type": "text",
        "name": "relationship_specify_8",
        "title": {
-        "default": "Other (specify): – specify",
-        "es": "Otro (especifique): – especifique"
+        "default": "Other (specify):",
+        "es": "Otro (especifique):"
        },
        "visibleIf": "{panel.relationship} contains 'Other (specify):'",
        "isRequired": true
@@ -1480,8 +1480,8 @@
        "type": "text",
        "name": "network_sleeping_situation_specify_21",
        "title": {
-        "default": "Other location not listed (please specify): – specify",
-        "es": "Otro lugar no listado (especifique): – especifique"
+        "default": "Other location not listed (please specify):",
+        "es": "Otro lugar no listado (especifique):"
        },
        "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'",
        "isRequired": true
@@ -1895,8 +1895,8 @@
      "type": "text",
      "name": "Q419_specify_5",
      "title": {
-      "default": "Other (please specify:) – specify",
-      "es": "Otra (especifique): – especifique"
+      "default": "Other (please specify:)",
+      "es": "Otra (especifique):"
      },
      "visibleIf": "{Q419} contains 'Other (please specify:)'",
      "isRequired": true
@@ -2929,8 +2929,8 @@
       {
        "value": "Different Identity",
        "text": {
-        "default": "(5) Different Identity",
-        "es": "(5) Identidad diferente"
+        "default": "Different Identity (specify):",
+        "es": "Identidad diferente (especifique):"
        }
       },
       {
@@ -2970,8 +2970,8 @@
      "type": "text",
      "name": "Q6_specify_5",
      "title": {
-      "default": "Different Identity – specify",
-      "es": "Identidad diferente – especifique"
+      "default": "Different Identity (specify):",
+      "es": "Identidad diferente (especifique):"
      },
      "visibleIf": "{Q6} contains 'Different Identity'",
      "isRequired": true
@@ -3046,8 +3046,8 @@
      "type": "text",
      "name": "Q8_specify_8",
      "title": {
-      "default": "Other (specify): – specify",
-      "es": "Otro (especifique): – especifique"
+      "default": "Other (specify):",
+      "es": "Otro (especifique):"
      },
      "visibleIf": "{Q8} contains 'Other (specify):'",
      "isRequired": true
@@ -3267,8 +3267,8 @@
      "type": "text",
      "name": "Q10_specify_13",
      "title": {
-      "default": "Other Asian, specify: – specify",
-      "es": "Otro origen asiático(a) (especifique): – especifique"
+      "default": "Other Asian, specify:",
+      "es": "Otro origen asiático(a) (especifique):"
      },
      "visibleIf": "{Q10} contains 'Other Asian, specify:'",
      "isRequired": true
@@ -3277,8 +3277,8 @@
      "type": "text",
      "name": "Q10_specify_26",
      "title": {
-      "default": "Other Pacific Islander, specify: – specify",
-      "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
+      "default": "Other Pacific Islander, specify:",
+      "es": "Oriundo de otras islas del Pacífico (especifique):"
      },
      "visibleIf": "{Q10} contains 'Other Pacific Islander, specify:'",
      "isRequired": true
@@ -3287,8 +3287,8 @@
      "type": "text",
      "name": "Q10_specify_29",
      "title": {
-      "default": "Other race, specify – specify",
-      "es": "De otra raza (especifique): – especifique"
+      "default": "Other race, specify",
+      "es": "De otra raza (especifique):"
      },
      "visibleIf": "{Q10} contains 'Other race, specify'",
      "isRequired": true
@@ -3459,8 +3459,8 @@
      "type": "text",
      "name": "Q13_specify_8",
      "title": {
-      "default": "Other, specify – specify",
-      "es": "Otro (especifique): – especifique"
+      "default": "Other, specify",
+      "es": "Otro (especifique):"
      },
      "visibleIf": "{Q13} contains 'Other, specify'",
      "isRequired": true
@@ -3919,8 +3919,8 @@
        "type": "text",
        "name": "Q28c_specify_9",
        "title": {
-        "default": "Other Asian (specify): – specify",
-        "es": "Otro origen asiático (especifique): – especifique"
+        "default": "Other Asian (specify):",
+        "es": "Otro origen asiático (especifique):"
        },
        "visibleIf": "({panel.Q28c} contains 'Other Asian (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
@@ -3929,8 +3929,8 @@
        "type": "text",
        "name": "Q28c_specify_15",
        "title": {
-        "default": "Other Pacific Islander (specify): – specify",
-        "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
+        "default": "Other Pacific Islander (specify):",
+        "es": "Oriundo de otras islas del Pacífico (especifique):"
        },
        "visibleIf": "({panel.Q28c} contains 'Other Pacific Islander (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
@@ -3939,8 +3939,8 @@
        "type": "text",
        "name": "Q28c_specify_17",
        "title": {
-        "default": "Other race (specify): – specify",
-        "es": "De otra raza (especifique): – especifique"
+        "default": "Other race (specify):",
+        "es": "De otra raza (especifique):"
        },
        "visibleIf": "({panel.Q28c} contains 'Other race (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
@@ -4035,8 +4035,8 @@
         {
          "value": "Different identity",
          "text": {
-          "default": "(5) Different identity",
-          "es": "(5) Identidad diferente"
+          "default": "(5) Different Identity (specify):",
+          "es": "(5) Identidad diferente (especifique):"
          }
         },
         {
@@ -4077,8 +4077,8 @@
        "type": "text",
        "name": "Q29c_specify_12",
        "title": {
-        "default": "Different identity – specify",
-        "es": "Identidad diferente – especifique"
+        "default": "Different Identity (specify):",
+        "es": "Identidad diferente (especifique):"
        },
        "visibleIf": "({panel.Q29c} contains 'Different identity') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
@@ -4498,8 +4498,8 @@
        "type": "text",
        "name": "Q34c_Oth_specify",
        "title": {
-        "default": "Other condition – specify",
-        "es": "Otra condición – especifique"
+        "default": "Other condition (specify):",
+        "es": "Otra condición (especifique):"
        },
        "visibleIf": "({panel.Q34c_Oth} notempty) and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
        "isRequired": true
@@ -4958,8 +4958,8 @@
        "type": "text",
        "name": "Q28f_specify_9",
        "title": {
-        "default": "Other Asian (specify): – specify",
-        "es": "Otro origen asiático (especifique): – especifique"
+        "default": "Other Asian (specify):",
+        "es": "Otro origen asiático (especifique):"
        },
        "visibleIf": "({panel.Q28f} contains 'Other Asian (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -4968,8 +4968,8 @@
        "type": "text",
        "name": "Q28f_specify_15",
        "title": {
-        "default": "Other Pacific Islander (specify): – specify",
-        "es": "Oriundo de otras islas del Pacífico (especifique): – especifique"
+        "default": "Other Pacific Islander (specify):",
+        "es": "Oriundo de otras islas del Pacífico (especifique):"
        },
        "visibleIf": "({panel.Q28f} contains 'Other Pacific Islander (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -4978,8 +4978,8 @@
        "type": "text",
        "name": "Q28f_specify_17",
        "title": {
-        "default": "Other race (specify): – specify",
-        "es": "De otra raza (especifique): – especifique"
+        "default": "Other race (specify):",
+        "es": "De otra raza (especifique):"
        },
        "visibleIf": "({panel.Q28f} contains 'Other race (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -5074,8 +5074,8 @@
         {
          "value": "Different identity",
          "text": {
-          "default": "(5) Different identity",
-          "es": "(5) Identidad diferente"
+          "default": "(5) Different Identity (specify):",
+          "es": "(5) Identidad diferente (especifique):"
          }
         },
         {
@@ -5116,8 +5116,8 @@
        "type": "text",
        "name": "Q29f_specify_5",
        "title": {
-        "default": "Different identity – specify",
-        "es": "Identidad diferente – especifique"
+        "default": "Different Identity (specify):",
+        "es": "Identidad diferente (especifique):"
        },
        "visibleIf": "({panel.Q29f} contains 'Different identity') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -5192,8 +5192,8 @@
        "type": "text",
        "name": "Q31f_specify_6",
        "title": {
-        "default": "Other (specify) – specify",
-        "es": "Otro (especifique): – especifique"
+        "default": "Other (specify)",
+        "es": "Otro (especifique):"
        },
        "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -5336,8 +5336,8 @@
        "type": "text",
        "name": "Q33f_specify_7",
        "title": {
-        "default": "Other, specify – specify",
-        "es": "Otro, especifique – especifique"
+        "default": "Other, specify",
+        "es": "Otro, especifique"
        },
        "visibleIf": "({panel.Q33f} contains 'Other, specify') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -5757,8 +5757,8 @@
        "type": "text",
        "name": "Q34f_Oth_specify",
        "title": {
-        "default": "Other condition – specify",
-        "es": "Otra condición – especifique"
+        "default": "Other condition (specify):",
+        "es": "Otra condición (especifique):"
        },
        "visibleIf": "({panel.Q34f_Oth} notempty) and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -6357,8 +6357,8 @@
      "type": "text",
      "name": "Q36_Oth_specify",
      "title": {
-      "default": "Other condition – specify",
-      "es": "Otra condición – especifique"
+      "default": "Other condition (specify):",
+      "es": "Otra condición (especifique):"
      },
      "visibleIf": "{Q36_Oth} notempty",
      "isRequired": true
@@ -7543,8 +7543,8 @@
      "type": "text",
      "name": "Q50_specify_24",
      "title": {
-      "default": "Other (Specify): – specify",
-      "es": "Otra opción (especifique) – especifique"
+      "default": "Other (Specify):",
+      "es": "Otra opción (especifique)"
      },
      "visibleIf": "{Q50} contains 'Other (Specify):'",
      "isRequired": true
@@ -7965,8 +7965,8 @@
      "type": "text",
      "name": "Q54_specify_8",
      "title": {
-      "default": "Other, specify – specify",
-      "es": "Otro, especificar – especifique"
+      "default": "Other, specify",
+      "es": "Otro, especificar"
      },
      "visibleIf": "{Q54} contains 'Other, specify'",
      "isRequired": true
@@ -8208,8 +8208,8 @@
      "type": "text",
      "name": "Q55_specify_26",
      "title": {
-      "default": "Other income or cash assistance benefit (please specify): – specify",
-      "es": "Otro tipo de ingreso o asistencia en efectivo (por favor, especifique): – especifique"
+      "default": "Other income or cash assistance benefit (please specify):",
+      "es": "Otro tipo de ingreso o asistencia en efectivo (por favor, especifique):"
      },
      "visibleIf": "{Q55} contains 'Other income or cash assistance benefit (please specify):'",
      "isRequired": true
@@ -8218,8 +8218,8 @@
      "type": "text",
      "name": "Q55_specify_27",
      "title": {
-      "default": "Other food or nutrition assistance benefit (please specify): – specify",
-      "es": "Otro beneficio de asistencia alimentaria o nutricional (por favor, especifique): – especifique"
+      "default": "Other food or nutrition assistance benefit (please specify):",
+      "es": "Otro beneficio de asistencia alimentaria o nutricional (por favor, especifique):"
      },
      "visibleIf": "{Q55} contains 'Other food or nutrition assistance benefit (please specify):'",
      "isRequired": true
@@ -8228,8 +8228,8 @@
      "type": "text",
      "name": "Q55_specify_7",
      "title": {
-      "default": "Other health coverage (please specify): – specify",
-      "es": "Otro seguro de salud (por favor, especifique): – especifique"
+      "default": "Other health coverage (please specify):",
+      "es": "Otro seguro de salud (por favor, especifique):"
      },
      "visibleIf": "{Q55} contains 'Other health coverage (please specify):'",
      "isRequired": true
@@ -8238,8 +8238,8 @@
      "type": "text",
      "name": "Q55_specify_28",
      "title": {
-      "default": "Other housing or employment benefit (please specify): – specify",
-      "es": "Otros beneficios de vivienda o empleo (por favor, especifique): – especifique"
+      "default": "Other housing or employment benefit (please specify):",
+      "es": "Otros beneficios de vivienda o empleo (por favor, especifique):"
      },
      "visibleIf": "{Q55} contains 'Other housing or employment benefit (please specify):'",
      "isRequired": true
@@ -8248,8 +8248,8 @@
      "type": "text",
      "name": "Q55_specify_21",
      "title": {
-      "default": "Other (please specify): – specify",
-      "es": "Otro servicio, beneficio o asistencia (por favor, especifique): – especifique"
+      "default": "Other (please specify):",
+      "es": "Otro servicio, beneficio o asistencia (por favor, especifique):"
      },
      "visibleIf": "{Q55} contains 'Other (please specify):'",
      "isRequired": true
@@ -8499,8 +8499,8 @@
      "type": "text",
      "name": "Q403_specify_10",
      "title": {
-      "default": "Other (specify): – specify",
-      "es": "Otro (especifique): – especifique"
+      "default": "Other (specify):",
+      "es": "Otro (especifique):"
      },
      "visibleIf": "{Q403} contains 'Other (specify):'",
      "isRequired": true
