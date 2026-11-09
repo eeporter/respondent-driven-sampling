@@ -5936,6 +5936,43 @@
      ]
     },
     {
+     "type": "radiogroup",
+     "name": "Q37_HIV",
+     "title": {
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
+     },
+     "choices": [
+      {
+       "value": "Yes",
+       "text": {
+        "default": "Yes",
+        "es": "Sí"
+       }
+      },
+      {
+       "value": "No",
+       "text": "No"
+      },
+      {
+       "value": "Declined",
+       "text": {
+        "default": "Declined",
+        "es": "No respondió"
+       }
+      },
+      {
+       "value": "Don't know",
+       "text": {
+        "default": "Don't know",
+        "es": "No lo sé"
+       }
+      }
+     ],
+     "visibleIf": "{Q36_HIV} notempty",
+     "isRequired": true
+    },
+    {
      "type": "checkbox",
      "name": "Q36_SMI",
      "titleLocation": "hidden",
@@ -6180,6 +6217,43 @@
        }
       }
      ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "Q37_DD",
+     "title": {
+      "default": "Is this condition permanent or long-term?",
+      "es": "¿Y esta condícion es a largo plazo o permanente?"
+     },
+     "choices": [
+      {
+       "value": "Yes",
+       "text": {
+        "default": "Yes",
+        "es": "Sí"
+       }
+      },
+      {
+       "value": "No",
+       "text": "No"
+      },
+      {
+       "value": "Declined",
+       "text": {
+        "default": "Declined",
+        "es": "No respondió"
+       }
+      },
+      {
+       "value": "Don't know",
+       "text": {
+        "default": "Don't know",
+        "es": "No lo sé"
+       }
+      }
+     ],
+     "visibleIf": "{Q36_DD} notempty",
+     "isRequired": true
     },
     {
      "type": "checkbox",
