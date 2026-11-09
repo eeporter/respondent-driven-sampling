@@ -17,6 +17,10 @@ import toast from 'react-hot-toast';
 
 import { SurveyDocument } from '@/types/Survey';
 
+import EndSurveyEarly, {
+	END_EARLY_TARGET_PAGE,
+	ENDED_EARLY_KEY
+} from './components/EndSurveyEarly';
 import SurveyPageNav from './components/SurveyPageNav';
 import {
 	attachLanguageHandler,
@@ -162,6 +166,13 @@ const Survey = () => {
 			// always allow going backwards, and allow the normal one-page-forward
 			// step (the Next button, which runs validation itself)
 			if (target <= current || target === current + 1) return;
+
+			// "End survey early" jumps straight to the closing pages
+			if (
+				sender.getValue(ENDED_EARLY_KEY) === true &&
+				options.newCurrentPage?.name === END_EARLY_TARGET_PAGE
+			)
+				return;
 
 			// allow forward navigation only to somewhere already visited
 			if (!visitedPages.has(target)) {
@@ -448,6 +459,9 @@ const Survey = () => {
 					<>
 						<SurveyPageNav survey={surveyRef.current} />
 						<SurveyComponent model={surveyRef.current} />
+						{!isEditMode && (
+							<EndSurveyEarly survey={surveyRef.current} />
+						)}
 					</>
 				)}
 			</div>
