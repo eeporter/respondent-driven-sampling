@@ -458,10 +458,10 @@ const Survey = () => {
 				{surveyRef.current && (
 					<>
 						<SurveyPageNav survey={surveyRef.current} />
-						<SurveyComponent model={surveyRef.current} />
 						{!isEditMode && (
 							<EndSurveyEarly survey={surveyRef.current} />
 						)}
+						<SurveyComponent model={surveyRef.current} />
 					</>
 				)}
 			</div>

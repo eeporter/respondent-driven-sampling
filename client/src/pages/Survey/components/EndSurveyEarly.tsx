@@ -15,18 +15,18 @@ import { Model } from 'survey-core';
 export const ENDED_EARLY_KEY = 'ended_early';
 export const ENDED_EARLY_PAGE_KEY = 'ended_early_page';
 
-// The button is offered once the screening questions are done (so coupon
-// eligibility can be decided) and until the closing pages are reached.
-const FIRST_PAGE = 'yc_network_size';
+// The button is offered on every page after the consent page, until the
+// closing pages are reached.
+const CONSENT_PAGE = 'consent';
 export const END_EARLY_TARGET_PAGE = 'outro';
 
 const isOfferedOn = (survey: Model) => {
 	const pages = survey.visiblePages;
 	const current = survey.currentPageNo;
-	const first = pages.findIndex(p => p.name === FIRST_PAGE);
+	const consent = pages.findIndex(p => p.name === CONSENT_PAGE);
 	const target = pages.findIndex(p => p.name === END_EARLY_TARGET_PAGE);
 	return (
-		first !== -1 && target !== -1 && current >= first && current < target
+		consent !== -1 && target !== -1 && current > consent && current < target
 	);
 };
 
@@ -59,11 +59,13 @@ const EndSurveyEarly = ({ survey }: { survey: Model }) => {
 
 	return (
 		<>
-			<Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1 }}>
+			<Box sx={{ display: 'flex', justifyContent: 'flex-end', my: 1.5 }}>
 				<Button
-					variant="outlined"
+					variant="contained"
 					color="error"
+					size="large"
 					onClick={() => setOpen(true)}
+					sx={{ fontWeight: 700, px: 3, boxShadow: 3 }}
 				>
 					End survey early
 				</Button>
