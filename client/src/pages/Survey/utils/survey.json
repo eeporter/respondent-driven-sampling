@@ -2566,49 +2566,129 @@
      "type": "text",
      "name": "Q17_days",
      "inputType": "number",
-     "min": 0,
      "title": {
       "default": "DAYS (<7)",
-      "es": "DÍAS ("
+      "es": "DÍAS (<7)"
      },
      "visibleIf": "{Q17_units} contains 'Days (<7)'",
-     "isRequired": true
+     "isRequired": true,
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d+$",
+       "text": {
+        "default": "Enter a whole number, with no decimals.",
+        "es": "Ingrese un número entero, sin decimales."
+       }
+      },
+      {
+       "type": "numeric",
+       "minValue": 1,
+       "maxValue": 6,
+       "text": {
+        "default": "Enter 1 to 6 days. Convert larger amounts to the next unit (7 days = 1 week, 4 weeks = 1 month, 12 months = 1 year).",
+        "es": "Ingrese de 1 a 6 días. Convierta cantidades mayores a la siguiente unidad (7 días = 1 semana, 4 semanas = 1 mes, 12 meses = 1 año)."
+       }
+      }
+     ]
     },
     {
      "type": "text",
      "name": "Q17_weeks",
      "inputType": "number",
-     "min": 0,
      "title": {
       "default": "WEEKS (<4)",
-      "es": "SEMANAS ("
+      "es": "SEMANAS (<4)"
      },
      "visibleIf": "{Q17_units} contains 'Weeks (<4)'",
-     "isRequired": true
+     "isRequired": true,
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d+$",
+       "text": {
+        "default": "Enter a whole number, with no decimals.",
+        "es": "Ingrese un número entero, sin decimales."
+       }
+      },
+      {
+       "type": "numeric",
+       "minValue": 1,
+       "maxValue": 3,
+       "text": {
+        "default": "Enter 1 to 3 weeks. Convert larger amounts to the next unit (7 days = 1 week, 4 weeks = 1 month, 12 months = 1 year).",
+        "es": "Ingrese de 1 a 3 semanas. Convierta cantidades mayores a la siguiente unidad (7 días = 1 semana, 4 semanas = 1 mes, 12 meses = 1 año)."
+       }
+      }
+     ]
     },
     {
      "type": "text",
      "name": "Q17_months",
      "inputType": "number",
-     "min": 0,
      "title": {
       "default": "MONTHS (<12)",
-      "es": "MESES ("
+      "es": "MESES (<12)"
      },
      "visibleIf": "{Q17_units} contains 'Months (<12)'",
-     "isRequired": true
+     "isRequired": true,
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d+$",
+       "text": {
+        "default": "Enter a whole number, with no decimals.",
+        "es": "Ingrese un número entero, sin decimales."
+       }
+      },
+      {
+       "type": "numeric",
+       "minValue": 1,
+       "maxValue": 11,
+       "text": {
+        "default": "Enter 1 to 11 months. Convert larger amounts to the next unit (7 days = 1 week, 4 weeks = 1 month, 12 months = 1 year).",
+        "es": "Ingrese de 1 a 11 meses. Convierta cantidades mayores a la siguiente unidad (7 días = 1 semana, 4 semanas = 1 mes, 12 meses = 1 año)."
+       }
+      }
+     ]
     },
     {
      "type": "text",
      "name": "Q17_years",
      "inputType": "number",
-     "min": 0,
      "title": {
       "default": "YEARS (≥1)",
       "es": "AÑOS (≥1)"
      },
      "visibleIf": "{Q17_units} contains 'Years (≥1)'",
-     "isRequired": true
+     "isRequired": true,
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d+$",
+       "text": {
+        "default": "Enter a whole number, with no decimals.",
+        "es": "Ingrese un número entero, sin decimales."
+       }
+      },
+      {
+       "type": "numeric",
+       "minValue": 1,
+       "maxValue": 99,
+       "text": {
+        "default": "Enter a whole number of years, 1 or more.",
+        "es": "Ingrese un número entero de años, 1 o más."
+       }
+      },
+      {
+       "type": "expression",
+       "expression": "{yc_age} empty or {Q17_years} <= {yc_age}",
+       "text": {
+        "default": "The number of years can't be more than the respondent's age.",
+        "es": "El número de años no puede ser mayor que la edad de la persona."
+       }
+      }
+     ]
     }
    ],
    "navigationTitle": "Spells and Duration",
