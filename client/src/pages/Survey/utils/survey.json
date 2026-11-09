@@ -8420,7 +8420,21 @@
       "default": "Phone number",
       "es": "Número de teléfono"
      },
-     "inputType": "tel"
+     "maskType": "pattern",
+     "maskSettings": {
+      "pattern": "(999) 999-9999"
+     },
+     "inputType": "tel",
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d{10}$",
+       "text": {
+        "default": "Enter a 10-digit phone number, including the area code.",
+        "es": "Ingrese un número de teléfono de 10 dígitos, incluyendo el código de área."
+       }
+      }
+     ]
     },
     {
      "type": "text",
@@ -8429,7 +8443,16 @@
       "default": "Email",
       "es": "Correo electrónico"
      },
-     "inputType": "email"
+     "inputType": "email",
+     "validators": [
+      {
+       "type": "email",
+       "text": {
+        "default": "Enter a valid email address (for example, name@example.com).",
+        "es": "Ingrese un correo electrónico válido (por ejemplo, nombre@ejemplo.com)."
+       }
+      }
+     ]
     }
    ],
    "navigationTitle": "Future Research",
@@ -8502,7 +8525,16 @@
      "visibleIf": "{email_phone_consent} contains 'email'",
      "title": "What's your email address?",
      "requiredIf": "{email_phone_consent} contains 'email'",
-     "inputType": "email"
+     "inputType": "email",
+     "validators": [
+      {
+       "type": "email",
+       "text": {
+        "default": "Enter a valid email address (for example, name@example.com).",
+        "es": "Ingrese un correo electrónico válido (por ejemplo, nombre@ejemplo.com)."
+       }
+      }
+     ]
     },
     {
      "type": "text",
@@ -8513,7 +8545,18 @@
      "maskType": "pattern",
      "maskSettings": {
       "pattern": "(999) 999-9999"
-     }
+     },
+     "inputType": "tel",
+     "validators": [
+      {
+       "type": "regex",
+       "regex": "^\\d{10}$",
+       "text": {
+        "default": "Enter a 10-digit phone number, including the area code.",
+        "es": "Ingrese un número de teléfono de 10 dígitos, incluyendo el código de área."
+       }
+      }
+     ]
     }
    ],
    "navigationTitle": "Gift Card Contacts",
