@@ -8177,7 +8177,19 @@
         "default": "Minutes",
         "es": "Minutos"
        },
-       "inputType": "number"
+       "inputType": "number",
+       "min": 0,
+       "step": 1,
+       "validators": [
+        {
+         "type": "regex",
+         "regex": "^\\d+$",
+         "text": {
+          "default": "Enter minutes as a whole number, with no decimals (for example, 45).",
+          "es": "Ingrese los minutos como número entero, sin decimales (por ejemplo, 45)."
+         }
+        }
+       ]
       }
      ]
     },
