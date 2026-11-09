@@ -154,6 +154,14 @@
    },
    "elements": [
     {
+     "type": "html",
+     "name": "eligibility_prompt",
+     "html": {
+      "default": "<div style=\"margin: 6px 0;\"><strong>The next few questions will help us to determine if you are eligible to take the full survey.</strong></div>",
+      "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas nos ayudaran a determinar si es elegible para participar en la encuesta entera.</strong></div>"
+     }
+    },
+    {
      "type": "text",
      "name": "date_of_birth",
      "title": {
@@ -181,14 +189,6 @@
     "es": "Elegibilidad"
    },
    "elements": [
-    {
-     "type": "html",
-     "name": "eligibility_prompt",
-     "html": {
-      "default": "<div style=\"margin: 6px 0;\"><strong>The next few questions will help us to determine if you are eligible to take the full survey.</strong></div>",
-      "es": "<div style=\"margin: 6px 0;\"><strong>Las siguientes preguntas nos ayudaran a determinar si es elegible para participar en la encuesta entera.</strong></div>"
-     }
-    },
     {
      "type": "dropdown",
      "name": "Q2",
@@ -1581,7 +1581,7 @@
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true"
+   "visibleIf": "{yc_homeless} <> true"
   },
   {
    "name": "yc_housed_2",
@@ -1768,7 +1768,7 @@
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']"
+   "visibleIf": "{yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']"
   },
   {
    "name": "yc_housed_3",
@@ -1903,7 +1903,7 @@
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']"
+   "visibleIf": "{yc_homeless} <> true and {Q415} anyof ['Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)', 'Yes, sheltered (e.g., emergency shelter, transitional housing, or safe haven)']"
   },
   {
    "name": "yc_housed_4",
@@ -1960,7 +1960,7 @@
     }
    ],
    "navigationTitle": "Experience of Homelessness",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} <> true and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{yc_homeless} <> true and {Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_cvrtm",
@@ -2086,7 +2086,7 @@
      "type": "radiogroup",
      "name": "Q22_Van_choice",
      "title": {
-      "default": "At any given time, how many other people lived with you in the van?",
+      "default": "At any given time, how many other people lived with you in the van or SUV?",
       "es": "En cualquier dado momento, ¿cuántas personas vivieron en tu van o SUV?"
      },
      "description": "If the individual lived alone, please input 0.",
@@ -2400,7 +2400,7 @@
     }
    ],
    "navigationTitle": "Experience of Homelessness: CVRTM",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
+   "visibleIf": "{yc_homeless} = true"
   },
   {
    "name": "yc_spells_1",
@@ -2493,7 +2493,7 @@
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
+   "visibleIf": "{yc_homeless} = true"
   },
   {
    "name": "yc_spells_2",
@@ -2612,7 +2612,7 @@
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
+   "visibleIf": "{yc_homeless} = true"
   },
   {
    "name": "yc_spells_3",
@@ -2752,7 +2752,7 @@
     }
    ],
    "navigationTitle": "Spells and Duration",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {yc_homeless} = true"
+   "visibleIf": "{yc_homeless} = true"
   },
   {
    "name": "yc_demographics_1",
@@ -3291,7 +3291,7 @@
     }
    ],
    "navigationTitle": "Veteran Status",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18"
   },
   {
    "name": "yc_veteran_2",
@@ -3387,7 +3387,7 @@
     }
    ],
    "navigationTitle": "Veteran Status",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18 and {Q11} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_age} >= 18 and {Q11} anyof ['U.S. Armed Forces (including Army, Air Force, Navy, Marine Corps, Coast Guard, or Space Force)', 'National Guard', 'Reserves']"
   },
   {
    "name": "yc_household",
@@ -3461,7 +3461,7 @@
     }
    ],
    "navigationTitle": "Household",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_children",
@@ -4508,7 +4508,7 @@
     }
    ],
    "navigationTitle": "Household Children",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0"
   },
   {
    "name": "yc_adults",
@@ -5767,7 +5767,7 @@
     }
    ],
    "navigationTitle": "Household Family Over 18",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0 and {Q23_18p} > 0"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {Q23_U18} > 0 and {Q23_18p} > 0"
   },
   {
    "name": "yc_health",
@@ -6355,7 +6355,7 @@
     }
    ],
    "navigationTitle": "Health & Safety",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_safety_1",
@@ -6391,7 +6391,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_safety_2",
@@ -6424,7 +6424,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern'"
   },
   {
    "name": "yc_safety_3",
@@ -6541,7 +6541,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes'"
   },
   {
    "name": "yc_safety_4",
@@ -6589,7 +6589,7 @@
     }
    ],
    "navigationTitle": "Health & Safety, continued",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes' and {Q39} notcontains 'None of the Above' and {yc_homeless} = true"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {Q38_Safety} = 'NO obvious Safety Concern' and {Q38_Consent} = 'Yes' and {Q39} notcontains 'None of the Above' and {yc_homeless} = true"
   },
   {
    "name": "yc_systems",
@@ -6727,7 +6727,7 @@
     }
    ],
    "navigationTitle": "Systems Involvement",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_residence_1",
@@ -6782,7 +6782,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
   },
   {
    "name": "yc_residence_2",
@@ -6898,7 +6898,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
   },
   {
    "name": "yc_residence_3",
@@ -7246,7 +7246,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true and {Q46} = \"Yes\""
   },
   {
    "name": "yc_residence_4",
@@ -7471,7 +7471,7 @@
     }
    ],
    "navigationTitle": "Residence",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness' and {yc_homeless} = true"
   },
   {
    "name": "yc_education_1",
@@ -7628,7 +7628,7 @@
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_2",
@@ -7742,7 +7742,7 @@
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_3",
@@ -7893,7 +7893,7 @@
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_education_4",
@@ -8176,7 +8176,7 @@
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_special",
@@ -8427,7 +8427,7 @@
     }
    ],
    "navigationTitle": "Special Questions",
-   "visibleIf": "({yc_age} < 25 or {yc_age} empty) and {Q415} notcontains 'No, I have never experienced homelessness'"
+   "visibleIf": "{Q415} notcontains 'No, I have never experienced homelessness'"
   },
   {
    "name": "yc_future_research",
@@ -8673,10 +8673,6 @@
   {
    "type": "complete",
    "expression": "({Q2} = 'Declined' or {Q2} = 'Don\\'t know') and ({Q3} = 'Declined' or {Q3} = 'Don\\'t know')"
-  },
-  {
-   "type": "complete",
-   "expression": "dateDiff({date_of_birth}, '2027-01-31', 'years') >= 25"
   }
  ],
  "calculatedValues": [
