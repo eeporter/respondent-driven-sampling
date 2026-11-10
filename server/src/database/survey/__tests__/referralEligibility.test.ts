@@ -143,6 +143,13 @@ describe('isReferralEligible', () => {
 		).toBe(false);
 	});
 
+	test('ending early before the location items makes it ineligible', () => {
+		expect(isReferralEligible({ ended_early: true })).toBe(false);
+		expect(
+			isReferralEligible({ ended_early: true, Q2: 'Tent', Q3: 'Tent' })
+		).toBe(true);
+	});
+
 	test('a record with no answers yet is not blocked', () => {
 		expect(isReferralEligible(undefined)).toBe(true);
 		expect(isReferralEligible({})).toBe(true);

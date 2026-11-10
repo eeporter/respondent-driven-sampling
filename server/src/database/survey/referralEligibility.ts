@@ -101,8 +101,11 @@ export function isReferralEligible(
 	if (noAnswer(Q2) && noAnswer(Q3)) return false;
 
 	// Before the location questions are answered there is nothing to judge yet,
-	// e.g. an older record; keep the previous behaviour and allow it.
-	if (Q2 === undefined && Q3 === undefined) return true;
+	// e.g. an older record; keep the previous behaviour and allow it. A survey
+	// ended early before those questions gets no coupons, since its eligibility
+	// can't be known.
+	if (Q2 === undefined && Q3 === undefined)
+		return responses.ended_early !== true;
 
 	const either = (list: string[]) => inList(Q2, list) || inList(Q3, list);
 
