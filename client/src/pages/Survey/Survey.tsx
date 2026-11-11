@@ -18,7 +18,7 @@ import toast from 'react-hot-toast';
 import { SurveyDocument } from '@/types/Survey';
 
 import EndSurveyEarly, {
-	END_EARLY_TARGET_PAGE,
+	END_EARLY_TARGET_PAGES,
 	ENDED_EARLY_KEY
 } from './components/EndSurveyEarly';
 import SurveyPageNav from './components/SurveyPageNav';
@@ -131,7 +131,6 @@ const Survey = () => {
 			};
 		};
 
-
 		// Progress-bar navigation is visited-based: a volunteer may click back to
 		// any page they have already been to, but cannot jump ahead. Jumping ahead
 		// would bypass the required-field validation that the Next button enforces
@@ -170,7 +169,9 @@ const Survey = () => {
 			// "End survey early" jumps straight to the closing pages
 			if (
 				sender.getValue(ENDED_EARLY_KEY) === true &&
-				options.newCurrentPage?.name === END_EARLY_TARGET_PAGE
+				END_EARLY_TARGET_PAGES.includes(
+					options.newCurrentPage?.name ?? ''
+				)
 			)
 				return;
 

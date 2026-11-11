@@ -18,13 +18,20 @@ export const ENDED_EARLY_PAGE_KEY = 'ended_early_page';
 // The button is offered on every page after the consent page, until the
 // closing pages are reached.
 const CONSENT_PAGE = 'consent';
-export const END_EARLY_TARGET_PAGE = 'outro';
+// Ending early goes to the closing page: the usual outro, or the ineligible
+// outro (no gift card) when no valid answer about where they stayed was given yet.
+export const END_EARLY_TARGET_PAGES = ['outro', 'outro_ineligible'];
+
+const targetPage = (survey: Model) =>
+	survey.visiblePages.find(p => END_EARLY_TARGET_PAGES.includes(p.name));
 
 const isOfferedOn = (survey: Model) => {
 	const pages = survey.visiblePages;
 	const current = survey.currentPageNo;
 	const consent = pages.findIndex(p => p.name === CONSENT_PAGE);
-	const target = pages.findIndex(p => p.name === END_EARLY_TARGET_PAGE);
+	const target = pages.findIndex(p =>
+		END_EARLY_TARGET_PAGES.includes(p.name)
+	);
 	return (
 		consent !== -1 && target !== -1 && current > consent && current < target
 	);
@@ -33,7 +40,7 @@ const isOfferedOn = (survey: Model) => {
 /**
  * "End survey early" for a respondent who no longer wants to continue. After a
  * confirmation, the answers so far are kept and the survey jumps to the closing
- * pages (outro, gift cards), then finishes on the coupon page as usual.
+ * pages (outro and gift cards, or the ineligible outro), then finishes as usual.
  */
 const EndSurveyEarly = ({ survey }: { survey: Model }) => {
 	const [offered, setOffered] = useState(() => isOfferedOn(survey));
@@ -46,7 +53,7 @@ const EndSurveyEarly = ({ survey }: { survey: Model }) => {
 	}, [survey]);
 
 	const endNow = () => {
-		const target = survey.getPageByName(END_EARLY_TARGET_PAGE);
+		const target = targetPage(survey);
 		setOpen(false);
 		if (!target) return;
 		survey.setValue(ENDED_EARLY_KEY, true);
@@ -77,8 +84,10 @@ const EndSurveyEarly = ({ survey }: { survey: Model }) => {
 						The respondent is choosing to end the survey before
 						finishing all of the questions. The answers given so far
 						will be saved, and the remaining questions will be
-						skipped. You will go straight to the gift card pages and
-						then the referral coupon page.
+						skipped. You will go straight to the closing pages. If
+						the respondent has not yet given a valid answer about
+						where they stayed, they are not eligible for a gift card
+						or referral coupons.
 					</DialogContentText>
 					<DialogContentText sx={{ mt: 2, fontWeight: 600 }}>
 						Are you sure you want to end the survey now?
