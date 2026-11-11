@@ -1489,7 +1489,11 @@
        "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'",
        "isRequired": true
       }
-     ]
+     ],
+     "templateTabTitle": {
+      "default": "Person {panelIndex}",
+      "es": "Persona {panelIndex}"
+     }
     }
    ],
    "navigationTitle": "Network",
@@ -3598,10 +3602,6 @@
      "minPanelCount": 0,
      "maxPanelCount": 10,
      "displayMode": "tab",
-     "addPanelText": {
-      "default": "+ Add child",
-      "es": "+ Agregar niño/a"
-     },
      "removePanelText": {
       "default": "Remove",
       "es": "Quitar"
@@ -4623,7 +4623,12 @@
         "es": "El número de niños/as aquí debe ser igual al número de menores de 18 años indicado en la pregunta 28. Agregue o quite entradas hasta que coincidan."
        }
       }
-     ]
+     ],
+     "templateTabTitle": {
+      "default": "Child {panelIndex}",
+      "es": "Niño/a {panelIndex}"
+     },
+     "allowAddPanel": false
     }
    ],
    "navigationTitle": "Household Children",
@@ -4655,10 +4660,6 @@
      "minPanelCount": 0,
      "maxPanelCount": 10,
      "displayMode": "tab",
-     "addPanelText": {
-      "default": "+ Add family member",
-      "es": "+ Agregar familiar"
-     },
      "removePanelText": {
       "default": "Remove",
       "es": "Quitar"
@@ -5882,7 +5883,12 @@
         "es": "El número de familiares aquí debe ser igual al número de personas de 18 años o más indicado en la pregunta 28. Agregue o quite entradas hasta que coincidan."
        }
       }
-     ]
+     ],
+     "templateTabTitle": {
+      "default": "Adult {panelIndex}",
+      "es": "Adulto/a {panelIndex}"
+     },
+     "allowAddPanel": false
     }
    ],
    "navigationTitle": "Household Family Over 18",
