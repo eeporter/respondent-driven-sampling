@@ -8624,6 +8624,16 @@
      "html": {
       "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>That completes the questions for today's Youth Count survey.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Thank you for taking time to complete the survey and for sharing this information about you and your experiences. We have just a few more questions for you so that we can issue your gift cards and prepare your referral coupons that you can pass out to others in your network who are unsheltered.</strong></div>",
       "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Con esto terminamos las preguntas de la encuesta Youth Count de hoy.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Gracias por tomarse el tiempo de completar la encuesta y por compartir esta información sobre usted y sus experiencias. Tenemos solo unas preguntas más para poder darle sus tarjetas de regalo y preparar sus cupones de referencia, que puede repartir a otras personas de su red que no tienen dónde vivir.</strong></div>"
+     },
+     "visibleIf": "{referral_eligible} = true"
+    },
+    {
+     "type": "html",
+     "name": "outro_no_referral_html",
+     "visibleIf": "{referral_eligible} <> true",
+     "html": {
+      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>That completes the questions for today's Youth Count survey.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Thank you for taking time to complete the survey and for sharing this information about you and your experiences. We have just a few more questions for you so that we can issue your gift cards.</strong></div>",
+      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Con esto terminamos las preguntas de la encuesta Youth Count de hoy.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Gracias por tomarse el tiempo de completar la encuesta y por compartir esta información sobre usted y sus experiencias. Tenemos solo unas preguntas más para poder darle sus tarjetas de regalo.</strong></div>"
      }
     }
    ],
@@ -8719,7 +8729,7 @@
     }
    ],
    "navigationTitle": "Gift Card Contacts",
-   "visibleIf": "{yc_screened_in} = true"
+   "visibleIf": "{yc_screened_in} = true and {referral_eligible} = true"
   },
   {
    "name": "giftCards2",

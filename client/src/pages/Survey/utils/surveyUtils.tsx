@@ -4,15 +4,18 @@ import {
 	QuestionPanelDynamicModel,
 	QuestionSelectBase
 } from 'survey-core';
+
 // registers SurveyJS's Spanish strings (buttons, validation messages) for locale 'es'
 import 'survey-core/i18n/spanish';
 
-import { SurveyDocument } from '@/types/Survey';
-
 import { isTestEnvironment } from '@/utils/environment';
+import { isReferralEligible } from '@/utils/referralEligibility';
+
+import { SurveyDocument } from '@/types/Survey';
 
 // registers the category headers used in long checkbox lists (question 64)
 import './groupedChoices';
+
 import surveyJsonData from './survey.json';
 import { themeJson } from './surveyTheme';
 
@@ -81,12 +84,29 @@ const syncHouseholdEntries = (survey: Model, countName: string) => {
 };
 
 /**
- * Switches the survey's language whenever the language answer changes, and keeps
- * the household entry sections in step with the household counts. Exported so
- * the survey page can re-attach it after clearing its own value handlers.
+ * Survey variable saying whether the answers so far earn referral coupons, using
+ * the same rule as the coupon page. The outro uses it to mention coupons only to
+ * respondents who will get them.
+ */
+const REFERRAL_ELIGIBLE_VARIABLE = 'referral_eligible';
+
+const updateReferralEligible = (survey: Model) => {
+	survey.setVariable(
+		REFERRAL_ELIGIBLE_VARIABLE,
+		isReferralEligible(survey.data)
+	);
+};
+
+/**
+ * Switches the survey's language whenever the language answer changes, keeps
+ * the household entry sections in step with the household counts, and keeps the
+ * referral eligibility variable current. Exported so the survey page can
+ * re-attach it after clearing its own value handlers.
  */
 export const attachLanguageHandler = (survey: Model) => {
+	updateReferralEligible(survey);
 	survey.onValueChanged.add((sender, options) => {
+		updateReferralEligible(sender);
 		if (options.name === LANGUAGE_KEY) applySurveyLanguage(sender);
 		if (options.name in HOUSEHOLD_ENTRY_SECTIONS)
 			syncHouseholdEntries(sender, options.name);
@@ -167,7 +187,7 @@ export const initializeSurvey = (
 				'volunteer-pre-screen',
 				'age_check',
 				'consent',
-				'survey-validation',
+				'survey-validation'
 			];
 		} else if (editMode === 'giftcard') {
 			// Edit Gift Card Information
@@ -186,7 +206,7 @@ export const initializeSurvey = (
 				'survey-validation',
 				'giftCards',
 				'giftCards2',
-				'end_page',
+				'end_page'
 			];
 		}
 
@@ -215,6 +235,7 @@ export const initializeSurvey = (
 	if (surveyByObjectId) {
 		survey.data = surveyByObjectId.responses;
 		applySurveyLanguage(survey);
+		updateReferralEligible(survey);
 		if (!isEditMode) restoreLastPage(survey);
 		return {
 			survey,
@@ -229,6 +250,7 @@ export const initializeSurvey = (
 	else if (surveyByRefCode) {
 		survey.data = surveyByRefCode.responses;
 		applySurveyLanguage(survey);
+		updateReferralEligible(survey);
 		if (!isEditMode) restoreLastPage(survey);
 		return {
 			survey,
@@ -243,5 +265,6 @@ export const initializeSurvey = (
 	// No existing data found, return blank new survey
 
 	survey.data = {};
+	updateReferralEligible(survey);
 	return { survey, existingData: null };
 };
