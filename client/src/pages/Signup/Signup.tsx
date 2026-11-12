@@ -210,6 +210,7 @@ export default function Signup() {
 							name="role"
 							value={userData.role}
 							onChange={handleChange}
+							allowedRoles={['VOLUNTEER', 'MANAGER']}
 							required
 						/>
 

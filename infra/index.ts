@@ -32,6 +32,17 @@ const mongoServerVersion = config.get("mongoServerVersion") ?? "8.0";
 const mongoSku = config.get("mongoSku") ?? "M20";
 const mongoDiskSizeGb = config.getNumber("mongoDiskSizeGb") ?? 128;
 
+// IP ranges allowed to reach the database. Without any rules the cluster
+// refuses all connections, so list the web app's outbound IPs (exported below
+// as webAppOutboundIps) plus any admin machines that run the setup scripts.
+interface MongoFirewallRule {
+  name: string;
+  startIpAddress: string;
+  endIpAddress?: string;
+}
+const mongoFirewallRules =
+  config.getObject<MongoFirewallRule[]>("mongoFirewallRules") ?? [];
+
 // ---------------------------------------------------------------------------
 // Resource Group
 // ---------------------------------------------------------------------------
@@ -63,6 +74,18 @@ const mongoCluster = new documentdb.MongoCluster("rds-mongo-cluster", {
   // administratorLoginPassword is write-only and always shows as a diff;
   // createMode is auto-populated by Azure
   ignoreChanges: ["administratorLoginPassword", "createMode"],
+});
+
+mongoFirewallRules.forEach((rule) => {
+  new documentdb.FirewallRule(`rds-mongo-fw-${rule.name}`, {
+    firewallRuleName: rule.name,
+    mongoClusterName: mongoCluster.name,
+    resourceGroupName: resourceGroup.name,
+    properties: {
+      startIpAddress: rule.startIpAddress,
+      endIpAddress: rule.endIpAddress ?? rule.startIpAddress,
+    },
+  });
 });
 
 // Construct the connection string from config values (not from the cluster
@@ -144,3 +167,5 @@ const webApp = new web.WebApp("rds-web-app", {
 // ---------------------------------------------------------------------------
 export const appServiceUrl = pulumi.interpolate`https://${webApp.defaultHostName}`;
 export const mongoConnectionString = mongoUri;
+// Every address the web app may connect out from; add these to mongoFirewallRules
+export const webAppOutboundIps = webApp.possibleOutboundIpAddresses;

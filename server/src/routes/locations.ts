@@ -11,6 +11,7 @@ import { auth } from '@/middleware/auth';
 import { validate } from '@/middleware/validate';
 import { ACTIONS, SUBJECTS } from '@/permissions/constants';
 import { AuthenticatedRequest } from '@/types/auth';
+import { toEqualityFilter } from '@/utils/queryFilter';
 
 const router = express.Router();
 
@@ -33,9 +34,9 @@ const router = express.Router();
  */
 router.get('/', async (req: Request, res: Response, next: NextFunction) => {
 	try {
-		const result = await Location.find({
-			$and: [req.query]
-		}).sort({ hubName: 1 });
+		const result = await Location.find(toEqualityFilter(req.query)).sort({
+			hubName: 1
+		});
 		res.status(200).json({
 			message: 'Locations fetched successfully',
 			data: result.map(item => item.toObject())

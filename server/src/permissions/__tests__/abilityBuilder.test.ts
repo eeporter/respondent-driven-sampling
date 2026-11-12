@@ -621,7 +621,7 @@ describe('CASL abilityBuilder', () => {
 				).toBe(true);
 			});
 
-			test('Manager can read only own surveys at own location created today', () => {
+			test('Manager can read own surveys at own location created today', () => {
 				const ability = defineAbilitiesForUser(
 					// makeReq({
 					// 	role: ROLES.MANAGER,
@@ -645,7 +645,8 @@ describe('CASL abilityBuilder', () => {
 				).toBe(true);
 			});
 
-			test('Manager cannot read surveys from other users', () => {
+			// Managers oversee their hub, so they can read any survey taken there today
+			test('Manager can read surveys from other users at own location today', () => {
 				const ability = defineAbilitiesForUser(
 					// makeReq({
 					// 	role: ROLES.MANAGER,
@@ -664,9 +665,7 @@ describe('CASL abilityBuilder', () => {
 					createdAt: today
 				});
 
-				expect(ability.cannot(ACTIONS.CASL.READ, otherUserSurvey)).toBe(
-					true
-				);
+				expect(ability.can(ACTIONS.CASL.READ, otherUserSurvey)).toBe(true);
 			});
 
 			test('Manager cannot read surveys from different location', () => {
@@ -693,7 +692,7 @@ describe('CASL abilityBuilder', () => {
 				).toBe(true);
 			});
 
-			test('Manager can update only own surveys at own location created today', () => {
+			test('Manager can update own surveys at own location created today', () => {
 				const ability = defineAbilitiesForUser(
 					// makeReq({
 					// 	role: ROLES.MANAGER,
@@ -717,7 +716,8 @@ describe('CASL abilityBuilder', () => {
 				).toBe(true);
 			});
 
-			test('Manager cannot update surveys from other users', () => {
+			// Managers oversee their hub, so they can update any survey taken there today
+			test('Manager can update surveys from other users at own location today', () => {
 				const ability = defineAbilitiesForUser(
 					// makeReq({
 					// 	role: ROLES.MANAGER,
@@ -736,9 +736,49 @@ describe('CASL abilityBuilder', () => {
 					createdAt: today
 				});
 
+				expect(ability.can(ACTIONS.CASL.UPDATE, otherUserSurvey)).toBe(true);
+			});
+
+			test('Manager cannot read or update other users surveys at a different location', () => {
+				const ability = defineAbilitiesForUser(
+					ROLES.MANAGER,
+					self.userObjectId,
+					location1,
+					[],
+					TEST_TIMEZONE
+				);
+
+				const otherLocationSurvey = subject('Survey', {
+					createdByUserObjectId: otherUser.userObjectId,
+					locationObjectId: location2,
+					createdAt: today
+				});
+
+				expect(ability.cannot(ACTIONS.CASL.READ, otherLocationSurvey)).toBe(
+					true
+				);
 				expect(
-					ability.cannot(ACTIONS.CASL.UPDATE, otherUserSurvey)
+					ability.cannot(ACTIONS.CASL.UPDATE, otherLocationSurvey)
 				).toBe(true);
+			});
+
+			test('Manager cannot read or update other users surveys from a previous day', () => {
+				const ability = defineAbilitiesForUser(
+					ROLES.MANAGER,
+					self.userObjectId,
+					location1,
+					[],
+					TEST_TIMEZONE
+				);
+
+				const oldSurvey = subject('Survey', {
+					createdByUserObjectId: otherUser.userObjectId,
+					locationObjectId: location1,
+					createdAt: yesterday
+				});
+
+				expect(ability.cannot(ACTIONS.CASL.READ, oldSurvey)).toBe(true);
+				expect(ability.cannot(ACTIONS.CASL.UPDATE, oldSurvey)).toBe(true);
 			});
 
 			test('Manager cannot delete surveys', () => {

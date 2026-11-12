@@ -426,7 +426,6 @@ async function restoreSuperAdmin(identifier: string): Promise<void> {
 		return;
 	}
 
-	// @ts-expect-error - null is valid for soft-delete restoration
 	user.deletedAt = null;
 	await user.save();
 	await user.populate('locationObjectId');
