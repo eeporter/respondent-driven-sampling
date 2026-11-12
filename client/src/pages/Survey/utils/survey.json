@@ -188,6 +188,7 @@
      "type": "expression",
      "name": "network_panel_count",
      "visible": false,
+     "clearIfInvisible": "none",
      "expression": "iif({non_family_network_size} > 12, 12, {non_family_network_size})"
     }
    ],
