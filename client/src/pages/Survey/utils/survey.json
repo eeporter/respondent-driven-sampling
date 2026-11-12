@@ -1,5 +1,6 @@
 {
  "title": "2026 Youth Housing Survey",
+ "clearInvisibleValues": "none",
  "pages": [
   {
    "name": "test_environment_notice",
