@@ -1791,6 +1791,7 @@
   }
  ],
  "partialSendEnabled": true,
+ "clearInvisibleValues": "none",
  "showPageTitles": false,
  "showProgressBar": false,
  "textUpdateMode": "onTyping",
