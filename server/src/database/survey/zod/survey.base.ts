@@ -7,8 +7,10 @@ import {
 	SURVEY_CODE_LENGTH
 } from '@/database/utils/constants';
 
-// Base field definitions - reusable across all survey schemas
-export const baseSurveySchema = z
+// Base field definitions - reusable across all survey schemas. Kept free of
+// object-level refinements so validators can .pick() and .partial() it, which
+// zod refuses on a refined object schema.
+export const surveyFieldsSchema = z
 	.object({
 		surveyCode: z
 			.string()
@@ -67,6 +69,9 @@ export const baseSurveySchema = z
 		createdAt: z.coerce.date(),
 		updatedAt: z.coerce.date()
 	})
+	.meta({ model: Survey });
+
+export const baseSurveySchema = surveyFieldsSchema
 	// Refinements across all fields
 	.refine(data => data.parentSurveyCode !== data.surveyCode, {
 		message: 'Cannot use same survey code to refer to itself'

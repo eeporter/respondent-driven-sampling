@@ -1,8 +1,8 @@
 import Survey from '@/database/survey/mongoose/survey.model';
-import { baseSurveySchema } from '@/database/survey/zod/survey.base';
+import { surveyFieldsSchema } from '@/database/survey/zod/survey.base';
 import { SYSTEM_SURVEY_CODE } from '@/database/utils/constants';
 
-export const createSurveySchema = baseSurveySchema
+export const createSurveySchema = surveyFieldsSchema
 	// fields the client should send when creating a survey.
 	.pick({
 		surveyCode: true,
@@ -36,7 +36,7 @@ export const createSurveySchema = baseSurveySchema
 	.meta({ model: Survey });
 
 // Update schema - only updatable fields
-export const updateSurveySchema = baseSurveySchema
+export const updateSurveySchema = surveyFieldsSchema
 	.pick({
 		// Updatable fields
 		// NOTE: Verify if we can specify which keys are updatable in responses object.
@@ -50,6 +50,6 @@ export const updateSurveySchema = baseSurveySchema
 	.meta({ model: Survey });
 
 // Read schema - for filtering to fetch one or more surveys by any field(s)
-export const readSurveySchema = baseSurveySchema
+export const readSurveySchema = surveyFieldsSchema
 	.partial()
 	.meta({ model: Survey });
