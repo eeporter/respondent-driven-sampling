@@ -3420,7 +3420,7 @@
       {
        "value": "Other, specify",
        "text": {
-        "default": "Other, specify",
+        "default": "Other (specify):",
         "es": "Otro (especifique):"
        }
       },
@@ -3445,7 +3445,7 @@
      "type": "text",
      "name": "Q13_specify_8",
      "title": {
-      "default": "Other, specify",
+      "default": "Other (specify):",
       "es": "Otro (especifique):"
      },
      "visibleIf": "{Q13} contains 'Other, specify'",
