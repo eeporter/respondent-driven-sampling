@@ -194,8 +194,13 @@ const Survey = () => {
 		// creating duplicate survey records, since only the first call may create.
 		let saveInFlight = false;
 		let saveQueued = false;
+		// Set once the survey is completed. After that no autosave may run: a late
+		// one would overwrite the stored survey and wipe the coupon codes that the
+		// coupon page shows.
+		let surveyFinished = false;
 
-		const persist = async (sender: Model) => {
+		const persist = async (sender: Model, force = false) => {
+			if (surveyFinished && !force) return;
 			if (saveInFlight) {
 				saveQueued = true;
 				return;
@@ -250,7 +255,7 @@ const Survey = () => {
 				saveInFlight = false;
 				if (saveQueued) {
 					saveQueued = false;
-					void persist(sender);
+					if (!surveyFinished) void persist(sender);
 				}
 			}
 		};
@@ -265,11 +270,20 @@ const Survey = () => {
 		// typing in a text field does not fire a request per keystroke.
 		let valueDebounce: ReturnType<typeof setTimeout> | null = null;
 		survey.onValueChanged.add(sender => {
+			if (surveyFinished) return;
 			if (valueDebounce) clearTimeout(valueDebounce);
 			valueDebounce = setTimeout(() => void persist(sender), 800);
 		});
 
 		survey.onComplete.add(async sender => {
+			// Stop autosaving first: an answer typed just before Complete (such as
+			// the gift card number) leaves a delayed autosave pending, and if it ran
+			// after this point the coupon page would lose its codes.
+			surveyFinished = true;
+			if (valueDebounce) {
+				clearTimeout(valueDebounce);
+				valueDebounce = null;
+			}
 			// A survey can complete before any autosave has finished — most notably
 			// the under-18 path, where answering "No" fires the complete trigger
 			// while the create request from the page change may still be in flight.
@@ -281,7 +295,7 @@ const Survey = () => {
 				}
 			}
 			if (getObjectId() === null) {
-				await persist(sender);
+				await persist(sender, true);
 			}
 
 			const surveyData = {
