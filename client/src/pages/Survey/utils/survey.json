@@ -7082,10 +7082,10 @@
      "type": "dropdown",
      "name": "Q48_Followup",
      "title": {
-      "default": "57. Where did you first stay when you came to the L.A. area?",
-      "es": "57. ¿Dónde vivió por primera vez cuando llegó al área de Los Ángeles?"
+      "default": "57. Where did you first stay when you came to the L.A. area? Was it in your own apartment or home, someone else's apartment or home, or someplace else?",
+      "es": "57. ¿Dónde vivió por primera vez cuando llegó al área de Los Ángeles? ¿Fue en su propio apartamento o casa, en el apartamento o casa de otra persona, o en otro lugar?"
      },
-     "description": "Read the first two responses then say, \"Or someplace else\". Wait for response, then select choice closest to their answer.",
+     "description": "Wait for response, then select the choice closest to their answer.",
      "choices": [
       {
        "value": "Your own apartment or home",
