@@ -7974,8 +7974,7 @@
       "default": "Other (specify):",
       "es": "Otro (especifique):"
      },
-     "visibleIf": "{Q54} contains 'Other, specify'",
-     "isRequired": true
+     "visibleIf": "{Q54} contains 'Other, specify'"
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
