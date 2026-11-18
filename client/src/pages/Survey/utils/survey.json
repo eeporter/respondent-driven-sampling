@@ -7544,8 +7544,7 @@
       "default": "Other (Specify):",
       "es": "Otra opción (especifique)"
      },
-     "visibleIf": "{Q50} contains 'Other (Specify):'",
-     "isRequired": true
+     "visibleIf": "{Q50} contains 'Other (Specify):'"
     }
    ],
    "navigationTitle": "Residence",
