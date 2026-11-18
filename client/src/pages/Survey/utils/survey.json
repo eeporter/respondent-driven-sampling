@@ -1071,13 +1071,16 @@
      "isRequired": true,
      "setValueIf": "{non_family_network_size_noanswer} notempty",
      "setValueExpression": "0",
-     "enableIf": "{non_family_network_size_noanswer} empty"
+     "enableIf": "{non_family_network_size_noanswer} empty",
+     "resetValueIf": "{non_family_network_size_noanswer} empty"
     },
     {
      "type": "radiogroup",
      "name": "non_family_network_size_noanswer",
-     "titleLocation": "hidden",
-     "title": "non_family_network_size",
+     "title": {
+      "default": "If the participant declines or doesn't know:",
+      "es": "Si no responde o no sabe:"
+     },
      "choices": [
       {
        "value": "Declined",
@@ -3483,7 +3486,8 @@
      "isRequired": true,
      "setValueIf": "{Q23_End} notempty",
      "setValueExpression": "0",
-     "enableIf": "{Q23_End} empty"
+     "enableIf": "{Q23_End} empty",
+     "resetValueIf": "{Q23_End} empty"
     },
     {
      "type": "text",
@@ -3497,7 +3501,8 @@
      "isRequired": true,
      "setValueIf": "{Q23_End} notempty",
      "setValueExpression": "0",
-     "enableIf": "{Q23_End} empty"
+     "enableIf": "{Q23_End} empty",
+     "resetValueIf": "{Q23_End} empty"
     },
     {
      "type": "radiogroup",
