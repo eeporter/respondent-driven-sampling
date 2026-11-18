@@ -4476,14 +4476,14 @@
        "name": "Q34c_Oth",
        "titleLocation": "hidden",
        "title": {
-        "default": "AND DOES {panel.Q24c} HAVE (9) Other conditions (specify) ? __________________________________________________",
+        "default": "AND DOES {panel.Q24c} HAVE (9) Other conditions (specify): __________________________________________________",
         "es": "TIENE {panel.Q24c} (9) ¿otras condiciones de salud (especifique)? __________________________________________________"
        },
        "choices": [
         {
          "value": "Yes",
          "text": {
-          "default": "(9) Other conditions (specify) ?",
+          "default": "(9) Other conditions (specify):",
           "es": "(9) ¿otras condiciones de salud (especifique)?"
          }
         }
@@ -5159,7 +5159,7 @@
         {
          "value": "Other (specify)",
          "text": {
-          "default": "(6) Other (specify)",
+          "default": "(6) Other (specify):",
           "es": "(6) Otro (especifique):"
          }
         },
@@ -5185,7 +5185,7 @@
        "type": "text",
        "name": "Q31f_specify_6",
        "title": {
-        "default": "Other (specify)",
+        "default": "Other (specify):",
         "es": "Otro (especifique):"
        },
        "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
@@ -5303,8 +5303,8 @@
         {
          "value": "Other, specify",
          "text": {
-          "default": "Other, specify",
-          "es": "Otro, especifique"
+          "default": "Other (specify):",
+          "es": "Otro (especifique):"
          }
         },
         {
@@ -5329,8 +5329,8 @@
        "type": "text",
        "name": "Q33f_specify_7",
        "title": {
-        "default": "Other, specify",
-        "es": "Otro, especifique"
+        "default": "Other (specify):",
+        "es": "Otro (especifique):"
        },
        "visibleIf": "({panel.Q33f} contains 'Other, specify') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
        "isRequired": true
@@ -5732,14 +5732,14 @@
        "name": "Q34f_Oth",
        "titleLocation": "hidden",
        "title": {
-        "default": "AND DOES {panel.Q24f} HAVE (9) Other conditions (specify) ? __________________________________________________",
+        "default": "AND DOES {panel.Q24f} HAVE (9) Other conditions (specify): __________________________________________________",
         "es": "TIENE {panel.Q24f} (9) ¿otras condiciones de salud (especifque)? __________________________________________________"
        },
        "choices": [
         {
          "value": "Yes",
          "text": {
-          "default": "(9) Other conditions (specify) ?",
+          "default": "(9) Other conditions (specify):",
           "es": "(9) ¿otras condiciones de salud (especifque)?"
          }
         }
@@ -6338,14 +6338,14 @@
      "name": "Q36_Oth",
      "titleLocation": "hidden",
      "title": {
-      "default": "(9) Other conditions (specify)? __________________________________________________",
+      "default": "(9) Other conditions (specify): __________________________________________________",
       "es": "(9) ¿otras condiciones de salud (especifique)? __________________________________________________"
      },
      "choices": [
       {
        "value": "Yes",
        "text": {
-        "default": "(9) Other conditions (specify)?",
+        "default": "(9) Other conditions (specify):",
         "es": "(9) ¿otras condiciones de salud (especifique)?"
        }
       }
