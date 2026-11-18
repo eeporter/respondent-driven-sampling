@@ -983,6 +983,7 @@
       "default": "Have you spent any night in the past 30 days in any of the following cities?",
       "es": "¿Ha pasado alguna noche en los últimos 30 días en alguna de las siguientes ciudades?"
      },
+     "description": "Read each city name out loud and indicate the participant's response for each.",
      "columns": [
       {
        "value": "Yes",
