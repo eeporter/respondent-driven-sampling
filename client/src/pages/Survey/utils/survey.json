@@ -8055,8 +8055,8 @@
       {
        "value": "Other income or cash assistance benefit (please specify):",
        "text": {
-        "default": "Other income or cash assistance benefit (please specify):",
-        "es": "Otro tipo de ingreso o asistencia en efectivo (por favor, especifique):"
+        "default": "Other income or cash assistance benefit (specify):",
+        "es": "Otro tipo de ingreso o asistencia en efectivo (especifique):"
        }
       },
       {
@@ -8087,8 +8087,8 @@
       {
        "value": "Other food or nutrition assistance benefit (please specify):",
        "text": {
-        "default": "Other food or nutrition assistance benefit (please specify):",
-        "es": "Otro beneficio de asistencia alimentaria o nutricional (por favor, especifique):"
+        "default": "Other food or nutrition assistance benefit (specify):",
+        "es": "Otro beneficio de asistencia alimentaria o nutricional (especifique):"
        }
       },
       {
@@ -8109,8 +8109,8 @@
       {
        "value": "Other health coverage (please specify):",
        "text": {
-        "default": "Other health coverage (please specify):",
-        "es": "Otro seguro de salud (por favor, especifique):"
+        "default": "Other health coverage (specify):",
+        "es": "Otro seguro de salud (especifique):"
        }
       },
       {
@@ -8166,15 +8166,15 @@
       {
        "value": "Other housing or employment benefit (please specify):",
        "text": {
-        "default": "Other housing or employment benefit (please specify):",
-        "es": "Otros beneficios de vivienda o empleo (por favor, especifique):"
+        "default": "Other housing or employment benefit (specify):",
+        "es": "Otros beneficios de vivienda o empleo (especifique):"
        }
       },
       {
        "value": "Other (please specify):",
        "text": {
-        "default": "Other (please specify):",
-        "es": "Otro servicio, beneficio o asistencia (por favor, especifique):"
+        "default": "Other (specify):",
+        "es": "Otro servicio, beneficio o asistencia (especifique):"
        },
        "groupTitle": {
         "default": "Other responses",
@@ -8213,8 +8213,8 @@
      "type": "text",
      "name": "Q55_specify_26",
      "title": {
-      "default": "Other income or cash assistance benefit (please specify):",
-      "es": "Otro tipo de ingreso o asistencia en efectivo (por favor, especifique):"
+      "default": "Other income or cash assistance benefit (specify):",
+      "es": "Otro tipo de ingreso o asistencia en efectivo (especifique):"
      },
      "visibleIf": "{Q55} contains 'Other income or cash assistance benefit (please specify):'",
      "isRequired": true
@@ -8223,8 +8223,8 @@
      "type": "text",
      "name": "Q55_specify_27",
      "title": {
-      "default": "Other food or nutrition assistance benefit (please specify):",
-      "es": "Otro beneficio de asistencia alimentaria o nutricional (por favor, especifique):"
+      "default": "Other food or nutrition assistance benefit (specify):",
+      "es": "Otro beneficio de asistencia alimentaria o nutricional (especifique):"
      },
      "visibleIf": "{Q55} contains 'Other food or nutrition assistance benefit (please specify):'",
      "isRequired": true
@@ -8233,8 +8233,8 @@
      "type": "text",
      "name": "Q55_specify_7",
      "title": {
-      "default": "Other health coverage (please specify):",
-      "es": "Otro seguro de salud (por favor, especifique):"
+      "default": "Other health coverage (specify):",
+      "es": "Otro seguro de salud (especifique):"
      },
      "visibleIf": "{Q55} contains 'Other health coverage (please specify):'",
      "isRequired": true
@@ -8243,8 +8243,8 @@
      "type": "text",
      "name": "Q55_specify_28",
      "title": {
-      "default": "Other housing or employment benefit (please specify):",
-      "es": "Otros beneficios de vivienda o empleo (por favor, especifique):"
+      "default": "Other housing or employment benefit (specify):",
+      "es": "Otros beneficios de vivienda o empleo (especifique):"
      },
      "visibleIf": "{Q55} contains 'Other housing or employment benefit (please specify):'",
      "isRequired": true
@@ -8253,8 +8253,8 @@
      "type": "text",
      "name": "Q55_specify_21",
      "title": {
-      "default": "Other (please specify):",
-      "es": "Otro servicio, beneficio o asistencia (por favor, especifique):"
+      "default": "Other (specify):",
+      "es": "Otro servicio, beneficio o asistencia (especifique):"
      },
      "visibleIf": "{Q55} contains 'Other (please specify):'",
      "isRequired": true
