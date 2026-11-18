@@ -8507,8 +8507,7 @@
       "default": "Other (specify):",
       "es": "Otro (especifique):"
      },
-     "visibleIf": "{Q403} contains 'Other (specify):'",
-     "isRequired": true
+     "visibleIf": "{Q403} contains 'Other (specify):'"
     }
    ],
    "navigationTitle": "Special Questions",
