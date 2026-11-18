@@ -459,7 +459,7 @@
           "description": "Feel free to enter any variations of the respondent's answer. For example: 1.5 years, 18 months, 1 year and 6 months.",
           "items": [
             {
-              "name": "overall_lot_homeless_days",
+              "name": "overall_lot_homeless_years",
               "inputType": "number",
               "title": "Years"
             },
@@ -469,7 +469,7 @@
               "title": "Months"
             },
             {
-              "name": "overall_lot_homeless_years",
+              "name": "overall_lot_homeless_days",
               "inputType": "number",
               "title": "Days"
             }
