@@ -1839,7 +1839,7 @@
       {
        "value": "Other (please specify:)",
        "text": {
-        "default": "Other (please specify:)",
+        "default": "Other (specify):",
         "es": "Otra (especifique):"
        }
       },
@@ -1867,7 +1867,7 @@
      "type": "text",
      "name": "Q419_specify_5",
      "title": {
-      "default": "Other (please specify:)",
+      "default": "Other (specify):",
       "es": "Otra (especifique):"
      },
      "visibleIf": "{Q419} contains 'Other (please specify:)'",
@@ -4477,14 +4477,14 @@
        "titleLocation": "hidden",
        "title": {
         "default": "AND DOES {panel.Q24c} HAVE (9) Other conditions (specify): __________________________________________________",
-        "es": "TIENE {panel.Q24c} (9) ¿otras condiciones de salud (especifique)? __________________________________________________"
+        "es": "TIENE {panel.Q24c} (9) Otras condiciones de salud (especifique): __________________________________________________"
        },
        "choices": [
         {
          "value": "Yes",
          "text": {
           "default": "(9) Other conditions (specify):",
-          "es": "(9) ¿otras condiciones de salud (especifique)?"
+          "es": "(9) Otras condiciones de salud (especifique):"
          }
         }
        ],
@@ -5733,14 +5733,14 @@
        "titleLocation": "hidden",
        "title": {
         "default": "AND DOES {panel.Q24f} HAVE (9) Other conditions (specify): __________________________________________________",
-        "es": "TIENE {panel.Q24f} (9) ¿otras condiciones de salud (especifque)? __________________________________________________"
+        "es": "TIENE {panel.Q24f} (9) Otras condiciones de salud (especifique): __________________________________________________"
        },
        "choices": [
         {
          "value": "Yes",
          "text": {
           "default": "(9) Other conditions (specify):",
-          "es": "(9) ¿otras condiciones de salud (especifque)?"
+          "es": "(9) Otras condiciones de salud (especifique):"
          }
         }
        ],
@@ -6339,14 +6339,14 @@
      "titleLocation": "hidden",
      "title": {
       "default": "(9) Other conditions (specify): __________________________________________________",
-      "es": "(9) ¿otras condiciones de salud (especifique)? __________________________________________________"
+      "es": "(9) Otras condiciones de salud (especifique): __________________________________________________"
      },
      "choices": [
       {
        "value": "Yes",
        "text": {
         "default": "(9) Other conditions (specify):",
-        "es": "(9) ¿otras condiciones de salud (especifique)?"
+        "es": "(9) Otras condiciones de salud (especifique):"
        }
       }
      ]
@@ -7935,8 +7935,8 @@
       {
        "value": "Other, specify",
        "text": {
-        "default": "(8) Other, specify",
-        "es": "(8) Otro, especificar"
+        "default": "(8) Other (specify):",
+        "es": "(8) Otro (especifique):"
        }
       },
       {
@@ -7963,8 +7963,8 @@
      "type": "text",
      "name": "Q54_specify_8",
      "title": {
-      "default": "Other, specify",
-      "es": "Otro, especificar"
+      "default": "Other (specify):",
+      "es": "Otro (especifique):"
      },
      "visibleIf": "{Q54} contains 'Other, specify'",
      "isRequired": true
