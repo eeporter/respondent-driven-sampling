@@ -2963,8 +2963,7 @@
       "default": "Different Identity (specify):",
       "es": "Identidad diferente (especifique):"
      },
-     "visibleIf": "{Q6} contains 'Different Identity'",
-     "isRequired": true
+     "visibleIf": "{Q6} contains 'Different Identity'"
     },
     {
      "type": "radiogroup",
@@ -4084,8 +4083,7 @@
         "default": "Different Identity (specify):",
         "es": "Identidad diferente (especifique):"
        },
-       "visibleIf": "({panel.Q29c} contains 'Different identity') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q29c} contains 'Different identity') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       },
       {
        "type": "html",
@@ -5124,8 +5122,7 @@
         "default": "Different Identity (specify):",
         "es": "Identidad diferente (especifique):"
        },
-       "visibleIf": "({panel.Q29f} contains 'Different identity') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q29f} contains 'Different identity') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
       {
        "type": "radiogroup",
