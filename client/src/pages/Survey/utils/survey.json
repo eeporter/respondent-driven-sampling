@@ -8637,7 +8637,7 @@
   },
   {
    "name": "giftCards",
-   "title": "Gift Card Contacts",
+   "title": "Referral Gift Card Contact",
    "elements": [
     {
      "type": "html",
@@ -8704,7 +8704,7 @@
      ]
     }
    ],
-   "navigationTitle": "Gift Card Contacts",
+   "navigationTitle": "Referral Gift Card Contact",
    "visibleIf": "{yc_screened_in} = true and {referral_eligible} = true"
   },
   {
