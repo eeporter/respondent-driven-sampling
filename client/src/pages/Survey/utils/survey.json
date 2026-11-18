@@ -8709,7 +8709,7 @@
   },
   {
    "name": "giftCards2",
-   "title": "Gift Card Details",
+   "title": "Visa Card Details",
    "elements": [
     {
      "type": "html",
@@ -8777,7 +8777,7 @@
      ]
     }
    ],
-   "navigationTitle": "Gift Card Details",
+   "navigationTitle": "Visa Card Details",
    "visibleIf": "{yc_screened_in} = true"
   },
   {
