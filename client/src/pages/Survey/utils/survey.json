@@ -7680,8 +7680,8 @@
       {
        "value": "Yes, currently enrolled in other (specify):",
        "text": {
-        "default": "Yes, currently enrolled in other (specify):",
-        "es": "Sí, actualmente inscrito/a en otro (especifique):"
+        "default": "Yes, currently enrolled in another educational program (specify):",
+        "es": "Sí, actualmente inscrito/a en otro programa educativo (especifique):"
        }
       },
       {
@@ -7702,6 +7702,15 @@
       }
      ],
      "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "Q405_specify_7",
+     "title": {
+      "default": "Another educational program (specify):",
+      "es": "Otro programa educativo (especifique):"
+     },
+     "visibleIf": "{Q405} contains 'Yes, currently enrolled in other (specify):'"
     }
    ],
    "navigationTitle": "Education, Employment, & Benefits",
