@@ -8291,7 +8291,18 @@
         "default": "Hours",
         "es": "Horas"
        },
-       "inputType": "number"
+       "inputType": "number",
+       "min": 0,
+       "validators": [
+        {
+         "type": "numeric",
+         "minValue": 0,
+         "text": {
+          "default": "Enter hours as 0 or more (decimals allowed, for example, 1.5).",
+          "es": "Ingrese las horas como 0 o más (se permiten decimales, por ejemplo, 1.5)."
+         }
+        }
+       ]
       },
       {
        "name": "minutes",
