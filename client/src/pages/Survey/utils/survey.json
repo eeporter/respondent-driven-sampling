@@ -8713,11 +8713,6 @@
    "elements": [
     {
      "type": "html",
-     "name": "gift_card_intructions",
-     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\">\n\t\t\t\t<strong>Instructions:</strong> The HUB lead will provide the gift card to the respondent. Please record the information below before submitting this survey.\n\t\t\t</div>"
-    },
-    {
-     "type": "html",
      "name": "gift_card_reminder_individual",
      "visibleIf": "{has_minor_child} <> true",
      "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Reminder:</strong> This respondent is eligible for a $25 Visa Gift Card.</div>"
