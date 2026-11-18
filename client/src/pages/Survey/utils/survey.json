@@ -3141,7 +3141,7 @@
       {
        "value": "Other Asian, specify:",
        "text": {
-        "default": "Other Asian, specify:",
+        "default": "Other Asian (specify):",
         "es": "Otro origen asiático(a) (especifique):"
        }
       },
@@ -3215,7 +3215,7 @@
       {
        "value": "Other Pacific Islander, specify:",
        "text": {
-        "default": "Other Pacific Islander, specify:",
+        "default": "Other Pacific Islander (specify):",
         "es": "Oriundo de otras islas del Pacífico (especifique):"
        }
       },
@@ -3229,7 +3229,7 @@
       {
        "value": "Other race, specify",
        "text": {
-        "default": "Other race, specify",
+        "default": "Other race (specify):",
         "es": "De otra raza (especifique):"
        }
       },
@@ -3256,31 +3256,28 @@
      "type": "text",
      "name": "Q10_specify_13",
      "title": {
-      "default": "Other Asian, specify:",
+      "default": "Other Asian (specify):",
       "es": "Otro origen asiático(a) (especifique):"
      },
-     "visibleIf": "{Q10} contains 'Other Asian, specify:'",
-     "isRequired": true
+     "visibleIf": "{Q10} contains 'Other Asian, specify:'"
     },
     {
      "type": "text",
      "name": "Q10_specify_26",
      "title": {
-      "default": "Other Pacific Islander, specify:",
+      "default": "Other Pacific Islander (specify):",
       "es": "Oriundo de otras islas del Pacífico (especifique):"
      },
-     "visibleIf": "{Q10} contains 'Other Pacific Islander, specify:'",
-     "isRequired": true
+     "visibleIf": "{Q10} contains 'Other Pacific Islander, specify:'"
     },
     {
      "type": "text",
      "name": "Q10_specify_29",
      "title": {
-      "default": "Other race, specify",
+      "default": "Other race (specify):",
       "es": "De otra raza (especifique):"
      },
-     "visibleIf": "{Q10} contains 'Other race, specify'",
-     "isRequired": true
+     "visibleIf": "{Q10} contains 'Other race, specify'"
     },
     {
      "type": "html",
@@ -3925,8 +3922,7 @@
         "default": "Other Asian (specify):",
         "es": "Otro origen asiático (especifique):"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other Asian (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28c} contains 'Other Asian (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       },
       {
        "type": "text",
@@ -3935,8 +3931,7 @@
         "default": "Other Pacific Islander (specify):",
         "es": "Oriundo de otras islas del Pacífico (especifique):"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other Pacific Islander (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28c} contains 'Other Pacific Islander (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       },
       {
        "type": "text",
@@ -3945,8 +3940,7 @@
         "default": "Other race (specify):",
         "es": "De otra raza (especifique):"
        },
-       "visibleIf": "({panel.Q28c} contains 'Other race (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28c} contains 'Other race (specify):') and {panel.Q26c_unit} <> 'Respondent does not have a child under 18 living with them'"
       },
       {
        "type": "html",
@@ -4964,8 +4958,7 @@
         "default": "Other Asian (specify):",
         "es": "Otro origen asiático (especifique):"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other Asian (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28f} contains 'Other Asian (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
       {
        "type": "text",
@@ -4974,8 +4967,7 @@
         "default": "Other Pacific Islander (specify):",
         "es": "Oriundo de otras islas del Pacífico (especifique):"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other Pacific Islander (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28f} contains 'Other Pacific Islander (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
       {
        "type": "text",
@@ -4984,8 +4976,7 @@
         "default": "Other race (specify):",
         "es": "De otra raza (especifique):"
        },
-       "visibleIf": "({panel.Q28f} contains 'Other race (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q28f} contains 'Other race (specify):') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
       {
        "type": "html",
