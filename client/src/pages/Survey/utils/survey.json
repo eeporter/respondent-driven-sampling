@@ -951,8 +951,7 @@
      "isRequired": true
     }
    ],
-   "navigationTitle": "Survey Validation",
-   "visibleIf": "{yc_screened_in} = true"
+   "navigationTitle": "Survey Validation"
   },
   {
    "name": "yc_screening_cities",
