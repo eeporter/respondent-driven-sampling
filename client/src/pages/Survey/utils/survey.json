@@ -8630,8 +8630,8 @@
      "name": "outro_no_referral_html",
      "visibleIf": "{referral_eligible} <> true",
      "html": {
-      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>That completes the questions for today's Youth Count survey.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Thank you for taking time to complete the survey and for sharing this information about you and your experiences. We have just a few more questions for you so that we can issue your gift cards.</strong></div>",
-      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Con esto terminamos las preguntas de la encuesta Youth Count de hoy.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Gracias por tomarse el tiempo de completar la encuesta y por compartir esta información sobre usted y sus experiencias. Tenemos solo unas preguntas más para poder darle sus tarjetas de regalo.</strong></div>"
+      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>That completes the questions for today's Youth Count survey.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Thank you for taking the time to complete the survey and for sharing this information about you and your experiences. Please give me a moment to provide you with your Visa card.</strong></div>",
+      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Con esto terminamos las preguntas de la encuesta Youth Count de hoy.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Gracias por tomarse el tiempo de completar la encuesta y por compartir esta información sobre usted y sus experiencias. Por favor, deme un momento para entregarle su tarjeta Visa.</strong></div>"
      }
     }
    ],
