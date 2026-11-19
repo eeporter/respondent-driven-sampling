@@ -8747,6 +8747,11 @@
      "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Reminder:</strong> This respondent is eligible for a $50 family survey incentive. Please ensure they receive TWO $25 Visa Cards.</div>"
     },
     {
+     "type": "html",
+     "name": "gift_card_expiry_instructions",
+     "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Instructions: Please inform the respondent that the Visa card(s) will expire after December 30, 2027 and to remind them to use their Visa card before that date.</strong></div>"
+    },
+    {
      "type": "radiogroup",
      "name": "gift_card_check",
      "title": "Did the respondent receive their Visa Gift Card(s)?",
