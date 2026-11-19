@@ -164,6 +164,50 @@ export const recordSkippedAnswers = (
 	}
 };
 
+/**
+ * Colour-codes the long "where did you stay" dropdowns (Q2 last 30 days, Q3
+ * last night) so surveyors can find an answer quickly: housed in black,
+ * sheltered in blue, unsheltered in red. Declined / Don't know keep the normal
+ * colour.
+ */
+const LOCATION_QUESTIONS = ['Q2', 'Q3'];
+const LOCATION_COLORS: Record<string, string> = {
+	housed: '#000000',
+	sheltered: '#1d4ed8',
+	unsheltered: '#b91c1c'
+};
+const locationGroup = (index: number, value: unknown) => {
+	if (value === 'Declined' || value === "Don't know") return null;
+	if (index <= 2) return 'housed'; // own home, relative/friend, stranger
+	if (index <= 11) return 'sheltered'; // Emergency shelter ... Assisted living
+	return 'unsheltered'; // Street, sidewalk, or alley ... RV or camper
+};
+const escapeHtml = (text: string) =>
+	text.replace(
+		/[&<>"']/g,
+		ch =>
+			({
+				'&': '&amp;',
+				'<': '&lt;',
+				'>': '&gt;',
+				'"': '&quot;',
+				"'": '&#39;'
+			})[ch] as string
+	);
+
+export const attachLocationChoiceColors = (survey: Model) => {
+	survey.onTextMarkdown.add((_sender, options) => {
+		const question = options.element as QuestionSelectBase | undefined;
+		if (!question || !LOCATION_QUESTIONS.includes(question.name)) return;
+		const choices = question.choices ?? [];
+		const index = choices.findIndex(c => c.text === options.text);
+		if (index === -1) return;
+		const group = locationGroup(index, choices[index].value);
+		if (!group) return;
+		options.html = `<span style="color: ${LOCATION_COLORS[group]};">${escapeHtml(options.text)}</span>`;
+	});
+};
+
 // Helper function to initialize survey with or without existing data
 export const initializeSurvey = (
 	surveyByRefCode: SurveyDocument | null,
@@ -230,6 +274,7 @@ export const initializeSurvey = (
 	survey.applyTheme(themeJson);
 
 	attachLanguageHandler(survey);
+	attachLocationChoiceColors(survey);
 
 	// Populate with existing data from objectId if found
 	if (surveyByObjectId) {
