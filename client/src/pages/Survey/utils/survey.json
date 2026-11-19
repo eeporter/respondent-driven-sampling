@@ -8613,23 +8613,23 @@
     }
    ],
    "navigationTitle": "Outro",
-   "visibleIf": "{yc_screened_in} = true"
+   "visibleIf": "{yc_screened_in} = true and {yc_not_qualified} <> true"
   },
   {
    "name": "outro_ineligible",
    "title": {
-    "default": "Thank you",
-    "es": "Gracias"
+    "default": "Outro - Does not qualify",
+    "es": "Cierre - No califica"
    },
-   "navigationTitle": "Thank you",
-   "visibleIf": "{yc_screened_in} <> true",
+   "navigationTitle": "Outro - Does not qualify",
+   "visibleIf": "{yc_not_qualified} = true",
    "elements": [
     {
      "type": "html",
      "name": "outro_ineligible_html",
      "html": {
-      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>That's all the questions for today. Thank you for taking the time to talk with us.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Based on your answers, you aren't eligible for the rest of the Youth Count survey, so we won't be giving out a gift card or referral coupons today.</strong></div>",
-      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Esas son todas las preguntas por hoy. Gracias por tomarse el tiempo de hablar con nosotros.</strong></div><div style=\"margin: 6px 0 16px 0;\"><strong>Según sus respuestas, usted no es elegible para el resto de la encuesta Youth Count, así que hoy no le daremos una tarjeta de regalo ni cupones de referencia.</strong></div>"
+      "default": "<div style=\"margin: 6px 0 16px 0;\"><strong>I'm sorry, you do not qualify for the survey. Thank you for your time.</strong></div>",
+      "es": "<div style=\"margin: 6px 0 16px 0;\"><strong>Lo siento, usted no califica para la encuesta. Gracias por su tiempo.</strong></div>"
      }
     }
    ]
@@ -8705,7 +8705,7 @@
     }
    ],
    "navigationTitle": "Referral Gift Card Contact",
-   "visibleIf": "{yc_screened_in} = true and {referral_eligible} = true"
+   "visibleIf": "{yc_screened_in} = true and {referral_eligible} = true and {yc_not_qualified} <> true"
   },
   {
    "name": "giftCards2",
@@ -8773,7 +8773,7 @@
     }
    ],
    "navigationTitle": "Visa Card Details",
-   "visibleIf": "{yc_screened_in} = true"
+   "visibleIf": "{yc_screened_in} = true and {yc_not_qualified} <> true"
   },
   {
    "name": "end_page",
@@ -8823,6 +8823,10 @@
   {
    "name": "yc_screened_in",
    "expression": "({Q2} notempty and {Q2} <> 'Declined' and {Q2} <> 'Don\\'t know') or ({Q3} notempty and {Q3} <> 'Declined' and {Q3} <> 'Don\\'t know')"
+  },
+  {
+   "name": "yc_not_qualified",
+   "expression": "{yc_screened_in} <> true or ({ended_early} = true and {ended_early_page} anyof ['age_check', 'yc_eligibility', 'survey-validation', 'yc_screening_cities'])"
   }
  ],
  "partialSendEnabled": true,

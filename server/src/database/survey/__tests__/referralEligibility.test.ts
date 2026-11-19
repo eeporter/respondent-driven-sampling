@@ -150,6 +150,35 @@ describe('isReferralEligible', () => {
 		).toBe(true);
 	});
 
+	test('ending early on a pre-survey page makes it ineligible', () => {
+		for (const page of [
+			'age_check',
+			'yc_eligibility',
+			'survey-validation',
+			'yc_screening_cities'
+		]) {
+			expect(
+				isReferralEligible({
+					...base,
+					Q2: 'Tent',
+					Q3: 'Tent',
+					ended_early: true,
+					ended_early_page: page
+				})
+			).toBe(false);
+		}
+		// Ending early after the pre-survey questions still follows the usual rule.
+		expect(
+			isReferralEligible({
+				...base,
+				Q2: 'Tent',
+				Q3: 'Tent',
+				ended_early: true,
+				ended_early_page: 'yc_network_size'
+			})
+		).toBe(true);
+	});
+
 	test('a record with no answers yet is not blocked', () => {
 		expect(isReferralEligible(undefined)).toBe(true);
 		expect(isReferralEligible({})).toBe(true);

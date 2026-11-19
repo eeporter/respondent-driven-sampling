@@ -68,6 +68,15 @@ const inList = (v: unknown, list: string[]) =>
 
 const noAnswer = (v: unknown) => v === 'Declined' || v === "Don't know";
 
+// Pre-survey pages (date of birth, where they stayed, initials, cities). Ending
+// the survey early on one of these means the respondent does not qualify.
+export const PRE_SURVEY_PAGES = [
+	'age_check',
+	'yc_eligibility',
+	'survey-validation',
+	'yc_screening_cities'
+];
+
 /** Whole years between a YYYY-MM-DD date of birth and the reference date. */
 export function ageOn(dateOfBirth: unknown, onDate = AGE_REFERENCE_DATE) {
 	if (typeof dateOfBirth !== 'string') return null;
@@ -94,6 +103,13 @@ export function isReferralEligible(
 	if (responses.deduplication === 'Yes') return false;
 	const age = ageOn(responses.date_of_birth);
 	if (age !== null && age >= 25) return false;
+
+	// Ended early during the pre-survey questions: does not qualify.
+	if (
+		responses.ended_early === true &&
+		PRE_SURVEY_PAGES.includes(responses.ended_early_page as string)
+	)
+		return false;
 
 	const { Q2, Q3 } = responses;
 	// Declined or didn't know where they slept, both in the last 30 days and last

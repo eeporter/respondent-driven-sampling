@@ -18,8 +18,9 @@ export const ENDED_EARLY_PAGE_KEY = 'ended_early_page';
 // The button is offered on every page after the consent page, until the
 // closing pages are reached.
 const CONSENT_PAGE = 'consent';
-// Ending early goes to the closing page: the usual outro, or the ineligible
-// outro (no gift card) when no valid answer about where they stayed was given yet.
+// Ending early goes to the closing page: the usual outro, or the "does not
+// qualify" outro (no Visa card, no coupons) when it happens during the
+// pre-survey questions or no valid answer about where they stayed was given.
 export const END_EARLY_TARGET_PAGES = ['outro', 'outro_ineligible'];
 
 const targetPage = (survey: Model) =>
@@ -53,11 +54,18 @@ const EndSurveyEarly = ({ survey }: { survey: Model }) => {
 	}, [survey]);
 
 	const endNow = () => {
-		const target = targetPage(survey);
 		setOpen(false);
-		if (!target) return;
+		// Record the early end first: where it happens decides which closing page
+		// shows (ending during the pre-survey questions goes to "does not qualify").
+		const from = survey.currentPage?.name;
 		survey.setValue(ENDED_EARLY_KEY, true);
-		survey.setValue(ENDED_EARLY_PAGE_KEY, survey.currentPage?.name);
+		survey.setValue(ENDED_EARLY_PAGE_KEY, from);
+		const target = targetPage(survey);
+		if (!target) {
+			survey.clearValue(ENDED_EARLY_KEY);
+			survey.clearValue(ENDED_EARLY_PAGE_KEY);
+			return;
+		}
 		survey.currentPage = target;
 		window.scrollTo({ top: 0 });
 	};
