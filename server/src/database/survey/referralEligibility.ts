@@ -100,6 +100,7 @@ export function isReferralEligible(
 
 	// Hard stops: no consent, a repeat respondent, or 25 and over.
 	if (responses.consent_given === 'No') return false;
+	if (responses.consent_participate === 'No') return false;
 	if (responses.deduplication === 'Yes') return false;
 	const age = ageOn(responses.date_of_birth);
 	if (age !== null && age >= 25) return false;

@@ -179,6 +179,25 @@ describe('isReferralEligible', () => {
 		).toBe(true);
 	});
 
+	test('not consenting to participate makes it ineligible', () => {
+		expect(
+			isReferralEligible({
+				...base,
+				Q2: 'Tent',
+				Q3: 'Tent',
+				consent_participate: 'No'
+			})
+		).toBe(false);
+		expect(
+			isReferralEligible({
+				...base,
+				Q2: 'Tent',
+				Q3: 'Tent',
+				consent_participate: 'Yes'
+			})
+		).toBe(true);
+	});
+
 	test('a record with no answers yet is not blocked', () => {
 		expect(isReferralEligible(undefined)).toBe(true);
 		expect(isReferralEligible({})).toBe(true);

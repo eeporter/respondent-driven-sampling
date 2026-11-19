@@ -103,10 +103,33 @@
      ]
     },
     {
+     "type": "radiogroup",
+     "name": "consent_participate",
+     "isRequired": true,
+     "title": {
+      "default": "Do you consent to participate in this study?",
+      "es": "¿Acepta participar en este estudio?"
+     },
+     "choices": [
+      {
+       "value": "Yes",
+       "text": {
+        "default": "Yes",
+        "es": "Sí"
+       }
+      },
+      {
+       "value": "No",
+       "text": "No"
+      }
+     ],
+     "visibleIf": "{consent_given} = 'Yes'"
+    },
+    {
      "type": "html",
      "name": "consent_refusal_note",
      "html": "<div style=\"background-color: #fff3cd; padding: 10px; margin: 10px 0;\"><strong>Interviewer:</strong> PLEASE RE-READ THE INTRODUCTION AND CONFIDENTIALITY STATEMENT ONE MORE TIME, AND VERIFY REFUSAL. THANK THEM FOR THEIR TIME BEFORE CLICKING NEXT.</div>",
-     "visibleIf": "{consent_given} = 'No'"
+     "visibleIf": "{consent_given} = 'No' or {consent_participate} = 'No'"
     }
    ],
    "navigationTitle": "Consent"
@@ -8797,6 +8820,10 @@
   {
    "type": "complete",
    "expression": "{consent_given} = 'No'"
+  },
+  {
+   "type": "complete",
+   "expression": "{consent_participate} = 'No'"
   }
  ],
  "calculatedValues": [
