@@ -60,6 +60,8 @@ const OTHER_HOUSING = [
 
 const OWN_HOME = 'Your own apartment or home';
 
+const NEVER_HOMELESS = 'No, I have never experienced homelessness';
+
 const normalise = (v: unknown) =>
 	typeof v === 'string' ? v.trim().toLowerCase() : '';
 
@@ -135,19 +137,15 @@ export function isReferralEligible(
 	const networkSize = Number(responses.non_family_network_size);
 	const knowsHomelessYouth = Number.isFinite(networkSize) && networkSize >= 1;
 
-	// 3) Doubled up, if they know one or more homeless youth.
-	if (either(DOUBLED_UP)) return knowsHomelessYouth;
-
-	// 4) Own home, if they have a history of homelessness and know one or more
-	// homeless youth.
-	if (either([OWN_HOME])) {
+	// 3) Doubled up and 4) own home: never eligible if they have never
+	// experienced homelessness (Q7, saved as Q415); otherwise eligible if they know
+	// one or more homeless youth (the age check above still applies).
+	if (either(DOUBLED_UP) || either([OWN_HOME])) {
 		const history = Array.isArray(responses.Q415)
 			? responses.Q415
 			: [responses.Q415];
-		const hasHistory = history.some(
-			v => typeof v === 'string' && v.startsWith('Yes')
-		);
-		return hasHistory && knowsHomelessYouth;
+		if (history.includes(NEVER_HOMELESS)) return false;
+		return knowsHomelessYouth;
 	}
 
 	// Anything else (e.g. one answer Declined and the other blank) gets no coupons.

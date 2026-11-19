@@ -50,9 +50,25 @@ describe('isReferralEligible', () => {
 		expect(
 			isReferralEligible({ ...doubledUp, non_family_network_size: 0 })
 		).toBe(false);
+		expect(
+			isReferralEligible({
+				...doubledUp,
+				Q415: ['No, I have never experienced homelessness'],
+				non_family_network_size: 3
+			})
+		).toBe(false);
+		expect(
+			isReferralEligible({
+				...doubledUp,
+				Q415: [
+					'Yes, unsheltered (e.g., on the street, in a car, or other place not meant for human habitation)'
+				],
+				non_family_network_size: 1
+			})
+		).toBe(true);
 	});
 
-	test('4) youth in their own home need a history and a homeless contact', () => {
+	test('4) youth in their own home: never homeless gets none, otherwise need a homeless contact', () => {
 		const ownHome = {
 			...base,
 			Q2: 'Your own apartment or home',
@@ -87,6 +103,13 @@ describe('isReferralEligible', () => {
 				...ownHome,
 				Q415: ["Declined / Don't know"],
 				non_family_network_size: 3
+			})
+		).toBe(true);
+		expect(
+			isReferralEligible({
+				...ownHome,
+				Q415: ["Declined / Don't know"],
+				non_family_network_size: 0
 			})
 		).toBe(false);
 	});
