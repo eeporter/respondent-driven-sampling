@@ -1255,8 +1255,7 @@
         "default": "Other (specify):",
         "es": "Otro (especifique):"
        },
-       "visibleIf": "{panel.relationship} contains 'Other (specify):'",
-       "isRequired": true
+       "visibleIf": "{panel.relationship} contains 'Other (specify):'"
       },
       {
        "type": "radiogroup",
