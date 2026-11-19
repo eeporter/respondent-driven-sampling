@@ -188,3 +188,16 @@ body {
 		color: #000;
 	}
 }
+
+/* Coupon script the interviewer reads aloud */
+.coupon-read-aloud {
+	background-color: #fff3cd;
+	padding: 10px 14px;
+	margin: 10px 0 16px 0;
+	text-align: left;
+	line-height: 1.45;
+}
+
+.coupon-read-aloud p {
+	margin: 8px 0;
+}
