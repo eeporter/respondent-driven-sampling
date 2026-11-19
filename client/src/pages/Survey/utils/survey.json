@@ -1434,7 +1434,7 @@
         {
          "value": "Other location not listed (please specify):",
          "text": {
-          "default": "Other location not listed (please specify):",
+          "default": "Other location not listed (specify):",
           "es": "Otro lugar no listado (especifique):"
          }
         },
@@ -1473,11 +1473,10 @@
        "type": "text",
        "name": "network_sleeping_situation_specify_21",
        "title": {
-        "default": "Other location not listed (please specify):",
+        "default": "Other location not listed (specify):",
         "es": "Otro lugar no listado (especifique):"
        },
-       "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'",
-       "isRequired": true
+       "visibleIf": "{panel.network_sleeping_situation} contains 'Other location not listed (please specify):'"
       }
      ],
      "templateTabTitle": {
