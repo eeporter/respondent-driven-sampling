@@ -332,7 +332,15 @@ const Survey = () => {
 					// no coupons are handed out.
 					if (!isReferralEligible(surveyData.responses)) {
 						setChildSurveyCodes([]);
-						navigate('/ineligible');
+						// Respondents who don't qualify for the survey at all (declined
+						// consent, or the "does not qualify" outro) get a wording of their
+						// own; others only miss out on coupons.
+						const responses = surveyData.responses ?? {};
+						const doesNotQualify =
+							responses.consent_given === 'No' ||
+							responses.consent_participate === 'No' ||
+							sender.getVariable('yc_not_qualified') === true;
+						navigate('/ineligible', { state: { doesNotQualify } });
 						return;
 					}
 					setChildSurveyCodes(result.childSurveyCodes ?? []);
