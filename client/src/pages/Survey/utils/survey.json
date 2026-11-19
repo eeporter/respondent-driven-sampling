@@ -3500,7 +3500,7 @@
      "inputType": "number",
      "min": 0,
      "title": {
-      "default": "Number of people under 18 living with participant",
+      "default": "Number of children under 18 living with participant",
       "es": "Número de niños/as menores de 18 años"
      },
      "isRequired": true,
