@@ -8837,11 +8837,11 @@
   },
   {
    "name": "valid_homelessness_30d",
-   "expression": "({Q2} = 'Emergency shelter' or {Q2} = 'Safe haven' or {Q2} = 'Transitional housing' or {Q2} = 'Youth shelter' or {Q2} = 'Street, sidewalk, or alley' or {Q2} = 'Bus or train stop/station' or {Q2} = 'On a bus' or {Q2} = 'On a train' or {Q2} = 'Parking lot (Surface)' or {Q2} = 'Parking structure' or {Q2} = 'Airport' or {Q2} = 'Campground or woods' or {Q2} = 'Park, beach, or riverbed' or {Q2} = 'Under bridge or overpass' or {Q2} = 'Abandoned building' or {Q2} = 'Unconverted garage, attic, or basement' or {Q2} = 'Workplace' or {Q2} = 'Other outdoor location' or {Q2} = 'Other place not meant for human habitation' or {Q2} = 'Makeshift shelter' or {Q2} = 'Tent' or {Q2} = 'Car or truck' or {Q2} = 'Van or SUV' or {Q2} = 'RV or camper')"
+   "expression": "{Q2} notempty and {Q2} <> 'Your own apartment or home' and {Q2} <> 'Apartment or home of a relative or friend' and {Q2} <> 'Apartment or home of a stranger' and {Q2} <> 'Declined' and {Q2} <> 'Don\\'t know'"
   },
   {
    "name": "valid_homelessness_last_night",
-   "expression": "({Q3} = 'Emergency shelter' or {Q3} = 'Safe haven' or {Q3} = 'Transitional housing' or {Q3} = 'Youth shelter' or {Q3} = 'Street, sidewalk, or alley' or {Q3} = 'Bus or train stop/station' or {Q3} = 'On a bus' or {Q3} = 'On a train' or {Q3} = 'Parking lot (surface)' or {Q3} = 'Parking structure' or {Q3} = 'Airport' or {Q3} = 'Campground or woods' or {Q3} = 'Park, beach, or riverbed' or {Q3} = 'Under bridge or overpass' or {Q3} = 'Abandoned building' or {Q3} = 'Unconverted garage, attic, or basement' or {Q3} = 'Workplace' or {Q3} = 'Other outdoor location' or {Q3} = 'Other place not meant for human habitation' or {Q3} = 'Makeshift shelter' or {Q3} = 'Tent' or {Q3} = 'Car or truck' or {Q3} = 'Van or SUV' or {Q3} = 'RV or camper')"
+   "expression": "{Q3} notempty and {Q3} <> 'Your own apartment or home' and {Q3} <> 'Apartment or home of a relative or friend' and {Q3} <> 'Apartment or home of a stranger' and {Q3} <> 'Declined' and {Q3} <> 'Don\\'t know'"
   },
   {
    "name": "yc_homeless",
