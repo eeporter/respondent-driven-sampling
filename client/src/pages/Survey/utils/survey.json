@@ -7512,8 +7512,8 @@
       {
        "value": "Other (Specify):",
        "text": {
-        "default": "Other (Specify):",
-        "es": "Otra opción (especifique)"
+        "default": "Other (specify):",
+        "es": "Otra opción (especifique):"
        }
       },
       {
@@ -7547,8 +7547,8 @@
      "type": "text",
      "name": "Q50_specify_24",
      "title": {
-      "default": "Other (Specify):",
-      "es": "Otra opción (especifique)"
+      "default": "Other (specify):",
+      "es": "Otra opción (especifique):"
      },
      "visibleIf": "{Q50} contains 'Other (Specify):'"
     }
