@@ -24,7 +24,9 @@ export default function SurveyEntryDashboard() {
 	const [viewAll, setViewAll] = useState(false);
 	const [filterMode, setFilterMode] = useState('byDate');
 	const [showFilterPopup, setShowFilterPopup] = useState(false);
-	const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+	const [selectedLocation, setSelectedLocation] = useState<string | null>(
+		null
+	);
 	const [sortConfig, setSortConfig] = useState<{
 		key: string | null;
 		direction: 'asc' | 'desc';
@@ -55,7 +57,10 @@ export default function SurveyEntryDashboard() {
 		viewAll,
 		selectedDate
 	);
-	const filteredByLocation = filterSurveysByLocation(filteredByDate, selectedLocation);
+	const filteredByLocation = filterSurveysByLocation(
+		filteredByDate,
+		selectedLocation
+	);
 	const sortedSurveys = sortSurveys(filteredByLocation, sortConfig);
 	const searchedSurveys = searchSurveys(sortedSurveys, searchTerm);
 	const currentSurveys = paginateSurveys(
@@ -81,14 +86,8 @@ export default function SurveyEntryDashboard() {
 			width: 140
 		},
 		{
-			key: 'responses.first_two_letters_fname',
-			label: 'First 2 of First',
-			sortable: true,
-			width: 110
-		},
-		{
-			key: 'responses.first_two_letters_lname',
-			label: 'First 2 of Last',
+			key: 'responses.respondent_initials',
+			label: 'Initials',
 			sortable: true,
 			width: 110
 		},
@@ -168,9 +167,7 @@ export default function SurveyEntryDashboard() {
 				locations={
 					Array.from(
 						new Set(
-							surveys
-								?.map(s => s.locationName)
-								.filter(Boolean)
+							surveys?.map(s => s.locationName).filter(Boolean)
 						)
 					) ?? []
 				}

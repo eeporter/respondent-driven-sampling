@@ -36,8 +36,8 @@ export default function SurveyDetails() {
 	// Find location name from locations
 	const locationName =
 		survey && locations
-			? locations.find(loc => loc._id === survey.locationObjectId)?.hubName ||
-			  'Unknown'
+			? locations.find(loc => loc._id === survey.locationObjectId)
+					?.hubName || 'Unknown'
 			: 'Unknown';
 	const qrRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const ability = useAbility();
@@ -50,7 +50,10 @@ export default function SurveyDetails() {
 		? ability.can(ACTIONS.CASL.UPDATE, subject(SUBJECTS.SURVEY, survey))
 		: false;
 	// Fields to display in survey details (top box)
+	// Older surveys saved first/last two letters instead of a single initials
+	// answer, so those fields are still listed (only filled ones are shown).
 	const surveyDetailsFields = [
+		'respondent_initials',
 		'first_two_letters_fname',
 		'first_two_letters_lname',
 		'date_of_birth'
@@ -66,6 +69,7 @@ export default function SurveyDetails() {
 	];
 
 	const labelMap: Record<string, string> = {
+		respondent_initials: 'Initials',
 		first_two_letters_fname: 'First name initials',
 		first_two_letters_lname: 'Last name initials',
 		date_of_birth: 'Date of Birth',
@@ -155,7 +159,9 @@ export default function SurveyDetails() {
 									className="edit-button"
 									disabled={!canEdit}
 									onClick={() =>
-										navigate(`/survey/${id}/edit?mode=details`)
+										navigate(
+											`/survey/${id}/edit?mode=details`
+										)
 									}
 								>
 									Edit Survey Details
@@ -217,7 +223,9 @@ export default function SurveyDetails() {
 									className="edit-button"
 									disabled={!canEdit}
 									onClick={() =>
-										navigate(`/survey/${id}/edit?mode=giftcard`)
+										navigate(
+											`/survey/${id}/edit?mode=giftcard`
+										)
 									}
 								>
 									Edit Gift Card Information
@@ -265,7 +273,9 @@ export default function SurveyDetails() {
 									className="edit-button"
 									disabled={!canEdit}
 									onClick={() =>
-										navigate(`/survey/${id}/edit?mode=feedback`)
+										navigate(
+											`/survey/${id}/edit?mode=feedback`
+										)
 									}
 								>
 									Leave Feedback
@@ -308,12 +318,21 @@ export default function SurveyDetails() {
 							{survey.parentSurveyCode ?? 'N/A'}
 						</p>
 
-						<div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+						<div
+							style={{
+								display: 'flex',
+								alignItems: 'flex-start',
+								gap: '10px'
+							}}
+						>
 							<p style={{ margin: 0 }}>
 								<strong>Generated Referral Codes:</strong>
 							</p>
 							{referralCodes.length > 0 ? (
-								<ul className="referral-list" style={{ margin: 0 }}>
+								<ul
+									className="referral-list"
+									style={{ margin: 0 }}
+								>
 									{referralCodes.map(
 										(code: string, index: number) => (
 											<li
@@ -352,7 +371,8 @@ export default function SurveyDetails() {
 													key={index}
 													className="qr-box"
 													ref={el => {
-														qrRefs.current[index] = el;
+														qrRefs.current[index] =
+															el;
 													}}
 													style={{
 														display: 'inline-block',

@@ -106,6 +106,7 @@ export const searchSurveys = (
 			s.surveyCode,
 			s.employeeName,
 			s.locationName,
+			s.responses?.respondent_initials,
 			s.responses?.first_two_letters_fname,
 			s.responses?.first_two_letters_lname,
 			s.responses?.date_of_birth

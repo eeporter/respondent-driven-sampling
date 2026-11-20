@@ -40,8 +40,9 @@ export default function FilterDialog({
 	const [tempFilterMode, setTempFilterMode] = React.useState(filterMode);
 	const [tempSelectedDate, setTempSelectedDate] =
 		React.useState(selectedDate);
-	const [tempSelectedLocation, setTempSelectedLocation] =
-		React.useState<string | null>(selectedLocation);
+	const [tempSelectedLocation, setTempSelectedLocation] = React.useState<
+		string | null
+	>(selectedLocation);
 
 	React.useEffect(() => {
 		if (open) {
@@ -96,7 +97,9 @@ export default function FilterDialog({
 						labelId="location-filter-label"
 						value={tempSelectedLocation ?? ''}
 						label="Location"
-						onChange={e => setTempSelectedLocation(e.target.value || null)}
+						onChange={e =>
+							setTempSelectedLocation(e.target.value || null)
+						}
 					>
 						<MenuItem value="">All Locations</MenuItem>
 						{locations.map(location => (

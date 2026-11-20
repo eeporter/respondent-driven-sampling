@@ -938,38 +938,19 @@
    "elements": [
     {
      "type": "text",
-     "name": "first_two_letters_fname",
+     "name": "respondent_initials",
      "title": {
-      "default": "Enter the first two letters of the respondent's first name",
-      "es": "Ingrese las dos primeras letras del nombre de la persona encuestada"
+      "default": "Enter the respondent's initials",
+      "es": "Ingrese las iniciales de la persona encuestada"
      },
      "validators": [
       {
        "type": "regex",
+       "regex": "^[A-Za-z]{1,4}$",
        "text": {
-        "default": "Please enter the first two letters of the respondent's first name.",
-        "es": "Ingrese las dos primeras letras del nombre de la persona encuestada."
-       },
-       "regex": "^[A-Za-z]{2}$"
-      }
-     ],
-     "isRequired": true
-    },
-    {
-     "type": "text",
-     "name": "first_two_letters_lname",
-     "title": {
-      "default": "Enter the first two letters of the respondent's last name",
-      "es": "Ingrese las dos primeras letras del apellido de la persona encuestada"
-     },
-     "validators": [
-      {
-       "type": "regex",
-       "text": {
-        "default": "Please enter the first two letters of the respondent's last name.",
-        "es": "Ingrese las dos primeras letras del apellido de la persona encuestada."
-       },
-       "regex": "^[A-Za-z]{2}$"
+        "default": "Enter the respondent's initials using letters only (up to 4 letters, for example, JD).",
+        "es": "Ingrese las iniciales de la persona encuestada usando solo letras (hasta 4 letras, por ejemplo, JD)."
+       }
       }
      ],
      "isRequired": true

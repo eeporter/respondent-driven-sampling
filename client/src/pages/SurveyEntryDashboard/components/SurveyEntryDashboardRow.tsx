@@ -37,10 +37,15 @@ export default function SurveyEntryDashboardRow({
 			<TableCell>{survey.locationName ?? 'N/A'}</TableCell>
 			<TableCell>{survey.employeeName}</TableCell>
 			<TableCell>
-				{survey.responses?.first_two_letters_fname ?? 'N/A'}
-			</TableCell>
-			<TableCell>
-				{survey.responses?.first_two_letters_lname ?? 'N/A'}
+				{/* older surveys saved the first two letters of first and last name */}
+				{survey.responses?.respondent_initials ??
+					([
+						survey.responses?.first_two_letters_fname,
+						survey.responses?.first_two_letters_lname
+					]
+						.filter(Boolean)
+						.join(' ') ||
+						'N/A')}
 			</TableCell>
 			<TableCell>{survey.responses?.date_of_birth ?? 'N/A'}</TableCell>
 			<TableCell>
