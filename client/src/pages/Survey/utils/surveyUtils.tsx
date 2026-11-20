@@ -208,6 +208,56 @@ export const attachLocationChoiceColors = (survey: Model) => {
 	});
 };
 
+/**
+ * In a radio group that can be cleared (such as Declined / Don't know under a
+ * count), clicking the selected option again unselects it. Surveyors expect
+ * this, and the small Clear link is easy to miss. Clearing also empties any
+ * value filled in automatically from that choice (see resetValueIf).
+ */
+export const attachRadioDeselect = (survey: Model) => {
+	survey.onAfterRenderQuestion.add((_sender, options) => {
+		const question = options.question;
+		if (question.getType() !== 'radiogroup') return;
+		if (
+			!(question as QuestionSelectBase & { allowClear?: boolean })
+				.allowClear
+		)
+			return;
+		const el = options.htmlElement as HTMLElement & {
+			ycDeselect?: boolean;
+		};
+		if (el.ycDeselect) return;
+		el.ycDeselect = true;
+		let before: unknown;
+		el.addEventListener(
+			'pointerdown',
+			() => {
+				before = question.value;
+			},
+			true
+		);
+		el.addEventListener(
+			'click',
+			event => {
+				const target = event.target as HTMLElement;
+				const input =
+					target
+						.closest('label')
+						?.querySelector('input[type=radio]') ??
+					(target.matches('input[type=radio]') ? target : null);
+				if (!(input instanceof HTMLInputElement) || question.isReadOnly)
+					return;
+				if (before != null && String(before) === input.value) {
+					event.preventDefault();
+					question.clearValue();
+					before = undefined;
+				}
+			},
+			true
+		);
+	});
+};
+
 // Helper function to initialize survey with or without existing data
 export const initializeSurvey = (
 	surveyByRefCode: SurveyDocument | null,
@@ -275,6 +325,7 @@ export const initializeSurvey = (
 
 	attachLanguageHandler(survey);
 	attachLocationChoiceColors(survey);
+	attachRadioDeselect(survey);
 	// Retired hub sites are not offered, except one a survey already has.
 	survey.onChoicesLoaded.add((_sender, options) => {
 		if (options.question.name !== 'location') return;
