@@ -8738,7 +8738,11 @@
       "Yes",
       "No"
      ],
-     "showOtherItem": true
+     "showOtherItem": true,
+     "otherErrorText": {
+      "default": "Please describe what happened in the \"Other\" box.",
+      "es": "Describa lo que pasó en el cuadro \"Otro\"."
+     }
     },
     {
      "type": "text",
