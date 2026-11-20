@@ -1,0 +1,93 @@
+# LA County Youth Count 2027 hub sites (the 18 sites offered when choosing a site).
+# Import with: npm run location -- import src/scripts/la-locations.yaml
+# "SPA 3 - The Common Good" still needs its street address.
+
+- hubName: 'SPA 1 - Penny Lane Centers TAY Lancaster'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '43520 Division St, Lancaster CA 93535'
+
+- hubName: 'SPA 1 - Valley Oasis Lancaster'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '43434 Sahuayo St, Lancaster, CA 93535'
+
+- hubName: 'SPA 1 - Valley Oasis Thrift Shoppe'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '3030 E Palmdale Blvd, Palmdale, CA 93550'
+
+- hubName: 'SPA 2 - The Village Family Services'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '6801 Coldwater Canyon, CA'
+
+- hubName: 'SPA 2 - VOA TAY Access Center'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '12502 Van Nuys Blvd., Suite 206, CA'
+
+- hubName: 'SPA 3 - Hillsides Youth Moving On'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '456 E Orange Grove Blvd, Suite 140, Pasadena CA 91104'
+
+- hubName: 'SPA 3 - Pacific Clinics HOPE Drop-In Center'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '13001 Ramona Blvd. Suite I, Irwindale, 91706'
+
+- hubName: 'SPA 3 - The Common Good'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: 'Address to be confirmed (SPA 3 - The Common Good)'
+
+- hubName: 'SPA 4 - LA LGBT Center'
+  hubType: ESTABLISHMENT
+  locationType: ROOFTOP
+  address: '1118 N. McCadden Pl. LA, CA 90038'
+
+- hubName: 'SPA 4 - My Friend''s Place'
+  hubType: ESTABLISHMENT
+  locationType: ROOFTOP
+  address: '5850 Hollywood Blvd, LA CA 90028'
+
+- hubName: 'SPA 4 - Skid Row Care Campus'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '442 S. Crocker St, Los Angeles, CA 90013'
+
+- hubName: 'SPA 5 - Safe Place for Youth'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '2471 Lincoln Blvd Suite 101 Venice, CA 90291'
+
+- hubName: 'SPA 6 - CRCD Ruth''s Place'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '4775 S. Broadway Los Angeles, CA'
+
+- hubName: 'SPA 6 - Watts Labor Community Action Committee'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '958 E 108th Street Los Angeles, CA 90059'
+
+- hubName: 'SPA 7 - Jovenes Access Center Whittier'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '9829 Carmenita Rd Suite H, Whittier CA 90605'
+
+- hubName: 'SPA 7 - Penny Lane Centers TAY Commerce'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '5628 E. Slauson Ave, Commerce, CA 90040'
+
+- hubName: 'SPA 8 - Harbor Interfaith'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '599 W 9th St, San Pedro, CA 90731'
+
+- hubName: 'SPA 8 - Sanctuary of Hope Hawthorne'
+  hubType: ESTABLISHMENT
+  locationType: APPROXIMATE
+  address: '13245 Hawthorne Blvd, Hawthorne, CA 90250'
