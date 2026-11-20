@@ -3044,8 +3044,7 @@
       "default": "Other (specify):",
       "es": "Otro (especifique):"
      },
-     "visibleIf": "{Q8} contains 'Other (specify):'",
-     "isRequired": true
+     "visibleIf": "{Q8} contains 'Other (specify):'"
     }
    ],
    "navigationTitle": "Individual Demographics",
@@ -5196,8 +5195,7 @@
         "default": "Other (specify):",
         "es": "Otro (especifique):"
        },
-       "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'",
-       "isRequired": true
+       "visibleIf": "({panel.Q31f} contains 'Other (specify)') and {panel.Q26f_unit} <> 'Respondent does not have family members 18 and older living with them'"
       },
       {
        "type": "checkbox",
