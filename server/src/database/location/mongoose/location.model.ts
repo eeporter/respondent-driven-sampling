@@ -7,7 +7,10 @@ const locationSchema = new Schema(
 		hubName: { type: String, required: true, unique: true },
 		hubType: { type: String, enum: HubType, required: true },
 		locationType: { type: String, enum: LocationType, required: true },
-		address: { type: String, required: true, unique: true }
+		address: { type: String, required: true, unique: true },
+		// A retired hub site keeps its record (surveys, seeds and users stay linked)
+		// but is no longer offered when choosing a site.
+		retired: { type: Boolean, default: false }
 	},
 	{ strict: 'throw' }
 );

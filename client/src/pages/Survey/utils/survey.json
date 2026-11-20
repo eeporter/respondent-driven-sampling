@@ -32,7 +32,8 @@
       "url": "/api/locations",
       "path": "data",
       "valueName": "_id",
-      "titleName": "hubName"
+      "titleName": "hubName",
+      "attachOriginalItems": true
      },
      "showNoneItem": true
     }

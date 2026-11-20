@@ -275,6 +275,17 @@ export const initializeSurvey = (
 
 	attachLanguageHandler(survey);
 	attachLocationChoiceColors(survey);
+	// Retired hub sites are not offered, except one a survey already has.
+	survey.onChoicesLoaded.add((_sender, options) => {
+		if (options.question.name !== 'location') return;
+		const current = options.question.value;
+		options.choices = options.choices.filter(choice => {
+			const original = (
+				choice as { originalItem?: { retired?: boolean } }
+			).originalItem;
+			return !original?.retired || choice.value === current;
+		});
+	});
 
 	// Populate with existing data from objectId if found
 	if (surveyByObjectId) {

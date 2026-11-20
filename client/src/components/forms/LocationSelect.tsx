@@ -18,12 +18,16 @@ export const LocationSelect = ({
 	const { locationService } = useApi();
 	const { data: locations = [] } = locationService.useLocations() ?? {};
 
-	const options = locations?.map(
-		(location: { _id: string; hubName: string }) => ({
+	// Retired hub sites are not offered, except the one already chosen.
+	const options = locations
+		?.filter(
+			(location: { _id: string; retired?: boolean | null }) =>
+				!location.retired || location._id === props.value
+		)
+		.map((location: { _id: string; hubName: string }) => ({
 			value: location._id,
 			label: location.hubName
-		})
-	);
+		}));
 
 	const optionsWithEmpty = includeEmptyOption
 		? [{ value: '', label: 'Select a location' }, ...(options ?? [])]
